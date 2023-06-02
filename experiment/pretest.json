@@ -2,38 +2,63 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "The accuracy of the deflection type instruments and of the null type instruments depends on ",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Linearity, calibration of spring",
+        "b": "Calibration of spring, linearity, and calibration of weights",
+        "c": "Linearity and calibration of spring, calibration of weights",
+        "d": "Both depends on calibration of weight"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "A dead-weight pressure gauge is used for ______.",
+      "answers": {
+        "a": "Static pressure measurement",
+        "b": "Dynamic pressure measurement",
+        "c": "High-vacuum measurement",
+        "d": "Low-volume  measurement"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Total absolute pressure is ________.",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "greater than atmospheric pressure + gauge pressure",
+        "b": "equal to atmospheric pressure + gauge pressure",
+        "c": "greater than atmospheric pressure - absolute pressure",
+        "d": "equal to atmospheric pressure - absolute pressure"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+	
+	
+	{
+      "question": "Which is the only unknown value in the dead weight tester?",
+      "answers": {
+        "a": "Pressure (p)",
+        "b": "Area of the piston (A)",
+        "c": "Mass of the weights (m)",
+        "d": "Acceleration due to gravity (g)"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+	
+	{
+      "question": "Which oil is used in dead weight tester?",
+      "answers": {
+        "a": "PD66 Oil Type",
+        "b": "SAE 20",
+        "c": "SAE 40",
+        "d": "SAE 30"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
     }
+	
   ]
 }

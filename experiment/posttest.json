@@ -2,37 +2,66 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Working principle of dead weight pressure gauge tester is based on",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Pascal's law",
+        "b": "Dalton's law of partial pressure",
+        "c": "Newton's law of viscosity",
+        "d": "Avogadro's hypothesis"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
+     
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "What is relative error?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "(Measured Value – Actual Value) /Actual Value",
+        "b": "(Measured Value  + Actual Value) /Actual Value",
+        "c": "(Measured Value – Actual Value) X Actual Value",
+        "d": "(Actual  Value – Measured   Value) /Actual Value"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "Gauge pressure is _____ ",
+      "answers": {
+        "a": "equal to atmospheric pressure - absolute pressure",
+        "b": "greater than atmospheric pressure + gauge pressure",
+        "c": "equal to atmospheric pressure + gauge pressure",
+        "d": "greater than atmospheric pressure - absolute pressure"
       },
-      "correctAnswer": "c",
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "Atmospheric pressure is _____",
+      "answers": {
+        "a": "equal to absolute pressure + Gauge pressure",
+        "b": "equal to gauge pressure",
+        "c": "greater than  Gauge pressure - absolute pressure",
+        "d": "less than absolute pressure"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "1 kilogram Force is equal to _____",
+      "answers": {
+        "a": "14.22334 PSI",
+        "b": "15  PSI",
+        "c": "13 PSI",
+        "d": "17.22335 PSI"
+      },
+     
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]
