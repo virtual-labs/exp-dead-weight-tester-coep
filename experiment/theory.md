@@ -13,7 +13,7 @@ Actual Instrument figure shown below:-
 
 ### Description
 
-The dead weight tester apparatus consists of a chamber which is filled with oil free impurities and a piston–cylinder combination is fitted above the chamber as shown in the diagram. The top portion of the piston is attached with a platform to carry weights. A plunger with a handle has been provided to vary the pressure of oil in the chamber. The pressure gauge to be tested is fitted at an appropriate plate.
+The dead weight tester apparatus consists of a chamber which is filled with oil free impurities and a piston-cylinder combination is fitted above the chamber as shown in the diagram. The top portion of the piston is attached with a platform to carry weights. A plunger with a handle has been provided to vary the pressure of oil in the chamber. The pressure gauge to be tested is fitted at an appropriate plate.
 
 The Bourdon gauge is the most popular pressure measuring device for both liquids and gasses. It can be connected to any source of pressure such as a pipe or vessel containing a pressurized fluid.
 
@@ -51,7 +51,7 @@ Now the pressure gauge to be calibrated is installed in an appropriate place in 
 
 ### Bourdon Gauge
 
-The Bourdon Gauge (Figure 2) is fitted with a transparent dial, which lets you see the internal workings of the gauge. The gauge consists of a thin walled closed ended tube which is oval in cross-section. This tube is bent through an angle of about 270°  along its long axis. The open end of the tube is welded to a hollow mounting block which allows the pressurized fluid to reach the tube. This causes the pressure from the source to be transmitted directly to the inside of the bourdon tube. The applied pressure causes the oval tube to become rounder (since a round cross-section has the maximum area for a given circumference). As it becomes rounder, the bourdon tube tends to uncurl which causes its free end to move. A system of linkages and levers transmits this motion to the gauge needle which moves over the scale.
+The Bourdon Gauge (Figure 2) is fitted with a transparent dial, which lets you see the internal workings of the gauge. The gauge consists of a thin walled closed ended tube which is oval in cross-section. This tube is bent through an angle of about 270&deg;  along its long axis. The open end of the tube is welded to a hollow mounting block which allows the pressurized fluid to reach the tube. This causes the pressure from the source to be transmitted directly to the inside of the bourdon tube. The applied pressure causes the oval tube to become rounder (since a round cross-section has the maximum area for a given circumference). As it becomes rounder, the bourdon tube tends to uncurl which causes its free end to move. A system of linkages and levers transmits this motion to the gauge needle which moves over the scale.
 
 ![3](images/figure3.PNG)
 
@@ -71,8 +71,8 @@ It is used to calibrate all kinds of pressure gauges such as industrial pressure
 
 ### Theoretical background and calculate
 
-Relative Error = (Measured Value – Actual Value) /Actual Value
-Percent Error = ¦Relative Error¦ × 100
+Relative Error = (Measured Value â€“ Actual Value) /Actual Value
+Percent Error = Â¦Relative ErrorÂ¦ Ã— 100
 
 ### Graphical Relationship: Plot the following graphs
 
