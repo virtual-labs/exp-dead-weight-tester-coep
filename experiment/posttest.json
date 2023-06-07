@@ -16,10 +16,10 @@
     {
       "question": "What is relative error?",
       "answers": {
-        "a": "(Measured Value – Actual Value) /Actual Value",
+        "a": "(Measured Value - Actual Value) /Actual Value",
         "b": "(Measured Value  + Actual Value) /Actual Value",
-        "c": "(Measured Value – Actual Value) X Actual Value",
-        "d": "(Actual  Value – Measured   Value) /Actual Value"
+        "c": "(Measured Value - Actual Value) X Actual Value",
+        "d": "(Actual  Value - Measured   Value) /Actual Value"
       },
      
       "correctAnswer": "a",
