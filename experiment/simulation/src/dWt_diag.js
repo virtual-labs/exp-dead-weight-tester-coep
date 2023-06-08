@@ -1,4 +1,3 @@
-
 function mimicCall(weight,meter,cylinderPiston)
 {
 
@@ -926,12 +925,15 @@ if(forward >= -2){
 
  console.log("value of handle1 "+hndl);
 }
-  if(forward > 58){
+  if(forward >= 58){
 	forward = 58;
-	h_img.animate({'transform':'r0'},time);
+	//h_img.animate({'transform':'r0'},time);
 	
 //	hflag = 0;
-     alert("Minimum limit...");
+     setTimeout(function(){ 
+	alert("Minimum limit...")
+     
+	},time+100);
 	 
 	
 	
@@ -958,11 +960,14 @@ if(forward >= -2){
 
  console.log("value of handle1 "+hndl);
 }
-  if(forward_55 > 65){
+  if(forward_55 >= 65){
 	forward_55 = 65;
 //	hflag = 0;
-     alert("Minimum limit...");
-	 h_img.animate({'transform':'r0'},time);
+     setTimeout(function(){ 
+	alert("Minimum limit...")
+     
+	},time+100);
+	 //h_img.animate({'transform':'r0'},time);
 	
 	
 }
@@ -989,12 +994,15 @@ if(forward >= -2){
 
  console.log("value of handle1 "+hndl);
 }
-  if(forward_60 > 70){
+  if(forward_60 >= 70){
 	forward_60 = 70;
 //	hflag = 0;
-	 h_img.animate({'transform':'r0'},time);
+	 //h_img.animate({'transform':'r0'},time);
 
-     alert("Minimum limit...");
+     setTimeout(function(){ 
+	alert("Minimum limit...")
+     
+	},time+100);
 	
 	
 }
@@ -1027,11 +1035,14 @@ hflag++;
  
  console.log("value of handle1 "+hndl);
  } 
- if(forward < -2 ){
+ if(forward <= -2 ){
 	forward = -2;
 //	hflag = 0;
-	 h_img.animate({'transform':'r0'},time);
-	alert("Maximum limit...");
+	 //h_img.animate({'transform':'r0'},time);
+	setTimeout(function(){ 
+	alert("Maximum limit...")
+     
+	},time+100);
 }
 } else if(a == 55){
 	
@@ -1057,11 +1068,14 @@ hflag++;
  
  console.log("value of handle1 "+hndl);
  } 
- if(forward_55 < 0){
+ if(forward_55 <= 0){
 	forward_55 = 0;
 //	hflag = 0;
-	 h_img.animate({'transform':'r0'},time);
-	alert("Maximum limit...");
+	// h_img.animate({'transform':'r0'},time);
+	setTimeout(function(){ 
+	alert("Maximum limit...")
+     
+	},time+100);
 }
 	
 }
@@ -1088,11 +1102,14 @@ hflag++;
  
  console.log("value of handle1 "+hndl);
  } 
- if(forward_60 < 0){
+ if(forward_60 <= 0){
 	forward_60 = 0;
 //	hflag = 0;
-	 h_img.animate({'transform':'r0'},time);
-	alert("Maximum limit...");
+	 //h_img.animate({'transform':'r0'},time);
+	setTimeout(function(){ 
+	alert("Maximum limit...")
+     
+	},time+100);
 }
 
 	
