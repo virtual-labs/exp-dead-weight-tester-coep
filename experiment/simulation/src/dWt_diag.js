@@ -1,4 +1,3 @@
-
 function mimicCall(weight,meter,cylinderPiston)
 {
 
