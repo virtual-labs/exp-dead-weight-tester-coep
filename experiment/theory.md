@@ -1,4 +1,3 @@
-
 ### Theory
 
 Instrument calibration is one of the primary processes used to maintain instrument accuracy. It is the process of configuring an instrument to provide results within an acceptable range. Known weights have been applied on a Dead Weight Calibrator to apply pressure to a fluid for checking the accuracy of readings from a pressure gauge. Various types of pressure measuring instruments have been used to measure the pressure intensity at any point in static or moving fluid.
