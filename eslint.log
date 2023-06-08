@@ -1,0 +1,1484 @@
+
+/home/runner/work/exp-dead-weight-tester-coep/exp-dead-weight-tester-coep/experiment/simulation/lib/jquery.js
+  2:58     warning  'module' is not defined                                                    no-undef
+  2:73     warning  'module' is not defined                                                    no-undef
+  2:6324   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:6580   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:7011   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:7270   warning  Empty block statement                                                      no-empty
+  2:7839   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:9709   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:11311  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:11887  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:11925  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:12343  warning  Empty block statement                                                      no-empty
+  2:12906  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:13218  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:15046  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:15317  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:15517  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:15893  warning  Do not access Object.prototype method 'hasOwnProperty' from target object  no-prototype-builtins
+  2:16598  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:18982  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:19073  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:19133  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:20435  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:21049  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:21160  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:23420  warning  Unnecessary escape character: \[                                           no-useless-escape
+  2:23422  warning  Unnecessary escape character: \.                                           no-useless-escape
+  2:30761  warning  Empty block statement                                                      no-empty
+  2:31981  warning  Empty block statement                                                      no-empty
+  3:7811   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  3:7951   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  3:8441   warning  Empty block statement                                                      no-empty
+  3:11852  warning  Empty block statement                                                      no-empty
+  3:14493  warning  Empty block statement                                                      no-empty
+  3:24051  warning  Empty block statement                                                      no-empty
+  3:26100  warning  Move function declaration to function body root                            no-inner-declarations
+  3:30714  warning  Empty block statement                                                      no-empty
+  4:2546   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:5062   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:11701  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:13447  warning  Empty block statement                                                      no-empty
+  4:14747  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:14827  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:15164  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:15244  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:15659  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:15915  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:16492  warning  Unnecessary escape character: \/                                           no-useless-escape
+  4:17365  warning  Unnecessary escape character: \/                                           no-useless-escape
+  4:17377  warning  Unnecessary escape character: \/                                           no-useless-escape
+  4:17610  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:20109  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:22009  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:27128  warning  Empty block statement                                                      no-empty
+  4:27205  warning  Empty block statement                                                      no-empty
+  5:812    warning  'define' is not defined                                                    no-undef
+  5:824    warning  'define' is not defined                                                    no-undef
+
+/home/runner/work/exp-dead-weight-tester-coep/exp-dead-weight-tester-coep/experiment/simulation/lib/jquery.min.js
+  2:71     warning  'module' is not defined                                                    no-undef
+  2:86     warning  'module' is not defined                                                    no-undef
+  2:5433   warning  Unexpected control character(s) in regular expression: \x1f, \x1f          no-control-regex
+  2:5916   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:6170   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:6614   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:7404   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:9497   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:9807   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:11608  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:12183  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:12221  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:13234  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:13546  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:15374  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:15645  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:15843  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:16217  warning  Do not access Object.prototype method 'hasOwnProperty' from target object  no-prototype-builtins
+  2:16907  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:18727  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:18827  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:18887  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:19071  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:20240  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:21514  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:21625  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:23791  warning  Unnecessary escape character: \/                                           no-useless-escape
+  2:33395  warning  Empty block statement                                                      no-empty
+  2:37269  warning  Unnecessary escape character: \/                                           no-useless-escape
+  2:38490  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:38606  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:39234  warning  Empty block statement                                                      no-empty
+  2:46727  warning  Unnecessary escape character: \/                                           no-useless-escape
+  2:49033  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:50593  warning  Empty block statement                                                      no-empty
+  2:58406  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:59575  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:65215  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:66958  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:67024  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:67328  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:67394  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:67801  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:68078  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:73449  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:75043  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:75823  warning  'r.href' is assigned to itself                                             no-self-assign
+  2:80414  warning  Empty block statement                                                      no-empty
+  2:83525  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:87869  warning  'define' is not defined                                                    no-undef
+  2:87881  warning  'define' is not defined                                                    no-undef
+
+/home/runner/work/exp-dead-weight-tester-coep/exp-dead-weight-tester-coep/experiment/simulation/lib/raphael.js
+  5800:60  error  Parsing error: Deleting local variable in strict mode
+
+/home/runner/work/exp-dead-weight-tester-coep/exp-dead-weight-tester-coep/experiment/simulation/lib/raphael.min.js
+  1:66     warning  'module' is not defined                                                                                                                          no-undef
+  1:112    warning  'define' is not defined                                                                                                                          no-undef
+  1:123    warning  'define' is not defined                                                                                                                          no-undef
+  1:161    warning  'exports' is not defined                                                                                                                         no-undef
+  1:1566   warning  'DocumentTouch' is not defined                                                                                                                   no-undef
+  1:2001   warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:2017   warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:2033   warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:2052   warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:2081   warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:2110   warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:2126   warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:2145   warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:2174   warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:2203   warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:2219   warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:2238   warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:2346   warning  Unnecessary escape character: \)                                                                                                                 no-useless-escape
+  1:3257   warning  Unexpected control character(s) in regular expression: \x09, \x0a, \x0b, \x0c, \x0d, \x09, \x0a, \x0b, \x0c, \x0d                                no-control-regex
+  1:3582   warning  Unexpected control character(s) in regular expression: \x09, \x0a, \x0b, \x0c, \x0d, \x09, \x0a, \x0b, \x0c, \x0d, \x09, \x0a, \x0b, \x0c, \x0d  no-control-regex
+  1:3756   warning  Unnecessary escape character: \-                                                                                                                 no-useless-escape
+  1:4055   warning  Unexpected control character(s) in regular expression: \x09, \x0a, \x0b, \x0c, \x0d, \x09, \x0a, \x0b, \x0c, \x0d, \x09, \x0a, \x0b, \x0c, \x0d  no-control-regex
+  1:4222   warning  Unnecessary escape character: \-                                                                                                                 no-useless-escape
+  1:4521   warning  Unexpected control character(s) in regular expression: \x09, \x0a, \x0b, \x0c, \x0d, \x09, \x0a, \x0b, \x0c, \x0d                                no-control-regex
+  1:4539   warning  Unnecessary escape character: \-                                                                                                                 no-useless-escape
+  1:4856   warning  Unexpected control character(s) in regular expression: \x09, \x0a, \x0b, \x0c, \x0d, \x09, \x0a, \x0b, \x0c, \x0d                                no-control-regex
+  1:5154   warning  Unnecessary escape character: \)                                                                                                                 no-useless-escape
+  1:7857   warning  'ActiveXObject' is not defined                                                                                                                   no-undef
+  1:7931   warning  'createPopup' is not defined                                                                                                                     no-undef
+  1:19015  warning  Expected a 'break' statement before 'default'                                                                                                    no-fallthrough
+  1:20113  warning  Expected a 'break' statement before 'default'                                                                                                    no-fallthrough
+  1:20421  warning  Expected a 'break' statement before 'default'                                                                                                    no-fallthrough
+  1:24342  warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:35757  warning  't' is defined but never used                                                                                                                    no-unused-vars
+  1:49075  warning  'r' is defined but never used                                                                                                                    no-unused-vars
+  1:50549  warning  'i' is defined but never used                                                                                                                    no-unused-vars
+  1:50598  warning  'r' is defined but never used                                                                                                                    no-unused-vars
+  1:52666  warning  Unnecessary escape character: \}                                                                                                                 no-useless-escape
+  1:53074  warning  Empty block statement                                                                                                                            no-empty
+  1:53754  warning  Unnecessary escape character: \)                                                                                                                 no-useless-escape
+  1:60967  warning  Unnecessary escape character: \-                                                                                                                 no-useless-escape
+  1:72245  warning  Unnecessary escape character: \-                                                                                                                 no-useless-escape
+  1:72515  warning  Unnecessary escape character: \(                                                                                                                 no-useless-escape
+  1:72517  warning  Unnecessary escape character: \)                                                                                                                 no-useless-escape
+  1:75570  warning  Expected a conditional expression and instead saw an assignment                                                                                  no-cond-assign
+  1:77369  warning  Expected a 'break' statement before 'case'                                                                                                       no-fallthrough
+  1:77405  warning  Expected a 'break' statement before 'case'                                                                                                       no-fallthrough
+  1:77447  warning  Expected a 'break' statement before 'case'                                                                                                       no-fallthrough
+  1:77582  warning  Expected a 'break' statement before 'case'                                                                                                       no-fallthrough
+  1:77619  warning  Expected a 'break' statement before 'case'                                                                                                       no-fallthrough
+  1:77661  warning  Expected a 'break' statement before 'case'                                                                                                       no-fallthrough
+  1:79325  warning  Expected a 'break' statement before 'case'                                                                                                       no-fallthrough
+  1:79783  warning  Expected a 'break' statement before 'case'                                                                                                       no-fallthrough
+  1:79973  warning  Expected a 'break' statement before 'default'                                                                                                    no-fallthrough
+  1:80032  warning  Unnecessary escape character: \-                                                                                                                 no-useless-escape
+  1:89485  warning  'r' is defined but never used                                                                                                                    no-unused-vars
+  1:89543  warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:89545  warning  Unnecessary escape character: \/                                                                                                                 no-useless-escape
+  1:90733  warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:90735  warning  Unnecessary escape character: \^                                                                                                                 no-useless-escape
+  1:90739  warning  Unnecessary escape character: \[                                                                                                                 no-useless-escape
+  1:90741  warning  Unnecessary escape character: \-                                                                                                                 no-useless-escape
+  1:90780  warning  Unnecessary escape character: \.                                                                                                                 no-useless-escape
+  1:90782  warning  Unnecessary escape character: \/                                                                                                                 no-useless-escape
+  1:91000  warning  Do not access Object.prototype method 'hasOwnProperty' from target object                                                                        no-prototype-builtins
+
+/home/runner/work/exp-dead-weight-tester-coep/exp-dead-weight-tester-coep/experiment/simulation/src/07-06-2023BackUp.js
+     2:10   warning  'mimicCall' is defined but never used               no-unused-vars
+     5:17   warning  'Raphael' is not defined                            no-undef
+     6:1    warning  '$' is not defined                                  no-undef
+     7:2    warning  '$' is not defined                                  no-undef
+    11:14   warning  '$' is not defined                                  no-undef
+    13:6    warning  '$' is not defined                                  no-undef
+    14:3    warning  'width' is assigned a value but never used          no-unused-vars
+    14:11   warning  '$' is not defined                                  no-undef
+    15:15   warning  'Raphael' is not defined                            no-undef
+    19:15   warning  'Raphael' is not defined                            no-undef
+    23:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+    24:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+    25:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+    30:5    warning  'cylin' is assigned a value but never used          no-unused-vars
+    36:10   warning  'pf1' is defined but never used                     no-unused-vars
+    44:5    warning  'flag' is assigned a value but never used           no-unused-vars
+    45:5    warning  'w1' is defined but never used                      no-unused-vars
+    46:9    warning  'borderhide1' is assigned a value but never used    no-unused-vars
+    46:22   warning  'borderhide' is assigned a value but never used     no-unused-vars
+    47:5    warning  'SetFlagVal' is assigned a value but never used     no-unused-vars
+    53:5    warning  'Img' is already defined                            no-redeclare
+    54:15   warning  'arc_anim' is defined but never used                no-unused-vars
+    58:5    warning  'index' is assigned a value but never used          no-unused-vars
+    59:5    warning  'wt_arr' is assigned a value but never used         no-unused-vars
+    61:5    warning  'blank_rec' is assigned a value but never used      no-unused-vars
+   104:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   115:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   122:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   124:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   136:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   139:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   140:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   144:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   155:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   158:3    warning  'block' is not defined                              no-undef
+   159:3    warning  'block_ht' is not defined                           no-undef
+   163:3    warning  'block' is not defined                              no-undef
+   164:3    warning  'block_ht' is not defined                           no-undef
+   168:3    warning  'block' is not defined                              no-undef
+   169:3    warning  'block_ht' is not defined                           no-undef
+   171:2    warning  'r1' is not defined                                 no-undef
+   171:31   warning  'block' is not defined                              no-undef
+   171:77   warning  'block_ht' is not defined                           no-undef
+   171:119  warning  'block_ht' is not defined                           no-undef
+   175:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   176:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   177:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   178:5    warning  'p' is not defined                                  no-undef
+   179:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   183:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   184:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   184:4    warning  'R' is not defined                                  no-undef
+   185:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   187:3    warning  'R_cap1' is not defined                             no-undef
+   191:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   192:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   192:4    warning  'R' is not defined                                  no-undef
+   193:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   195:3    warning  'R_cap1' is not defined                             no-undef
+   197:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   198:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   198:4    warning  'R' is not defined                                  no-undef
+   199:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   201:3    warning  'R_cap1' is not defined                             no-undef
+   228:3    warning  'p' is not defined                                  no-undef
+   230:28   warning  'Raphael' is not defined                            no-undef
+   231:10   warning  'p' is not defined                                  no-undef
+   233:30   warning  'Raphael' is not defined                            no-undef
+   234:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   236:32   warning  'Raphael' is not defined                            no-undef
+   236:67   warning  'block' is not defined                              no-undef
+   236:113  warning  'block_ht' is not defined                           no-undef
+   237:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   237:38   warning  'block_ht' is not defined                           no-undef
+   238:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   238:6    warning  'r1' is not defined                                 no-undef
+   260:3    warning  'p' is not defined                                  no-undef
+   262:28   warning  'Raphael' is not defined                            no-undef
+   263:10   warning  'p' is not defined                                  no-undef
+   265:30   warning  'Raphael' is not defined                            no-undef
+   266:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   269:32   warning  'Raphael' is not defined                            no-undef
+   269:67   warning  'block' is not defined                              no-undef
+   269:113  warning  'block_ht' is not defined                           no-undef
+   270:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   270:38   warning  'block_ht' is not defined                           no-undef
+   271:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   271:6    warning  'r1' is not defined                                 no-undef
+   293:3    warning  'p' is not defined                                  no-undef
+   296:28   warning  'Raphael' is not defined                            no-undef
+   297:10   warning  'p' is not defined                                  no-undef
+   299:30   warning  'Raphael' is not defined                            no-undef
+   300:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   303:32   warning  'Raphael' is not defined                            no-undef
+   303:67   warning  'block' is not defined                              no-undef
+   303:113  warning  'block_ht' is not defined                           no-undef
+   304:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   304:38   warning  'block_ht' is not defined                           no-undef
+   306:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   306:6    warning  'r1' is not defined                                 no-undef
+   315:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   316:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   316:4    warning  'M_valve' is not defined                            no-undef
+   317:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   318:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   322:10   warning  'R_valve' is not defined                            no-undef
+   323:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   324:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   328:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   329:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   329:4    warning  'M_valve' is not defined                            no-undef
+   330:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   331:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   335:10   warning  'R_valve' is not defined                            no-undef
+   336:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   337:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   341:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   342:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   342:4    warning  'M_valve' is not defined                            no-undef
+   343:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   344:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   348:10   warning  'R_valve' is not defined                            no-undef
+   350:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   351:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   359:15   warning  'Raphael' is not defined                            no-undef
+   360:8    warning  'R_valve' is not defined                            no-undef
+   363:2    warning  'R_valve' is not defined                            no-undef
+   365:13   warning  'Raphael' is not defined                            no-undef
+   366:8    warning  'R_valve' is not defined                            no-undef
+   368:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   370:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   373:8    warning  'R_valve' is not defined                            no-undef
+   374:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   374:4    warning  'M_valve' is not defined                            no-undef
+   381:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   382:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   383:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   383:24   warning  'Raphael' is not defined                            no-undef
+   387:7    warning  'keepRotating5' is already defined                  no-redeclare
+   387:23   warning  'Raphael' is not defined                            no-undef
+   392:7    warning  'keepRotating5' is already defined                  no-redeclare
+   392:23   warning  'Raphael' is not defined                            no-undef
+   394:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   395:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   396:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   398:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   400:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   400:24   warning  'Raphael' is not defined                            no-undef
+   404:13   warning  'keepRotating6' is already defined                  no-redeclare
+   404:29   warning  'Raphael' is not defined                            no-undef
+   410:7    warning  'keepRotating6' is already defined                  no-redeclare
+   410:23   warning  'Raphael' is not defined                            no-undef
+   412:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   413:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   424:4    warning  Move function declaration to function body root     no-inner-declarations
+   425:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   430:4    warning  'circle' is not defined                             no-undef
+   433:4    warning  'cirAni' is not defined                             no-undef
+   433:13   warning  'Raphael' is not defined                            no-undef
+   434:4    warning  'circle' is not defined                             no-undef
+   434:19   warning  'cirAni' is not defined                             no-undef
+   440:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   440:6    warning  Move function declaration to function body root     no-inner-declarations
+   441:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   442:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   443:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   444:4    warning  'circle1' is not defined                            no-undef
+   445:4    warning  'circle1' is not defined                            no-undef
+   447:4    warning  'cirAni1' is not defined                            no-undef
+   447:14   warning  'Raphael' is not defined                            no-undef
+   448:4    warning  'circle1' is not defined                            no-undef
+   448:20   warning  'cirAni1' is not defined                            no-undef
+   449:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   456:8    warning  'totalDelay' is already defined                     no-redeclare
+   457:4    warning  Move function declaration to function body root     no-inner-declarations
+   463:4    warning  'circle' is not defined                             no-undef
+   464:4    warning  'circle2' is not defined                            no-undef
+   466:4    warning  'cirAni' is not defined                             no-undef
+   466:13   warning  'Raphael' is not defined                            no-undef
+   467:4    warning  'circle' is not defined                             no-undef
+   467:19   warning  'cirAni' is not defined                             no-undef
+   468:4    warning  'circle2' is not defined                            no-undef
+   468:20   warning  'cirAni' is not defined                             no-undef
+   471:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   473:4    warning  Move function declaration to function body root     no-inner-declarations
+   477:4    warning  'circle1' is not defined                            no-undef
+   478:4    warning  'circle1' is not defined                            no-undef
+   480:4    warning  'cirAni1' is not defined                            no-undef
+   480:14   warning  'Raphael' is not defined                            no-undef
+   481:4    warning  'circle1' is not defined                            no-undef
+   481:20   warning  'cirAni1' is not defined                            no-undef
+   489:8    warning  'totalDelay' is already defined                     no-redeclare
+   490:4    warning  Move function declaration to function body root     no-inner-declarations
+   491:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   493:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   496:4    warning  'circle' is not defined                             no-undef
+   497:4    warning  'circle2' is not defined                            no-undef
+   499:4    warning  'cirAni' is not defined                             no-undef
+   499:13   warning  'Raphael' is not defined                            no-undef
+   500:4    warning  'circle' is not defined                             no-undef
+   500:19   warning  'cirAni' is not defined                             no-undef
+   501:4    warning  'circle2' is not defined                            no-undef
+   501:20   warning  'cirAni' is not defined                             no-undef
+   506:4    warning  Move function declaration to function body root     no-inner-declarations
+   510:4    warning  'circle1' is not defined                            no-undef
+   511:4    warning  'circle1' is not defined                            no-undef
+   513:4    warning  'cirAni1' is not defined                            no-undef
+   513:14   warning  'Raphael' is not defined                            no-undef
+   514:4    warning  'circle1' is not defined                            no-undef
+   514:20   warning  'cirAni1' is not defined                            no-undef
+   533:5    warning  'sp' is assigned a value but never used             no-unused-vars
+   538:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   540:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   543:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   556:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   558:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   561:6    warning  'circleB1' is assigned a value but never used       no-unused-vars
+   562:6    warning  'circleB2' is assigned a value but never used       no-unused-vars
+   563:6    warning  'circleB3' is assigned a value but never used       no-unused-vars
+   566:9    warning  'circle1' is already defined                        no-redeclare
+   566:9    warning  'circle1' is assigned a value but never used        no-unused-vars
+   567:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   568:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   569:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   570:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   570:7    warning  'circle2' is already defined                        no-redeclare
+   570:7    warning  'circle2' is assigned a value but never used        no-unused-vars
+   571:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   572:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   574:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   574:7    warning  'meter_range1' is assigned a value but never used   no-unused-vars
+   575:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   576:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   577:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   578:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   579:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   580:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   581:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   582:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   582:7    warning  'square' is assigned a value but never used         no-unused-vars
+   583:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   583:7    warning  's' is assigned a value but never used              no-unused-vars
+   585:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   585:7    warning  'range1' is assigned a value but never used         no-unused-vars
+   586:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   587:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   588:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   589:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   590:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   591:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   592:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   593:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   594:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   595:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   597:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   598:69   warning  Unnecessary semicolon                               no-extra-semi
+   612:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   612:3    warning  'surf' is not defined                               no-undef
+   618:3    warning  'txt_weight' is not defined                         no-undef
+   619:3    warning  'wt5mx' is not defined                              no-undef
+   619:16   warning  'wt5my' is not defined                              no-undef
+   619:29   warning  'wt5rx' is not defined                              no-undef
+   619:42   warning  'wt5ry' is not defined                              no-undef
+   619:55   warning  'txtwx' is not defined                              no-undef
+   619:68   warning  'txtwy' is not defined                              no-undef
+   620:3    warning  'wt5' is not defined                                no-undef
+   620:23   warning  'wt5mx' is not defined                              no-undef
+   620:33   warning  'wt5my' is not defined                              no-undef
+   620:41   warning  'wt5rx' is not defined                              no-undef
+   620:47   warning  'wt5ry' is not defined                              no-undef
+   621:3    warning  'wt' is not defined                                 no-undef
+   621:8    warning  'wt5' is not defined                                no-undef
+   622:25   warning  'txtwx' is not defined                              no-undef
+   622:33   warning  'txtwy' is not defined                              no-undef
+   622:39   warning  'txt_weight' is not defined                         no-undef
+   623:4    warning  'txtAnim' is not defined                            no-undef
+   623:14   warning  'txt_weight' is not defined                         no-undef
+   628:3    warning  'txt_weight' is not defined                         no-undef
+   629:3    warning  'wt5mx' is not defined                              no-undef
+   629:16   warning  'wt5my' is not defined                              no-undef
+   629:29   warning  'wt5rx' is not defined                              no-undef
+   629:42   warning  'wt5ry' is not defined                              no-undef
+   629:55   warning  'txtwx' is not defined                              no-undef
+   629:68   warning  'txtwy' is not defined                              no-undef
+   630:3    warning  'wt2' is not defined                                no-undef
+   630:23   warning  'wt5mx' is not defined                              no-undef
+   630:33   warning  'wt5my' is not defined                              no-undef
+   630:41   warning  'wt5rx' is not defined                              no-undef
+   630:47   warning  'wt5ry' is not defined                              no-undef
+   631:3    warning  'wt' is not defined                                 no-undef
+   631:8    warning  'wt2' is not defined                                no-undef
+   632:24   warning  'txtwx' is not defined                              no-undef
+   632:32   warning  'txtwy' is not defined                              no-undef
+   632:38   warning  'txt_weight' is not defined                         no-undef
+   633:3    warning  'txtAnim' is not defined                            no-undef
+   633:13   warning  'txt_weight' is not defined                         no-undef
+   637:3    warning  'txt_weight' is not defined                         no-undef
+   638:3    warning  'wt5mx' is not defined                              no-undef
+   638:16   warning  'wt5my' is not defined                              no-undef
+   638:29   warning  'wt5rx' is not defined                              no-undef
+   638:42   warning  'wt5ry' is not defined                              no-undef
+   638:55   warning  'txtwx' is not defined                              no-undef
+   638:68   warning  'txtwy' is not defined                              no-undef
+   639:3    warning  'wt1' is not defined                                no-undef
+   639:23   warning  'wt5mx' is not defined                              no-undef
+   639:33   warning  'wt5my' is not defined                              no-undef
+   639:41   warning  'wt5rx' is not defined                              no-undef
+   639:48   warning  'wt5ry' is not defined                              no-undef
+   640:3    warning  'wt' is not defined                                 no-undef
+   640:8    warning  'wt1' is not defined                                no-undef
+   641:24   warning  'txtwx' is not defined                              no-undef
+   641:32   warning  'txtwy' is not defined                              no-undef
+   641:38   warning  'txt_weight' is not defined                         no-undef
+   642:3    warning  'txtAnim' is not defined                            no-undef
+   642:13   warning  'txt_weight' is not defined                         no-undef
+   646:3    warning  'txt_weight' is not defined                         no-undef
+   647:3    warning  'wt5mx' is not defined                              no-undef
+   647:16   warning  'wt5my' is not defined                              no-undef
+   647:29   warning  'wt5rx' is not defined                              no-undef
+   647:41   warning  'wt5ry' is not defined                              no-undef
+   647:54   warning  'txtwx' is not defined                              no-undef
+   647:67   warning  'txtwy' is not defined                              no-undef
+   648:3    warning  'wt500' is not defined                              no-undef
+   648:25   warning  'wt5mx' is not defined                              no-undef
+   648:35   warning  'wt5my' is not defined                              no-undef
+   648:43   warning  'wt5rx' is not defined                              no-undef
+   648:49   warning  'wt5ry' is not defined                              no-undef
+   649:3    warning  'wt' is not defined                                 no-undef
+   649:8    warning  'wt500' is not defined                              no-undef
+   650:24   warning  'txtwx' is not defined                              no-undef
+   650:32   warning  'txtwy' is not defined                              no-undef
+   650:38   warning  'txt_weight' is not defined                         no-undef
+   651:3    warning  'txtAnim' is not defined                            no-undef
+   651:13   warning  'txt_weight' is not defined                         no-undef
+   655:4    warning  'txt_weight' is not defined                         no-undef
+   656:4    warning  'wt5mx' is not defined                              no-undef
+   656:17   warning  'wt5my' is not defined                              no-undef
+   656:30   warning  'wt5rx' is not defined                              no-undef
+   656:42   warning  'wt5ry' is not defined                              no-undef
+   656:55   warning  'txtwx' is not defined                              no-undef
+   656:68   warning  'txtwy' is not defined                              no-undef
+   657:3    warning  'wt100' is not defined                              no-undef
+   657:25   warning  'wt5mx' is not defined                              no-undef
+   657:35   warning  'wt5my' is not defined                              no-undef
+   657:43   warning  'wt5rx' is not defined                              no-undef
+   657:49   warning  'wt5ry' is not defined                              no-undef
+   658:3    warning  'wt' is not defined                                 no-undef
+   658:8    warning  'wt100' is not defined                              no-undef
+   659:24   warning  'txtwx' is not defined                              no-undef
+   659:32   warning  'txtwy' is not defined                              no-undef
+   659:38   warning  'txt_weight' is not defined                         no-undef
+   660:3    warning  'txtAnim' is not defined                            no-undef
+   660:13   warning  'txt_weight' is not defined                         no-undef
+   664:4    warning  'txt_weight' is not defined                         no-undef
+   665:4    warning  'wt5mx' is not defined                              no-undef
+   665:17   warning  'wt5my' is not defined                              no-undef
+   665:30   warning  'wt5rx' is not defined                              no-undef
+   665:42   warning  'wt5ry' is not defined                              no-undef
+   665:55   warning  'txtwx' is not defined                              no-undef
+   665:68   warning  'txtwy' is not defined                              no-undef
+   666:3    warning  'wt50' is not defined                               no-undef
+   666:24   warning  'wt5mx' is not defined                              no-undef
+   666:34   warning  'wt5my' is not defined                              no-undef
+   666:42   warning  'wt5rx' is not defined                              no-undef
+   666:48   warning  'wt5ry' is not defined                              no-undef
+   667:3    warning  'wt' is not defined                                 no-undef
+   667:8    warning  'wt50' is not defined                               no-undef
+   668:24   warning  'txtwx' is not defined                              no-undef
+   668:32   warning  'txtwy' is not defined                              no-undef
+   668:38   warning  'txt_weight' is not defined                         no-undef
+   669:3    warning  'txtAnim' is not defined                            no-undef
+   669:13   warning  'txt_weight' is not defined                         no-undef
+   675:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   676:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   676:3    warning  'rec_text' is not defined                           no-undef
+   684:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   696:28   warning  'Raphael' is not defined                            no-undef
+   697:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   698:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   699:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   699:30   warning  'Raphael' is not defined                            no-undef
+   700:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   701:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   703:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   710:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   713:1    warning  'textW' is assigned a value but never used          no-unused-vars
+   713:9    warning  'txtAnim' is not defined                            no-undef
+   721:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   729:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   729:30   warning  'Raphael' is not defined                            no-undef
+   730:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   735:31   warning  'Raphael' is not defined                            no-undef
+   736:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   738:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   739:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   752:5    warning  'hflag' is assigned a value but never used          no-unused-vars
+   763:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   764:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   765:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   766:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   769:27   warning  'Raphael' is not defined                            no-undef
+   770:10   warning  'p' is not defined                                  no-undef
+   772:30   warning  'Raphael' is not defined                            no-undef
+   773:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   776:9    warning  'r1' is not defined                                 no-undef
+   776:26   warning  'Raphael' is not defined                            no-undef
+   776:61   warning  'block' is not defined                              no-undef
+   776:107  warning  'block_ht' is not defined                           no-undef
+   776:145  warning  'block_ht' is not defined                           no-undef
+   788:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   795:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   796:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   798:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   801:6    warning  '_transformedPath_p' is already defined             no-redeclare
+   801:27   warning  'Raphael' is not defined                            no-undef
+   802:10   warning  'p' is not defined                                  no-undef
+   804:11   warning  '_transformedPath' is already defined               no-redeclare
+   804:30   warning  'Raphael' is not defined                            no-undef
+   805:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   808:9    warning  'r1' is not defined                                 no-undef
+   808:26   warning  'Raphael' is not defined                            no-undef
+   808:61   warning  'block' is not defined                              no-undef
+   808:107  warning  'block_ht' is not defined                           no-undef
+   808:145  warning  'block_ht' is not defined                           no-undef
+   818:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   826:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   827:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   828:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   829:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   832:6    warning  '_transformedPath_p' is already defined             no-redeclare
+   832:27   warning  'Raphael' is not defined                            no-undef
+   833:10   warning  'p' is not defined                                  no-undef
+   835:11   warning  '_transformedPath' is already defined               no-redeclare
+   835:30   warning  'Raphael' is not defined                            no-undef
+   836:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   839:9    warning  'r1' is not defined                                 no-undef
+   839:26   warning  'Raphael' is not defined                            no-undef
+   839:61   warning  'block' is not defined                              no-undef
+   839:107  warning  'block_ht' is not defined                           no-undef
+   839:145  warning  'block_ht' is not defined                           no-undef
+   848:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   863:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   870:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   870:28   warning  'Raphael' is not defined                            no-undef
+   871:10   warning  'p' is not defined                                  no-undef
+   873:30   warning  'Raphael' is not defined                            no-undef
+   874:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   877:3    warning  'r1' is not defined                                 no-undef
+   877:20   warning  'Raphael' is not defined                            no-undef
+   877:55   warning  'block' is not defined                              no-undef
+   877:101  warning  'block_ht' is not defined                           no-undef
+   877:149  warning  'block_ht' is not defined                           no-undef
+   886:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   893:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   900:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   900:7    warning  '_transformedPath_p' is already defined             no-redeclare
+   900:28   warning  'Raphael' is not defined                            no-undef
+   901:10   warning  'p' is not defined                                  no-undef
+   903:11   warning  '_transformedPath' is already defined               no-redeclare
+   903:30   warning  'Raphael' is not defined                            no-undef
+   904:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   907:3    warning  'r1' is not defined                                 no-undef
+   907:20   warning  'Raphael' is not defined                            no-undef
+   907:55   warning  'block' is not defined                              no-undef
+   907:101  warning  'block_ht' is not defined                           no-undef
+   907:152  warning  'block_ht' is not defined                           no-undef
+   916:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   924:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   931:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   931:7    warning  '_transformedPath_p' is already defined             no-redeclare
+   931:28   warning  'Raphael' is not defined                            no-undef
+   932:10   warning  'p' is not defined                                  no-undef
+   934:11   warning  '_transformedPath' is already defined               no-redeclare
+   934:30   warning  'Raphael' is not defined                            no-undef
+   935:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   938:3    warning  'r1' is not defined                                 no-undef
+   938:20   warning  'Raphael' is not defined                            no-undef
+   938:55   warning  'block' is not defined                              no-undef
+   938:101  warning  'block_ht' is not defined                           no-undef
+   938:152  warning  'block_ht' is not defined                           no-undef
+   947:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   959:31   warning  'Raphael' is not defined                            no-undef
+   960:10   warning  'p' is not defined                                  no-undef
+   962:30   warning  'Raphael' is not defined                            no-undef
+   963:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   966:32   warning  'Raphael' is not defined                            no-undef
+   966:67   warning  'block' is not defined                              no-undef
+   966:113  warning  'block_ht' is not defined                           no-undef
+   967:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   967:38   warning  'block_ht' is not defined                           no-undef
+   969:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   969:6    warning  'r1' is not defined                                 no-undef
+   974:1    warning  'wt50' is not defined                               no-undef
+   996:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   997:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1008:2    warning  'wt100' is not defined                              no-undef
+  1030:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1031:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1042:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1042:3    warning  'wt500' is not defined                              no-undef
+  1062:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1063:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1064:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1072:2    warning  'wt1' is not defined                                no-undef
+  1092:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1093:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1094:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1102:3    warning  'wt2' is not defined                                no-undef
+  1121:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1122:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1123:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1131:2    warning  'wt5' is not defined                                no-undef
+  1152:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1153:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1161:2    warning  'wt' is not defined                                 no-undef
+  1168:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1174:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1177:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1178:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1180:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1183:6    warning  Unnecessary semicolon                               no-extra-semi
+  1191:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1193:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1204:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1207:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1214:5    warning  'weight_blocks' is assigned a value but never used  no-unused-vars
+  1226:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1230:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1235:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1236:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1237:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1238:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1239:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1243:5    warning  'weight13' is assigned a value but never used       no-unused-vars
+  1244:1    warning  'rec_text' is not defined                           no-undef
+  1246:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1249:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1254:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1255:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1257:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1258:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1263:2    warning  'M_valve' is not defined                            no-undef
+  1271:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1273:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1273:11   warning  'Raphael' is not defined                            no-undef
+  1276:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1276:12   warning  'Raphael' is not defined                            no-undef
+  1280:17   warning  'Raphael' is not defined                            no-undef
+  1283:13   warning  'Raphael' is not defined                            no-undef
+  1286:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1288:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1288:9    warning  'r' is already defined                              no-redeclare
+  1288:13   warning  'Raphael' is not defined                            no-undef
+  1291:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1291:7    warning  'r1' is already defined                             no-redeclare
+  1291:12   warning  'Raphael' is not defined                            no-undef
+  1295:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1295:18   warning  'Raphael' is not defined                            no-undef
+  1298:5    warning  'keep' is already defined                           no-redeclare
+  1298:12   warning  'Raphael' is not defined                            no-undef
+  1305:13   warning  'Raphael' is not defined                            no-undef
+  1306:8    warning  'M_valve' is not defined                            no-undef
+  1313:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1316:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1318:7    warning  'circleB3' is assigned a value but never used       no-unused-vars
+  1319:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1327:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1330:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1333:7    warning  'circleB3' is assigned a value but never used       no-unused-vars
+  1341:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1348:6    warning  'circleB3' is assigned a value but never used       no-unused-vars
+  1363:8    warning  'R_valve' is not defined                            no-undef
+  1364:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1364:4    warning  'M_valve' is not defined                            no-undef
+
+/home/runner/work/exp-dead-weight-tester-coep/exp-dead-weight-tester-coep/experiment/simulation/src/animate.js
+   6:2   warning  'paper' is not defined    no-undef
+   6:14  warning  'Raphael' is not defined  no-undef
+   8:16  warning  'paper' is not defined    no-undef
+   9:13  warning  'paper' is not defined    no-undef
+  17:1   warning  Mixed spaces and tabs     no-mixed-spaces-and-tabs
+  18:1   warning  Mixed spaces and tabs     no-mixed-spaces-and-tabs
+  22:1   warning  Mixed spaces and tabs     no-mixed-spaces-and-tabs
+  26:1   warning  Mixed spaces and tabs     no-mixed-spaces-and-tabs
+  27:1   warning  Mixed spaces and tabs     no-mixed-spaces-and-tabs
+  28:1   warning  Mixed spaces and tabs     no-mixed-spaces-and-tabs
+  29:1   warning  Mixed spaces and tabs     no-mixed-spaces-and-tabs
+  30:1   warning  Mixed spaces and tabs     no-mixed-spaces-and-tabs
+  31:1   warning  Mixed spaces and tabs     no-mixed-spaces-and-tabs
+  32:1   warning  Mixed spaces and tabs     no-mixed-spaces-and-tabs
+  33:3   warning  Unnecessary semicolon     no-extra-semi
+
+/home/runner/work/exp-dead-weight-tester-coep/exp-dead-weight-tester-coep/experiment/simulation/src/dWt_diag.js
+     1:10   warning  'mimicCall' is defined but never used               no-unused-vars
+     4:17   warning  'Raphael' is not defined                            no-undef
+     5:1    warning  '$' is not defined                                  no-undef
+     6:2    warning  '$' is not defined                                  no-undef
+    10:14   warning  '$' is not defined                                  no-undef
+    12:6    warning  '$' is not defined                                  no-undef
+    13:3    warning  'width' is assigned a value but never used          no-unused-vars
+    13:11   warning  '$' is not defined                                  no-undef
+    14:15   warning  'Raphael' is not defined                            no-undef
+    18:15   warning  'Raphael' is not defined                            no-undef
+    22:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+    23:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+    24:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+    29:5    warning  'cylin' is assigned a value but never used          no-unused-vars
+    35:10   warning  'pf1' is defined but never used                     no-unused-vars
+    41:6    warning  'keepRotating' is defined but never used            no-unused-vars
+    43:5    warning  'flag' is assigned a value but never used           no-unused-vars
+    44:5    warning  'w1' is defined but never used                      no-unused-vars
+    45:9    warning  'borderhide1' is assigned a value but never used    no-unused-vars
+    45:22   warning  'borderhide' is assigned a value but never used     no-unused-vars
+    46:5    warning  'SetFlagVal' is assigned a value but never used     no-unused-vars
+    49:5    warning  'Img' is defined but never used                     no-unused-vars
+    50:5    warning  'angle1' is assigned a value but never used         no-unused-vars
+    53:5    warning  'Img' is already defined                            no-redeclare
+    53:10   warning  'sectorImg' is defined but never used               no-unused-vars
+    54:5    warning  'arc' is defined but never used                     no-unused-vars
+    54:15   warning  'arc_anim' is defined but never used                no-unused-vars
+    54:24   warning  'triangle' is assigned a value but never used       no-unused-vars
+    58:5    warning  'index' is assigned a value but never used          no-unused-vars
+    59:5    warning  'wt_arr' is assigned a value but never used         no-unused-vars
+    61:5    warning  'blank_rec' is assigned a value but never used      no-unused-vars
+    71:6    warning  's' is assigned a value but never used              no-unused-vars
+    72:5    warning  's1' is assigned a value but never used             no-unused-vars
+    88:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   112:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   123:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   130:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   132:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   144:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   147:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   148:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   152:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   163:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   166:3    warning  'block' is not defined                              no-undef
+   167:3    warning  'block_ht' is not defined                           no-undef
+   171:3    warning  'block' is not defined                              no-undef
+   172:3    warning  'block_ht' is not defined                           no-undef
+   176:3    warning  'block' is not defined                              no-undef
+   177:3    warning  'block_ht' is not defined                           no-undef
+   179:2    warning  'r1' is not defined                                 no-undef
+   179:31   warning  'block' is not defined                              no-undef
+   179:77   warning  'block_ht' is not defined                           no-undef
+   179:119  warning  'block_ht' is not defined                           no-undef
+   183:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   184:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   185:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   186:5    warning  'p' is not defined                                  no-undef
+   187:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   191:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   192:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   192:4    warning  'R' is not defined                                  no-undef
+   193:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   195:3    warning  'R_cap1' is not defined                             no-undef
+   199:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   200:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   200:4    warning  'R' is not defined                                  no-undef
+   201:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   203:3    warning  'R_cap1' is not defined                             no-undef
+   205:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   206:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   206:4    warning  'R' is not defined                                  no-undef
+   207:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   209:3    warning  'R_cap1' is not defined                             no-undef
+   236:3    warning  'p' is not defined                                  no-undef
+   260:3    warning  'p' is not defined                                  no-undef
+   283:3    warning  'p' is not defined                                  no-undef
+   294:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   295:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   295:4    warning  'M_valve' is not defined                            no-undef
+   296:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   297:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   301:10   warning  'R_valve' is not defined                            no-undef
+   302:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   303:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   307:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   308:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   308:4    warning  'M_valve' is not defined                            no-undef
+   309:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   310:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   314:10   warning  'R_valve' is not defined                            no-undef
+   315:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   316:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   320:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   321:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   321:4    warning  'M_valve' is not defined                            no-undef
+   322:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   323:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   327:10   warning  'R_valve' is not defined                            no-undef
+   329:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   330:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   338:15   warning  'Raphael' is not defined                            no-undef
+   339:8    warning  'R_valve' is not defined                            no-undef
+   344:5    warning  'keepRotating5' is already defined                  no-redeclare
+   344:19   warning  'keepRotating6' is already defined                  no-redeclare
+   345:5    warning  'bubble' is already defined                         no-redeclare
+   346:2    warning  'R_valve' is not defined                            no-undef
+   350:14   warning  'Raphael' is not defined                            no-undef
+   351:8    warning  'R_valve' is not defined                            no-undef
+   353:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   355:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   358:8    warning  'R_valve' is not defined                            no-undef
+   359:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   359:4    warning  'M_valve' is not defined                            no-undef
+   360:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   361:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   362:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   362:21   warning  'Raphael' is not defined                            no-undef
+   367:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   367:20   warning  'Raphael' is not defined                            no-undef
+   373:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   373:20   warning  'Raphael' is not defined                            no-undef
+   375:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   376:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   377:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   379:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   382:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   382:21   warning  'Raphael' is not defined                            no-undef
+   385:26   warning  'Raphael' is not defined                            no-undef
+   388:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   388:20   warning  'Raphael' is not defined                            no-undef
+   390:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   391:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   393:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   403:4    warning  Move function declaration to function body root     no-inner-declarations
+   404:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   409:4    warning  'circle' is not defined                             no-undef
+   412:4    warning  'cirAni' is not defined                             no-undef
+   412:13   warning  'Raphael' is not defined                            no-undef
+   413:4    warning  'circle' is not defined                             no-undef
+   413:19   warning  'cirAni' is not defined                             no-undef
+   419:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   419:6    warning  Move function declaration to function body root     no-inner-declarations
+   420:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   421:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   422:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   423:4    warning  'circle1' is not defined                            no-undef
+   424:4    warning  'circle1' is not defined                            no-undef
+   426:4    warning  'cirAni1' is not defined                            no-undef
+   426:14   warning  'Raphael' is not defined                            no-undef
+   427:4    warning  'circle1' is not defined                            no-undef
+   427:20   warning  'cirAni1' is not defined                            no-undef
+   428:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   435:8    warning  'totalDelay' is already defined                     no-redeclare
+   436:4    warning  Move function declaration to function body root     no-inner-declarations
+   442:4    warning  'circle' is not defined                             no-undef
+   443:4    warning  'circle2' is not defined                            no-undef
+   445:4    warning  'cirAni' is not defined                             no-undef
+   445:13   warning  'Raphael' is not defined                            no-undef
+   446:4    warning  'circle' is not defined                             no-undef
+   446:19   warning  'cirAni' is not defined                             no-undef
+   447:4    warning  'circle2' is not defined                            no-undef
+   447:20   warning  'cirAni' is not defined                             no-undef
+   450:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   452:4    warning  Move function declaration to function body root     no-inner-declarations
+   456:4    warning  'circle1' is not defined                            no-undef
+   457:4    warning  'circle1' is not defined                            no-undef
+   459:4    warning  'cirAni1' is not defined                            no-undef
+   459:14   warning  'Raphael' is not defined                            no-undef
+   460:4    warning  'circle1' is not defined                            no-undef
+   460:20   warning  'cirAni1' is not defined                            no-undef
+   468:8    warning  'totalDelay' is already defined                     no-redeclare
+   469:4    warning  Move function declaration to function body root     no-inner-declarations
+   470:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   472:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   475:4    warning  'circle' is not defined                             no-undef
+   476:4    warning  'circle2' is not defined                            no-undef
+   478:4    warning  'cirAni' is not defined                             no-undef
+   478:13   warning  'Raphael' is not defined                            no-undef
+   479:4    warning  'circle' is not defined                             no-undef
+   479:19   warning  'cirAni' is not defined                             no-undef
+   480:4    warning  'circle2' is not defined                            no-undef
+   480:20   warning  'cirAni' is not defined                             no-undef
+   485:4    warning  Move function declaration to function body root     no-inner-declarations
+   489:4    warning  'circle1' is not defined                            no-undef
+   490:4    warning  'circle1' is not defined                            no-undef
+   492:4    warning  'cirAni1' is not defined                            no-undef
+   492:14   warning  'Raphael' is not defined                            no-undef
+   493:4    warning  'circle1' is not defined                            no-undef
+   493:20   warning  'cirAni1' is not defined                            no-undef
+   510:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   512:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   515:6    warning  'circleB1' is assigned a value but never used       no-unused-vars
+   516:6    warning  'circleB2' is assigned a value but never used       no-unused-vars
+   517:6    warning  'circleB3' is assigned a value but never used       no-unused-vars
+   520:9    warning  'circle1' is already defined                        no-redeclare
+   520:9    warning  'circle1' is assigned a value but never used        no-unused-vars
+   521:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   522:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   523:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   524:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   524:7    warning  'circle2' is already defined                        no-redeclare
+   524:7    warning  'circle2' is assigned a value but never used        no-unused-vars
+   525:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   526:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   528:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   528:7    warning  'meter_range1' is assigned a value but never used   no-unused-vars
+   529:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   530:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   531:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   532:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   533:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   534:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   535:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   535:7    warning  'square' is assigned a value but never used         no-unused-vars
+   536:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   536:7    warning  's' is assigned a value but never used              no-unused-vars
+   538:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   538:7    warning  'range1' is assigned a value but never used         no-unused-vars
+   539:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   540:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   541:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   543:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   543:7    warning  'meter_range2' is assigned a value but never used   no-unused-vars
+   545:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   560:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   562:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   565:6    warning  'circleB1' is assigned a value but never used       no-unused-vars
+   566:6    warning  'circleB2' is assigned a value but never used       no-unused-vars
+   567:6    warning  'circleB3' is assigned a value but never used       no-unused-vars
+   570:9    warning  'circle1' is already defined                        no-redeclare
+   570:9    warning  'circle1' is assigned a value but never used        no-unused-vars
+   571:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   572:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   573:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   574:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   574:7    warning  'circle2' is already defined                        no-redeclare
+   574:7    warning  'circle2' is assigned a value but never used        no-unused-vars
+   575:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   576:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   578:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   578:7    warning  'meter_range1' is assigned a value but never used   no-unused-vars
+   579:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   580:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   581:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   582:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   583:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   584:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   585:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   586:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   586:7    warning  'square' is assigned a value but never used         no-unused-vars
+   587:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   587:7    warning  's' is assigned a value but never used              no-unused-vars
+   589:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   589:7    warning  'range1' is assigned a value but never used         no-unused-vars
+   590:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   591:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   592:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   593:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   594:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   595:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   596:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   597:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   598:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   599:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   601:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   614:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   616:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   619:6    warning  'circleB1' is assigned a value but never used       no-unused-vars
+   620:6    warning  'circleB2' is assigned a value but never used       no-unused-vars
+   621:6    warning  'circleB3' is assigned a value but never used       no-unused-vars
+   623:9    warning  'circle1' is already defined                        no-redeclare
+   623:9    warning  'circle1' is assigned a value but never used        no-unused-vars
+   624:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   626:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   627:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   627:7    warning  'circle2' is already defined                        no-redeclare
+   627:7    warning  'circle2' is assigned a value but never used        no-unused-vars
+   628:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   628:7    warning  'triangle' is assigned a value but never used       no-unused-vars
+   629:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   629:7    warning  'range1' is assigned a value but never used         no-unused-vars
+   631:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   633:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   635:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   637:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   639:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   641:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   643:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   645:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   647:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   648:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   649:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   651:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   653:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   655:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   657:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   659:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   660:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   661:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   663:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   665:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   667:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   669:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   672:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   672:7    warning  'meter_range1' is assigned a value but never used   no-unused-vars
+   673:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   674:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   675:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   676:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   677:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   678:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   679:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   680:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   680:7    warning  'square' is assigned a value but never used         no-unused-vars
+   681:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   681:7    warning  's' is assigned a value but never used              no-unused-vars
+   682:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   683:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   753:5    warning  'spring_flag' is assigned a value but never used    no-unused-vars
+   758:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   758:3    warning  'surf' is not defined                               no-undef
+   764:3    warning  'txt_weight' is not defined                         no-undef
+   765:3    warning  'wt5mx' is not defined                              no-undef
+   765:16   warning  'wt5my' is not defined                              no-undef
+   765:29   warning  'wt5rx' is not defined                              no-undef
+   765:42   warning  'wt5ry' is not defined                              no-undef
+   765:55   warning  'txtwx' is not defined                              no-undef
+   765:68   warning  'txtwy' is not defined                              no-undef
+   766:3    warning  'wt5' is not defined                                no-undef
+   766:23   warning  'wt5mx' is not defined                              no-undef
+   766:33   warning  'wt5my' is not defined                              no-undef
+   766:41   warning  'wt5rx' is not defined                              no-undef
+   766:47   warning  'wt5ry' is not defined                              no-undef
+   767:3    warning  'wt' is not defined                                 no-undef
+   767:8    warning  'wt5' is not defined                                no-undef
+   768:25   warning  'txtwx' is not defined                              no-undef
+   768:33   warning  'txtwy' is not defined                              no-undef
+   768:39   warning  'txt_weight' is not defined                         no-undef
+   769:4    warning  'txtAnim' is not defined                            no-undef
+   769:14   warning  'txt_weight' is not defined                         no-undef
+   774:3    warning  'txt_weight' is not defined                         no-undef
+   775:3    warning  'wt5mx' is not defined                              no-undef
+   775:16   warning  'wt5my' is not defined                              no-undef
+   775:29   warning  'wt5rx' is not defined                              no-undef
+   775:42   warning  'wt5ry' is not defined                              no-undef
+   775:55   warning  'txtwx' is not defined                              no-undef
+   775:68   warning  'txtwy' is not defined                              no-undef
+   776:3    warning  'wt2' is not defined                                no-undef
+   776:23   warning  'wt5mx' is not defined                              no-undef
+   776:33   warning  'wt5my' is not defined                              no-undef
+   776:41   warning  'wt5rx' is not defined                              no-undef
+   776:47   warning  'wt5ry' is not defined                              no-undef
+   777:3    warning  'wt' is not defined                                 no-undef
+   777:8    warning  'wt2' is not defined                                no-undef
+   778:24   warning  'txtwx' is not defined                              no-undef
+   778:32   warning  'txtwy' is not defined                              no-undef
+   778:38   warning  'txt_weight' is not defined                         no-undef
+   779:3    warning  'txtAnim' is not defined                            no-undef
+   779:13   warning  'txt_weight' is not defined                         no-undef
+   783:3    warning  'txt_weight' is not defined                         no-undef
+   784:3    warning  'wt5mx' is not defined                              no-undef
+   784:16   warning  'wt5my' is not defined                              no-undef
+   784:29   warning  'wt5rx' is not defined                              no-undef
+   784:42   warning  'wt5ry' is not defined                              no-undef
+   784:55   warning  'txtwx' is not defined                              no-undef
+   784:68   warning  'txtwy' is not defined                              no-undef
+   785:3    warning  'wt1' is not defined                                no-undef
+   785:23   warning  'wt5mx' is not defined                              no-undef
+   785:33   warning  'wt5my' is not defined                              no-undef
+   785:41   warning  'wt5rx' is not defined                              no-undef
+   785:48   warning  'wt5ry' is not defined                              no-undef
+   786:3    warning  'wt' is not defined                                 no-undef
+   786:8    warning  'wt1' is not defined                                no-undef
+   787:24   warning  'txtwx' is not defined                              no-undef
+   787:32   warning  'txtwy' is not defined                              no-undef
+   787:38   warning  'txt_weight' is not defined                         no-undef
+   788:3    warning  'txtAnim' is not defined                            no-undef
+   788:13   warning  'txt_weight' is not defined                         no-undef
+   792:3    warning  'txt_weight' is not defined                         no-undef
+   793:3    warning  'wt5mx' is not defined                              no-undef
+   793:16   warning  'wt5my' is not defined                              no-undef
+   793:29   warning  'wt5rx' is not defined                              no-undef
+   793:41   warning  'wt5ry' is not defined                              no-undef
+   793:54   warning  'txtwx' is not defined                              no-undef
+   793:67   warning  'txtwy' is not defined                              no-undef
+   794:3    warning  'wt500' is not defined                              no-undef
+   794:25   warning  'wt5mx' is not defined                              no-undef
+   794:35   warning  'wt5my' is not defined                              no-undef
+   794:43   warning  'wt5rx' is not defined                              no-undef
+   794:49   warning  'wt5ry' is not defined                              no-undef
+   795:3    warning  'wt' is not defined                                 no-undef
+   795:8    warning  'wt500' is not defined                              no-undef
+   796:24   warning  'txtwx' is not defined                              no-undef
+   796:32   warning  'txtwy' is not defined                              no-undef
+   796:38   warning  'txt_weight' is not defined                         no-undef
+   797:3    warning  'txtAnim' is not defined                            no-undef
+   797:13   warning  'txt_weight' is not defined                         no-undef
+   801:4    warning  'txt_weight' is not defined                         no-undef
+   802:4    warning  'wt5mx' is not defined                              no-undef
+   802:17   warning  'wt5my' is not defined                              no-undef
+   802:30   warning  'wt5rx' is not defined                              no-undef
+   802:42   warning  'wt5ry' is not defined                              no-undef
+   802:55   warning  'txtwx' is not defined                              no-undef
+   802:68   warning  'txtwy' is not defined                              no-undef
+   803:3    warning  'wt100' is not defined                              no-undef
+   803:25   warning  'wt5mx' is not defined                              no-undef
+   803:35   warning  'wt5my' is not defined                              no-undef
+   803:43   warning  'wt5rx' is not defined                              no-undef
+   803:49   warning  'wt5ry' is not defined                              no-undef
+   804:3    warning  'wt' is not defined                                 no-undef
+   804:8    warning  'wt100' is not defined                              no-undef
+   805:24   warning  'txtwx' is not defined                              no-undef
+   805:32   warning  'txtwy' is not defined                              no-undef
+   805:38   warning  'txt_weight' is not defined                         no-undef
+   806:3    warning  'txtAnim' is not defined                            no-undef
+   806:13   warning  'txt_weight' is not defined                         no-undef
+   810:4    warning  'txt_weight' is not defined                         no-undef
+   811:4    warning  'wt5mx' is not defined                              no-undef
+   811:17   warning  'wt5my' is not defined                              no-undef
+   811:30   warning  'wt5rx' is not defined                              no-undef
+   811:42   warning  'wt5ry' is not defined                              no-undef
+   811:55   warning  'txtwx' is not defined                              no-undef
+   811:68   warning  'txtwy' is not defined                              no-undef
+   812:3    warning  'wt50' is not defined                               no-undef
+   812:24   warning  'wt5mx' is not defined                              no-undef
+   812:34   warning  'wt5my' is not defined                              no-undef
+   812:42   warning  'wt5rx' is not defined                              no-undef
+   812:48   warning  'wt5ry' is not defined                              no-undef
+   813:3    warning  'wt' is not defined                                 no-undef
+   813:8    warning  'wt50' is not defined                               no-undef
+   814:24   warning  'txtwx' is not defined                              no-undef
+   814:32   warning  'txtwy' is not defined                              no-undef
+   814:38   warning  'txt_weight' is not defined                         no-undef
+   815:3    warning  'txtAnim' is not defined                            no-undef
+   815:13   warning  'txt_weight' is not defined                         no-undef
+   821:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   822:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   822:3    warning  'rec_text' is not defined                           no-undef
+   830:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   842:28   warning  'Raphael' is not defined                            no-undef
+   843:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   844:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   845:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   845:30   warning  'Raphael' is not defined                            no-undef
+   846:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   847:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   849:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   856:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   859:1    warning  'textW' is assigned a value but never used          no-unused-vars
+   859:9    warning  'txtAnim' is not defined                            no-undef
+   867:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   875:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   875:30   warning  'Raphael' is not defined                            no-undef
+   876:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   881:31   warning  'Raphael' is not defined                            no-undef
+   882:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   884:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   885:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   898:5    warning  'hflag' is assigned a value but never used          no-unused-vars
+   909:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   910:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   911:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   912:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   915:27   warning  'Raphael' is not defined                            no-undef
+   916:10   warning  'p' is not defined                                  no-undef
+   918:30   warning  'Raphael' is not defined                            no-undef
+   919:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   922:9    warning  'r1' is not defined                                 no-undef
+   922:26   warning  'Raphael' is not defined                            no-undef
+   922:61   warning  'block' is not defined                              no-undef
+   922:107  warning  'block_ht' is not defined                           no-undef
+   922:145  warning  'block_ht' is not defined                           no-undef
+   937:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   944:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   945:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   947:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   950:6    warning  '_transformedPath_p' is already defined             no-redeclare
+   950:27   warning  'Raphael' is not defined                            no-undef
+   951:10   warning  'p' is not defined                                  no-undef
+   953:11   warning  '_transformedPath' is already defined               no-redeclare
+   953:30   warning  'Raphael' is not defined                            no-undef
+   954:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   957:9    warning  'r1' is not defined                                 no-undef
+   957:26   warning  'Raphael' is not defined                            no-undef
+   957:61   warning  'block' is not defined                              no-undef
+   957:107  warning  'block_ht' is not defined                           no-undef
+   957:145  warning  'block_ht' is not defined                           no-undef
+   970:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   978:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   979:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   980:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   981:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   984:6    warning  '_transformedPath_p' is already defined             no-redeclare
+   984:27   warning  'Raphael' is not defined                            no-undef
+   985:10   warning  'p' is not defined                                  no-undef
+   987:11   warning  '_transformedPath' is already defined               no-redeclare
+   987:30   warning  'Raphael' is not defined                            no-undef
+   988:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+   991:9    warning  'r1' is not defined                                 no-undef
+   991:26   warning  'Raphael' is not defined                            no-undef
+   991:61   warning  'block' is not defined                              no-undef
+   991:107  warning  'block_ht' is not defined                           no-undef
+   991:145  warning  'block_ht' is not defined                           no-undef
+  1000:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1018:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1025:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1025:28   warning  'Raphael' is not defined                            no-undef
+  1026:10   warning  'p' is not defined                                  no-undef
+  1028:30   warning  'Raphael' is not defined                            no-undef
+  1029:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1032:3    warning  'r1' is not defined                                 no-undef
+  1032:20   warning  'Raphael' is not defined                            no-undef
+  1032:55   warning  'block' is not defined                              no-undef
+  1032:101  warning  'block_ht' is not defined                           no-undef
+  1032:149  warning  'block_ht' is not defined                           no-undef
+  1041:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1051:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1058:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1058:7    warning  '_transformedPath_p' is already defined             no-redeclare
+  1058:28   warning  'Raphael' is not defined                            no-undef
+  1059:10   warning  'p' is not defined                                  no-undef
+  1061:11   warning  '_transformedPath' is already defined               no-redeclare
+  1061:30   warning  'Raphael' is not defined                            no-undef
+  1062:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1065:3    warning  'r1' is not defined                                 no-undef
+  1065:20   warning  'Raphael' is not defined                            no-undef
+  1065:55   warning  'block' is not defined                              no-undef
+  1065:101  warning  'block_ht' is not defined                           no-undef
+  1065:152  warning  'block_ht' is not defined                           no-undef
+  1085:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1092:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1092:7    warning  '_transformedPath_p' is already defined             no-redeclare
+  1092:28   warning  'Raphael' is not defined                            no-undef
+  1093:10   warning  'p' is not defined                                  no-undef
+  1095:11   warning  '_transformedPath' is already defined               no-redeclare
+  1095:30   warning  'Raphael' is not defined                            no-undef
+  1096:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1099:3    warning  'r1' is not defined                                 no-undef
+  1099:20   warning  'Raphael' is not defined                            no-undef
+  1099:55   warning  'block' is not defined                              no-undef
+  1099:101  warning  'block_ht' is not defined                           no-undef
+  1099:152  warning  'block_ht' is not defined                           no-undef
+  1108:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1123:31   warning  'Raphael' is not defined                            no-undef
+  1124:10   warning  'p' is not defined                                  no-undef
+  1126:30   warning  'Raphael' is not defined                            no-undef
+  1127:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1130:32   warning  'Raphael' is not defined                            no-undef
+  1130:67   warning  'block' is not defined                              no-undef
+  1130:113  warning  'block_ht' is not defined                           no-undef
+  1131:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1131:38   warning  'block_ht' is not defined                           no-undef
+  1133:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1133:6    warning  'r1' is not defined                                 no-undef
+  1138:1    warning  'wt50' is not defined                               no-undef
+  1160:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1161:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1172:2    warning  'wt100' is not defined                              no-undef
+  1194:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1195:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1206:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1206:3    warning  'wt500' is not defined                              no-undef
+  1226:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1227:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1228:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1236:2    warning  'wt1' is not defined                                no-undef
+  1256:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1257:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1258:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1266:3    warning  'wt2' is not defined                                no-undef
+  1285:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1286:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1287:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1295:2    warning  'wt5' is not defined                                no-undef
+  1316:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1317:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1325:2    warning  'wt' is not defined                                 no-undef
+  1332:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1338:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1341:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1342:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1344:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1347:6    warning  Unnecessary semicolon                               no-extra-semi
+  1355:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1357:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1368:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1371:3    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1378:5    warning  'weight_blocks' is assigned a value but never used  no-unused-vars
+  1390:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1394:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1399:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1400:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1401:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1402:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1403:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1407:5    warning  'weight13' is assigned a value but never used       no-unused-vars
+  1408:1    warning  'rec_text' is not defined                           no-undef
+  1410:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1413:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1418:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1419:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1421:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1422:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1427:2    warning  'M_valve' is not defined                            no-undef
+  1441:13   warning  'Raphael' is not defined                            no-undef
+  1442:8    warning  'M_valve' is not defined                            no-undef
+  1446:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1447:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1448:22   warning  'Raphael' is not defined                            no-undef
+  1453:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1455:3    warning  'circleB3' is not defined                           no-undef
+  1460:7    warning  'keepRotating' is already defined                   no-redeclare
+  1460:22   warning  'Raphael' is not defined                            no-undef
+  1461:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1462:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1465:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1467:3    warning  'circleB3' is not defined                           no-undef
+  1475:7    warning  'keepRotating' is already defined                   no-redeclare
+  1475:22   warning  'Raphael' is not defined                            no-undef
+  1480:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1482:3    warning  'circleB3' is not defined                           no-undef
+  1486:7    warning  'keepRotating' is already defined                   no-redeclare
+  1486:22   warning  'Raphael' is not defined                            no-undef
+  1487:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1488:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1491:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1493:3    warning  'circleB3' is not defined                           no-undef
+  1496:5    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1498:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1499:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1503:7    warning  'keepRotating' is already defined                   no-redeclare
+  1503:22   warning  'Raphael' is not defined                            no-undef
+  1510:2    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1510:4    warning  'circleB3' is not defined                           no-undef
+  1514:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1516:7    warning  'keepRotating' is already defined                   no-redeclare
+  1516:22   warning  'Raphael' is not defined                            no-undef
+  1523:3    warning  'circleB3' is not defined                           no-undef
+  1527:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1530:8    warning  'R_valve' is not defined                            no-undef
+  1531:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+  1531:4    warning  'M_valve' is not defined                            no-undef
+  1533:1    warning  Mixed spaces and tabs                               no-mixed-spaces-and-tabs
+
+/home/runner/work/exp-dead-weight-tester-coep/exp-dead-weight-tester-coep/experiment/simulation/src/mainPage.js
+  38:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  39:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  40:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  41:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  42:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  43:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  44:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  45:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  46:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  47:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  48:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  49:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  50:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  51:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  52:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  53:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  54:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  55:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  56:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  57:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  58:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  59:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  60:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  61:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  62:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  63:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  64:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  65:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  66:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  67:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  68:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  69:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  70:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  71:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  71:5   warning  '$' is not defined          no-undef
+  72:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  73:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  73:5   warning  '$' is not defined          no-undef
+  75:2   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  75:13  warning  '$' is not defined          no-undef
+  76:2   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  76:12  warning  '$' is not defined          no-undef
+  77:2   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  77:21  warning  '$' is not defined          no-undef
+  78:2   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  78:6   warning  '$' is not defined          no-undef
+  79:2   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  79:6   warning  '$' is not defined          no-undef
+  80:2   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  80:6   warning  '$' is not defined          no-undef
+  81:2   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  82:2   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  83:2   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  84:2   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  84:5   warning  '$' is not defined          no-undef
+  86:2   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+  86:6   warning  'mimicCall' is not defined  no-undef
+  87:1   warning  Mixed spaces and tabs       no-mixed-spaces-and-tabs
+
+✖ 1464 problems (1 error, 1463 warnings)
+  0 errors and 4 warnings potentially fixable with the `--fix` option.
+
