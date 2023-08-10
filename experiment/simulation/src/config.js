@@ -1,4 +1,4 @@
-function config(){
+function config1(){
 
 var weight="";
  var meter="";
