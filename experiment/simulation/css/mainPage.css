@@ -42,9 +42,7 @@ background-color:gray;
 	color:#fff;
 	font-size:20px;
 }
-p{ 
-	text-align: center;
-}
+
 
 input[type=range].slider {
   -webkit-appearance: none;

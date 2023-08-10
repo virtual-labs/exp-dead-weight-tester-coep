@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="css/mainPage.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/dwt.css">
 </head>
 
 <style>
@@ -31,25 +32,29 @@
 
 	
 <div  class="row container-fluid" id="mainDiv">
-<div class="col-lg-7" id="canvas">
+<div class="col-lg-6" id="canvas">
 	             <div class="panel panel-primary">
-	      			<div class="panel-heading bg-info" id="panelHeading2"><center id="centerText">DEAD WEIGHT TESTER DIAGRAM</center>
+	      			<div class="panel-heading " id="panelHeading2"><center id="centerText1"> DIAGRAM</center>
 	      			</div>
 	      			<label  id="counter"></label>
 	      			<div class="panel-body" id="canvas-div" >
-	      			<img src="images/dwTester.png" " width="600" height="400">
+	      			<img src="images/dwTester.png" class="img-fluid " width="1000" height="800">
 	      			</div>
 
 	   			</div>
 	       </div>
-	<div class="col-lg-5" id="main-div">
+	<div class="col-lg-6" id="main-div">
 				<div class="panel panel-primary">
-	      			<div class="panel-heading bg-info" id="panelHeading1"><center id="centerText">CONFIGURATION OF DEAD WEIGHT TESTER</center>
+	      			<div class="panel-heading " id="panelHeading1"><center id="centerText2">BASIC KNOWLEDGE</center>
 	      			</div>
 	     			<div class="panel-body" id="main-div-conf">
-	     			<div class="row" id="sub-main-div">
+<!-- 	     			<script>basicKnowledge();</script> -->
+	     			</div>
+	     			<div class="row" id="sub-main-div1">
 	     			
 	     			</div>
+	     			<div class="row" id="sub-main-div2">
+	     			
 	     			</div>
 	     		</div>
 	   	</div>
@@ -69,8 +74,14 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
-<script type="text/javascript" src="src/mainPage.js"></script>
+<script type="text/javascript" src="src/questionJson.js"></script>
+<script type="text/javascript" src="src/questions.js"></script>
+
+<script type="text/javascript" src="src/config.js"></script>
+<!-- <script type="text/javascript" src="src/mainPage.js"></script> -->
 <script type="text/javascript" src="src/dWt_diag.js"></script>
+<script type="text/javascript" src="src/table&graph.js"></script>
+
 
 
 
