@@ -46,7 +46,7 @@
 			}
 
 			questions += '<div class="buttonDiv">'
-				+ '<button  class="btn btn-danger" data-toggle="modal" data-target="#myModal" id="testSubmit">Submit Test</button>'
+				+ '<button  class="btn btn-danger"  id="testSubmit">Submit Test</button>'
 				
 				
 				+ '<button id="config" class=" btn btn-danger nextLevelBtn" >Next Level</button>'
@@ -97,9 +97,9 @@
 
 						if (myRadio == null) {
 							flag = flag && false;
-//							alert('Please attempt aCll the questions');
-							$("body").css("padding","0px");
-							$("#modelMsg").html("<b class='boldTextRed'>Please attempt all the questions.</b>");
+							alert('Please attempt aCll the questions');
+//							$("body").css("padding","0px");
+//							$("#modelMsg").html("<b class='boldTextRed'>Please attempt all the questions.</b>");
 						break;	
 						}
 						arr.push({
@@ -124,13 +124,13 @@
 //						$("#modelMsg").html("<b class='boldTextGreen'>Test Submitted Successfully . Correct Answers Are : " + ansCount+"</b>");
 						alert("Test Submitted Successfully . Correct Answers Are : " + ansCount);
 						$("body").css("padding","0px 0px 0px 0px");
-						config();
+						config1();
 		   					
 					}
 					
 			$('#config').on('click', function() {
 				 $("#centerText2").html("CONFIGURATION"); 
-				config();
+				config1();
 				});
 						
 			});
