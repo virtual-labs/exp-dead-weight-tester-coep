@@ -97,7 +97,7 @@
 
 						if (myRadio == null) {
 							flag = flag && false;
-							alert('Please attempt aCll the questions');
+							alert('Please attempt all the questions');
 //							$("body").css("padding","0px");
 //							$("#modelMsg").html("<b class='boldTextRed'>Please attempt all the questions.</b>");
 						break;	
