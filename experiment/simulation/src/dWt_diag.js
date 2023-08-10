@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 
 function mimicCall(meter,cylinderPiston)
-=======
-function mimicCall(weight,meter,cylinderPiston)
->>>>>>> 6e8883ec11bfa31477c8e67f63d4d5381ff6c340
 {
 
 aper = new Raphael(document.getElementById('canvas-div'), 1000, 800);
@@ -2023,95 +2019,6 @@ minus.click(function(){
 	
    }
  
-<<<<<<< HEAD
-=======
-
- console.log("value of handle1 "+hndl);
-}
-  if(forward >= 58){
-	forward = 58;
-	//h_img.animate({'transform':'r0'},time);
-	
-//	hflag = 0;
-     setTimeout(function(){ 
-	alert("Minimum limit...")
-     
-	},time+100);
-	 
-	
-	
-}
-}else if(a == 55){
-	
-	if(forward_55 >= 0){
-	     	      hndl=hndl-15;
-	 h_img.animate({'transform':'r'+(hndl)+''},time);
-
-	      forward_55 = forward_55+5;
-
-	console.log("minus clicks "+forward_55);
-	var _transformedPath_p = Raphael.transformPath("M"+(x+(px*a))+" "+(y +163-b)+" l 0 "+(-b)+" l "+(-a-10)+ " 0 l 0 "+a+ " l "+(a+10)+" 0 l 0 "+(-b) , 'T '+forward_55+' 0 ' );
-         p.animate({path: _transformedPath_p}, time);	
-         
-      var _transformedPath = Raphael.transformPath("M"+(x+(hx*a))+" "+(y+161-(b))+" l "+(-3.2*(a))+" 0 "+" l 0 "+(b/4)+" l "+(3.2*(a))+" 0 l "+(b+5)+" 0 l 0 "+(1.5*a)+" l "+(b/4)+" 0 "
-	                                             +" l 0 "+(-3.2*a)+" l "+(-b/4)+" 0 l 0 "+(1.58*a)+" z " , 'T '+forward_55+' 0');
-
-        h.animate({path: _transformedPath}, time);
-        r1.animate({path:Raphael.transformPath("M"+(x+(hx*a-block))+" "+(y+161-(b))+"l 0 "+(-b+3)+" l "+(-block_ht*a)+" 0 "+"l 0 "+(a-1)+" l "+(block_ht*a)+" 0 z") },time);
- hflag--;
- 
-
- console.log("value of handle1 "+hndl);
-}
-  if(forward_55 >= 65){
-	forward_55 = 65;
-//	hflag = 0;
-     setTimeout(function(){ 
-	alert("Minimum limit...")
-     
-	},time+100);
-	 //h_img.animate({'transform':'r0'},time);
-	
-	
-}
-	
-}else{
-	
-	if(forward_60 >= 0){
-	     
-	      forward_60 = forward_60+5;
-	      hndl=hndl-15;
-	 h_img.animate({'transform':'r'+(hndl)+''},time);
-
-	console.log("minus clicks "+forward_60);
-	var _transformedPath_p = Raphael.transformPath("M"+(x+(px*a))+" "+(y +163-b)+" l 0 "+(-b)+" l "+(-a-10)+ " 0 l 0 "+a+ " l "+(a+10)+" 0 l 0 "+(-b) , 'T '+forward_60+' 0 ' );
-         p.animate({path: _transformedPath_p}, time);	
-         
-      var _transformedPath = Raphael.transformPath("M"+(x+(hx*a))+" "+(y+161-(b))+" l "+(-3.2*(a))+" 0 "+" l 0 "+(b/4)+" l "+(3.2*(a))+" 0 l "+(b+5)+" 0 l 0 "+(1.5*a)+" l "+(b/4)+" 0 "
-	                                             +" l 0 "+(-3.2*a)+" l "+(-b/4)+" 0 l 0 "+(1.58*a)+" z " , 'T '+forward_60+' 0');
-
-        h.animate({path: _transformedPath}, time);
-        r1.animate({path:Raphael.transformPath("M"+(x+(hx*a-block))+" "+(y+161-(b))+"l 0 "+(-b+3)+" l "+(-block_ht*a)+" 0 "+"l 0 "+(a-1)+" l "+(block_ht*a)+" 0 z") },time);
- hflag--;
- 
-
- console.log("value of handle1 "+hndl);
-}
-  if(forward_60 >= 70){
-	forward_60 = 70;
-//	hflag = 0;
-	 //h_img.animate({'transform':'r0'},time);
-
-     setTimeout(function(){ 
-	alert("Minimum limit...")
-     
-	},time+100);
-	
-	
-}
-	
-}
->>>>>>> 6e8883ec11bfa31477c8e67f63d4d5381ff6c340
 })
 
 function meterMinusZero(){
@@ -2150,41 +2057,11 @@ function meterMinusZero(){
 		keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+142)+', '+(y1+84)+' '}, time );
 		mline.animate(keepRotating);
 	   
-<<<<<<< HEAD
 		}else {
 		keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+142)+', '+(y1+65)+' '}, time);
 		mline.animate(keepRotating); 
 	 	}
 	}
-=======
-       hndl=hndl+15; 
-       h_img.animate({'transform':'r'+(hndl)+''},time);
-     
-         forward = forward-5; 
-         
-         
-	 var _transformedPath_p = Raphael.transformPath("M"+(x+(px*a))+" "+(y +163-b)+" l 0 "+(-b)+" l "+(-a-10)+ " 0 l 0 "+a+ " l "+(a+10)+" 0 l 0 "+(-b) , 'T '+forward+' 0 ' );
-         p.animate({path: _transformedPath_p}, time);	
-
-      var _transformedPath = Raphael.transformPath("M"+(x+(hx*a))+" "+(y+161-(b))+" l "+(-3.2*(a))+" 0 "+" l 0 "+(b/4)+" l "+(3.2*(a))+" 0 l "+(b+5)+" 0 l 0 "+(1.5*a)+" l "+(b/4)+" 0 "
-	                                             +" l 0 "+(-3.2*a)+" l "+(-b/4)+" 0 l 0 "+(1.58*a)+" z " , 'T '+forward+' 0');
-
-        h.animate({path: _transformedPath}, time);   
-  r1.animate({path:Raphael.transformPath("M"+(x+(hx*a-block))+" "+(y+161-(b))+"l 0 "+(-b+3)+" l "+(-block_ht*a+(forward))+" 0 "+"l 0 "+(a-1)+" l "+(block_ht*a+(-forward))+" 0 z") },time);
-    
-hflag++;
- 
- console.log("value of handle1 "+hndl);
- } 
- if(forward <= -2 ){
-	forward = -2;
-//	hflag = 0;
-	 //h_img.animate({'transform':'r0'},time);
-	setTimeout(function(){ 
-	alert("Maximum limit...")
-     
-	},time+100);
->>>>>>> 6e8883ec11bfa31477c8e67f63d4d5381ff6c340
 }
 
 
@@ -2196,7 +2073,6 @@ var st1 = 1;
 		id1 = 5;		
 		air_bubble();
 	
-<<<<<<< HEAD
 		pfClickBubble();
 			var pis1_transformedPath1  = Raphael.transformPath("M"+sz+" "+sy1+" l 0 "+((1.7*a)-up_lift)+ " l "+wid+ " 0 l 0 "+((-(1.7)*a)+up_lift)+"z");	
 	pis1.animate({path: pis1_transformedPath1}, time);
@@ -2232,93 +2108,6 @@ var st1 = 1;
 		if(rCapClose == 1){
 			minusAnim();
 			
-=======
-		if(forward_55 <= 65){
-	console.log("plus clicks "+forward_55);
-	   
-       hndl=hndl+15; 
-       h_img.animate({'transform':'r'+hndl+''},time);
-     
-         forward_55 = forward_55-5; 
-         
-         
-	 var _transformedPath_p = Raphael.transformPath("M"+(x+(px*a))+" "+(y +163-b)+" l 0 "+(-b)+" l "+(-a-10)+ " 0 l 0 "+a+ " l "+(a+10)+" 0 l 0 "+(-b) , 'T '+forward_55+' 0 ' );
-         p.animate({path: _transformedPath_p}, time);	
-
-      var _transformedPath = Raphael.transformPath("M"+(x+(hx*a))+" "+(y+161-(b))+" l "+(-3.2*(a))+" 0 "+" l 0 "+(b/4)+" l "+(3.2*(a))+" 0 l "+(b+5)+" 0 l 0 "+(1.5*a)+" l "+(b/4)+" 0 "
-	                                             +" l 0 "+(-3.2*a)+" l "+(-b/4)+" 0 l 0 "+(1.58*a)+" z " , 'T '+forward_55+' 0');
-
-        h.animate({path: _transformedPath}, time);   
-  r1.animate({path:Raphael.transformPath("M"+(x+(hx*a-block))+" "+(y+161-(b))+"l 0 "+(-b+3)+" l "+(-block_ht*a+(forward_55))+" 0 "+"l 0 "+(a-1)+" l "+(block_ht*a+(-forward_55))+" 0 z") },time);
-    
-hflag++;
- 
- console.log("value of handle1 "+hndl);
- } 
- if(forward_55 <= 0){
-	forward_55 = 0;
-//	hflag = 0;
-	// h_img.animate({'transform':'r0'},time);
-	setTimeout(function(){ 
-	alert("Maximum limit...")
-     
-	},time+100);
-}
-	
-}
-else{
-		if(forward_60 <= 70){
-	console.log("plus clicks "+forward_60);
-	   
-       hndl=hndl+15; 
-       h_img.animate({'transform':'r'+hndl+''},time);
-     
-         forward_60 = forward_60-5; 
-         
-         
-	 var _transformedPath_p = Raphael.transformPath("M"+(x+(px*a))+" "+(y +163-b)+" l 0 "+(-b)+" l "+(-a-10)+ " 0 l 0 "+a+ " l "+(a+10)+" 0 l 0 "+(-b) , 'T '+forward_60+' 0 ' );
-         p.animate({path: _transformedPath_p}, time);	
-
-      var _transformedPath = Raphael.transformPath("M"+(x+(hx*a))+" "+(y+161-(b))+" l "+(-3.2*(a))+" 0 "+" l 0 "+(b/4)+" l "+(3.2*(a))+" 0 l "+(b+5)+" 0 l 0 "+(1.5*a)+" l "+(b/4)+" 0 "
-	                                             +" l 0 "+(-3.2*a)+" l "+(-b/4)+" 0 l 0 "+(1.58*a)+" z " , 'T '+forward_60+' 0');
-
-        h.animate({path: _transformedPath}, time);   
-  r1.animate({path:Raphael.transformPath("M"+(x+(hx*a-block))+" "+(y+161-(b))+"l 0 "+(-b+3)+" l "+(-block_ht*a+(forward_60))+" 0 "+"l 0 "+(a-1)+" l "+(block_ht*a+(-forward_60))+" 0 z") },time);
-    
-hflag++;
- 
- console.log("value of handle1 "+hndl);
- } 
- if(forward_60 <= 0){
-	forward_60 = 0;
-//	hflag = 0;
-	 //h_img.animate({'transform':'r0'},time);
-	setTimeout(function(){ 
-	alert("Maximum limit...")
-     
-	},time+100);
-}
-
-	
-}
-})
-
-
-
-h.click( function() {
- 
-     var _transformedPath_p = Raphael.transformPath("M"+(x+(px*a))+" "+(y +163-b)+" l 0 "+(-b)+" l "+(-a-10)+ " 0 l 0 "+a+ " l "+(a+10)+" 0 l 0 "+(-b) , 'T '+a+' 0 ' );
-         p.animate({path: _transformedPath_p}, time);	
-         
-      var _transformedPath = Raphael.transformPath("M"+(x+(hx*a))+" "+(y+161-(b))+" l "+(-3.2*(a))+" 0 "+" l 0 "+(b/4)+" l "+(3.2*(a))+" 0 l "+(b+5)+" 0 l 0 "+(1.5*a)+" l "+(b/4)+" 0 "
-	                                             +" l 0 "+(-3.2*a)+" l "+(-b/4)+" 0 l 0 "+(1.58*a)+" z " , 'T '+a+' 0');
-
-        h.animate({path: _transformedPath}, time);  
-       var _transformedPath2 = Raphael.transformPath("M"+(x+(hx*a-block))+" "+(y+161-(b))+"l 0 "+(-b+3)+" l "+(-block_ht*a)+" 0 "+"l 0 "+(a-1)
-	                            +" l "+(block_ht*a)+" 0 z", ' T 0 0 ');
-
-	    r1.animate({path: _transformedPath2}, time);   
->>>>>>> 6e8883ec11bfa31477c8e67f63d4d5381ff6c340
        
 		}if(rCapClose == 0){
 			r_capCheck = 1;
