@@ -161,7 +161,7 @@ This is till the automatic validation is set up.
     * answer : Should be an object containing options, and each option should be a string.
     * difficulty : should be a string and should have values from ["beginner", "intermerdiate", "advanced"]
     * correctAnswer : Should be a string and it's value should be present in keys of one of the answer.
-* If explanation is present it has to be an object and needs to follow the description of answer object.  
+* If explanation is present it has to be an object and needs to follow the description of answer object..  
 
 ### 7. Test Cases
 - [x] Using the mentioned quiz format  
