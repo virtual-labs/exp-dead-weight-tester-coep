@@ -2351,7 +2351,17 @@ minus.click(function(){
 		pisAnimBubble();
 	}if(st1==5){
 		
-		 if(std12==1 && rCapClose == 1){
+		 
+	id = 5;
+	confirmFlg = 1;
+	idVal = 1;
+	totalStackWeight = totalStackWeight;
+	  pressure = pressure; 
+      meterVal = meterVal;
+	if(rCapClose == 0){
+			forward = forVal; 
+		}else{
+			if(std12==1 && rCapClose == 1){
 				if(a==50){
 					arrOilplus[0]=paper.path('M'+(x-288.6+(2.9*a))+ ' ' +(y+119+(-2.3*a))+ 'l 0  0   ').attr({ 'stroke':'#fff', 'stroke-width':92.8});
 					arrOilplus[0].animate({path :'M'+(x-288.6+(2.9*a))+ ' ' +(y+119+(-2.3*a))+ 'l 0 '+(b/2)+' '},time+1000);
@@ -2367,15 +2377,6 @@ minus.click(function(){
 				}
 		 std12++;
         }
-	id = 5;
-	confirmFlg = 1;
-	idVal = 1;
-	totalStackWeight = totalStackWeight;
-	  pressure = pressure; 
-      meterVal = meterVal;
-	if(rCapClose == 0){
-			forward = forVal; 
-		}else{
 			if(up_lift <= 0){
 		pf1 = 0;
 		position = 0;
@@ -3632,7 +3633,7 @@ var unit1=270/meterguage;
 }
 
 function addFun(){
- 
+                 const index = arrWeight.indexOf(totalStackWeight);
                    arrWeight.push(totalStackWeight);
 					var hasDuplicate = arrWeight.some((totalStackWeight, i) => arrWeight.indexOf(totalStackWeight) !== i);
 					
@@ -3640,7 +3641,7 @@ function addFun(){
 					if(hasDuplicate == true){
 						dupFlg = 0;
 						
-					   alert("Avoid Duplicates..");
+					   alert("Avoid Duplicates");
 					  arrWeight.splice(index,1);
 					}else{
 					
