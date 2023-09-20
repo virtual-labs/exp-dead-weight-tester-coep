@@ -1,12 +1,14 @@
 
 function mimicCall(meter,cylinderPiston)
 {
-
-aper = new Raphael(document.getElementById('canvas-div'), 1000, 800);
+console.log(counterMasterJson);	
+$("#centerText1").html("MIMIC");
+$("#centerText2").html("OBSERVED READINGS");
+//paper = new Raphael(document.getElementById('canvas-div'), 800, 800);
 $('#canvas-div').removeAttr('width');
 	$('#canvas-div').removeAttr('height');
 	var w = 1000;
-	var h = 1000;
+	var h = 800;
 
 	var width = $(window).width();
 
@@ -14,11 +16,11 @@ $('#canvas-div').removeAttr('width');
 		width = $(this).width();
 		paper = new Raphael(document.getElementById('canvas-div'), '100%', '100%');
 		paper.setViewBox(0, 0, w, h, true);
-		paper.setSize('100%', '100%');
+		paper.setSize('90%', '90%');
 	} else {
 		paper = new Raphael(document.getElementById('canvas-div'), '100%', '100%');
 		paper.setViewBox(0, 0, w, h, true);
-		paper.setSize('100%', '100%');
+		paper.setSize('90%', '90%');
 	}
 //	 console.log("weight    "+weight);
 //		   console.log("meter    "+meter);
@@ -35,7 +37,8 @@ var wid;
 var expVal = 0;
 var rec_wid;
 var plusBlock = 0;
-var pf , pf1, pis1;
+var pf = 0;
+var pf1, pis1;
 var h,pistonP,r1;
 var time = 1000;
 var hx,px;
@@ -45,9 +48,10 @@ var l;
 var x1, y1;
 var flag = 0;
 var w1;
+var remainWeight = 0;
 var rec,borderhide1, borderhide;
 var SetFlagVal=0,  v2_check = 0 , v1_check = 0;
-var meterguage=parseInt(meter) ;
+var meterguage = parseInt(meter) ;
 var r_capCheck = 0;
 var Img , h_img, plus, minus;
 var angle1=-30;
@@ -74,27 +78,37 @@ var up_anim;
  var cnt500gf = 0;
  var cnt100gf = 0;  
  var position=0;
+ var pf1 = 0;
+ var conBefRem = 0;
  var pressure = 0;
 var pres = 0;
 var actalVal = 0;
- var masterJson = {};
- var jsonArr = [];
- var imgWeightArray = [];
- var wtStackMasterJson = {};
+var miniMinus = 0;
+var dupFlg = 0;
+var masterJson = {};
+
+var jsonArr = [];
+var imgWeightArray = [];
+ 
+var wtStackMasterJson = {};
 var confirmFlg = 0;
- var stackJsonArr = [];
- var ranSelection = [];
- var pressure = 0,presCal = 0 , actualPres = 0;
+var stackJsonArr = [];
+var ranSelection = [];
+var pressure = 0,presCal = 0 , actualPres = 0;
 var os = 0;
 var presAfter = 0;
 var presAfterVal = 0;
 var pAfterVal = 0;
- var sFlagAfter =0;
-   var oil_flag = 0;
-  var setflag=0;
-  var rFlg = 0;
-  var Tank_arr = [];
+var sFlagAfter =0;
+var oil_flag = 0;
+var setflag=0;
+var rFlg = 0;
+var Tank_arr = [];
 var ct = 1;
+var tot_weight = 0;
+var arrOilplus=[];
+var plusOilFlag=0;
+
 var ranNegPosVal = Math.floor(Math.random() * 2);
 var idVal = 0;	
 cylinder();
@@ -114,12 +128,11 @@ weight50(x,y);
 
 //meterwork(x,y);
 
-if(meterguage==16 ){
-	
+if(meterguage==16 ){	
 	meterguage1();
-}else if(meterguage==50){
+} if(meterguage==50){
 	meterguage2();
-}else{
+}if(meterguage==100){
 	 meterguage3();
 }
 
@@ -290,7 +303,7 @@ function oil_reservoir(){
 function R_capClose(){
 	  oil_flag = 0;
 	    rCapClose = 1;
-	    console.log("rCapClose :"+rCapClose);
+//	    console.log("rCapClose :"+rCapClose);
         if (a==50){
 	 	var keepRotating6 = Raphael.animation({ 'transform': 'r-0 ,442, 394' }, 2000 );
         R_cap.animate(keepRotating6.repeat(1));
@@ -325,6 +338,7 @@ R_cap.click(function(){
 	  
 //R_Validation--;
 });
+
 
 oil_rect.click(function(){
 	if(oil_flag==1){
@@ -362,6 +376,7 @@ oil_rect.click(function(){
 			Tank_arr[2].animate({path :'M'+(x-319.3+(2.9*a))+ ' ' +(y+180+(-2.3*a))+ 'l 0 '+(-a*2)+' '},time+1000, function(){ 
 			rFlg = 1;
 			oilImg.remove();
+			
 		})
 		ct++;
 		})			
@@ -379,6 +394,7 @@ oil_rect.click(function(){
 			Tank_arr[2].animate({path :'M'+(x-350+(2.9*a))+ ' ' +(y+180+(-2.3*a))+ 'l 0 '+((-a*2)+2)+' '},time+1000, function(){ 
 			rFlg = 1;
 			oilImg.remove();
+			
 		})
 		ct++;
 		})		
@@ -390,11 +406,50 @@ oil_rect.click(function(){
 	}
 	
 })
+
+
+	
+function oilfillonPluse(){
+		if(plusOilFlag == 0){
+				if(a==50){
+					arrOilplus[0]=paper.path('M'+(x-288.6+(2.9*a))+ ' ' +(y+119+(-2.3*a))+ 'l 0  0   ').attr({ 'stroke':'#fff', 'stroke-width':92.8});
+					arrOilplus[0].animate({path :'M'+(x-288.6+(2.9*a))+ ' ' +(y+119+(-2.3*a))+ 'l 0 '+(b/2)+' '},time+1000);
+		
+				}else if(a==55){
+					arrOilplus[0]=paper.path('M'+(x-319.3+(2.9*a))+ ' ' +(y+117+(-2.3*a))+'l 0  0').attr({'stroke':'#fff','stroke-width':102.8});
+					arrOilplus[0].animate({path :'M'+(x-319.3+(2.9*a))+ ' ' +(y+117+(-2.3*a))+'l 0 '+((b/2)-1.8)+'  '},time+1000);
+		
+				}else{
+					arrOilplus[0]=paper.path('M'+(x-350.2+(2.9*a))+ ' ' +(y+115+(-2.3*a))+ 'l 0  0   ').attr({ 'stroke':'#fff', 'stroke-width':113});
+					arrOilplus[0].animate({path :'M'+(x-350.2+(2.9*a))+ ' ' +(y+115+(-2.3*a))+ 'l 0 '+((b/2)-1.8)+' '},time+1000); 
+		
+				}
+		}	
+//		 plusOilFlag++;
+		else{
+				if(a==50){
+					arrOilplus[0]=paper.path('M'+(x-288.6+(2.9*a))+ ' ' +(y+133+(-2.3*a))+ 'l 0  0   ').attr({ 'stroke':'#6b5c3d', 'stroke-width':92.8});
+					arrOilplus[0].animate({path :'M'+(x-288.6+(2.9*a))+ ' ' +(y+133+(-2.3*a))+ 'l 0 '+(-(b/2))+' '},time+1000); 
+		
+				}else if(a==55){
+					arrOilplus[0]=paper.path('M'+(x-319.3+(2.9*a))+ ' ' +(y+130+(-2.3*a))+'l 0  0').attr({'stroke':'#6b5c3d','stroke-width':102.8});
+					arrOilplus[0].animate({path :'M'+(x-319.3+(2.9*a))+ ' ' +(y+130+(-2.3*a))+'l 0 '+(-((b/2)-1.8))+'  '},time+1000);
+		
+				}else{
+					arrOilplus[0]=paper.path('M'+(x-350.2+(2.9*a))+ ' ' +(y+128+(-2.3*a))+ 'l 0  0   ').attr({ 'stroke':'#6b5c3d', 'stroke-width':113});
+					arrOilplus[0].animate({path :'M'+(x-350.2+(2.9*a))+ ' ' +(y+128+(-2.3*a))+ 'l 0 '+(-((b/2)-1.8))+' '},time+1000);
+		
+					}
+			
+}
+
+}
   
   
 function oilSpread(){
 	 tempJson = {};
 	var arr = [];
+
 //	tempJson.R_oil = "Reservoir oil";
 	
 	if(a==50){
@@ -415,7 +470,7 @@ function oilSpread(){
 		
 		arr[3]=paper.path('M'+(x-162.1+(3.9*a))+ ' ' +(y+256.8+(-2.3*a))+'l 0  0').attr({'stroke':'#6b5c3d','stroke-width':35.6});
 		arr[3].animate({path :'M'+(x-161.9+(3.9*a))+ ' ' +(y+256.8+(-2.3*a))+'l 0  '+(-a*2.3)+'     '},time, function(){
-		os = 1;
+		os = 1;			
          });
 		  pis1.toFront();
          pf.toFront();
@@ -450,7 +505,8 @@ function oilSpread(){
 		
 		arr[3]=paper.path('M'+(x-189.2+(3.9*a))+ ' ' +(y+256.8+(-2.3*a))+'l 0  0').attr({'stroke':'#6b5c3d','stroke-width':39.2});
 		arr[3].animate({path :'M'+(x-189.2+(3.9*a))+ ' ' +(y+256.8+(-2.3*a))+'l 0  '+(-a*2.2)+'     '},time, function(){
-		os = 1;
+			os = 1;
+		
 		});
          pis1.toFront();
          pf.toFront();
@@ -993,22 +1049,101 @@ function pisAnimBubble(){
         polish.animate({'width': 20, 'height': 20, 'x': sxp-5, 'y': syp-18-up_lift}, time);
 }
 
-
 function pfClick(){
-	pf_flag = 1;
-	
-	if(a == 50){
+	totalStackWeight = totalStackWeight;
+//	if(pf1 == 0){
+//		
+//			if(a == 50){
+//	up_lift = up_lift+5;
+//	Yposition= syp-124;
+//	 }
+//	 if(a == 55){
+//		up_lift = up_lift+5;
+//		Yposition= syp-135;
+//	}if(a == 60){
+//		up_lift = up_lift+5;
+//		Yposition= syp-145;
+//	}
+//	pf.animate({path: Raphael.transformPath("M"+sxp+" "+syp+" l 0 "+(-1.64*a)+" l "+(-1.4*a)+" 0 l 0 "+(-b/2)+" l "+(3*a)+" 0 l 0 "
+//	                          +(b/2)+" l "+(-1.4*a)+" 0 l 0 "+(1.64*a)+" z ", 'T 0 '+-up_lift)}, time);	    
+//	                          
+//	    var _transformedPath1 = Raphael.transformPath("M"+sx+" "+sy+" l "+rec_wid+" 0 l 0"+(-b*1.5)+" l "+(-rec_wid)+" 0 l 0 "+(b*1.5)
+//	                   
+//	                       , 'T 0 '+-up_lift);
+//
+//	    pis.animate({path: _transformedPath1}, time);
+//	//  polish = paper.rect((sxp-5),(syp-18),20,20,5) .attr({'stroke' : '#000' , 'stroke-width' : 1 , 'gradient': '160-#C0C0C0-#A9A9A9'});  
+//        polish.animate({'width': 20, 'height': 20, 'x': sxp-5, 'y': syp-18-up_lift}, time);
+//        
+//        	for(i=0 ; i<wtStackMasterJson.LIFOSTACK.length; i++)
+//	 {		
+//	      str=wtStackMasterJson.LIFOSTACK[i].weight;
+//	    if( str=="gf100" ){
+//
+//		
+//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);	
+//			Yposition = Yposition-30;
+//			console.log(wtStackMasterJson);
+//		
+//	     }	
+//	      if( str=="gf500" ){
+//		
+//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);					
+//			console.log(wtStackMasterJson);
+//			Yposition = Yposition-30;	
+//				     }
+//	      if( str=="kgf1" ){
+//		
+//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);				
+//			console.log(wtStackMasterJson);
+//			Yposition = Yposition-30;				
+//	     }	
+//	      if( str=="kgf2" ){
+//		
+//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);					
+//			console.log(wtStackMasterJson);	
+//			Yposition = Yposition-30;			
+//	     }	
+//	      if( str=="kgf5" ){
+//			
+//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);			
+//			console.log(wtStackMasterJson);			
+//			Yposition = Yposition-30;	
+//	     }	
+//	      if( str=="kgf10" ){	
+//			
+//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);			
+//			console.log(wtStackMasterJson);
+//			Yposition = Yposition-30;
+//	     }	   	  
+//  if(a == 50 && up_lift > 48){
+//	up_lift = 48;
+//
+//}
+//if(a == 55 && up_lift>53){
+//	up_lift = 53;
+//}if(a == 60 && up_lift>59){
+//	up_lift = 59;
+//} 
+//  
+//   pis.toFront();  
+////   l.toFront(); 
+//   pf.toFront();
+//   polish.toFront();
+//	 }
+//        
+//	}
+//	if(pf1 == 1 || pf1 == 0){
+		
+		if(a == 50){
 	up_lift = up_lift+5;
-	console.log("up_lift :"+up_lift);
 	Yposition= syp-124;
 	 }
 	 if(a == 55){
 		up_lift = up_lift+5;
-		console.log("up_lift :"+up_lift);
 		Yposition= syp-135;
 	}if(a == 60){
 		up_lift = up_lift+5;
-		console.log("up_lift :"+up_lift);
 		Yposition= syp-145;
 	}
 	pf.animate({path: Raphael.transformPath("M"+sxp+" "+syp+" l 0 "+(-1.64*a)+" l "+(-1.4*a)+" 0 l 0 "+(-b/2)+" l "+(3*a)+" 0 l 0 "
@@ -1021,8 +1156,8 @@ function pfClick(){
 	    pis.animate({path: _transformedPath1}, time);
 	//  polish = paper.rect((sxp-5),(syp-18),20,20,5) .attr({'stroke' : '#000' , 'stroke-width' : 1 , 'gradient': '160-#C0C0C0-#A9A9A9'});  
         polish.animate({'width': 20, 'height': 20, 'x': sxp-5, 'y': syp-18-up_lift}, time);
-	
-	for(i=0, position = 0 ; i<wtStackMasterJson.LIFOSTACK.length; i++)
+        
+        	for(i = 0 ; i<wtStackMasterJson.LIFOSTACK.length; i++)
 	 {		
 	      str=wtStackMasterJson.LIFOSTACK[i].weight;
 	    if( str=="gf100" ){
@@ -1078,10 +1213,101 @@ if(a == 55 && up_lift>53){
    pf.toFront();
    polish.toFront();
 	 }
-    var pis1_transformedPath1  = Raphael.transformPath("M"+sz+" "+sy1+" l 0 "+((1.7*a)-up_lift)+ " l "+wid+ " 0 l 0 "+((-(1.7)*a)+up_lift)+"z");	
+//	}
+	var pis1_transformedPath1  = Raphael.transformPath("M"+sz+" "+sy1+" l 0 "+((1.7*a)-up_lift)+ " l "+wid+ " 0 l 0 "+((-(1.7)*a)+up_lift)+"z");	
 	pis1.animate({path: pis1_transformedPath1}, time);
-	
 }
+
+//function pfClick(){
+//	pf_flag = 1;
+//	pf1 = 1;
+//	
+//	if(a == 50){
+//	up_lift = up_lift+5;
+////	console.log("up_lift :"+up_lift);
+//	Yposition= syp-124;
+//	 }
+//	 if(a == 55){
+//		up_lift = up_lift+5;
+////		console.log("up_lift :"+up_lift);
+//		Yposition= syp-135;
+//	}if(a == 60){
+//		up_lift = up_lift+5;
+////		console.log("up_lift :"+up_lift);
+//		Yposition= syp-145;
+//	}
+//	pf.animate({path: Raphael.transformPath("M"+sxp+" "+syp+" l 0 "+(-1.64*a)+" l "+(-1.4*a)+" 0 l 0 "+(-b/2)+" l "+(3*a)+" 0 l 0 "
+//	                          +(b/2)+" l "+(-1.4*a)+" 0 l 0 "+(1.64*a)+" z ", 'T 0 '+-up_lift)}, time);	    
+//	                          
+//	    var _transformedPath1 = Raphael.transformPath("M"+sx+" "+sy+" l "+rec_wid+" 0 l 0"+(-b*1.5)+" l "+(-rec_wid)+" 0 l 0 "+(b*1.5)
+//	                   
+//	                       , 'T 0 '+-up_lift);
+//
+//	    pis.animate({path: _transformedPath1}, time);
+//	//  polish = paper.rect((sxp-5),(syp-18),20,20,5) .attr({'stroke' : '#000' , 'stroke-width' : 1 , 'gradient': '160-#C0C0C0-#A9A9A9'});  
+//        polish.animate({'width': 20, 'height': 20, 'x': sxp-5, 'y': syp-18-up_lift}, time);
+//	
+//	for(i=0, position = 0 ; i<wtStackMasterJson.LIFOSTACK.length; i++)
+//	 {		
+//	      str=wtStackMasterJson.LIFOSTACK[i].weight;
+//	    if( str=="gf100" ){
+//
+//		
+//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);	
+//			Yposition = Yposition-30;
+//			console.log(wtStackMasterJson);
+//		
+//	     }	
+//	      if( str=="gf500" ){
+//		
+//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);					
+//			console.log(wtStackMasterJson);
+//			Yposition = Yposition-30;	
+//				     }
+//	      if( str=="kgf1" ){
+//		
+//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);				
+//			console.log(wtStackMasterJson);
+//			Yposition = Yposition-30;				
+//	     }	
+//	      if( str=="kgf2" ){
+//		
+//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);					
+//			console.log(wtStackMasterJson);	
+//			Yposition = Yposition-30;			
+//	     }	
+//	      if( str=="kgf5" ){
+//			
+//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);			
+//			console.log(wtStackMasterJson);			
+//			Yposition = Yposition-30;	
+//	     }	
+//	      if( str=="kgf10" ){	
+//			
+//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);			
+//			console.log(wtStackMasterJson);
+//			Yposition = Yposition-30;
+//	     }	   	  
+//  if(a == 50 && up_lift > 48){
+//	up_lift = 48;
+//
+//}
+//if(a == 55 && up_lift>53){
+//	up_lift = 53;
+//}if(a == 60 && up_lift>59){
+//	up_lift = 59;
+//} 
+//  
+//   pis.toFront();  
+////   l.toFront(); 
+//   pf.toFront();
+//   polish.toFront();
+//	 }
+//    var pis1_transformedPath1  = Raphael.transformPath("M"+sz+" "+sy1+" l 0 "+((1.7*a)-up_lift)+ " l "+wid+ " 0 l 0 "+((-(1.7)*a)+up_lift)+"z");	
+//	pis1.animate({path: pis1_transformedPath1}, time);
+//	
+//}
+
 
 var divideVal = 0;
 var ranErr=0;
@@ -1199,8 +1425,8 @@ function meterZero(){
 animVal++;
 } 
 ranErr = num.toFixed(1);
-     console.log(" num "+num);
-     console.log(" ranErr "+ranErr);
+//     console.log(" num "+num);
+//     console.log(" ranErr "+ranErr);
      pres = parseFloat(ranErr);
      
    
@@ -1208,7 +1434,7 @@ ranErr = num.toFixed(1);
 var unit1=270/meterguage;
 
  angle= unit1;
- pressure = angle+pres+1; 
+ pressure += pres; 
   console.log("pressure :"+pressure);
   presCal = pressure - totalStackWeight;
   actualPres = pressure-presCal;
@@ -1270,13 +1496,75 @@ var unit1=270/meterguage;
      
 }
     
+function meterZeroMinus(){
+	pressure -= pres; 
+  
+  presCal = pressure - totalStackWeight;
+  actualPres = pressure-presCal;
+  
+	if(meterguage == 50){
+		divideVal = 5;
+	}if(meterguage == 100){
+		divideVal = 2.8;
+	}if(meterguage == 16){		
+		divideVal = 12;
+	}
+
+   errDisp = pres/divideVal;
+	var erDisplay = errDisp.toFixed(1);
+	 err = parseFloat(erDisplay);	 
+	actualPressure3 -= err;     
+     actalVal = actualPressure3.toFixed(1); 
+     meterVal = actualPressure3.toFixed(1);
+   if(a==50){
+	    
+	 	x1 = x-528 , y1 = y-307;
+	 	if (meterguage==16){
+		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+118)+' '},time+4000,'elastic');
+		mline.animate(keepRotating); 
+			 	
+		}else { 
+		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+98)+' '}, time+4000,'elastic' );
+	    mline.animate(keepRotating);
+
+		}	
+	}else if(a==55){
+		x1 = x-560 , y1 = y-334;
+		if (meterguage==16){
+			
+		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
+		mline.animate(keepRotating); 
+
+		}else {
+			
+		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time+4000,'elastic');
+	    mline.animate(keepRotating);
+     			
+		}
+ 	    
+	       
+	}else{
+		x1 = x-540 , y1 = y-328;
+		if (meterguage==16){
+			
+		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
+		mline.animate(keepRotating);
+	   
+		}else {
+		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+65)+' '}, time+4000,'elastic' );
+		mline.animate(keepRotating); 
+	 	}
+	}
+}
+
+
 
 function meterAnimonPlusBefore(){
 if(animVal == 0){	
-	if(meter == 16){
+	if(meterguage == 16){
 	var rmin = 2 ; var rmax = 10;
  num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin);
-}else if(meter == 50){
+}else if(meterguage == 50){
 	var rmin = 2.3 ; var rmax = 5;
  num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin);
 }else{
@@ -1333,10 +1621,10 @@ if(sFlag == 0){
 	  
 function meterAnimonPlusNegBef(){
 if(animVal == 0){	
-	if(meter == 16){
+	if(meterguage == 16){
 	var rmin = 2 ; var rmax = 10;
  num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin);
-}else if(meter == 50){
+}else if(meterguage == 50){
 	var rmin = 2.3 ; var rmax = 5;
  num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin);
 }else{
@@ -1565,8 +1853,9 @@ var unit1=270/meterguage;
 	  }	 
  	  
 function meterAnimonMinus(){	
-
-      pressure = pressure-pres;
+     
+      
+      pressure = pressure-pres;      
       meterVal = parseFloat(meterVal-err).toFixed(1);
       console.log("meterVal enter"+meterVal);
       console.log(" pressure enter"+pressure);
@@ -1614,11 +1903,13 @@ function meterAnimonMinus(){
 
 // vertical piston move
 
-function pisAnim(){
+function pisAnimZero(){
 	pf_flag = 0;
 	sFlagAfter = 0;
 	sFlag = 0;
 	funCallFlgError = 0;
+	meterVal = 0 ;
+	actalVal = 0;
 	ranNegPosVal=Math.floor(Math.random() * 2);	
 	
 	
@@ -1637,7 +1928,7 @@ function pisAnim(){
 		Yposition= syp-145;
 	}
       console.log("Value of up_lift in minus: "+up_lift);
-	
+	  
 	  var _transformedPath_p1 = Raphael.transformPath("M"+sxp+" "+syp+" l 0 "+(-1.64*a)+" l "+(-1.4*a)+" 0 l 0 "+(-b/2)+" l "+(3*a)+" 0 l 0 "
 	                          +(b/2)+" l "+(-1.4*a)+" 0 l 0 "+(1.64*a)+" z ", 'T 0 '+-up_lift);
          pf.animate({path: _transformedPath_p1}, time);	
@@ -1647,6 +1938,43 @@ function pisAnim(){
 
 	    pis.animate({path: _transformedPath1}, time);	    
     polish.animate({'width': 20, 'height': 20, 'x': sxp-5, 'y': syp-18+-up_lift}, time);
+}
+
+
+
+function pisAnim(){
+	
+	
+	ranNegPosVal=Math.floor(Math.random() * 2);	
+	
+	totalStackWeight = totalStackWeight;
+	up_lift = up_lift;
+	 if(a == 50){		
+     up_lift -= 5 ;
+      
+     Yposition = syp-124;
+     } if(a == 55){
+	up_lift -= 5;
+	console.log(" pisAnim value "+up_lift);
+	Yposition= syp-135;
+	}if(a == 60){
+		up_lift -= 5;
+	console.log(" pisAnim value "+up_lift);
+		Yposition= syp-145;
+	}
+      console.log("Value of up_lift in minus: "+up_lift);
+	  
+	  var _transformedPath_p1 = Raphael.transformPath("M"+sxp+" "+syp+" l 0 "+(-1.64*a)+" l "+(-1.4*a)+" 0 l 0 "+(-b/2)+" l "+(3*a)+" 0 l 0 "
+	                          +(b/2)+" l "+(-1.4*a)+" 0 l 0 "+(1.64*a)+" z ", 'T 0 '+-up_lift);
+         pf.animate({path: _transformedPath_p1}, time);	
+
+      var _transformedPath1 = Raphael.transformPath("M"+sx+" "+sy+" l "+rec_wid+" 0 l 0"+(-b*1.5)+" l "+(-rec_wid)+" 0 l 0 "+(b*1.5)	                   
+	                       , 'T 0 '+-up_lift);
+
+	    pis.animate({path: _transformedPath1}, time);	    
+    polish.animate({'width': 20, 'height': 20, 'x': sxp-5, 'y': syp-18+-up_lift}, time);
+   
+      
    
 	    for(i=0; i<wtStackMasterJson.LIFOSTACK.length; i++)
 	 {		
@@ -1694,11 +2022,18 @@ function pisAnim(){
 	     }
 	     
     }
+    totalStackWeight = totalStackWeight;
+   imgWeightArray = imgWeightArray;
    pis.toFront();  
    pf.toFront();
    polish.toFront();
     var pis1_transformedPath1  = Raphael.transformPath("M"+sz+" "+sy1+" l 0 "+((1.7*a)-up_lift)+ " l "+wid+ " 0 l 0 "+((-(1.7)*a)+up_lift)+"z");	
 	pis1.animate({path: pis1_transformedPath1}, time);
+//	if(up_lift <= 0){
+//	pf1 = 0;
+//	}else{
+//		pf1 = 1;
+//	}
 }
 
 
@@ -1742,7 +2077,7 @@ function plusAnim(){
 	                                             +" l 0 "+(-3.2*a)+" l "+(-b/4)+" 0 l 0 "+(1.58*a)+" z " , 'T '+forward+' 0');
      
         h.animate({path: _transformedPath}, time);   
-     	console.log("value in handle in plus :"+hndl);   
+//     	console.log("value in handle in plus :"+hndl);   
 
         
   r1.animate({path:Raphael.transformPath("M"+(x+(hx*a-block))+" "+(y+161-(b))+"l 0 "+(-b+3)+" l "+(-block_ht*(a/2.5)+forward)+" 0 "+"l 0 "+(a-1)+" l "+(block_ht*(a/2.5)-forward)+" 0 z") },time);
@@ -1762,9 +2097,11 @@ if(forward <= forVal-5)
 	
 	  h_img.animate({'transform':'r'+hndl},time);
 	forward = forVal;
-	
+	totalStackWeight = totalStackWeight;
+		imgWeightArray = imgWeightArray;
 		bubbleCall();	
 	if(plusFlg == 0){
+		
 	setTimeout(function(){ 
 	alert("Maximum limit...")
      
@@ -1792,7 +2129,7 @@ function minusAnim(){
 
 	  
         hndl=hndl-60; 
-        console.log("value of hndl in minus :"+hndl);
+//        console.log("value of hndl in minus :"+hndl);
       h_img.animate({'transform':'r'+(hndl)+''},time);
 
      pistonP.animate({path: Raphael.transformPath("M"+(x+(px*a))+" "+(y +163-b)+" l 0 "+(-b)+" l "+(-b*1.2)+ " 0 l 0 "+a+ " l "+(b*1.2)+" 0 l 0 z" , 'T '+forward+' 0 ' )}, time);	
@@ -1813,17 +2150,20 @@ function minusAnim(){
 			  h_img.animate({'transform':'r'+(hndl)+''},time);
 
 			forward = 0;
-			  setInterval(function(){
-		         R_valve.attr({'stroke' : '#000'  , 'fill':'red','stroke-width': 2 });
-         },time+1000);	
+			
 			if(minusFlg == 0){
+			
 	setTimeout(function(){ 
 	alert("Minimum limit...")
       
 	},time+100);
 	plusBlock = 1;
 	}
-	
+	if(miniMinus == 1){
+			  setInterval(function(){
+		         R_valve.attr({'stroke' : '#000'  , 'fill':'red','stroke-width': 2 });
+         },time+1000);
+         }	
 	minusFlg = 1;
 	}
   
@@ -1843,17 +2183,20 @@ plus.click(function(){
 if(v1_check == 1 && v2_check == 2){
   if(id==1||id==2||id==3||id==4){
 	horizontalAnimPlus();
-	
+	oilfillonPluse();
+	plusOilFlag++;
 }else{ 
 	if(plusBlock == 1){
 	if(forward <= 0){		
-
+   
   if(pisStop > forward ){
 	
-	if(totalStackWeight ==0){
+	if(totalStackWeight == 0){
+		
 		pfClickB();
-	plusAnim();
-	meterZero();
+	plusAnim();	
+	meterZero();	
+	
 	var pis1_transformedPath1  = Raphael.transformPath("M"+sz+" "+sy1+" l 0 "+((1.7*a)-up_lift)+ " l "+wid+ " 0 l 0 "+((-(1.7)*a)+up_lift)+"z");	
 	pis1.animate({path: pis1_transformedPath1}, time);
 	 pis.toFront();  
@@ -1866,11 +2209,12 @@ if(v1_check == 1 && v2_check == 2){
 //	meterAnimPosErr();
 //	meterAnimNegErr();
     }else{
+	totalStackWeight = totalStackWeight;
 	pfClick();	
 	
 	plusAnim();
 	
-
+   
 	if(ranNegPosVal==0)
 	{
 		expVal = 0;
@@ -1880,7 +2224,10 @@ if(v1_check == 1 && v2_check == 2){
 		expVal = 1;
 		meterAnimNegErr();
 	}
+  
+
 }
+ 
 	}else{		
 		plusAnim();	
 	   }	
@@ -1900,7 +2247,7 @@ var pressureAfterVal = 0;
 var pAv = 0;
 
 function meterAnimPosErr(){
-	
+	totalStackWeight = totalStackWeight;
 	if(totalStackWeight > 0){
 	 meterAnimonPlusBefore();
 	  if(xPray == pressure){
@@ -1934,6 +2281,7 @@ function meterAnimPosErr(){
 var pBv = 0;
 
 function meterAnimNegErr(){
+	totalStackWeight = totalStackWeight;
 	if(totalStackWeight > 0){
 	 meterAnimonPlusNegBef();
 	
@@ -1964,54 +2312,92 @@ function meterAnimNegErr(){
 //}
 }
 
-
+var std12 =1;
 
 minus.click(function(){
    plusFlg = 0;
-   
-   console.log("value of hndl in minus:"+hndl);
+      
+//   console.log("value of hndl in minus:"+hndl);
 	if(st1 == 1){		
-		id = 1;		
+		id = 1;	
+		plusOilFlag=0;	
 		minusAnim();
-		
+		oilfillonPluse();
     
 		pisAnimBubble();
 	}if(st1 == 2){		
 		id = 2;
+		plusOilFlag=0;	
 		pisAnimBubble();
-		
+		oilfillonPluse();
    polish.toFront();
     
 		minusAnim();		
 	}if(st1 == 3){		
 		id = 3;
+		plusOilFlag=0;	
 		minusAnim();
-		
+		oilfillonPluse();
    polish.toFront();
     
 		pisAnimBubble();	
 	}if(st1 == 4){		
 		id = 4;
 		minusAnim();
-	
-    
+	    plusOilFlag=0;	
+	   
+        oilfillonPluse();
+       
 		pisAnimBubble();
 	}if(st1==5){
+		
+		 if(std12==1 && rCapClose == 1){
+				if(a==50){
+					arrOilplus[0]=paper.path('M'+(x-288.6+(2.9*a))+ ' ' +(y+119+(-2.3*a))+ 'l 0  0   ').attr({ 'stroke':'#fff', 'stroke-width':92.8});
+					arrOilplus[0].animate({path :'M'+(x-288.6+(2.9*a))+ ' ' +(y+119+(-2.3*a))+ 'l 0 '+(b/2)+' '},time+1000);
+		
+				}else if(a==55){
+					arrOilplus[0]=paper.path('M'+(x-319.3+(2.9*a))+ ' ' +(y+117+(-2.3*a))+'l 0  0').attr({'stroke':'#fff','stroke-width':102.8});
+					arrOilplus[0].animate({path :'M'+(x-319.3+(2.9*a))+ ' ' +(y+117+(-2.3*a))+'l 0 '+((b/2)-1.8)+'  '},time+1000);
+		
+				}else{
+					arrOilplus[0]=paper.path('M'+(x-350.2+(2.9*a))+ ' ' +(y+114+(-2.3*a))+ 'l 0  0   ').attr({ 'stroke':'#fff', 'stroke-width':113});
+					arrOilplus[0].animate({path :'M'+(x-350.2+(2.9*a))+ ' ' +(y+114+(-2.3*a))+ 'l 0 '+((b/2)-1.8)+' '},time+1000); 
+		
+				}
+		 std12++;
+        }
 	id = 5;
 	confirmFlg = 1;
 	idVal = 1;
+	totalStackWeight = totalStackWeight;
+	  pressure = pressure; 
+      meterVal = meterVal;
 	if(rCapClose == 0){
 			forward = forVal; 
 		}else{
+			if(up_lift <= 0){
+		pf1 = 0;
+		position = 0;
+		}else{
+		pf1 = 1;
+		position = imgWeightArray.length;
+		wt_ht = wt_ht;
+		}
 			plusBlock == 1;			
 			if(up_lift > 0){
 	           meterAnimonMinus();
-               pisAnim();	
+	            if(totalStackWeight == 0){
+		        pisAnimZero();
+	           }else{
+               pisAnim();
+               }	
 	           minusAnim();	
 	           
 	}else {
 		plusBlock == 1;
 		up_lift = 0;
+//		meterZeroMinus();
 		meterMinusZero();
 		minusAnim();
 	}
@@ -2113,9 +2499,9 @@ var st1 = 1;
 			r_capCheck = 1;
 //        r_capClose();
 		 setTimeout(function(){
-		alert(" Now close the cap of Oil Reservoir  ");
+		alert(" First close the cap of Oil Reservoir and then move to minimum position of handle. ");
 		},time+100);
-		
+		miniMinus = 1;
 		}
         st1++;
 //        console.log("value of st1  plus for st1 = 1: "+st1);	
@@ -2135,6 +2521,7 @@ var maxH = 0;
 
 
 function horizontalAnimPlus(){
+	plusOilFlag=1;
 	 if(meterguage == 16){
 	forward = forward-8;
     }
@@ -2148,7 +2535,7 @@ function horizontalAnimPlus(){
 	 
 	 hndl=hndl+60; 
     h_img.animate({'transform':'r'+(hndl)+''},time);
-	  console.log("pisStop in plus : "+pisStop);	 
+//	  console.log("pisStop in plus : "+pisStop);	 
 	
 
     pistonP.animate({path: Raphael.transformPath("M"+(x+(px*a))+" "+(y +163-b)+" l 0 "+(-b)+" l "+(-b*1.2)+ " 0 l 0 "+a+ " l "+(b*1.2)+" 0 l 0 "+(-b) , 'T '+forward+' 0 ' )}, time);	
@@ -2158,7 +2545,7 @@ function horizontalAnimPlus(){
 	                                             +" l 0 "+(-3.2*a)+" l "+(-b/4)+" 0 l 0 "+(1.58*a)+" z " , 'T '+forward+' 0');
      
         h.animate({path: _transformedPath}, time);   
-     	console.log("value in handle in plus :"+hndl);   
+//     	console.log("value in handle in plus :"+hndl);   
 
         
   r1.animate({path:Raphael.transformPath("M"+(x+(hx*a-block))+" "+(y+161-(b))+"l 0 "+(-b+3)+" l "+(-block_ht*(a/2.5)+forward)+" 0 "+"l 0 "+(a-1)+" l "+(block_ht*(a/2.5)-forward)+" 0 z") },time);
@@ -2173,7 +2560,7 @@ if(forward <= forVal-5)
 	if(meterguage == 100){
 		hndl = 1440;
 	}		
-		console.log("value in handle in plus max is :"+hndl);
+//		console.log("value in handle in plus max is :"+hndl);
 	  h_img.animate({'transform':'r'+hndl},time);	
 		forward = forVal;
 	
@@ -2187,64 +2574,117 @@ if(forward <= forVal-5)
   
 }
 
-
-
-wt50.click(function(){	
+wt50.click(function(){
 	if(idVal == 1){
 	if(totalStackWeight >= meterguage)
 		  {
-			alert("weight is greater than meter limit");
+			
+//			if(pf1 == 0){
+//			alert("weight is greater than meter limit");
+//			}else{
+			alert("weight is greater than meter limit");	
+//			}
 		}else{
-if(minusFlg == 0 && id == 1 ||id == 2 ||id == 3||id == 4){
+			totalStackWeight =totalStackWeight;
+if(minusFlg == 0){
 	 wt_ht = 0;
 	alert("Go to minimum position of handle and then add weight");
-	}else{
-    
-	 tempStackMasterJson = {};
- 	tempStackMasterJson.weight ='gf100' ;
-	tempStackMasterJson.position = position;
-	
+}
+
+else{
+	if(imgWeightArray.length <=11){
+     remainWeight = meterguage-totalStackWeight;
+	    if(remainWeight >= 0.1)
+	     {
+
+	tempStackMasterJson = {};
+	tempStackMasterJson.weight ='gf100' ;
+	tempStackMasterJson.position=position;
 	tempStackMasterJson.tempName ='weight100gf' ;
 	stackJsonArr.push(tempStackMasterJson);
-	wtStackMasterJson.LIFOSTACK=stackJsonArr;	
-	
-	cnt100gf++;		
-	
+	wtStackMasterJson.LIFOSTACK=stackJsonArr;
+	cnt100gf++;	
+	 dupFlg = 1;
 	if(a == 50){
-	imgWeightArray[position] = paper.image("images/100gf.png",(x-40), y-53-wt_ht,150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//	 imgWeightArray[position] = paper.image("images/100gf.png",(x-40), y-53-wt_ht,150, 30);
+//	 imgWeightArray = imgWeightArray;
+//	   }else{
+//		position = 0;
+		position = imgWeightArray.length; 
+//		pf1 = 1;
+		imgWeightArray[position] = paper.image("images/100gf.png",(x-40), (y-50-wt_ht-up_lift),150, 30);
+		if(up_lift>0){
+		   pisAnim();	
+//		}			
+		}
 	}else if(a == 55){
-	imgWeightArray[position] = paper.image("images/100gf.png",(x-50), (y-71-wt_ht),150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//	imgWeightArray[position]= paper.image("images/100gf.png",(x-50), (y-71-wt_ht),150, 30);
+//	imgWeightArray = imgWeightArray;
+//	 }else{
+//		position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+	imgWeightArray[position] = paper.image("images/100gf.png",(x-50), (y-69-wt_ht-up_lift),150, 30);
+	if(up_lift>0){
+		   pisAnim();	
+//		}		
+	}
 	}else{
-    imgWeightArray[position] = paper.image("images/100gf.png",(x-55), (y-88.58-wt_ht),150, 30);	
-        }
-	
-//	if(wt_ht <= 300){
-      position++;
-	weight12 = 0.100;
-	  totalStackWeight+= weight12;
-	  
-	 wt_ht += 30;
+//		if(pf1 == 0){
+//			pf1 = 0;
+//	 imgWeightArray[position] = paper.image("images/100gf.png",(x-55), (y-88.58-wt_ht),150, 30);
+//	 imgWeightArray = imgWeightArray;
+//	 }else{
+//		position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+	imgWeightArray[position] = paper.image("images/100gf.png",(x-55), (y-88.58-wt_ht-up_lift),150, 30);	
+	if(up_lift>0){
+		   pisAnim();	
+		}	
+//	}
+	}	
+	position++;	
+	weight12 = 0.1;
+	  totalStackWeight+= 0.1;
+	   wt_ht += 30;
            flag++;
            cnt++;
-            console.log("cnt100gf++ :"+cnt100gf);
-           console.log("wt_ht :"+wt_ht);
-
-        console.log(totalStackWeight); 
-         console.log("counter : "+cnt);   
-       }
-       
-     }
+//           wt_arr[cnt] = wt;
+          console.log("cnt500gf++ :"+cnt100gf);
+         console.log("counter : "+cnt);        
+//         console.log("www "+weight12);
      }else{
+	alert("If you add this weight it will cross meter limit");
+}
+     }else{
+	
+	alert("Blocks placed above limit");
+}
+     }
+    }
+    }else{
 	alert("first remove the bubbles from oil Reservoir");
 }
-	});
+})
+
+
 var dwt;
 var weight500gf;
  wt100.click(function(){
 	if(idVal == 1){
 	if(totalStackWeight >= meterguage)
 		  {
-			alert("weight is greater than meter limit");
+			
+//			if(pf1 == 0){
+//			alert("weight is greater than meter limit");
+//			}else{
+			alert("weight is greater than meter limit");	
+//			}
 		}else{
 if(minusFlg == 0){
 	 wt_ht = 0;
@@ -2252,7 +2692,10 @@ if(minusFlg == 0){
 }
 
 else{
- 
+	if(imgWeightArray.length <=11){
+    remainWeight = meterguage-totalStackWeight;
+	    if(remainWeight >= 0.5)
+	     {
 
 	tempStackMasterJson = {};
 	tempStackMasterJson.weight ='gf500' ;
@@ -2261,18 +2704,54 @@ else{
 	stackJsonArr.push(tempStackMasterJson);
 	wtStackMasterJson.LIFOSTACK=stackJsonArr;
 	cnt500gf++;	
-	
+	 dupFlg = 1;
 	if(a == 50){
-	 imgWeightArray[position] = paper.image("images/500gf.png",(x-40), y-53-wt_ht,150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//	 imgWeightArray[position] = paper.image("images/500gf.png",(x-40), y-53-wt_ht,150, 30);
+//	 imgWeightArray = imgWeightArray;
+//	   }else{
+//		position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+		imgWeightArray[position] = paper.image("images/500gf.png",(x-40), (y-50-wt_ht-up_lift),150, 30);
+		if(up_lift>0){
+		   pisAnim();	
+//		}			
+		}
 	}else if(a == 55){
-	imgWeightArray[position]= paper.image("images/500gf.png",(x-50), (y-71-wt_ht),150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//	imgWeightArray[position]= paper.image("images/500gf.png",(x-50), (y-71-wt_ht),150, 30);
+//	imgWeightArray = imgWeightArray;
+//	 }else{
+//		position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+	imgWeightArray[position] = paper.image("images/500gf.png",(x-50), (y-69-wt_ht-up_lift),150, 30);
+	if(up_lift>0){
+		   pisAnim();	
+//		}		
+	}
 	}else{
-	 imgWeightArray[position] = paper.image("images/500gf.png",(x-55), (y-88.58-wt_ht),150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//	 imgWeightArray[position] = paper.image("images/500gf.png",(x-55), (y-88.58-wt_ht),150, 30);
+//	 imgWeightArray = imgWeightArray;
+//	 }else{
+//		position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+	imgWeightArray[position] = paper.image("images/500gf.png",(x-55), (y-88.58-wt_ht-up_lift),150, 30);	
+	if(up_lift>0){
+		   pisAnim();	
+//		}	
+	}
 	}	
 	
 	position++;	
-	weight12 = 0.500;
-	  totalStackWeight+= weight12;
+	weight12 = 0.5;
+	  totalStackWeight+= 0.5;
 	   wt_ht += 30;
            flag++;
            cnt++;
@@ -2280,6 +2759,13 @@ else{
           console.log("cnt500gf++ :"+cnt500gf);
          console.log("counter : "+cnt);        
 //         console.log("www "+weight12);
+      }else{
+	alert("If you add this weight it will cross meter limit");
+}
+     }else{
+	
+	alert("Blocks placed above limit");
+}
      }
     }
     }else{
@@ -2291,13 +2777,20 @@ else{
 		if(idVal == 1){
 		if(totalStackWeight >= meterguage)
 		  {
-			alert("weight is greater than meter limit");
+//			if(pf1 == 0){
+//			alert("weight is greater than meter limit");
+//			}else{
+			alert("weight is greater than meter limit");	
+//			}
 		}else{
 		if(minusFlg == 0){
 	 wt_ht = 0;
 	alert("Go to minimum position of handle and then add weight");
 } if(minusFlg == 1){
-		
+	if(imgWeightArray.length <=11){
+		remainWeight = meterguage-totalStackWeight;
+	    if(remainWeight >= 1)
+	     {
 		tempStackMasterJson = {};
 		tempStackMasterJson.weight ='kgf1' ;
 	tempStackMasterJson.position=position;	
@@ -2305,19 +2798,54 @@ else{
 	stackJsonArr.push(tempStackMasterJson);
 	wtStackMasterJson.LIFOSTACK=stackJsonArr;		
 		cnt1kgf++;
-		
+		 dupFlg = 1;
 
 	if(a == 50){
-		imgWeightArray[position] = paper.image("images/1kgf.png",(x-40), y-53-wt_ht,150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//		imgWeightArray[position] = paper.image("images/1kgf.png",(x-40), y-53-wt_ht,150, 30);
+//		imgWeightArray = imgWeightArray;
+//		}else{
+//			position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+		imgWeightArray[position] = paper.image("images/1kgf.png",(x-40), (y-50-wt_ht-up_lift),150, 30);	
+		if(up_lift>0){
+		   pisAnim();	
+//		}		
+		}
 	}else if(a == 55){
-		imgWeightArray[position] = paper.image("images/1kgf.png",(x-50), (y-71-wt_ht),150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//		imgWeightArray[position] = paper.image("images/1kgf.png",(x-50), (y-71-wt_ht),150, 30);
+//		imgWeightArray = imgWeightArray;
+//		}else{
+//			position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+		imgWeightArray[position] = paper.image("images/1kgf.png",(x-50), (y-69-wt_ht-up_lift),150, 30);
+		if(up_lift>0){
+		   pisAnim();	
+//		}			
+		}
 	}else{
-		imgWeightArray[position] = paper.image("images/1kgf.png",(x-55), (y-88.58-wt_ht),150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//		imgWeightArray[position] = paper.image("images/1kgf.png",(x-55), (y-88.58-wt_ht),150, 30);
+//		imgWeightArray = imgWeightArray;
+//		}else{
+//			position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+		imgWeightArray[position] = paper.image("images/1kgf.png",(x-55), (y-88.58-wt_ht-up_lift),150, 30);
+		if(up_lift>0){
+		   pisAnim();	
+		}			
+//		}
 	}
-
 	position++;
 	weight12 = 1;
-	  totalStackWeight+= weight12;
+	  totalStackWeight+= 1;
 		  
 	   wt_ht += 30;
            flag++;
@@ -2326,6 +2854,13 @@ else{
             console.log("counter : "+cnt);  
             console.log(totalStackWeight);
 //             console.log("www "+weight12);
+        }else{
+	alert("If you add this weight it will cross meter limit");
+}
+       }else{
+	
+	alert("Blocks placed above limit");
+}
        }
        }
       }else{
@@ -2337,12 +2872,20 @@ else{
 		if(idVal == 1){
 		if(totalStackWeight >= meterguage)
 		  {
-			alert("weight is greater than meter limit");
+//			if(pf1 == 0){
+//			alert("weight is greater than meter limit");
+//			}else{
+			alert("weight is greater than meter limit");	
+//			}
 		}else{
 		if(minusFlg == 0){
 	 wt_ht = 0;
 	alert("Go to minimum position of handle and then add weight");
 } else{ 
+	if(imgWeightArray.length <=11){
+	remainWeight = meterguage-totalStackWeight;
+	    if(remainWeight >= 2)
+	     {
 		tempStackMasterJson = {};
 		tempStackMasterJson.weight ='kgf2' ;
 	tempStackMasterJson.position=position;
@@ -2351,19 +2894,55 @@ else{
 	stackJsonArr.push(tempStackMasterJson);
 	wtStackMasterJson.LIFOSTACK=stackJsonArr;	
 		cnt2kgf++;
-		
+		 dupFlg = 1;
 
 	if(a == 50){
-		imgWeightArray[position] = paper.image("images/2kgf.png",(x-40), (y-53-wt_ht),150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//		imgWeightArray[position] = paper.image("images/2kgf.png",(x-40), (y-53-wt_ht),150, 30);
+//		imgWeightArray = imgWeightArray;
+//		}else{
+//			position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+		imgWeightArray[position] = paper.image("images/2kgf.png",(x-40), (y-50-wt_ht-up_lift),150, 30);	
+		if(up_lift>0){
+		   pisAnim();	
+//		}		
+		}
 	}else if(a == 55){
-		imgWeightArray[position] = paper.image("images/2kgf.png",(x-50), (y-71-wt_ht),150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//		imgWeightArray[position] = paper.image("images/2kgf.png",(x-50), (y-71-wt_ht),150, 30);
+//		imgWeightArray = imgWeightArray;
+//		}else{
+//			position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+		imgWeightArray[position] = paper.image("images/2kgf.png",(x-50), (y-69-wt_ht-up_lift),150, 30);	
+		if(up_lift>0){
+		   pisAnim();	
+//		}		
+		}
 	}else{
-		 imgWeightArray[position] = paper.image("images/2kgf.png",(x-55), (y-88.58-wt_ht),150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//		 imgWeightArray[position] = paper.image("images/2kgf.png",(x-55), (y-88.58-wt_ht),150, 30);
+//		 imgWeightArray = imgWeightArray;
+//		 }else{
+//			position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+		imgWeightArray[position] = paper.image("images/2kgf.png",(x-55), (y-88.58-wt_ht-up_lift),150, 30);
+		if(up_lift>0){
+		   pisAnim();	
+//		}		
+		}
 	}
 
 	position++;
 	   weight12 = 2;
-	  totalStackWeight+= weight12;
+	  totalStackWeight+= 2;
 	   wt_ht += 30;
            flag++;
             cnt++;
@@ -2371,6 +2950,13 @@ else{
        console.log("counter : "+cnt);  
       console.log(totalStackWeight);
 //       console.log("www "+weight12);
+      }else{
+	alert("If you add this weight it will cross meter limit");
+	
+}
+      }else{
+	alert("Blocks placed above limit");
+}
       }
       }
       }else{
@@ -2382,13 +2968,20 @@ else{
 	if(idVal == 1){
 	if(totalStackWeight >= meterguage)
 		  {
-			alert("weight is greater than meter limit");
+//			if(pf1 == 0){
+//			alert("weight is greater than meter limit");
+//			}else{
+			alert("weight is greater than meter limit");	
+//			}
 		}else{
 	if(minusFlg == 0){
 	 wt_ht = 0;
 	alert("Go to minimum position of handle and then add weight");
 } else{
-	
+	if(imgWeightArray.length <=11){
+	remainWeight = meterguage-totalStackWeight;
+	    if(remainWeight >= 5)
+	     {
 	tempStackMasterJson = {};
 	tempStackMasterJson.weight ='kgf5' ;
 	tempStackMasterJson.position=position;
@@ -2398,18 +2991,54 @@ else{
 	
 	
 	cnt5kgf++;
-
+     dupFlg = 1;
 	if(a == 50){
-		imgWeightArray[position] = paper.image("images/5kgf.png",(x-40), (y-53-wt_ht),150, 30);
+//		if(pf1 == 0){
+//		imgWeightArray[position] = paper.image("images/5kgf.png",(x-40), (y-53-wt_ht),150, 30);
+//		imgWeightArray = imgWeightArray;
+//		pf1 = 0;
+//		}else{
+//			position = 0;
+			position = imgWeightArray.length; 
+			pf1 = 1;
+		imgWeightArray[position] = paper.image("images/5kgf.png",(x-40), (y-50-wt_ht-up_lift),150, 30);	
+		if(up_lift>0){
+		   pisAnim();	
+		}	
+//		}
 	}else if(a == 55){
-		imgWeightArray[position] = paper.image("images/5kgf.png",(x-50), (y-71-wt_ht),150, 30);
+//		if(pf1 == 0){
+//		imgWeightArray[position] = paper.image("images/5kgf.png",(x-50), (y-71-wt_ht),150, 30);
+//		imgWeightArray = imgWeightArray;
+//		pf1 = 0;
+//		}else{
+//			position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+		imgWeightArray[position] = paper.image("images/5kgf.png",(x-50), (y-69-wt_ht-up_lift),150, 30);	
+		if(up_lift>0){
+		   pisAnim();	
+//		}	
+		}
 	}else{
-		 imgWeightArray[position] = paper.image("images/5kgf.png",(x-55), (y-88.58-wt_ht),150, 30);
+//		if(pf1 == 0){
+//		 imgWeightArray[position] = paper.image("images/5kgf.png",(x-55), (y-88.58-wt_ht),150, 30);
+//		 imgWeightArray = imgWeightArray;
+//		 pf1 = 0;
+//		 }else{
+//			position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+		imgWeightArray[position] = paper.image("images/5kgf.png",(x-55), (y-88.58-wt_ht-up_lift),150, 30);	
+		if(up_lift>0){
+		   pisAnim();	
+//		}	
+		}
 	}
 
 	position++;
 	 weight12 = 5;
-	  totalStackWeight+= weight12;
+	  totalStackWeight+= 5;
 	   wt_ht += 30;
            flag++;
           
@@ -2418,6 +3047,13 @@ else{
             console.log("counter : "+cnt);  
       console.log(totalStackWeight);
 //       console.log("www "+weight12);
+     }else{
+	alert("If you add this weight it will cross meter limit");
+}
+     }else{
+	alert("Blocks placed above limit");
+	
+}
      }
      }
      }else{
@@ -2427,15 +3063,24 @@ else{
 	
 	wt5.click(function(){
 		if(idVal == 1){
+			
 		if(totalStackWeight >= meterguage)
 		  {
-			alert("weight is greater than meter limit");
+//			if(pf1 == 0){
+//			alert("weight is greater than meter limit");
+//			}else{
+			alert("weight is greater than meter limit");	
+//			}
 		}else{
 		if(minusFlg == 0 ){
 	 wt_ht = 0;
 	alert("Go to minimum position of handle and then add weight");
 } else{
-	
+	   if(imgWeightArray.length <= 11)
+	    {
+	    remainWeight = meterguage-totalStackWeight;
+	    if(remainWeight >= 10)
+	     {
 		tempStackMasterJson = {};
 		tempStackMasterJson.weight ='kgf10' ;
 	tempStackMasterJson.position=position;
@@ -2445,76 +3090,116 @@ else{
 	
 	
 		cnt10kgf++;
-
+ dupFlg = 1;
 	if(a == 50){
-
-imgWeightArray[position] =  paper.image("images/10kgf.png",(x-40), y-53-wt_ht,150, 30);
-
+//     if(pf1 == 0){
+//      pf1 = 0;
+//     
+//     imgWeightArray[position] =  paper.image("images/10kgf.png",(x-40), y-53-wt_ht,150, 30);
+//      imgWeightArray = imgWeightArray;
+//      
+//     
+//      }else{
+//	position = 0;
+	position = imgWeightArray.length; 
+	pf1 = 1;
+	imgWeightArray[position] =  paper.image("images/10kgf.png",(x-40),  y-50-up_lift-wt_ht,150, 30);
+	if(up_lift>0){
+		   pisAnim();	
+//		}	
+//	Yposition-up_lift
+}
 
 	}else if(a == 55){
-	imgWeightArray[position] =  paper.image("images/10kgf.png",(x-50), (y-71-wt_ht),150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//	imgWeightArray[position] =  paper.image("images/10kgf.png",(x-50), (y-71-wt_ht),150, 30);
+//	imgWeightArray = imgWeightArray;
+//	  }else{
+//		position = 0;
+	position = imgWeightArray.length; 
+	pf1 = 1;
+	imgWeightArray[position] =  paper.image("images/10kgf.png",(x-50), (y-69-wt_ht-up_lift),150, 30);	
+	if(up_lift>0){
+		   pisAnim();	
+		}	
+//	}
 	}else{
-	imgWeightArray[position] =  paper.image("images/10kgf.png",(x-55), (y-88.58-wt_ht),150, 30);
+//		if(pf1 == 0){
+//			pf1 = 0;
+//	imgWeightArray[position] =  paper.image("images/10kgf.png",(x-55), (y-88.58-wt_ht),150, 30);
+//	imgWeightArray = imgWeightArray;
+//	}else{
+//		position = 0;
+		position = imgWeightArray.length; 
+		pf1 = 1;
+		imgWeightArray[position] =  paper.image("images/10kgf.png",(x-55), (y-88.58-wt_ht-up_lift),150, 30);
+		if(up_lift>0){
+		   pisAnim();	
+		}	
+//		}
 	}
 
 	position++;
 	weight12 = 10;
-	  totalStackWeight+= weight12;
+	  totalStackWeight+= 10;
 	   wt_ht += 30;
        flag++;        
         cnt++; 
              console.log("cnt10kgf :"+cnt10kgf);
    console.log(totalStackWeight);
+     }else{
+	 alert("If you add this weight it will cross meter limit");
+}
      }
+     else{
+	alert("Blocks placed above limit");
+	 
+}
+}
      }
      }else{
 	alert("first remove the bubbles from oil Reservoir");
 } 
 	});
 	
-	wt = wt_ht;
-	var y2 =0;
-	var rem;
-	
-var weight_blocks = 0;
 
-var arrLen = 0;
-var arrImg = [];
+var str;
 function weight_remove(){
-		
-		
-		        
- if(totalStackWeight > 0)
+	
+	   
+ if(totalStackWeight > 0 && imgWeightArray.length!=0)
    {   
 	var length = masterJson.weight.length-1;
+	var gf1001 = Boolean("gf100" in masterJson.weight[length]);
 	var gf500 = Boolean("gf500" in masterJson.weight[length]);
-	var gf100 = Boolean("gf100" in masterJson.weight[length]);
+	
 	var kgf1 = Boolean("kgf1" in masterJson.weight[length]);
 	var kgf2 = Boolean("kgf2" in masterJson.weight[length]);
     var kgf5 = Boolean("kgf5" in masterJson.weight[length]);
     var kgf10 = Boolean("kgf10" in masterJson.weight[length]);
-	var str=wtStackMasterJson.LIFOSTACK[wtStackMasterJson.LIFOSTACK.length-1].weight;
+	 str = wtStackMasterJson.LIFOSTACK[wtStackMasterJson.LIFOSTACK.length-1].weight;
 
-  imgWeightArray[imgWeightArray.length-1].remove();
-	imgWeightArray.pop();
-	   console.log(imgWeightArray);
-	if(gf100 === true && str=="gf100" )
+    imgWeightArray = imgWeightArray;
+ 
+	if(gf1001 === true && str=="gf100" )
 	{
 		
-		if(masterJson.weight[masterJson.weight.length-1].gf100 == 0){
-		cnt100gf = 0;
-		masterJson.weight[masterJson.weight.length-1].gf100 = 0;
-        }else{
+//		if(masterJson.weight[masterJson.weight.length-1].gf100 == 0){
+//		cnt100gf = 0;
+//		masterJson.weight[masterJson.weight.length-1].gf100 = 0;
+//        }else{
 	
 	    cnt100gf--;
-	    wt_ht -= 30;
-		totalStackWeight -= 0.100;
+	   
+		totalStackWeight -= 0.1;
+		 totalStackWeight = totalStackWeight;
 		masterJson.weight[masterJson.weight.length-1].gf100 -=1;	
-	
+	   
 
 		console.log(wtStackMasterJson);
-	   console.log("totalStackWeight"+totalStackWeight);
-	     }
+
+//	     }
 	       console.log(masterJson);
 	} 
 	
@@ -2522,117 +3207,150 @@ function weight_remove(){
 	else if(gf500 === true && str=="gf500" )
 	{
 		
-		if(masterJson.weight[masterJson.weight.length-1].gf500 == 0){
-		cnt500gf = 0;
-		masterJson.weight[masterJson.weight.length-1].gf500 = 0;
-        }else{
+//		if(masterJson.weight[masterJson.weight.length-1].gf500 == 0){
+//		cnt500gf = 0;
+//		masterJson.weight[masterJson.weight.length-1].gf500 = 0;
+//        }else{
 	
 	    cnt500gf--;
-		totalStackWeight -= 0.500;
+		totalStackWeight -= 0.5;
+		totalStackWeight = totalStackWeight;
 		masterJson.weight[masterJson.weight.length-1].gf500 -=1;
+		 
 		console.log(wtStackMasterJson);
 	   console.log("totalStackWeight"+totalStackWeight);
-	     }
+//	     }
 	       console.log(masterJson);
 	} 
 	
-	else if(kgf1 === true && str=="kgf1" )
+	 else if(kgf1 === true && str=="kgf1" )
 	{
 		
-		if(masterJson.weight[masterJson.weight.length-1].kgf1 == 0){
-		cnt1kgf = 0;
-		masterJson.weight[masterJson.weight.length-1].kgf1 = 0;
-        }else{
+//		if(masterJson.weight[masterJson.weight.length-1].kgf1 == 0){
+//		cnt1kgf = 0;
+//		masterJson.weight[masterJson.weight.length-1].kgf1 = 0;
+//        }else{
 	
 	    cnt1kgf--;
 		totalStackWeight-= 1;
+		totalStackWeight = totalStackWeight;
 		masterJson.weight[masterJson.weight.length-1].kgf1 -=1;	
+		 
 		console.log(wtStackMasterJson);
 	   console.log("totalStackWeight"+totalStackWeight);
 	   
-	     }
+//	     }
 	       console.log(masterJson);
 	} 
 	
-	else if(kgf2 === true && str=="kgf2" )
+	 else if(kgf2 === true && str=="kgf2" )
 	{
 		
-		if(masterJson.weight[masterJson.weight.length-1].kgf2 == 0){
-		cnt2kgf = 0;
-		masterJson.weight[masterJson.weight.length-1].kgf2 = 0;
-        }else{
+//		if(masterJson.weight[masterJson.weight.length-1].kgf2 == 0){
+//		cnt2kgf = 0;
+//		masterJson.weight[masterJson.weight.length-1].kgf2 = 0;
+//        }else{
 	    cnt2kgf--;
 		totalStackWeight-= 2;
+		totalStackWeight = totalStackWeight;
 		masterJson.weight[masterJson.weight.length-1].kgf2 -=1;	
-
+         
 	console.log(wtStackMasterJson);
 	   console.log("totalStackWeight"+totalStackWeight);
 	   
-	     }
+//	     }
 	       console.log(masterJson);
 	} 
 	
-	else if(kgf5 === true && str=="kgf5" )
+	 else if(kgf5 === true && str=="kgf5" )
 	{
 		
-		if(masterJson.weight[masterJson.weight.length-1].kgf5 == 0){
-		cnt5kgf = 0;
-		masterJson.weight[masterJson.weight.length-1].kgf5 = 0;
-        }else{
+//		if(masterJson.weight[masterJson.weight.length-1].kgf5 == 0){
+//		cnt5kgf = 0;
+//		masterJson.weight[masterJson.weight.length-1].kgf5 = 0;
+//        }else{
 	    cnt5kgf--;
 		totalStackWeight-= 5;
-					
+		totalStackWeight = totalStackWeight;			
 		masterJson.weight[masterJson.weight.length-1].kgf5 -=1;
+	
 	console.log(wtStackMasterJson);
 	   console.log("totalStackWeight"+totalStackWeight);
 	   
-	     }
+//	     }
 	       console.log(masterJson);
 	} 
 	
-	else if(kgf10 === true && str=="kgf10" )
+	 else if(kgf10 === true && str=="kgf10" )
 	{
 		
-		if(masterJson.weight[masterJson.weight.length-1].kgf10 == 0){
-		cnt10kgf = 0;
-		masterJson.weight[masterJson.weight.length-1].kgf10 = 0;
-        }else{
+//		if(masterJson.weight[masterJson.weight.length-1].kgf10 == 0){
+//		cnt10kgf = 0;
+//		masterJson.weight[masterJson.weight.length-1].kgf10 = 0;
+//        }else{
 	    cnt10kgf--;
 	    
 		totalStackWeight -= 10;		
+		totalStackWeight = totalStackWeight;
 		masterJson.weight[masterJson.weight.length-1].kgf10 -=1;
 		
-		console.log(wtStackMasterJson);
-	   console.log("totalStackWeight"+totalStackWeight);
-	     }
-	       console.log(masterJson);
-	}    
-   
+//		console.log(wtStackMasterJson);
+//	   console.log("totalStackWeight"+totalStackWeight);
+//	     }
+	   
+	}  
+	imgWeightArray[imgWeightArray.length-1].remove();
+	imgWeightArray.pop();
+	   console.log(imgWeightArray);
+	
+	totalStackWeight = totalStackWeight;
+	 imgWeightArray.length = imgWeightArray.length;
+//  imgWeightArray.splice(position,imgWeightArray);
     }else{
-	wt_ht =0;
+	wt_ht = 0;
+	imgWeightArray.length = 0;
 	alert("Place weight on platform...");
 }
+   
+    console.log("weight removed value : "+totalStackWeight);
+    console.log("masterJson");
+    console.log(masterJson);
 	}
 
 
 
 			
  rec.click(function(){ 
-	
+	if(conBefRem == 1){
 	 cnt--;
 		 wt_ht -= 30;
-		
+         
+         console.log("dupFlg in weight_remove :"+dupFlg);
 //        wtStackMasterJson.LIFOSTACK = wtStackMasterJson.LIFOSTACK;
     
 	      flag--; 
+//	      		if(up_lift <= 0){
+//		pf1 = 0;
+		position = imgWeightArray.length;
+//		}else{
+//		pf1 = 1;
+//		position = imgWeightArray.length;
+//		wt_ht = wt_ht;
+//		}
+		
 		  weight_remove();
-		   delete wtStackMasterJson.LIFOSTACK.pop();
+		  delete wtStackMasterJson.LIFOSTACK.pop();
 		  console.log("After delete");
         console.log(wtStackMasterJson);		 
 
 		    pf.toFront();
-		    polish.toFront();				  	
-       
+		    polish.toFront();	
+		   		  	
+       }else{
+	alert("First confirm weight then Remove it.");
+	conBefRem == 0;
+}
+ dupFlg = 1;	
 })
 //var maxFlag = 1;
 
@@ -2657,7 +3375,7 @@ var anim = Raphael.animation({ fill: "#2da60f" ,'stroke' : "#000" , 'stroke-widt
      if(a==50){
 	    
 	 	x1 = x-528 , y1 = y-307;
-	 	if (meterguage==16  ){
+	 	if (meterguage == 16  ){
 
 		arry[0]=paper.path('M'+(x-524.5+(3.9*a))+ ' ' +(y+137.9+(-2.3*a))+'l 0  0').attr({'stroke':'#6b5c3d','stroke-width':36});
 		arry[0].animate({path :'M'+(x-524.5+(3.9*a))+ ' ' +(y+137.9+(-2.3*a))+'l 0  '+(-a*2.3)+' '},time);
@@ -2687,7 +3405,7 @@ var anim = Raphael.animation({ fill: "#2da60f" ,'stroke' : "#000" , 'stroke-widt
 		}	
 	}else if(a==55){
 		x1 = x-560 , y1 = y-334;
-		if (meterguage==16){
+		if (meterguage == 16){
 		arry[0]=paper.path('M'+(x-579+(3.9*a))+ ' ' +(y+139+(-2.3*a))+'l 0  0').attr({'stroke':'#6b5c3d','stroke-width':40});
 		arry[0].animate({path :'M'+(x-579+(3.9*a))+ ' ' +(y+139+(-2.3*a))+'l 0  '+((-a*2.3)-2.7)+' '},time);
 		arry[0]=paper.path('M'+(x-319.3+(2.9*a))+ ' ' +(y+116+(-2.3*a))+'l 0  0').attr({'stroke':'#fff','stroke-width':103});
@@ -2716,7 +3434,7 @@ var anim = Raphael.animation({ fill: "#2da60f" ,'stroke' : "#000" , 'stroke-widt
 	       
 	}else{
 		
-		if (meterguage==16){
+		if (meterguage == 16){
 			x1 = x-540 , y1 = y-330;
 
 		arry[0]=paper.path('M'+(x-633.4+(3.9*a))+ ' ' +(y+140.3+(-2.3*a))+'l 0  0').attr({'stroke':'#6b5c3d','stroke-width':42.8});
@@ -2789,39 +3507,102 @@ var unit1=270/meterguage;
 }
 var arrWeight = [];
 var checkAlert = 0;
+var cnt_before = 0 , cnt_exact = 0, cnt_after = 0;
+var check_bef = 0;
+var sdt1 = 0;
 
 subRec.click(function(){
+	conBefRem = 1;
+    pf_flag = 0;
+	sFlagAfter = 0;
+	sFlag = 0;
+	funCallFlgError = 0;
+//    if(totalStackWeight % 1 == 0){
+	totalStackWeight = totalStackWeight;
+//}else{
+//	var totw = 0;
+//	totalStackWeight = totalStackWeight.toFixed(1);
+//	totalStackWeight = totw;
+//}
 if(confirmFlg == 1){	
 	animVal = 0;
-	if(expVal == 1){
-	expectedVal1();
-	 }else{
-		expectedVal();
+//	if(up_lift <= 0){
+//		pf1 = 0;
+		position = imgWeightArray.length;
+//	}else{
+//		pf1 = 1;
+//		position = imgWeightArray.length;
+//	}
+	
+//	     arrWeight.push(totalStackWeight);
+//					var hasDuplicate = arrWeight.some((totalStackWeight, i) => arrWeight.indexOf(totalStackWeight) !== i);
+//					if(hasDuplicate == true &&  dupFlg == 0){
+//					   alert("duplicate");
+//					  
+//					   
+//					}else{
+						if(expVal == 1){
+									expectedVal1();
+									 }else{
+										expectedVal();
+									}
+				if(a == 50 ){
+		if(up_lift < 35){
+			alert("You have clicked below polish surface");
+			
+			cnt_before++;
+			
+			
+		}if(up_lift == 35){
+			cnt_exact++;
+		}if(up_lift > 35){
+			alert("You have clicked above polish surface");
+			cnt_after++;
+		}
 	}
-	arrWeight.push(totalStackWeight);
-	console.log(arrWeight);
-	addFun();
-	for (var i = 0; i < arrWeight.length; i++) {
-				if ((arrWeight[i] - arrWeight[i + 1]) == 0) {
-					//alert that duplicate is present
-//					console.log("Duplicate values present in array..");
-					alert("weight is repeated !!");	
-					
-					arrWeight = arrWeight.filter((a, b) => arrWeight.indexOf(a) == b); //remove the duplicate value from the array
-//					console.log("After duplicate removal :" + array);
-                    
-					
-				}else{	
-				checkAlert = 1;
-				$("#simulationLabel").attr('hidden',true);
-	           tableCreate(masterJson,meter);
-				}
-	     
-  }
-}else{
-	confirmFlg = 0;
-}	
+	if(a == 55 ){
+		if(up_lift < 40){
+			alert("You have clicked below polish surface");
+			cnt_before++;
+		}if(up_lift == 40){
+			cnt_exact++;
+		}if(up_lift > 40){
+			alert("You have clicked above polish surface");
+			cnt_after++;
+		}
+	}
+	if(a == 60 ){
+		if(up_lift < 45){
+			alert("You have clicked below polish surface");
+			cnt_before++;
+		}if(up_lift == 45){
+			cnt_exact++;
+		}if(up_lift > 45){
+			alert("You have clicked above polish surface");
+			cnt_after++;
+		}
+	}		
+	
+	if(totalStackWeight == 0 && sdt1 == 0){		
+	           addFun();
+	           sdt1++;	           
+	           }
+	        if(totalStackWeight > 0){
+		addFun();
+	        }   
+	       console.log("masterJson in subrec");
+	       console.log(masterJson);
+	       tableCreate(masterJson,meter);
+	       dupFlg = 0;
+	  }
 
+
+
+
+//}else{
+//	confirmFlg = 0;
+//}	
+dupFlg = 0;
 })
 // platform click close
 function expectedVal(){
@@ -2849,31 +3630,58 @@ var unit1=270/meterguage;
 	actualPressure1 = actualPres+err;     
      actalVal = actualPressure1;
 }
+
 function addFun(){
-	var tempJson = {};
-	
-	 
-	tempJson.gf100 = cnt100gf;
-	tempJson.gf500 = cnt500gf;
-	tempJson.kgf1 = cnt1kgf;
-	tempJson.kgf2 = cnt2kgf;
-	tempJson.kgf5 = cnt5kgf;
-    tempJson.kgf10 = cnt10kgf;
-    
-    tempJson.totalWeight = totalStackWeight;
-    tempJson.meterPressureWithExpectedError = actalVal; 
-     tempJson.meterPressureWithError = meterVal;
-    tempJson.errorAdded = err; 
-    jsonArr.push(tempJson);
-	masterJson.weight = jsonArr;
-//	calculationPanel();
-//masterJson.weight.sort(function(a, b){
-//		  		  return a.totalWeight - b.totalWeight;
-//			});
-	console.log(masterJson);
-    console.log(imgWeightArray);
-    console.log(wtStackMasterJson);
+ 
+                   arrWeight.push(totalStackWeight);
+					var hasDuplicate = arrWeight.some((totalStackWeight, i) => arrWeight.indexOf(totalStackWeight) !== i);
+					
+					console.log("hasDuplicate"+hasDuplicate);
+					if(hasDuplicate == true){
+						dupFlg = 0;
+						
+					   alert("Avoid Duplicates..");
+					  arrWeight.splice(index,1);
+					}else{
+					
+				    var tempJson = {};
+					var countTempJson = {};
+						tot_weight = totalStackWeight;
+					 dupFlg = 1;
+					tempJson.gf100 = cnt100gf;
+					tempJson.gf500 = cnt500gf;	
+					tempJson.kgf1 = cnt1kgf;
+					tempJson.kgf2 = cnt2kgf;
+					tempJson.kgf5 = cnt5kgf;
+				    tempJson.kgf10 = cnt10kgf;
+				    tempJson.totalWeight = totalStackWeight;
+				    
+				    tempJson.meterPressureWithExpectedError = actalVal; 
+				     tempJson.meterPressureWithError = meterVal;
+				     
+				    tempJson.errorAdded = err; 
+				    tempJson.tableSortVal = tot_weight;
+				    jsonArr.push(tempJson);
+					masterJson.weight = jsonArr;
+				    
+				    countTempJson.BelowPolishSurface = cnt_before; 
+				    countTempJson.onPolishSurface = cnt_exact; 
+				    countTempJson.AbovePolishSurface = cnt_after; 
+				    counterMasterJson.mimic = countTempJson;
+				    
+				    
+				//	calculationPanel();
+				    console.log("IN add function meter pressure with error 2"+actalVal);
+					masterJson.weight.sort(function(a, b){
+						  return a.tableSortVal - b.tableSortVal;
+						  });
+						 } 
+				}
+   
+//	console.log(masterJson);
+//    console.log(imgWeightArray);
+//    console.log(wtStackMasterJson);
 }
 
-}
+//}
   

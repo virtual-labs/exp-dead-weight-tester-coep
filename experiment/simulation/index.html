@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" > -->
     <link rel="stylesheet" href=" https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
-   
+   	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/header1.css">
 	<link rel="stylesheet" href="css/mainPage.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/header.css">
+
 	<link rel="stylesheet" href="css/dwt.css">
 </head>
 
@@ -28,15 +29,145 @@
 
 </style>
 <body bgproperties="fixed">
+
 <header>
 		<img class="Coeplogo" src='images/COEPlogo.png' />
-		<img class="VlabLogo" src='images/vlab logo.png' />
-		<span id="colgName">COLLEGE OF ENGINEERING, PUNE</span>		
+		<img class="VlabLogo" src='images/vlablogo.jpg' />
+		<span id="colgName">COEP Technological University</span>		
 		
 	</header>
+<div  class="row " >
+<div class="col-sm-10">
+<!-- <button type="button" class="btn btn-primary">Primary</button> -->
+</div>
+<div class="col-sm-2">
+<button type="button" class="btn btn-danger btn-lg" id="procedure" data-toggle="modal" data-target="#readProcedureModal">Read Procedure</button>
+<!-- <button type="button" class="btn btn-danger" >Read Procedure</button> -->
+</div>
+</div>
+<div id="readProcedureModal" class="modal fade" role="dialog">
+  <div class="modal-dialog  modal-lg">
 
-	
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+<!--         <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        <h4 class="modal-title"><center>PROCEDURE</center></h4>
+      </div>
+      <div class="modal-body">
+    
+
+<center id="modelTitle"> Basic Knowledge </center>
+ <ol>
+<li> Answer all the questions and click on "Submit Test" button.</li>
+</ol>
+
+<center id="modelTitle"> Configuration</center>
+<ol>
+<li> Select meter gauge and cylinder Piston Area.</li>
+<li> Calculate radius of cylinder as its area is Known. After submitting the given answer is wrong for 3 attempts it will show the formula, if still given answer is wrong it will show the correct answer. 
+</li>
+</ol>
+<center id="modelTitle"> Mimic</center>
+<!-- ![1](images/DWT_dig_labels.PNG) -->
+<img src="images/DWT_dig_labels.png" class="img-responsive" alt="Cinque Terre">
+<ol>
+<li>
+Open the Cap of Oil Rerservior. 
+</li>
+<li>
+Click on "Oil Rerservior" button and fill the reservoir with oil.  
+</li>
+<li>
+Click on oil reservoir valve(it will change its color to green), so that oil will get spread in the cylinder. 
+</li>
+<li>
+ Click on meterguage valve and spread the oil throughout the cylinder and meterguage.
+</li>
+<li>
+Once the oil is spread in the cylinder click on plus sign("Forward click") to move the handle in clockwise direction, and to generate the pressure so that the handle will move in inner direction.
+</li>
+<li>
+ After creating  pressure and you reach its maximum  position excess air will get released. Then click on minus sign("Reverse click") this will release the pressure so that the handle will move in outer direction. To remove excess air from the oil and cylinder repeat this process four times and close the cap of oil reservoir by clicking on cap.  
+</li>
+<li>
+Click on minus sign and reach its initial position. Once you reach the minimum limit, oil reservoir valve will get closed(it will change its color to red). 
+</li>
+<li>
+Place the weights (by clicking weights from the weight stack)on platform and click on plus sign to generate the pressure, when the pressure is generated, platform will get uplifted. You can uplift the platform till it reaches to its correct reading position (refer Fig.1 and Fig.2) and then click on confirm button to add the record in table.
+ </li>
+<img src="images/ProcedureDig.png" class="img-responsive" alt="Cinque Terre">
+<!-- <img src="images/platformFig2.png" class="img-responsive" alt="Cinque Terre"> -->
+<!--  ![1](images/platform_explanation.PNG) -->
+<!--  **Fig.1**  -->
+<!--  ![1](images/platformFig2.PNG) -->
+<!--  **Fig.2**  -->
+
+<li>
+Once you add a values in the table then release the pressure by clicking on minus sign and repeat step 8 for more readings. You can add or remove weights from the platform for different readings. To remove weight from the platform click on "Remove weight" button. 
+</li>
+<li>
+ It is mandatory to perform this experiment for minimum and maximum weight i.e. 0 kg and maximum as per meter selection.  
+</li>
+<li>
+After you take 5 readings Showgraph button will be enabled. 
+</li>
+<li>
+Once you click on show graph, graph will be displayed. Further the process can be followed as per instructions.
+</li>
+
+</ol>
+
+<center id="modelTitle">Calibration</center>
+<ol>
+<li>
+Calculate zero error(minimum value) upto two decimals and click on submit(Formula: Actual Reading - Observed Reading). 
+</li>
+<li>
+Similarly calculate span error(maximum value) upto two decimals and click on submit(Formula: Actual Reading - Observed Reading).
+</li>
+<li>
+ Observe the graph and then adjust zero by clicking "plus" and "minus" buttons. 
+</li>
+<li>
+ Once zero error is calibrated then calibrate span error with same process as mentioned in step 3.
+</li>
+<li>
+ When span error is calibrated it disturbs zero. Again adjust zero and follow the process as mentioned in step 3. 
+</li>
+<li> After adjusting zero and span error click on "CALIBRATION WITH METER" button to move on next level.
+</li>
+</ol>
+<center id="modelTitle"> Calibration With Pressure Guage</center>
+
+<ol>
+<li>
+ Follow the given Instructions and complete the process.
+ </li>
+<li>
+After complition of process click on "Fault Finding" button to move on next level. 
+</li>
+</ol>
+<center id="modelTitle"> Fault Finding</center>
+<ol>
+<li>
+ Observe the shown table and select the fault accordingly.
+</li>
+
+<li> After selecting the correct fault Result will be displayed.
+</li>
+</ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <div  class="row container-fluid" id="mainDiv">
+
 <div class="col-lg-6" id="canvas">
 	             <div class="panel panel-primary">
 	      			<div class="panel-heading " id="panelHeading2"><center id="centerText1"> DIAGRAM</center>
@@ -55,8 +186,8 @@
 	     			<div class="panel-body" id="main-div-conf">
 <!-- 	     			<script>basicKnowledge();</script> -->
 	     			</div>
-	     			<div class="row" id="sub-main-div1">
-	     			
+	     			<div class="row" >
+	     			<div class="col-sm-12" id="sub-main-div1" >
 	     			</div>
 	     			<div class="row" id="sub-main-div2">
 	     			
@@ -64,13 +195,13 @@
 	     		</div>
 	   	</div>
 	        
-	        
+	  </div>      
 	</div>
-	
-</body>
-<footer>
+	<footer>
 Copyrights &copy; COEP - Virtual Lab
 </footer>
+</body>
+
 <!-- https://code.jquery.com/jquery-3.5.1.js -->
 <script type="text/javascript" src="lib/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
@@ -85,11 +216,13 @@ Copyrights &copy; COEP - Virtual Lab
 <script type="text/javascript" src="src/questionJson.js"></script>
 <script type="text/javascript" src="src/questions.js"></script>
 
-<script type="text/javascript" src="src/config.js"></script>
+<script type="text/javascript" src="src/config1.js"></script>
 <!-- <script type="text/javascript" src="src/mainPage.js"></script> -->
 <script type="text/javascript" src="src/dWt_diag.js"></script>
 <script type="text/javascript" src="src/table&graph.js"></script>
-
+<script type="text/javascript" src="src/Calibration.js"></script>
+<script type="text/javascript" src="src/MeterCalibration.js"></script>
+<script type="text/javascript" src="src/faultFinding.js"></script>
 
 
 
