@@ -8,7 +8,7 @@
 - Calculate radius of cylinder by using formula - Area = "+unescape('%u220F')+" r"+unescape('%B2'). After submitting the given answer is wrong for 3 attempts it will show the formula, if still given answer is wrong it will show the correct answer. 
 
  ### Mimic:-
-![1](simulation/images/DWT_dig_PartsName.png)
+![1](simulation/images/DWT_dig_labels.png)
 
 1. Open the Cap of Oil Rerservior. 
 2. Click on "Oil Rerservior" button and fill the reservoir with oil.  
