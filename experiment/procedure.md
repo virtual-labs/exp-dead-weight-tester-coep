@@ -8,7 +8,7 @@
 - Calculate radius of cylinder by using formula - Area = "+unescape('%u220F')+" r"+unescape('%B2'). After submitting the given answer is wrong for 3 attempts it will show the formula, if still given answer is wrong it will show the correct answer. 
 
  ### Mimic:-
-![1](images/DWT_dig_PartsName.png)
+![1](simulation/images/DWT_dig_PartsName.png)
 
 1. Open the Cap of Oil Rerservior. 
 2. Click on "Oil Rerservior" button and fill the reservoir with oil.  
@@ -18,7 +18,8 @@
 6. After creating  pressure and you reach its maximum  position excess air will get released. Then click on minus sign("Reverse click") this will release the pressure so that the handle will move in outer direction. To remove excess air from the oil and cylinder repeat this process four times and close the cap of oil reservoir by clicking on cap.  
 7. Click on minus sign and reach its initial position. Once you reach the minimum limit, oil reservoir valve will get closed(it will change its color to red). 
 8. Place the weights (by clicking weights from the weight stack)on platform and click on plus sign to generate the pressure, when the pressure is generated, platform will get uplifted. You can uplift the platform till it reaches to its correct reading position (refer Fig.1 and Fig.2) and then click on confirm button to add the record in table.
- ![1](images/ProcedureDig.png)
+
+ ![1](simulation/images/ProcedureDig.png)
  
 9. Once you add a values in the table then release the pressure by clicking on minus sign and repeat step 8 for more readings. You can add or remove weights from the platform for different readings. To remove weight from the platform click on "Remove weight" button. 
 10. It is mandatory to perform this experiment for minimum and maximum weight i.e. 0 kg and maximum as per meter selection.  
