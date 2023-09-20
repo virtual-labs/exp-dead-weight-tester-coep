@@ -1,9 +1,12 @@
-function tableCreate(masterJson,meter)
-	{ 		var tableMainDiv = '<div class="row ">'
+function tableCreate(masterJson,meter,cylinderPiston)
+	{
+	
+	
+	var tableMainDiv = '<div class="row ">'
 					+'<div class="col-sm-12">'
 			        + '<table class=" table table-bordered " style="margin:10px;">'
 					+ ' <thead>'
-					+ '  <tr>'
+					+ '  <tr style = "BACKGROUND-COLOR: #154951; color:#fff;">'
 					+ '  <th>Sr No.</th>'
 					+ '   <th>Weight (kgf)</th>'
 					+ '  <th>Pressure (psi)</th>'
@@ -42,48 +45,72 @@ function tableCreate(masterJson,meter)
 				}
 				var checkAlert=0;
 				$("#showGraph").click(function() {
-					graphCreate(masterJson,meter);
+					
+					
 							
 					if (masterJson.weight.length >= 5) { 
 						
 						
-					if ( masterJson.weight[masterJson.weight.length - 1].totalWeight != meter)
+					if ( masterJson.weight[masterJson.weight.length - 1].totalWeight != meter && masterJson.weight[0].totalWeight != 0 )
 					{
 						checkAlert = 1;
-						alert(" You need to provide next input values as 1 and 100 !!");
+						alert(" need to add both zero and max limits");
 							
 					}
 					
 					else if (masterJson.weight[0].totalWeight != 0) 
 					{
 						checkAlert = 1;
-						alert("You need to provide next input value as 0 !!");
+						alert("You need to add weight 0 !!");
 					
 					}
 					
 					else if (masterJson.weight[masterJson.weight.length - 1].totalWeight != meter)
 					{
 							checkAlert = 1;
-							alert("You need to provide next input value as "+meter+" !!");
+							alert("You need to add max weight "+meter+" !!");
 							
 					}
-//					if (checkAlert == 0 )
-//					{ 
-////						$("#CalculateActualFlow").attr("hidden",true);
-////						$('#showGraph').attr('hidden',true);
-////						graphCreate();
-////						calibration();
-//console.log("Graph ");
-//					}
+					if (checkAlert == 0 )
+					{ 
+						$("#centerText1").html("CALIBRATION");
+                        $("#centerText2").html("CALIBRATE GRAPH");
+						graphCreate(masterJson,meter);
+						
+						$("#showGraph").prop("disabled",true);
+						calibration(masterJson,meter,cylinderPiston);
+						
+						
+//					str =''
+//						+'<div class="col-sm-2">'
+//					 +'</div>'
+//					 +'<div class="col-sm-8">'
+//					 +'<button type="button" style="padding: 10px;margin:20px; "  class="btn btn-danger btnStyle " id="Calibration"  ><b> NEXT LEVEL </b></button>'
+////					 +'<button type="button" style="padding: 10px;margin:20px; "  class="btn btn-danger btnStyle" id="showGraph" hidden ><b>SHOW GRAPH </b></button>'
+//					 +'</div>'
+//					 +'<div class="col-sm-2">'
+//					 +'</div>'
+//					 +'</div>'
+//				        $("#sub-main-div2").html(str);
+						console.log("calibration ");
+					}
 //				}
 //				else{
-//					alert("Please provide atleast 5 reading ");
+//					alert("Please provide atleast 5 reading ");}
 				}
 				console.log(masterJson);
-						
+				$("#Calibration").click(function(){
+					calibration(masterJson);
+                   
+			   });			
 			});
-				
+			
+			
+			 	
 			}
+	
+	
+		
 	function graphCreate(masterJson,meter)
 	{
 //		$("#panelHeadingBold").html("GRAPH REPRESENTATION");
@@ -116,6 +143,15 @@ function tableCreate(masterJson,meter)
 		Ymax = parseFloat(ydata[ydata.length - 1]);
 		console.log("Xmax "+Xmax);
 		console.log("Ymax "+Ymax);
+		var maxPoint=0;
+		if(Xmax<Ymax)
+		{
+			maxPoint=Ymax;
+		}
+		else
+		{
+			maxPoint=Xmax;
+		}
 		console.log(" Weight V/S Pressure  " + graphData1);
 		Highcharts.chart('sub-main-div1', {
 			title: {
@@ -126,14 +162,14 @@ function tableCreate(masterJson,meter)
 //			},
 			xAxis: {
 				min: 0.0,
-				max: Xmax,
+				max: maxPoint,
 				title: {
 					text: 'Weight'
 				}
 			},
 			yAxis: {
 				min: 0.0,
-				max: Ymax,
+				max: maxPoint,
 				title: {
 					text: 'Pressure'
 				}
@@ -142,7 +178,7 @@ function tableCreate(masterJson,meter)
 				{
 					type: 'line',
 					name: 'Standard value',
-					data: [[0.0, 0.0], [Xmax, Ymax]],
+					data: [[0.0, 0.0], [maxPoint, maxPoint]],
 					marker: {
 						enabled: false
 					},
