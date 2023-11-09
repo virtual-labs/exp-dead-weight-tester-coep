@@ -144,7 +144,7 @@ function calibration(masterJson,meter,cylinderPiston)
 			
 			counterMasterJson.calibration = countTempJson;
 			console.log(counterMasterJson);
-				MeterCalibration(meter,cylinderPiston,masterJson); 
+				MeterCalibration(meter,cylinderPiston,masterJson,counterMasterJson); 
 				
 			});
 			var id=0;

@@ -1,5 +1,6 @@
 var counterMasterJson ={};	
 var ansCount = 0;
+$(".panelBody").css({"background-color": "#fff"});
 //	$(function() {
 //		basicKnowledge = function() {
 	var ques_cnt = 0;	

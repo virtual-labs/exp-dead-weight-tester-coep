@@ -1,6 +1,9 @@
 
 function mimicCall(meter,cylinderPiston)
 {
+	
+	
+	$(".panelBody").css({"background-color": "#fff"});
 console.log(counterMasterJson);	
 $("#centerText1").html("MIMIC");
 $("#centerText2").html("OBSERVED READINGS");
@@ -420,8 +423,8 @@ function oilfillonPluse(){
 					arrOilplus[0].animate({path :'M'+(x-319.3+(2.9*a))+ ' ' +(y+117+(-2.3*a))+'l 0 '+((b/2)-1.8)+'  '},time+1000);
 		
 				}else{
-					arrOilplus[0]=paper.path('M'+(x-350.2+(2.9*a))+ ' ' +(y+115+(-2.3*a))+ 'l 0  0   ').attr({ 'stroke':'#fff', 'stroke-width':113});
-					arrOilplus[0].animate({path :'M'+(x-350.2+(2.9*a))+ ' ' +(y+115+(-2.3*a))+ 'l 0 '+((b/2)-1.8)+' '},time+1000); 
+					arrOilplus[0]=paper.path('M'+(x-350.2+(2.9*a))+ ' ' +(y+113+(-2.3*a))+ 'l 0  0   ').attr({ 'stroke':'#fff', 'stroke-width':113});
+					arrOilplus[0].animate({path :'M'+(x-350.2+(2.9*a))+ ' ' +(y+113+(-2.3*a))+ 'l 0 '+((b/2)-1.8)+' '},time+1000); 
 		
 				}
 		}	
@@ -1409,8 +1412,9 @@ var unit1=270/meterguage;
 	var xPrayVal = 0;
 	var sFlag = 0;
     var actualPressure3 = 0;
-    
+    var temp_pres = 0;
 function meterZero(){
+	pressure = pressure;
 	if(animVal == 0){	
 	if(meter == 16){
 	var rmin = 2 ; var rmax = 10;
@@ -1492,70 +1496,119 @@ var unit1=270/meterguage;
 		mline.animate(keepRotating); 
 	 	}
 	}
- 
+ temp_pres = pressure;
      
 }
     
-function meterZeroMinus(){
-	pressure -= pres; 
-  
-  presCal = pressure - totalStackWeight;
-  actualPres = pressure-presCal;
-  
-	if(meterguage == 50){
-		divideVal = 5;
-	}if(meterguage == 100){
-		divideVal = 2.8;
-	}if(meterguage == 16){		
-		divideVal = 12;
-	}
-
-   errDisp = pres/divideVal;
-	var erDisplay = errDisp.toFixed(1);
-	 err = parseFloat(erDisplay);	 
-	actualPressure3 -= err;     
-     actalVal = actualPressure3.toFixed(1); 
-     meterVal = actualPressure3.toFixed(1);
-   if(a==50){
-	    
-	 	x1 = x-528 , y1 = y-307;
-	 	if (meterguage==16){
-		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+118)+' '},time+4000,'elastic');
-		mline.animate(keepRotating); 
-			 	
-		}else { 
-		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+98)+' '}, time+4000,'elastic' );
-	    mline.animate(keepRotating);
-
-		}	
-	}else if(a==55){
-		x1 = x-560 , y1 = y-334;
-		if (meterguage==16){
-			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
-		mline.animate(keepRotating); 
-
-		}else {
-			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time+4000,'elastic');
-	    mline.animate(keepRotating);
-     			
-		}
- 	    
-	       
-	}else{
-		x1 = x-540 , y1 = y-328;
-		if (meterguage==16){
-			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
-		mline.animate(keepRotating);
-	   
-		}else {
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+65)+' '}, time+4000,'elastic' );
-		mline.animate(keepRotating); 
-	 	}
-	}
-}
+//function meterZeroMinus(){
+//	pressure = temp_pres;
+//	
+//  
+//  presCal = pressure - totalStackWeight;
+//  actualPres = pressure-presCal;
+//  
+//	if(meterguage == 50){
+//		divideVal = 5;
+//	}if(meterguage == 100){
+//		divideVal = 2.8;
+//	}if(meterguage == 16){		
+//		divideVal = 12;
+//	}
+//
+//   errDisp = pres/divideVal;
+//	var erDisplay = errDisp.toFixed(1);
+//	 err = parseFloat(erDisplay);	 
+//	actualPressure3 -= err;     
+//     actalVal = actualPressure3.toFixed(1); 
+//     meterVal = actualPressure3.toFixed(1);
+//    if(totalStackWeight == 0)
+//    {
+//	pressure -= pres; 
+//	 if(pressure > 0){
+//   if(a==50){
+//	    
+//	 	x1 = x-528 , y1 = y-307;
+//	 	if (meterguage==16){
+//		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+118)+' '},time+4000,'elastic');
+//		mline.animate(keepRotating); 
+//			 	
+//		}else { 
+//		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+98)+' '}, time+4000,'elastic' );
+//	    mline.animate(keepRotating);
+//
+//		}	
+//	}else if(a==55){
+//		x1 = x-560 , y1 = y-334;
+//		if (meterguage==16){
+//			
+//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
+//		mline.animate(keepRotating); 
+//
+//		}else {
+//			
+//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time+4000,'elastic');
+//	    mline.animate(keepRotating);
+//     			
+//		}
+// 	    
+//	       
+//	}else{
+//		x1 = x-540 , y1 = y-328;
+//		if (meterguage==16){
+//			
+//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
+//		mline.animate(keepRotating);
+//	   
+//		}else {
+//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+65)+' '}, time+4000,'elastic' );
+//		mline.animate(keepRotating); 
+//	 	}
+//	}
+//	}else{
+//		pressure = 0;
+//		angle = 0;
+//		if(a==50){
+//	    
+//	 	x1 = x-528 , y1 = y-307;
+//	 	if (meterguage==16){
+//		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+118)+' '},time+4000,'elastic');
+//		mline.animate(keepRotating); 
+//			 	
+//		}else { 
+//		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+98)+' '}, time+4000,'elastic' );
+//	    mline.animate(keepRotating);
+//
+//		}	
+//	}else if(a==55){
+//		x1 = x-560 , y1 = y-334;
+//		if (meterguage==16){
+//			
+//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
+//		mline.animate(keepRotating); 
+//
+//		}else {
+//			
+//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time+4000,'elastic');
+//	    mline.animate(keepRotating);
+//     			
+//		}
+// 	    
+//	       
+//	}else{
+//		x1 = x-540 , y1 = y-328;
+//		if (meterguage==16){
+//			
+//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
+//		mline.animate(keepRotating);
+//	   
+//		}else {
+//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+65)+' '}, time+4000,'elastic' );
+//		mline.animate(keepRotating); 
+//	 	}
+//	}
+//	}
+//  }	
+//}
 
 
 
@@ -2112,7 +2165,7 @@ if(forward <= forVal-5)
 }  
   
 }
-
+var rflg1 = 0;
 
 function minusAnim(){
 		plusFlg = 0;
@@ -2163,6 +2216,7 @@ function minusAnim(){
 			  setInterval(function(){
 		         R_valve.attr({'stroke' : '#000'  , 'fill':'red','stroke-width': 2 });
          },time+1000);
+         rflg1 = 1;
          }	
 	minusFlg = 1;
 	}
@@ -2186,7 +2240,7 @@ if(v1_check == 1 && v2_check == 2){
 	oilfillonPluse();
 	plusOilFlag++;
 }else{ 
-	if(plusBlock == 1){
+	if(plusBlock == 1 && rflg1 == 1){
 	if(forward <= 0){		
    
   if(pisStop > forward ){
@@ -2371,12 +2425,13 @@ minus.click(function(){
 					arrOilplus[0].animate({path :'M'+(x-319.3+(2.9*a))+ ' ' +(y+117+(-2.3*a))+'l 0 '+((b/2)-1.8)+'  '},time+1000);
 		
 				}else{
-					arrOilplus[0]=paper.path('M'+(x-350.2+(2.9*a))+ ' ' +(y+114+(-2.3*a))+ 'l 0  0   ').attr({ 'stroke':'#fff', 'stroke-width':113});
-					arrOilplus[0].animate({path :'M'+(x-350.2+(2.9*a))+ ' ' +(y+114+(-2.3*a))+ 'l 0 '+((b/2)-1.8)+' '},time+1000); 
+					arrOilplus[0]=paper.path('M'+(x-350.2+(2.9*a))+ ' ' +(y+113+(-2.3*a))+ 'l 0  0   ').attr({ 'stroke':'#fff', 'stroke-width':113});
+					arrOilplus[0].animate({path :'M'+(x-350.2+(2.9*a))+ ' ' +(y+113+(-2.3*a))+ 'l 0 '+((b/2)-1.8)+' '},time+1000); 
 		
 				}
 		 std12++;
         }
+        
 			if(up_lift <= 0){
 		pf1 = 0;
 		position = 0;
@@ -2385,15 +2440,20 @@ minus.click(function(){
 		position = imgWeightArray.length;
 		wt_ht = wt_ht;
 		}
+		
 			plusBlock == 1;			
 			if(up_lift > 0){
 	           meterAnimonMinus();
 	            if(totalStackWeight == 0){
 		        pisAnimZero();
+//		        meterZeroMinus();
+                meterZero();
+		        minusAnim();
 	           }else{
                pisAnim();
+               minusAnim();	
                }	
-	           minusAnim();	
+	           
 	           
 	}else {
 		plusBlock == 1;
@@ -2577,6 +2637,7 @@ if(forward <= forVal-5)
 
 wt50.click(function(){
 	if(idVal == 1){
+		if(rflg1 == 1){
 	if(totalStackWeight >= meterguage)
 		  {
 			
@@ -2669,6 +2730,9 @@ else{
      }
     }
     }else{
+	alert("Go to minimum position of handle and then add weight");
+}
+    }else{
 	alert("first remove the bubbles from oil Reservoir");
 }
 })
@@ -2678,6 +2742,7 @@ var dwt;
 var weight500gf;
  wt100.click(function(){
 	if(idVal == 1){
+		 if(rflg1 == 1){
 	if(totalStackWeight >= meterguage)
 		  {
 			
@@ -2770,12 +2835,16 @@ else{
      }
     }
     }else{
+	alert("Go to minimum position of handle and then add weight");
+}
+    }else{
 	alert("first remove the bubbles from oil Reservoir");
 }
 	});
 	
 	 wt500.click(function(){
 		if(idVal == 1){
+			if(rflg1 == 1){
 		if(totalStackWeight >= meterguage)
 		  {
 //			if(pf1 == 0){
@@ -2864,6 +2933,9 @@ else{
 }
        }
        }
+       }else{
+	alert("Go to minimum position of handle and then add weight");
+}
       }else{
 	alert("first remove the bubbles from oil Reservoir");
 } 
@@ -2871,6 +2943,7 @@ else{
 	
 	wt1.click(function(){
 		if(idVal == 1){
+			 if(rflg1 == 1){
 		if(totalStackWeight >= meterguage)
 		  {
 //			if(pf1 == 0){
@@ -2961,12 +3034,16 @@ else{
       }
       }
       }else{
+	alert("Go to minimum position of handle and then add weight");
+}
+      }else{
 	alert("first remove the bubbles from oil Reservoir");
 } 
 	});
 
   wt2.click(function(){
 	if(idVal == 1){
+		 if(rflg1 == 1){
 	if(totalStackWeight >= meterguage)
 		  {
 //			if(pf1 == 0){
@@ -3058,13 +3135,16 @@ else{
      }
      }
      }else{
+	alert("Go to minimum position of handle and then add weight");
+}
+     }else{
 	alert("first remove the bubbles from oil Reservoir");
 } 
 	});
 	
 	wt5.click(function(){
-		if(idVal == 1){
-			
+		if(idVal == 1 ){
+		  if(rflg1 == 1){	
 		if(totalStackWeight >= meterguage)
 		  {
 //			if(pf1 == 0){
@@ -3073,6 +3153,7 @@ else{
 			alert("weight is greater than meter limit");	
 //			}
 		}else{
+			 
 		if(minusFlg == 0 ){
 	 wt_ht = 0;
 	alert("Go to minimum position of handle and then add weight");
@@ -3159,6 +3240,9 @@ else{
 }
 }
      }
+     }else{
+	alert("Go to minimum position of handle and then add weight");
+}
      }else{
 	alert("first remove the bubbles from oil Reservoir");
 } 

@@ -1,5 +1,5 @@
 function tableCreate(masterJson,meter,cylinderPiston)
-	{
+	{$(".panelBody").css({"background-color": "#fff"});
 	
 	
 	var tableMainDiv = '<div class="row ">'
@@ -61,7 +61,7 @@ function tableCreate(masterJson,meter,cylinderPiston)
 					else if (masterJson.weight[0].totalWeight != 0) 
 					{
 						checkAlert = 1;
-						alert("You need to add weight 0 !!");
+						alert("You need to add zero weight reading (Don't add any weight and take reading)!!");
 					
 					}
 					
