@@ -1,5 +1,5 @@
 function tableCreateForFualtFinding1(masterJson)
-			{
+			{$(".panelBody").css({"background-color": "#fff"});
 //				 var min = 0.5;
 //				 var max = 10.00;
 				
@@ -84,7 +84,9 @@ function tableCreateForFualtFinding1(masterJson)
 
 
  var randomNumber;
-function fualtFinding(masterJson)
+ var count_correct_fault = 0;
+ var count_wrong_fault = 0;
+function fualtFinding(masterJson,counterMasterJson)
 {
 	
 	$("#centerText1").html("DEAD WEIGHT TESTER");
@@ -161,18 +163,25 @@ function fualtFinding(masterJson)
     			 $("#canvas-div").html("");
     			 $("#alertMsgBox").attr('hidden',true);
 //    			 alert("succefully done ");
-    			  $("#mainDiv").html("<b> Result page in progress.</b> ");
-//    			 resultAnalysis();
+//    			  $("#mainDiv").html("<b> Result page in progress.</b> ");
+//    			
+                count_correct_fault++;
+				resultAnalysis(counterMasterJson);
     		}
     		else{
     			$("#alertMsgBox").attr('hidden',false);
     			$("#msgBox").html("<b class='errorMsgf'> Wrong selection !!!!!!!!!</b>");	
+    			count_wrong_fault++;
     			}
 //    	}
 //    	else{
 //    		
 //    	}
     	
+    	var countTempJson = {};
+				 countTempJson.wrongOption = count_wrong_fault;
+				 countTempJson.correctOption = count_correct_fault;
+				 counterMasterJson.faultFinding = countTempJson;
 //    	counter=counter+1;
     });
 }//main function
