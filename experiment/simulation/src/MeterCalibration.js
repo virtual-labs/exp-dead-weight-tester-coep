@@ -1,5 +1,8 @@
-function MeterCalibration(meter,cylinderPiston,masterJson)
+function MeterCalibration(meter,cylinderPiston,masterJson,counterMasterJson)
+
 {
+	console.log(counterMasterJson);
+	$(".panelBody").css({"background-color": "#fff"});
 	var meterguage=parseInt(meter) ;
 	 $("#main-div-conf").html("");
 	 $("#sub-main-div1").html("");
@@ -44,7 +47,7 @@ $("#centerText2").html("INPUT");
 		 $("#faultFinding").click(function(){
 			console.log("click function fualtFinding");
 //					fualtFinding(masterJson);
-                   fualtFinding(masterJson);
+                   fualtFinding(masterJson,counterMasterJson);
 			   });			      
 //	paper = new Raphael(document.getElementById('canvas-div'));
 $('#canvas-div').removeAttr('width');
@@ -630,6 +633,7 @@ function subclick(){
 
 var rmin = -2.3 ;
  var rmax = 2.5;
+var fault_flg=0;
  var Meter_weight,Error_val,Total_weight;
 $("#submit_wt").click(function(){
 	Tot_weight=$("#enter_weight").val();
@@ -637,7 +641,8 @@ $("#submit_wt").click(function(){
 	weight=parseInt(Tot_weight);
 	console.log("Weight = "+weight);	
 	
-			if(meterguage==16 && weight<meterguage){		
+			if(meterguage==16 && weight<=meterguage){	
+				fault_flg=1;	
 					handle.animate({'transform':'r'+(hndl_angle)+''},time);	
 					Weight_img.animate({y:y1+100}, time+500);
 					var r = Raphael.animation({ 'transform':  'r'+(-angle2)+ ', '+(x1+200)+', '+(y1+97.2)+' '}, 1000 );	
@@ -664,9 +669,10 @@ $("#submit_wt").click(function(){
 						wtSpring=0;    
 					}
 					setTimeout(function(){ 
-					alert("Meter Calibrated Successfully");
-					},time+500);		
-			}else if(meterguage==50 && weight<meterguage){
+					alert("Meter Calibrated Successfully Now Click on Fault Finding");
+					},time+1500);		
+			}else if(meterguage==50 && weight<=meterguage){
+				fault_flg=1;
 					handle.animate({'transform':'r'+(hndl_angle)+''},time);	
 					Weight_img.animate({y:y1+100}, time+500);
 					var r = Raphael.animation({ 'transform':  'r'+(-angle2)+ ', '+(x1+200)+', '+(y1+97.2)+' '}, 1000 );	
@@ -693,9 +699,10 @@ $("#submit_wt").click(function(){
 						wtSpring=0;    
 					}
 					setTimeout(function(){ 
-					alert("Meter Calibrated Successfully");
-					},time);				
-			}else if(meterguage==100 && weight<meterguage){
+					alert("Meter Calibrated Successfully Now Click on Fault Finding");
+					},time+1500);				
+			}else if(meterguage==100 && weight<=meterguage){
+				fault_flg=1;
 					handle.animate({'transform':'r'+(hndl_angle)+''},time);	
 					Weight_img.animate({y:y1+100}, time+500);
 					var r = Raphael.animation({ 'transform':  'r'+(-angle2)+ ', '+(x1+200)+', '+(y1+97.2)+' '}, 1000 );	
@@ -722,8 +729,8 @@ $("#submit_wt").click(function(){
 						wtSpring=0;    
 					}
 					setTimeout(function(){ 
-					alert("Meter Calibrated Successfully");
-					},time);
+					alert("Meter Calibrated Successfully Now Click on Fault Finding");
+					},time+1500);
 						
 			}else{
 					setTimeout(function(){ 
@@ -731,8 +738,16 @@ $("#submit_wt").click(function(){
 	 				},time);
 	 				
 			}
+if(fault_flg==1){
+$("#faultFinding").attr('hidden',false);	
+}else{
+	fault_flg = 0;
+//	setTimeout(function(){ 
+//	 				alert("Please Enter Weight within Meter Range");
+//	 				},time);
+}			
 
-$("#faultFinding").attr('hidden',false);
+
 
 });
 
