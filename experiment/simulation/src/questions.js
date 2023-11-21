@@ -134,7 +134,7 @@ $(".panelBody").css({"background-color": "#fff"});
 //						$("body").css("padding","0px 0px 0px 0px");
 						
 						var tempCountJson ={};
-						tempCountJson.wrongAnswer = 6-ansCount; 
+						tempCountJson.correctAnswer = ansCount; 
 //						 jsonArr.push(tempJson);
 					counterMasterJson.questionary = tempCountJson;
 						 $("#centerText2").html("CONFIGURATION"); 
