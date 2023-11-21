@@ -14,9 +14,9 @@ var htm= ''
 	   
 	   +'<div class="col-sm-6">'
 	   +'<select  class="form-control form-control-lg selectbg selectStyle"  id="meter">'
-	   +'<option value=" 0 ">--- Select meter --- </option>'
-	   +'<option value=" 16 " >Small(0-16)  </option>'
-	   +'<option value=" 50 ">Medium(0-50)</option>'
+	   +'<option value=" 0">--- Select meter --- </option>'
+	   +'<option value=" 16" >Small(0-16)  </option>'
+	   +'<option value=" 50">Medium(0-50)</option>'
 	   +'<option value=" 100 ">Large(0-100)</option>'
 	  
 	   +'</select>'
@@ -86,7 +86,7 @@ CalculateActualFlowStr +='<div class="col-sm-4">'
 		}
 
 		
-		 var id=0;
+		 var id=1;
 	   $("#btnAnsCheck").click(function() {
 		meter=$("#meter").val();
 		cylinderPiston=$("#cylinderPiston").val();
@@ -141,22 +141,22 @@ CalculateActualFlowStr +='<div class="col-sm-4">'
 					 
 	
 				} else if (flowAns != flow) {
-					
+				wrong_cnt++;	
 	//			alert("Entered value is incorrect.Try it again... ");
 				 $("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again . </b>");
 				 $("body").css("padding","0px 0px 0px 0px");
 				console.log("wrong");
-				wrong_cnt++;
+				
 				}
 	
 	
 			} else if (id == 4) {
 				
 	//			alert("formula : Volume of the float = "+unescape('%u220F')+" / 4 Dr"+unescape('%B2')+"h ");
-				
+				 wrong_cnt++;
 				 $("#modelMsg").html("<b class='boldTextBlue'>formula : Area = "+unescape('%u220F')+" r"+unescape('%B2')+"</b> ");
 				 $("body").css("padding","0px 0px 0px 0px");
-				 wrong_cnt++;
+				
 				
 			} else {
 				flowAns = $("#flowAns").val().trim();
@@ -176,15 +176,45 @@ CalculateActualFlowStr +='<div class="col-sm-4">'
 	
 				} else {
 					checkAns = 0;
+					wrong_cnt++;
 	//				alert("correct answer is " + flow );
 					 $("#modelMsg").html("<b class='boldTextRed'>Correct answer is " + flow+"</b>");
 					 $("body").css("padding","0px 0px 0px 0px");
-					 wrong_cnt++;	
+					 	
 	
 				}
 			}
 			id++;
+			var cylinderString = "";
+			if(cylinderPiston==50)
+			{
+				cylinderString = "3 sq cm";
+			}
+			else if(cylinderPiston==55)
+			{
+				cylinderString = "5 sq cm";
+			}
+			else if(cylinderPiston==60)
+			{
+				cylinderString = "7 sq cm";
+			}
+			
+			var meterString = "";
+			if(meter==16)
+			{
+				meterString = "Small(0-16)";
+			}
+			else if(meter==50)
+			{
+				meterString = "Medium(0-50)";
+			}
+			else if(meter==100)
+			{
+				meterString = "Large(0-100)";
+			}
 			var countTempJson = {};
+			countTempJson.cylinderPiston = cylinderString;
+			countTempJson.meter = meterString;
 			countTempJson.expected = correct_cnt;
 			countTempJson.attempt = wrong_cnt;
 			counterMasterJson.config = countTempJson;
