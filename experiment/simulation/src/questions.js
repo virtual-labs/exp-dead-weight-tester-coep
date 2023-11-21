@@ -49,7 +49,8 @@ $(".panelBody").css({"background-color": "#fff"});
 
 			questions += '<div class="buttonDiv">'
 				+ '<button  class="btn btn-danger"  id="testSubmit" data-toggle="modal" data-target="#questionModal">Submit Test</button>'
-				
+				+ '<button  class="btn btn-danger"  id="nextLevel1" data-toggle="modal" data-target="#questionModal" hidden>Next Level</button>'
+
 //				data-toggle="modal" data-target="#myModal"
 			//	+ '<button id="config" class=" btn btn-danger nextLevelBtn" >Next Level</button>'
 
@@ -66,7 +67,7 @@ $(".panelBody").css({"background-color": "#fff"});
 				+ '       <p id="modelMsg"></p>'
 				+ '     </div>'
 				+ '     <div class="modal-footer">'
-				+ '       <button type="button" class="btn btn-danger" id="configcallModal" data-dismiss="modal">Next</button>'
+				+ '       <button type="button" class="btn btn-danger" id="configcallModal" data-dismiss="modal">OK</button>'
 				+ '     </div>'
 				+ '   </div>'
 				+ ' </div>'
@@ -81,13 +82,15 @@ $(".panelBody").css({"background-color": "#fff"});
 
 			$("#main-div-conf").html(questions);
              
-             $('#configcallModal').on('click', function() {	
+             $('#nextLevel1').on('click', function() {	
 	      if(ansCount != 0){
 		config1();
 	} 
 });
 			$('#testSubmit').on('click', function() {		
 				$("body").css("padding","0px 0px 0px 0px");
+				$("#testSubmit").prop("hidden",true);
+				$("#nextLevel1").prop("hidden",false);
 					var arr = [];
 					
 					for (var i = 0; i < QuestionsJSON.data["SEC"].length; i++) {

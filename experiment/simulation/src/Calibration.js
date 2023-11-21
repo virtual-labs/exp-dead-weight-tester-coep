@@ -11,6 +11,8 @@ function calibration(masterJson,meter,cylinderPiston)
 	    var zeroCalibrationWrongPlus = 0;
 	    var spanCalibrationWrongPlus = 0;
 	    var zeroCalibrationAgainPlus = 0;
+	    
+	    $("#showGraph").prop("hidden",true);
 		htm='';
 			htm+='<div class="card" id="calibrationDiv">'
 //			+'  <div class="card-header  text-white" style="font-size:20px;"><center>CALIBRATION</center></div>'
@@ -147,8 +149,9 @@ function calibration(masterJson,meter,cylinderPiston)
 				MeterCalibration(meter,cylinderPiston,masterJson,counterMasterJson); 
 				
 			});
-			var id=0;
+			var id=1;
 			var ans3 = 0;
+			var flowAns =0 ;
 			$("#zeroSubmit").click(function() {
 				
 				
@@ -156,7 +159,7 @@ function calibration(masterJson,meter,cylinderPiston)
 				
 				console.log("in zero submit");
 				
-				var flowAns = parseFloat($("#zeroText").val().trim());
+				 flowAns = parseFloat($("#zeroText").val().trim());
 				var max=masterJson.weight[0].meterPressureWithError;
 				var min=masterJson.weight[0].totalWeight;
 				var ans=min-max;
@@ -167,13 +170,13 @@ function calibration(masterJson,meter,cylinderPiston)
 				console.log("zero Answer   "+ans1);
 				
 				
-				if(flowAns=="")
-					{
-
-						 $("#modelMsgZero").html("<b class='boldTextBlue' >Dont Skip empty textbox . </b>");
-						 $("body").css("padding","0px 0px 0px 0px");
-					}
-				else{
+//				if(flowAns=="")
+//					{
+//
+//						 $("#modelMsgZero").html("<b class='boldTextBlue' >Dont Skip empty textbox . </b>");
+//						 $("body").css("padding","0px 0px 0px 0px");
+//					}
+//				else{
 
 				
 				if (id <= 3) {
@@ -221,12 +224,12 @@ function calibration(masterJson,meter,cylinderPiston)
 				}
 				id++;
 				 
-				}
+//				}
              
 				});
 			var length= masterJson.weight.length-1;
 			var ans2 = 0;
-			var id=0;
+			var id1=1;
 			$("#spanSubmit").click(function() {
 				
 				console.log("in span submit");
@@ -241,20 +244,20 @@ function calibration(masterJson,meter,cylinderPiston)
 				
 				var flowAns = parseFloat($("#spanText").val().trim());
 				console.log("flowAns Answer   "+flowAns);
-				if(flowAns=="")
-					{
-
-						 $("#modelMsgSpan").html("<b class='boldTextBlue' >Dont Skip empty textbox . </b>");
-						 $("body").css("padding","0px 0px 0px 0px");
-					}
-				else{
+//				if(flowAns=="")
+//					{
+//
+//						 $("#modelMsgSpan").html("<b class='boldTextBlue' >Dont Skip empty textbox . </b>");
+//						 $("body").css("padding","0px 0px 0px 0px");
+//					}
+//				else{
 
 				
-						if (id <= 3) {
+						if (id1 <= 3) {
 							
 								if (flowAns == ans1) {
 									checkAns = 0;
-									id=0;
+//									id=0;
 //									$("#spanText").val('');
 									$("#spanSubmit").prop('disabled', true);
 									$("#spanText").prop('disabled', true);
@@ -270,7 +273,7 @@ function calibration(masterJson,meter,cylinderPiston)
 					}
 
 
-				} else if (id == 4) {
+				} else if (id1 == 4) {
 					
 //					alert("formula : Volume of the float = "+unescape('%u220F')+" / 4 Dr"+unescape('%B2')+"h ");
 					
@@ -296,8 +299,8 @@ function calibration(masterJson,meter,cylinderPiston)
 						 span_wrong++;
 
 					}
-				}
-				id++;
+//				}
+				id1++;
 				 
 				}
              
@@ -338,9 +341,9 @@ function calibration(masterJson,meter,cylinderPiston)
 							 }
 						}	
 					
-				var chart = $('#sub-main-div1').highcharts();
+				var chart = $('#main-div-conf').highcharts();
 		        chart.series[1].setData(ydataPulse, false);
-		        $('#sub-main-div1').highcharts().redraw();
+		        $('#main-div-conf').highcharts().redraw();
 		        
 		       
 				 rotate+=20;
@@ -381,9 +384,9 @@ function calibration(masterJson,meter,cylinderPiston)
 							 }
 						}	
 					
-				var chart = $('#sub-main-div1').highcharts();
+				var chart = $('#main-div-conf').highcharts();
 		        chart.series[1].setData(ydataPulse, false);
-		        $('#sub-main-div1').highcharts().redraw();
+		        $('#main-div-conf').highcharts().redraw();
 		        
 		       
 				 rotate-=20;
@@ -450,9 +453,9 @@ function calibration(masterJson,meter,cylinderPiston)
 							 }
 						}	
 					
-				var chart = $('#sub-main-div1').highcharts();
+				var chart = $('#smain-div-conf').highcharts();
 		        chart.series[1].setData(ydataPulse, false);
-		        $('#sub-main-div1').highcharts().redraw();
+		        $('#main-div-conf').highcharts().redraw();
 		        
 		       
 				 rotate-=20;
@@ -501,9 +504,9 @@ function calibration(masterJson,meter,cylinderPiston)
 							}
 							
 							
-						var chart = $('#sub-main-div1').highcharts();
+						var chart = $('#main-div-conf').highcharts();
 				        chart.series[1].setData(ydataPulse, false);
-				        $('#sub-main-div1').highcharts().redraw();
+				        $('#main-div-conf').highcharts().redraw();
 				        rotate+=20;
 				       
 						
@@ -552,9 +555,9 @@ function calibration(masterJson,meter,cylinderPiston)
 							}
 							
 							
-						var chart = $('#sub-main-div1').highcharts();
+						var chart = $('#main-div-conf').highcharts();
 				        chart.series[1].setData(ydataPulse, false);
-				        $('#sub-main-div1').highcharts().redraw();
+				        $('#main-div-conf').highcharts().redraw();
 				        rotate-=20;
 				       
 						
@@ -618,9 +621,9 @@ function calibration(masterJson,meter,cylinderPiston)
 							 }
 						}	
 					
-				var chart = $('#sub-main-div1').highcharts();
+				var chart = $('#main-div-conf').highcharts();
 		        chart.series[1].setData(ydataPulse, false);
-		        $('#sub-main-div1').highcharts().redraw();
+		        $('#main-div-conf').highcharts().redraw();
 		        
 		       
 				 rotate+=20;
@@ -668,9 +671,9 @@ function calibration(masterJson,meter,cylinderPiston)
 							}
 							
 							
-						var chart = $('#sub-main-div1').highcharts();
+						var chart = $('#main-div-conf').highcharts();
 				        chart.series[1].setData(ydataPulse, false);
-				        $('#sub-main-div1').highcharts().redraw();
+				        $('#main-div-conf').highcharts().redraw();
 				        rotate+=20;
 				       
 						
@@ -718,9 +721,9 @@ function calibration(masterJson,meter,cylinderPiston)
 							}
 							
 							
-						var chart = $('#sub-main-div1').highcharts();
+						var chart = $('#main-div-conf').highcharts();
 				        chart.series[1].setData(ydataPulse, false);
-				        $('#sub-main-div1').highcharts().redraw();
+				        $('#main-div-conf').highcharts().redraw();
 				        rotate-=20;
 				       
 						
