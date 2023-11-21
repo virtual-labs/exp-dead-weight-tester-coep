@@ -148,6 +148,7 @@ function calibration(masterJson,meter,cylinderPiston)
 				
 			});
 			var id=0;
+			var ans3 = 0;
 			$("#zeroSubmit").click(function() {
 				
 				
@@ -155,11 +156,11 @@ function calibration(masterJson,meter,cylinderPiston)
 				
 				console.log("in zero submit");
 				
-				var flowAns = $("#zeroText").val().trim();
+				var flowAns = parseFloat($("#zeroText").val().trim());
 				var max=masterJson.weight[0].meterPressureWithError;
 				var min=masterJson.weight[0].totalWeight;
 				var ans=min-max;
-				
+				ans3 = parseFloat(ans);
 				console.log("zero ans    "+ans);
 				var ans1=ans.toFixed(2);
 				
@@ -224,6 +225,7 @@ function calibration(masterJson,meter,cylinderPiston)
              
 				});
 			var length= masterJson.weight.length-1;
+			var ans2 = 0;
 			var id=0;
 			$("#spanSubmit").click(function() {
 				
@@ -233,10 +235,11 @@ function calibration(masterJson,meter,cylinderPiston)
 				var min=masterJson.weight[length].totalWeight;
 				var ans=min-max;
 				console.log("span ans    "+ans);
-				var ans1=ans.toFixed(2);
+				ans2 = parseFloat(ans);
+				var ans1=ans2.toFixed(2);
 				console.log("span Answer   "+ans1);
 				
-				var flowAns = $("#spanText").val().trim();
+				var flowAns = parseFloat($("#spanText").val().trim());
 				console.log("flowAns Answer   "+flowAns);
 				if(flowAns=="")
 					{
@@ -623,6 +626,7 @@ function calibration(masterJson,meter,cylinderPiston)
 				 rotate+=20;
 				 //2 zero and span
 				 $("#plus2").click(function() {
+					zeroCalibrationAgainPlus++;
 						var ydataPulse=[];
 						var length= masterJson.weight.length-1;
 						$("#knob2").css({ transform: 'rotate('+rotate+'deg)' });
@@ -672,6 +676,7 @@ function calibration(masterJson,meter,cylinderPiston)
 						
 					});
 				 $("#minus2").click(function() {
+					zeroCalibrationAgainMinus++;
 						var ydataPulse=[];
 						var length= masterJson.weight.length-1;
 						$("#knob2").css({ transform: 'rotate('+rotate+'deg)' });

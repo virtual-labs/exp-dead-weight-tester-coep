@@ -1,8 +1,6 @@
 
 function mimicCall(meter,cylinderPiston)
-{
-	
-	
+{	
 	$(".panelBody").css({"background-color": "#fff"});
 console.log(counterMasterJson);	
 $("#centerText1").html("MIMIC");
@@ -277,7 +275,7 @@ function oil_reservoir(){
 		R_cap1=paper.path("M"+(x-348.6+(2.5*a))+ " " +(y+160.5+(-4.3*a))+"l 0  20 l "+(b*1.5)+" 0    l 0 -20      l "+(-b*1.5)+" 0   ").attr({'fill':'black'});
 
        }
-  }
+  } 
  
  
  function R_capOpen(){
@@ -408,7 +406,7 @@ oil_rect.click(function(){
 		
 	}
 	
-})
+});
 
 
 	
@@ -1054,88 +1052,7 @@ function pisAnimBubble(){
 
 function pfClick(){
 	totalStackWeight = totalStackWeight;
-//	if(pf1 == 0){
-//		
-//			if(a == 50){
-//	up_lift = up_lift+5;
-//	Yposition= syp-124;
-//	 }
-//	 if(a == 55){
-//		up_lift = up_lift+5;
-//		Yposition= syp-135;
-//	}if(a == 60){
-//		up_lift = up_lift+5;
-//		Yposition= syp-145;
-//	}
-//	pf.animate({path: Raphael.transformPath("M"+sxp+" "+syp+" l 0 "+(-1.64*a)+" l "+(-1.4*a)+" 0 l 0 "+(-b/2)+" l "+(3*a)+" 0 l 0 "
-//	                          +(b/2)+" l "+(-1.4*a)+" 0 l 0 "+(1.64*a)+" z ", 'T 0 '+-up_lift)}, time);	    
-//	                          
-//	    var _transformedPath1 = Raphael.transformPath("M"+sx+" "+sy+" l "+rec_wid+" 0 l 0"+(-b*1.5)+" l "+(-rec_wid)+" 0 l 0 "+(b*1.5)
-//	                   
-//	                       , 'T 0 '+-up_lift);
-//
-//	    pis.animate({path: _transformedPath1}, time);
-//	//  polish = paper.rect((sxp-5),(syp-18),20,20,5) .attr({'stroke' : '#000' , 'stroke-width' : 1 , 'gradient': '160-#C0C0C0-#A9A9A9'});  
-//        polish.animate({'width': 20, 'height': 20, 'x': sxp-5, 'y': syp-18-up_lift}, time);
-//        
-//        	for(i=0 ; i<wtStackMasterJson.LIFOSTACK.length; i++)
-//	 {		
-//	      str=wtStackMasterJson.LIFOSTACK[i].weight;
-//	    if( str=="gf100" ){
-//
-//		
-//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);	
-//			Yposition = Yposition-30;
-//			console.log(wtStackMasterJson);
-//		
-//	     }	
-//	      if( str=="gf500" ){
-//		
-//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);					
-//			console.log(wtStackMasterJson);
-//			Yposition = Yposition-30;	
-//				     }
-//	      if( str=="kgf1" ){
-//		
-//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);				
-//			console.log(wtStackMasterJson);
-//			Yposition = Yposition-30;				
-//	     }	
-//	      if( str=="kgf2" ){
-//		
-//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);					
-//			console.log(wtStackMasterJson);	
-//			Yposition = Yposition-30;			
-//	     }	
-//	      if( str=="kgf5" ){
-//			
-//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);			
-//			console.log(wtStackMasterJson);			
-//			Yposition = Yposition-30;	
-//	     }	
-//	      if( str=="kgf10" ){	
-//			
-//		imgWeightArray[i].animate({y: Yposition-up_lift}, time);			
-//			console.log(wtStackMasterJson);
-//			Yposition = Yposition-30;
-//	     }	   	  
-//  if(a == 50 && up_lift > 48){
-//	up_lift = 48;
-//
-//}
-//if(a == 55 && up_lift>53){
-//	up_lift = 53;
-//}if(a == 60 && up_lift>59){
-//	up_lift = 59;
-//} 
-//  
-//   pis.toFront();  
-////   l.toFront(); 
-//   pf.toFront();
-//   polish.toFront();
-//	 }
-//        
-//	}
+
 //	if(pf1 == 1 || pf1 == 0){
 		
 		if(a == 50){
@@ -1957,6 +1874,7 @@ function meterAnimonMinus(){
 // vertical piston move
 
 function pisAnimZero(){
+	totalStackWeight = 0;
 	pf_flag = 0;
 	sFlagAfter = 0;
 	sFlag = 0;
@@ -2444,15 +2362,22 @@ minus.click(function(){
 			plusBlock == 1;			
 			if(up_lift > 0){
 	           meterAnimonMinus();
-	            if(totalStackWeight == 0){
-		        pisAnimZero();
-//		        meterZeroMinus();
-                meterZero();
-		        minusAnim();
-	           }else{
+	           
+	           if(totalStackWeight >= 0){
+
                pisAnim();
                minusAnim();	
                }	
+	           
+//	            if(totalStackWeight == 0){
+//		        pisAnimZero();
+////		        meterZeroMinus();
+//                meterZero();
+//		        minusAnim();
+//	           }else{
+//               pisAnim();
+//               minusAnim();	
+//               }	
 	           
 	           
 	}else {
@@ -3731,7 +3656,7 @@ function addFun(){
 					
 				    var tempJson = {};
 					var countTempJson = {};
-						tot_weight = totalStackWeight;
+						tot_weight = totalStackWeight.toFixed(1);
 					 dupFlg = 1;
 					tempJson.gf100 = cnt100gf;
 					tempJson.gf500 = cnt500gf;	
@@ -3739,7 +3664,7 @@ function addFun(){
 					tempJson.kgf2 = cnt2kgf;
 					tempJson.kgf5 = cnt5kgf;
 				    tempJson.kgf10 = cnt10kgf;
-				    tempJson.totalWeight = totalStackWeight;
+				    tempJson.totalWeight = totalStackWeight.toFixed(1);
 				    
 				    tempJson.meterPressureWithExpectedError = actalVal; 
 				     tempJson.meterPressureWithError = meterVal;
@@ -3748,10 +3673,10 @@ function addFun(){
 				    tempJson.tableSortVal = tot_weight;
 				    jsonArr.push(tempJson);
 					masterJson.weight = jsonArr;
-				    
-				    countTempJson.BelowPolishSurface = cnt_before; 
+				    var additon = cnt_before+cnt_after;  
+				    countTempJson.misplacePolishSurface = additon; 
 				    countTempJson.onPolishSurface = cnt_exact; 
-				    countTempJson.AbovePolishSurface = cnt_after; 
+//				    countTempJson.AbovePolishSurface = cnt_after; 
 				    counterMasterJson.mimic = countTempJson;
 				    
 				    

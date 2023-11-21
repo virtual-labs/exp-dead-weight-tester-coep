@@ -166,22 +166,25 @@ function fualtFinding(masterJson,counterMasterJson)
 //    			  $("#mainDiv").html("<b> Result page in progress.</b> ");
 //    			
                 count_correct_fault++;
+               
 				resultAnalysis(counterMasterJson);
     		}
     		else{
     			$("#alertMsgBox").attr('hidden',false);
     			$("#msgBox").html("<b class='errorMsgf'> Wrong selection !!!!!!!!!</b>");	
     			count_wrong_fault++;
+    			
     			}
 //    	}
 //    	else{
 //    		
 //    	}
-    	
-    	var countTempJson = {};
+    	         var countTempJson = {};
 				 countTempJson.wrongOption = count_wrong_fault;
 				 countTempJson.correctOption = count_correct_fault;
 				 counterMasterJson.faultFinding = countTempJson;
+    	
 //    	counter=counter+1;
     });
+    
 }//main function
