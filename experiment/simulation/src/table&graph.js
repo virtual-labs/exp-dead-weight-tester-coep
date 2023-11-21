@@ -3,7 +3,7 @@ function tableCreate(masterJson,meter,cylinderPiston)
 	
 	
 	var tableMainDiv = '<div class="row ">'
-					+'<div class="col-sm-12">'
+					+'<div class="col-sm-12" style="margin-bottom :20px;" >'
 			        + '<table class=" table table-bordered " style="margin:10px;">'
 					+ ' <thead>'
 					+ '  <tr style = "BACKGROUND-COLOR: #154951; color:#fff;">'
@@ -38,7 +38,7 @@ function tableCreate(masterJson,meter,cylinderPiston)
 					 +'<div class="col-sm-2">'
 					 +'</div>'
 					 
-				$("#main-div-conf").html(tableMainDiv);
+				$("#sub-main-div1").html(tableMainDiv);
 				if(masterJson.weight.length >= 5)
 				{
 					$('#showGraph').removeAttr('hidden');		
@@ -153,7 +153,7 @@ function tableCreate(masterJson,meter,cylinderPiston)
 			maxPoint=Xmax;
 		}
 		console.log(" Weight V/S Pressure  " + graphData1);
-		Highcharts.chart('sub-main-div1', {
+		Highcharts.chart('main-div-conf', {
 			title: {
 				text: ' Weight V/S Pressure  '
 			},

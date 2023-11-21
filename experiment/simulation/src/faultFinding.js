@@ -20,7 +20,7 @@ function tableCreateForFualtFinding1(masterJson)
 //					var errorAddFault=errorRandom+masterJson.demo[i].rFlow;
 					tableMainDiv += '<tr>'
 						+ '   <td><center>' + masterJson.weight[i].totalWeight + '</center></td>'
-						+ '   <td style="background-color:#d65d5d;"><center>0</center></td>'
+						+ '   <td style="background-color:#f7b5b5;"><center>0</center></td>'
 //						+ '   <td style="background-color:#de767645"><center>' + errorAddFault.toFixed(2) + '</center></td>'
 						+ '     </tr>'
 
@@ -56,10 +56,11 @@ function tableCreateForFualtFinding1(masterJson)
 					console.log("errorRandom   "+errorRandom);
 					if(place<=i-1)
 						{
-							var error=masterJson.weight[place].meterPressureWithExpectedError;
+							var error1=masterJson.weight[place].meterPressureWithExpectedError;
+							var error = error1.toFixed(2); 
 							tableMainDiv += '<tr>'
 							+ '   <td><center>' +masterJson.weight[i].totalWeight + '</center></td>'
-							+ '   <td style="background-color:#d65d5d;"><center>' + error + '</center></td>'
+							+ '   <td style="background-color:#f7b5b5;"><center>' + error + '</center></td>'
 //							+ '   <td style="background-color:#de767645;"><center>' + errorRotameter.toFixed(2) + '</center></td>'
 							+ '     </tr>'
 						
@@ -69,7 +70,7 @@ function tableCreateForFualtFinding1(masterJson)
 						var error=parseFloat(errorRandom+masterJson.weight[i].meterPressureWithExpectedError);
 						tableMainDiv += '<tr>'
 							+ '   <td><center>' + masterJson.weight[i].totalWeight + '</center></td>'
-							+ '   <td style="background-color:#d65d5d;"><center >' + error + '</center></td>'
+							+ '   <td style="background-color:#f7b5b5;"><center >' + error + '</center></td>'
 //							+ '   <td style="background-color:#de767645;"><center >' + + masterJson.weight[i].meterPressureWithExpectedError + + '</center></td>'
 							+ '     </tr>'
 						}
@@ -113,7 +114,7 @@ function fualtFinding(masterJson,counterMasterJson)
 //		
 //		 +'  </select>'
 		 +'<div class="col-sm-12">'
-		 +' <select  class="form-control col-sm-12" id="errorSelection">'
+		 +' <select  class="form-control col-sm-12 " style="height: auto;" id="errorSelection">'
 		 +' <option >Select Error type </option>'
 		 +' <option  value="0">Needle jam </option>'
 		 +'  <option value="1">Helical spring fluctuate & break</option>'
@@ -180,8 +181,8 @@ function fualtFinding(masterJson,counterMasterJson)
 //    		
 //    	}
     	         var countTempJson = {};
-				 countTempJson.wrongOption = count_wrong_fault;
-				 countTempJson.correctOption = count_correct_fault;
+				 countTempJson.wrongSelection = count_wrong_fault;
+//				 countTempJson.correctOption = count_correct_fault;
 				 counterMasterJson.faultFinding = countTempJson;
     	
 //    	counter=counter+1;

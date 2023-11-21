@@ -3656,7 +3656,11 @@ function addFun(){
 					
 				    var tempJson = {};
 					var countTempJson = {};
+					 if(totalStackWeight % 1==0){
+						tot_weight = totalStackWeight
+					}else{
 						tot_weight = totalStackWeight.toFixed(1);
+						}
 					 dupFlg = 1;
 					tempJson.gf100 = cnt100gf;
 					tempJson.gf500 = cnt500gf;	
@@ -3664,7 +3668,12 @@ function addFun(){
 					tempJson.kgf2 = cnt2kgf;
 					tempJson.kgf5 = cnt5kgf;
 				    tempJson.kgf10 = cnt10kgf;
-				    tempJson.totalWeight = totalStackWeight.toFixed(1);
+				    if(totalStackWeight % 1==0){
+						tempJson.totalWeight = totalStackWeight
+					}else{
+						tempJson.totalWeight = totalStackWeight.toFixed(1);
+						}
+//				    tempJson.totalWeight = totalStackWeight.toFixed(1);
 				    
 				    tempJson.meterPressureWithExpectedError = actalVal; 
 				     tempJson.meterPressureWithError = meterVal;

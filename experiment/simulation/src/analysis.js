@@ -368,7 +368,7 @@ console.log(counterMasterJson);
 		+' <div class="panel-body counterPanelRed">'
 
 //		+'<center><span class="valueBox"><b>'+counterMasterJson.faultFinding.wrongOption+'</b></span></center>'
-        +'<center><span class="valueBox"><b>'+counterMasterJson.faultFinding.wrongOption+'</b></span></center>'
+        +'<center><span class="valueBox"><b>'+counterMasterJson.faultFinding.wrongSelection+'</b></span></center>'
 		+'</div>'
 		+'</div>'
 //		+'<span class="heading1">4 </span>'
