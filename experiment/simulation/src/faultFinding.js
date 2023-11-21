@@ -167,7 +167,10 @@ function fualtFinding(masterJson,counterMasterJson)
 //    			  $("#mainDiv").html("<b> Result page in progress.</b> ");
 //    			
                 count_correct_fault++;
-               
+               var countTempJson = {};
+				 countTempJson.wrongSelection = count_wrong_fault;
+				 countTempJson.correctOption = count_correct_fault;
+				 counterMasterJson.faultFinding = countTempJson;
 				resultAnalysis(counterMasterJson);
     		}
     		else{
@@ -180,10 +183,7 @@ function fualtFinding(masterJson,counterMasterJson)
 //    	else{
 //    		
 //    	}
-    	         var countTempJson = {};
-				 countTempJson.wrongSelection = count_wrong_fault;
-//				 countTempJson.correctOption = count_correct_fault;
-				 counterMasterJson.faultFinding = countTempJson;
+    	         
     	
 //    	counter=counter+1;
     });
