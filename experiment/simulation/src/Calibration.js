@@ -159,26 +159,26 @@ function calibration(masterJson,meter,cylinderPiston)
 				
 				console.log("in zero submit");
 				
-				 flowAns = parseFloat($("#zeroText").val().trim());
+				 flowAns = $("#zeroText").val().trim();
 				var max=masterJson.weight[0].meterPressureWithError;
 				var min=masterJson.weight[0].totalWeight;
 				var ans=min-max;
 				ans3 = parseFloat(ans);
 				console.log("zero ans    "+ans);
-				var ans1=ans.toFixed(2);
-				
+				var ans2=ans.toFixed(2);
+				var ans1 = parseFloat(ans2);
 				console.log("zero Answer   "+ans1);
 				
 				
-//				if(flowAns=="")
-//					{
-//
-//						 $("#modelMsgZero").html("<b class='boldTextBlue' >Dont Skip empty textbox . </b>");
-//						 $("body").css("padding","0px 0px 0px 0px");
-//					}
-//				else{
+				if(flowAns=="")
+				{
 
-				
+					 $("#modelMsgZero").html("<b class='boldTextBlue' >Dont Skip empty textbox . </b>");
+					 $("body").css("padding","0px 0px 0px 0px");
+					}
+				else{
+
+				 flowAns = parseFloat($("#zeroText").val().trim());
 				if (id <= 3) {
 					
 								if(flowAns==ans1){
@@ -224,7 +224,7 @@ function calibration(masterJson,meter,cylinderPiston)
 				}
 				id++;
 				 
-//				}
+				}
              
 				});
 			var length= masterJson.weight.length-1;
@@ -233,26 +233,27 @@ function calibration(masterJson,meter,cylinderPiston)
 			$("#spanSubmit").click(function() {
 				
 				console.log("in span submit");
-				
+				flowAns = $("#spanText").val().trim();
 				var max=masterJson.weight[length].meterPressureWithError;
 				var min=masterJson.weight[length].totalWeight;
 				var ans=min-max;
 				console.log("span ans    "+ans);
 				ans2 = parseFloat(ans);
-				var ans1=ans2.toFixed(2);
+				var ans3=ans2.toFixed(2);
+				var ans1 = parseFloat(ans3);
 				console.log("span Answer   "+ans1);
 				
-				var flowAns = parseFloat($("#spanText").val().trim());
+				//var flowAns = parseFloat($("#spanText").val().trim());
 				console.log("flowAns Answer   "+flowAns);
-//				if(flowAns=="")
-//					{
-//
-//						 $("#modelMsgSpan").html("<b class='boldTextBlue' >Dont Skip empty textbox . </b>");
-//						 $("body").css("padding","0px 0px 0px 0px");
-//					}
-//				else{
+				if(flowAns=="")
+					{
 
-				
+						 $("#modelMsgSpan").html("<b class='boldTextBlue' >Dont Skip empty textbox . </b>");
+						 $("body").css("padding","0px 0px 0px 0px");
+					}
+				else{
+
+				flowAns = parseFloat($("#spanText").val().trim());
 						if (id1 <= 3) {
 							
 								if (flowAns == ans1) {
@@ -299,7 +300,7 @@ function calibration(masterJson,meter,cylinderPiston)
 						 span_wrong++;
 
 					}
-//				}
+			}
 				id1++;
 				 
 				}
