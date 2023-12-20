@@ -2396,6 +2396,7 @@ minus.click(function(){
 function meterMinusZero(){
 	angle = 0;
 	pressure = 0;
+	totalStackWeight = 0;
 	 if(a==50){
 	    
 	 	x1 = x-528 , y1 = y-307;

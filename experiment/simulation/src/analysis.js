@@ -583,11 +583,11 @@ function resultAnalysis(counterMasterJson){
 			        type: 'pie'
 			    },
 			    title: {
-			        text: 'Browser market shares. January, 2022',
+			        text: 'Performance',
 			        align: 'left'
 			    },
 			    subtitle: {
-			        text: 'Click the slices to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>',
+			        text: 'Chart</a>',
 			        align: 'left'
 			    },
 
@@ -635,29 +635,29 @@ function resultAnalysis(counterMasterJson){
 			            colorByPoint: true,
 			            data: [
 			                {
-			                    name: 'Chrome',
+			                    name: 'Configuration',
 			                    y: 61.04,
-			                    drilldown: 'Chrome'
+			                    drilldown: 'Configuration'
 			                },
 			                {
-			                    name: 'Safari',
+			                    name: 'Mimic',
 			                    y: 9.47,
-			                    drilldown: 'Safari'
+			                    drilldown: 'Mimic'
 			                },
 			                {
-			                    name: 'Edge',
+			                    name: 'Table and Graph',
 			                    y: 9.32,
-			                    drilldown: 'Edge'
+			                    drilldown: 'Table and Graph '
 			                },
 			                {
-			                    name: 'Firefox',
+			                    name: 'Meter Calibration',
 			                    y: 8.15,
-			                    drilldown: 'Firefox'
+			                    drilldown: 'Meter Calibration'
 			                },
 			                {
-			                    name: 'Other',
+			                    name: 'Fault Finding',
 			                    y: 11.02,
-			                    drilldown: null
+			                    drilldown: 'Fault Finding'
 			                }
 			            ]
 			        }
@@ -665,8 +665,8 @@ function resultAnalysis(counterMasterJson){
 			    drilldown: {
 			        series: [
 			            {
-			                name: 'Chrome',
-			                id: 'Chrome',
+			                name: 'Configuration',
+			                id: 'Configuration',
 			                data: [
 			                    [
 			                        'v97.0',
@@ -775,8 +775,8 @@ function resultAnalysis(counterMasterJson){
 			                ]
 			            },
 			            {
-			                name: 'Safari',
-			                id: 'Safari',
+			                name: 'Mimic',
+			                id: 'Mimic',
 			                data: [
 			                    [
 			                        'v15.3',
@@ -817,8 +817,8 @@ function resultAnalysis(counterMasterJson){
 			                ]
 			            },
 			            {
-			                name: 'Edge',
-			                id: 'Edge',
+			                name: 'Table and Graph',
+			                id: 'Table and Graph',
 			                data: [
 			                    [
 			                        'v97',
@@ -835,8 +835,38 @@ function resultAnalysis(counterMasterJson){
 			                ]
 			            },
 			            {
-			                name: 'Firefox',
-			                id: 'Firefox',
+			                name: 'Meter Calibration',
+			                id: 'Meter Calibration',
+			                data: [
+			                    [
+			                        'v96.0',
+			                        4.17
+			                    ],
+			                    [
+			                        'v95.0',
+			                        3.33
+			                    ],
+			                    [
+			                        'v94.0',
+			                        0.11
+			                    ],
+			                    [
+			                        'v91.0',
+			                        0.23
+			                    ],
+			                    [
+			                        'v78.0',
+			                        0.16
+			                    ],
+			                    [
+			                        'v52.0',
+			                        0.15
+			                    ]
+			                ]
+			            },
+						{
+			                name: 'Fault Finding',
+			                id: 'Fault Finding',
 			                data: [
 			                    [
 			                        'v96.0',
