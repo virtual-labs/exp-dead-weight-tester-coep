@@ -1,7 +1,7 @@
 function MeterCalibration(meter,cylinderPiston,masterJson,counterMasterJson)
 
 {
-	console.log(counterMasterJson);
+//	console.log(counterMasterJson);
 	$(".panelBody").css({"background-color": "#fff"});
 	var meterguage=parseInt(meter) ;
 	 $("#main-div-conf").html("");
@@ -45,7 +45,7 @@ $("#centerText2").html("INPUT");
 				      
 		 $("#main-div-conf").html(CalculateActualFlowStr);		
 		 $("#faultFinding").click(function(){
-			console.log("click function fualtFinding");
+//			console.log("click function fualtFinding");
 //					fualtFinding(masterJson);
                    fualtFinding(masterJson,counterMasterJson);
 			   });			      
@@ -161,21 +161,21 @@ function spanWeight(){
 	sectorImg.animate(r1);	
 	Tot_weight=meterguage;
 	//meterguage;
-	console.log("Weight = "+Tot_weight);
+//	console.log("Weight = "+Tot_weight);
 	weight=parseInt(Tot_weight);
-	console.log("Weight = "+weight);
+//	console.log("Weight = "+weight);
  	num = Math.floor(Math.random() * (rmax - rmin + 1) + rmin);
- 	console.log("Error_val = "+num);
+// 	console.log("Error_val = "+num);
  	Error_val=parseInt(num);
  	Meter_weight=weight+Error_val;
-	console.log("Weight With Error = "+Meter_weight);			
+//	console.log("Weight With Error = "+Meter_weight);			
 	unit1=270/meterguage;
-	console.log("unit1 = "+unit1);
+//	console.log("unit1 = "+unit1);
 	angle= unit1*Meter_weight;  	
-	console.log("angle = "+angle);		
+//	console.log("angle = "+angle);		
 	keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+200)+', '+(y1+98)+' '}, 4000 ,'elastic');	
 	mline.animate(keepRotating);
-	console.log("angle wt="+angle);
+//	console.log("angle wt="+angle);
 }
 
 //16 reading meter
@@ -412,8 +412,8 @@ function meterwork(){
 		screw1=paper.image("images/screwDesign.png",(x1+257.7), (y1+111), 11.5, 11.5);  
 //        screw2=paper.image("images/black_screw.png",(x1+245.5), (y1+127), 11, 11);
 //        screw_Calibration=paper.image("images/screw_img.png",(x1+245), (y1+120), 11, 11);
-        console.log("x1="+x1);
-        console.log("y1="+y1);
+//        console.log("x1="+x1);
+ //       console.log("y1="+y1);
 		sectorImg.toFront();
 //		screw2.toFront();
 		sp.toFront();
@@ -438,8 +438,8 @@ arc= paper.path("M "+(x1+200)+" "+(y1+147.5)+ " A 30 30 0 0 1 "+(x1+200)+" "+(y1
 		screw1=paper.image("images/screwDesign.png",(x1+257.7), (y1+111), 11.5, 11.5);  
 //        screw2=paper.image("images/black_screw.png",(x1+245.5), (y1+127), 11, 11);
 //        screw_Calibration=paper.image("images/screw_img.png",(x1+245), (y1+120), 11, 11);
-        console.log("x1="+x1);
-        console.log("y1="+y1);
+ //       console.log("x1="+x1);
+ //       console.log("y1="+y1);
 		sectorImg.toFront();
 //		screw2.toFront();
 		sp.toFront();
@@ -472,10 +472,10 @@ if(meterguage==16)
 	angle2=35; 
 		    var rotate_sector = Raphael.animation({ 'transform':  'r'+(-angle2)+ ', '+(x1+246)+', '+(y1+128.5)+' '}, time);	
 		    	sectorImg.animate(rotate_sector);	
-		    	console.log("Sector angle = "+angle1);
+//		    	console.log("Sector angle = "+angle1);
 		    	span_calibration(Tot_weight);
 		    	
-			console.log("meter16 IF");
+//			console.log("meter16 IF");
 				
 		 		var r = Raphael.animation({ 'transform':  'r'+(angle1)+', '+(x1+200)+', '+(y1+97.2)+' '}, 1000 );	
 		    	Img.animate(r);	
@@ -503,7 +503,7 @@ if(meterguage==16)
 				var rotate_sector = Raphael.animation({ 'transform':  'r'+(angle2)+ ', '+(x1+242)+', '+(y1+124.8)+' '}, time);	
 			    sectorImg.animate(rotate_sector);		
 			    span_calibration(Tot_weight);
-				console.log("meter16 ELSE");
+//				console.log("meter16 ELSE");
 				
 				Weight_img.animate({y:y1+110}, time);	
 				var r = Raphael.animation({ 'transform':  'r'+(angle1)+ ', '+(x1+200)+', '+(y1+97.2)+' '}, 1000 );	
@@ -511,7 +511,7 @@ if(meterguage==16)
 				
 				keepRotating = Raphael.animation({ 'transform':  'r'+(angle)+ ', '+(x1+200)+', '+(y1+98)+' '}, 1000 );	
 				mline.animate(keepRotating);
-				console.log("Minus Angle="+angle);
+//				console.log("Minus Angle="+angle);
 			
 				
 			    var lineAnim1=Raphael.animation({path:"M"+(x1+265.5 )+" "+(y1+116)+" M    l -35 28 "},1000);
@@ -531,22 +531,22 @@ if(meterguage==16)
 }else{	
 ////50 meter	
 		if(Error_val<0){
-				console.log("meter50/100 IF");	
+//				console.log("meter50/100 IF");	
 				handle.animate({'transform':'r'+(hndl_angle)+''},time);	
 				angle2=35;  
 				var rotate_sector = Raphael.animation({ 'transform':  'r'+(-angle2)+ ', '+(x1+242)+', '+(y1+121.8)+' '}, time);	
 			    sectorImg.animate(rotate_sector);
-			    console.log("angle2 value in IF sector_work="+angle2);
+//			    console.log("angle2 value in IF sector_work="+angle2);
 		    	span_calibration(Tot_weight);		
 				Weight_img.animate({y:y1+100}, time+500);
 //				screw_Calibration.animate({x:x1+248,y:y1+115}, time);
 			 	var r = Raphael.animation({ 'transform':  'r'+(angle1)+ ', '+(x1+200)+', '+(y1+97.2)+' '}, 1000 );	
 			    Img.animate(r);  	    
 
-			   	console.log("Sector angle="+angle1);
+//			   	console.log("Sector angle="+angle1);
 				keepRotating = Raphael.animation({ 'transform':  'r'+(angle)+ ', '+(x1+200)+', '+(y1+98)+' '}, 4000 ,'elastic');	
 				mline.animate(keepRotating);
-				console.log("plus angle="+angle);					
+//				console.log("plus angle="+angle);					
 				var lineAnim1=Raphael.animation({path:"M"+(x1+265.5 )+" "+(y1+116)+" M    l -30 24 "},1000);
 				line1_border.animate(lineAnim1).attr({'stroke':'#cb9931','stroke-width':8});				
 				var lineAnim=Raphael.animation({path:"M"+(x1+264 )+" "+(y1+117)+" M    l -27 21 "},1000);   
@@ -571,16 +571,16 @@ if(meterguage==16)
 			angle2=-35;
 			var rotate_sector = Raphael.animation({ 'transform':  'r'+(angle2)+ ', '+(x1+242)+', '+(y1+124.8)+' '}, time);	
 			    sectorImg.animate(rotate_sector);		
-			console.log("angle2 value in ELSE sector_work="+angle2);
+//			console.log("angle2 value in ELSE sector_work="+angle2);
 		    span_calibration(Tot_weight);
-			console.log("meter50/100 ELSE");	
+//			console.log("meter50/100 ELSE");	
 			Weight_img.animate({y:y1+110}, time);	
 			var r = Raphael.animation({ 'transform':  'r'+(angle1)+ ', '+(x1+200)+', '+(y1+97.2)+' '}, 1000 );	
 			Img.animate(r);    	 	
 			
 			keepRotating = Raphael.animation({ 'transform':  'r'+(angle)+ ', '+(x1+200)+', '+(y1+98)+' '}, 1000 );	
 			mline.animate(keepRotating);
-			console.log("Minus Angle="+angle);
+	//		console.log("Minus Angle="+angle);
 			
 			//var lineAnim1=Raphael.animation({path:"M"+(x1+265.5 )+" "+(y1+116)+" M    l -26 25 "},1000);
 			//line1_border.animate(lineAnim1).attr({'stroke':'#cb9931','stroke-width':8});
@@ -610,14 +610,14 @@ function subclick(){
 					Img.animate(r);  	    
 					var r1 = Raphael.animation({ 'transform':  'r'+(angle1)+ ', '+(x1+247)+', '+(y1+121.8)+' '}, 1000 );	
 					sectorImg.animate(r1);		
-					console.log("Weight With Error = "+Meter_weight);			
+	//				console.log("Weight With Error = "+Meter_weight);			
 					unit1=270/meterguage;
-					console.log("unit1 = "+unit1);
+//					console.log("unit1 = "+unit1);
 					angle= unit1*weight;  	
-					console.log("angle = "+angle);		
+//					console.log("angle = "+angle);		
 					keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+200)+', '+(y1+98)+' '}, 4000 ,'elastic');	
 					mline.animate(keepRotating);
-					console.log("angle wt="+angle);	 
+//					console.log("angle wt="+angle);	 
 					if(wtSpring==0){
 						angle1=10;
 						var rotate_sector = Raphael.animation({ 'transform':  'r'+(-angle1)+ ', '+(x1+240)+', '+(y1+124.5)+' '}, time);	
@@ -637,9 +637,9 @@ var fault_flg=0;
  var Meter_weight,Error_val,Total_weight;
 $("#submit_wt").click(function(){
 	Tot_weight=$("#enter_weight").val();
-	console.log("Weight = "+Tot_weight);
+//	console.log("Weight = "+Tot_weight);
 	weight=parseInt(Tot_weight);
-	console.log("Weight = "+weight);	
+//	console.log("Weight = "+weight);	
 	
 			if(meterguage==16 && weight<=meterguage){	
 				fault_flg=1;	
@@ -649,14 +649,14 @@ $("#submit_wt").click(function(){
 					Img.animate(r);  	    
 					var r1 = Raphael.animation({ 'transform':  'r'+(angle1)+ ', '+(x1+247)+', '+(y1+121.8)+' '}, 1000 );	
 					sectorImg.animate(r1);		
-					console.log("Weight With Error = "+Meter_weight);			
+//					console.log("Weight With Error = "+Meter_weight);			
 					unit1=270/meterguage;
-					console.log("unit1 = "+unit1);
+//					console.log("unit1 = "+unit1);
 					angle= unit1*weight;  	
-					console.log("angle = "+angle);		
+	//				console.log("angle = "+angle);		
 					keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+200)+', '+(y1+98)+' '}, 4000 ,'elastic');	
 					mline.animate(keepRotating);
-					console.log("angle wt="+angle);	 
+//					console.log("angle wt="+angle);	 
 					if(wtSpring==0){
 						angle1=10;
 						var rotate_sector = Raphael.animation({ 'transform':  'r'+(-angle1)+ ', '+(x1+240)+', '+(y1+124.5)+' '}, time);	
@@ -679,14 +679,14 @@ $("#submit_wt").click(function(){
 					Img.animate(r);  	    
 					var r1 = Raphael.animation({ 'transform':  'r'+(angle1)+ ', '+(x1+247)+', '+(y1+121.8)+' '}, 1000 );	
 					sectorImg.animate(r1);		
-					console.log("Weight With Error = "+Meter_weight);			
+	//				console.log("Weight With Error = "+Meter_weight);			
 					unit1=270/meterguage;
-					console.log("unit1 = "+unit1);
+	//				console.log("unit1 = "+unit1);
 					angle= unit1*weight;  	
-					console.log("angle = "+angle);		
+//					console.log("angle = "+angle);		
 					keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+200)+', '+(y1+98)+' '}, 4000 ,'elastic');	
 					mline.animate(keepRotating);
-					console.log("angle wt="+angle);	 
+//					console.log("angle wt="+angle);	 
 					if(wtSpring==0){
 						angle1=10;
 						var rotate_sector = Raphael.animation({ 'transform':  'r'+(-angle1)+ ', '+(x1+240)+', '+(y1+124.5)+' '}, time);	
@@ -709,14 +709,14 @@ $("#submit_wt").click(function(){
 					Img.animate(r);  	    
 					var r1 = Raphael.animation({ 'transform':  'r'+(angle1)+ ', '+(x1+247)+', '+(y1+121.8)+' '}, 1000 );	
 					sectorImg.animate(r1);		
-					console.log("Weight With Error = "+Meter_weight);			
+//					console.log("Weight With Error = "+Meter_weight);			
 					unit1=270/meterguage;
-					console.log("unit1 = "+unit1);
+	//				console.log("unit1 = "+unit1);
 					angle= unit1*weight;  	
-					console.log("angle = "+angle);		
+	//				console.log("angle = "+angle);		
 					keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+200)+', '+(y1+98)+' '}, 4000 ,'elastic');	
 					mline.animate(keepRotating);
-					console.log("angle wt="+angle);	 
+//					console.log("angle wt="+angle);	 
 					if(wtSpring==0){
 						angle1=10;
 						var rotate_sector = Raphael.animation({ 'transform':  'r'+(-angle1)+ ', '+(x1+240)+', '+(y1+124.5)+' '}, time);	
@@ -798,7 +798,7 @@ zeroError.remove();
 						
 					    keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+200)+', '+(y1+98)+' '}, 4000 ,'elastic');	
 						mline.animate(keepRotating);
-						console.log("plus angle="+angle);	
+//						console.log("plus angle="+angle);	
 					
 					var lineAnim1=Raphael.animation({path:"M"+(x1+267.5 )+" "+(y1+116)+" M    l -26 25 "},1000);
 					line1_border.animate(lineAnim1).attr({'stroke':'#cb9931','stroke-width':8});
@@ -828,7 +828,7 @@ zeroError.remove();
 					    sectorImg.animate(r1);	
 						keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+200)+', '+(y1+98)+' '}, 4000 ,'elastic');	
 						mline.animate(keepRotating);
-						console.log("plus angle="+angle);	
+	//					console.log("plus angle="+angle);	
 					
 					var lineAnim1=Raphael.animation({path:"M"+(x1+267.5 )+" "+(y1+116)+" M    l -26 25 "},1000);
 					line1_border.animate(lineAnim1).attr({'stroke':'#cb9931','stroke-width':8});
@@ -852,30 +852,30 @@ zeroError.remove();
 			var r = Raphael.animation({ 'transform':  'r'+(-angle1)+ ', '+(x1+200)+', '+(y1+97.2)+' '}, 1000 );	
 			Img.animate(r); 
 			
-			console.log("sector angle for max limit = "+angle1);
+//			console.log("sector angle for max limit = "+angle1);
 			Tot_weight=meterguage;
 			//meterguage;
-			console.log("Weight = "+Tot_weight);
+//			console.log("Weight = "+Tot_weight);
 			weight=parseInt(Tot_weight);
-			console.log("Weight = "+weight);
+//			console.log("Weight = "+weight);
 		 	num = Math.floor(Math.random() * (rmax - rmin + 1) + rmin);
-		 	console.log("Error_val = "+num);
+//		 	console.log("Error_val = "+num);
 		 	Error_val=parseInt(num);
 		 	if(Error_val==0){
 				Meter_weight=weight+Error_val+1;
-				console.log("Error val with adding 1 = "+Meter_weight);
+//				console.log("Error val with adding 1 = "+Meter_weight);
 			}else{
 		 	Meter_weight=weight+Error_val;
 		 	}
-			console.log(" Error val without1 = "+Meter_weight);	
+//			console.log(" Error val without1 = "+Meter_weight);	
 					
 			unit1=270/meterguage;
-			console.log("unit1 = "+unit1);
+//			console.log("unit1 = "+unit1);
 			angle= unit1*Meter_weight;  	
-			console.log("angle = "+angle);		
+//			console.log("angle = "+angle);		
 			keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+200)+', '+(y1+98)+' '}, 3000 ,'elastic');	
 			mline.animate(keepRotating);
-			console.log("angle wt="+angle);	
+//			console.log("angle wt="+angle);	
 			spanError=paper.image("images/spanerror.png",x1+290, y1+100, 205,65);
 			spanError.animate({x:x1+260}, time);	
 			handle.animate({'transform':'r'+(hndl_angle)+''},time);
@@ -883,11 +883,11 @@ zeroError.remove();
 						+ "M "+(x1+199)+" "+(y1+49)+ " A 65 65 0 0 1 "+(x1+268 )+" "+(y1+115)+" M "+line1}, 1000);
 			arc.animate(keep);	
 		 if(Error_val<0){
-			console.log("Error_val= "+Error_val);
+//			console.log("Error_val= "+Error_val);
 						angle2=38;
 						var rotate_sector = Raphael.animation({ 'transform':  'r'+(-angle2)+ ', '+(x1+246)+', '+(y1+128.5)+' '}, time);	
 				    	sectorImg.animate(rotate_sector);
-						console.log("IF____angle==38");
+	//					console.log("IF____angle==38");
 						var lineAnim1=Raphael.animation({path:"M"+(x1+265.5 )+" "+(y1+116)+" M    l -30 24 "},1000);
 						line1_border.animate(lineAnim1).attr({'stroke':'#cb9931','stroke-width':8});
 						
@@ -898,12 +898,12 @@ zeroError.remove();
 		//				arc.animate(keep);
 						
 					}else{
-							console.log("Error_val= "+Error_val);
+	//						console.log("Error_val= "+Error_val);
 		
 						angle2=45;
 						var rotate_sector = Raphael.animation({ 'transform':  'r'+(-angle2)+ ', '+(x1+240)+', '+(y1+124.5)+' '}, time);	
 				    	sectorImg.animate(rotate_sector);
-						console.log("ELSE____angle==45");
+		//				console.log("ELSE____angle==45");
 						var lineAnim1=Raphael.animation({path:"M"+(x1+265.5 )+" "+(y1+116)+" M    l -35 19 "},1000);
 						line1_border.animate(lineAnim1).attr({'stroke':'#cb9931','stroke-width':8});
 						

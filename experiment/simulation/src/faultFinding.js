@@ -36,7 +36,7 @@ function tableCreateForFualtFinding1(masterJson)
 				var min = 1;
 				 var max = masterJson.weight.length-1;
 				 var place=parseInt(Math.random() * (max - min) + min);
-				 console.log("Place Continue  "+place);
+//				 console.log("Place Continue  "+place);
 				var min1 = 0.5;
 				 var max1 = 10;
 				var tableMainDiv = '<h4><center>OBSERVE THE TABLE READING & SELECT THE FAULT</center></h4>'
@@ -53,7 +53,7 @@ function tableCreateForFualtFinding1(masterJson)
 				for (var i = 0,p=0; i < masterJson.weight.length; i++,p++) {
 					var temp=Math.random() * (max1 - min1) + min1;
 					errorRandom=temp.toFixed(2);
-					console.log("errorRandom   "+errorRandom);
+//					console.log("errorRandom   "+errorRandom);
 					if(place<=i-1)
 						{
 							var error1=masterJson.weight[place].meterPressureWithExpectedError;
@@ -100,7 +100,7 @@ function fualtFinding(masterJson,counterMasterJson)
 	 $("#panelHeadingBold").html(""); 
 	  randomNumber=Math.floor(Math.random() * 2);
 //	 randomNumber=1;
-	 console.log("random  "+randomNumber);
+//	 console.log("random  "+randomNumber);
 	var str=''
 	str+='<div class="row ">'
 //			+'<button type="button" class="col-sm-12 btn btn-danger" style="margin-top:20px;" id="nextFaultFinding"disabled>Next Level</button>'
@@ -157,7 +157,7 @@ function fualtFinding(masterJson,counterMasterJson)
     $("#errorSelection").change(function() {
 	 $("#errorSelection").css("height", "");
     	var selectedOption=$("#errorSelection").val();
-    	console.log("selectedOption   "+selectedOption);
+ //   	console.log("selectedOption   "+selectedOption);
 //    	if(counter<=3){
     		if( randomNumber==selectedOption){
     			$("#main-div-conf").html("");

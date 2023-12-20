@@ -100,34 +100,34 @@ CalculateActualFlowStr +='<div class="col-sm-4">'
 				 $("body").css("padding","0px 0px 0px 0px");
 			}
 		else{
-		console.log("cylinderPiston "+cylinderPiston);
+//		console.log("cylinderPiston "+cylinderPiston);
 				if(cylinderPiston==50){
 					cylinderPiston1=3;
-					console.log("cylinderPiston1 "+cylinderPiston1);
+	//				console.log("cylinderPiston1 "+cylinderPiston1);
 				}
 				else if(cylinderPiston==55){
 					cylinderPiston1=5;
-					console.log("cylinderPiston1 "+cylinderPiston1);
+//					console.log("cylinderPiston1 "+cylinderPiston1);
 				}
 				else {
 					cylinderPiston1=7;
-					console.log("cylinderPiston1 "+cylinderPiston1);
+	//				console.log("cylinderPiston1 "+cylinderPiston1);
 				}
 			temp =parseFloat(cylinderPiston1/3.14);
 		
 			flowActual=Math.sqrt(temp);
 			flow=flowActual.toFixed(2);
-			console.log("flow   "+flow);
+	//		console.log("flow   "+flow);
 			if (id <= 3) {
 				
 				if (flowAns == flow) {
 					checkAns = 0;
-					console.log("success");
+//					console.log("success");
 //					 $("#CalculateActualFlow").html("");
 					  $("#checkConfg").attr('hidden',false);
 					 $("#main-div-conf").html("<h4><center id='simulationLabel'>Now Start Simulation</center></h4>");
-						console.log("meter   "+meter);
-					console.log("cylinderPiston   "+cylinderPiston);
+//						console.log("meter   "+meter);
+//					console.log("cylinderPiston   "+cylinderPiston);
 					$("#canvas-div").html("");
 					 mimicCall(meter,cylinderPiston);
 					 
@@ -137,7 +137,7 @@ CalculateActualFlowStr +='<div class="col-sm-4">'
 	//			alert("Entered value is incorrect.Try it again... ");
 				 $("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try it again . </b>");
 				 $("body").css("padding","0px 0px 0px 0px");
-				console.log("wrong");
+	//			console.log("wrong");
 				}
 	
 	
@@ -157,8 +157,8 @@ CalculateActualFlowStr +='<div class="col-sm-4">'
 //					 $("#CalculateActualFlow").html("");
 					  $("#checkConfg").attr('hidden',false);
 					 $("#main-div-conf").html("<h4><center id='simulationLabel'>Now Start Simulation</center></h4>");
-					console.log("meter   "+meter);
-					console.log("cylinderPiston   "+cylinderPiston);
+//					console.log("meter   "+meter);
+//					console.log("cylinderPiston   "+cylinderPiston);
 					$("#canvas-div").html("");
 					 mimicCall(meter,cylinderPiston);
 					  
