@@ -278,7 +278,7 @@ function oil_reservoir(){
 function R_capClose(){
 	  oil_flag = 0;
 	    rCapClose = 1;
-	    console.log("rCapClose :"+rCapClose);
+//	    console.log("rCapClose :"+rCapClose);
         if (a==50){
 	 	var keepRotating6 = Raphael.animation({ 'transform': 'r-0 ,442, 394' }, 2000 );
         R_cap.animate(keepRotating6.repeat(1));
@@ -998,7 +998,7 @@ function remove_Weight_label(){
 // platform click close
 function calculationPanel()
 {
-		console.log(masterJson);
+//		console.log(masterJson);
 //		console.log();
 //		console.log();
 	$("#main-div-conf").html("");
@@ -1060,16 +1060,16 @@ function pfClick(){
 	pf_flag = 1; 
 	if(a == 50){
 	up_lift = up_lift+5;
-	console.log("up_lift :"+up_lift);
+//	console.log("up_lift :"+up_lift);
 	Yposition= syp-124;
 	 }
 	 if(a == 55){
 		up_lift = up_lift+5;
-		console.log("up_lift :"+up_lift);
+//		console.log("up_lift :"+up_lift);
 		Yposition= syp-135;
 	}if(a == 60){
 		up_lift = up_lift+5;
-		console.log("up_lift :"+up_lift);
+//		console.log("up_lift :"+up_lift);
 		Yposition= syp-145;
 	}
 	pf.animate({path: Raphael.transformPath("M"+sxp+" "+syp+" l 0 "+(-1.64*a)+" l "+(-1.4*a)+" 0 l 0 "+(-b/2)+" l "+(3*a)+" 0 l 0 "
@@ -1091,37 +1091,37 @@ function pfClick(){
 		
 		imgWeightArray[i].animate({y: Yposition-up_lift}, time);	
 			Yposition = Yposition-30;
-			console.log(wtStackMasterJson);
+//			console.log(wtStackMasterJson);
 		
 	     }	
 	      if( str=="gf500" ){
 		
 		imgWeightArray[i].animate({y: Yposition-up_lift}, time);					
-			console.log(wtStackMasterJson);
+//			console.log(wtStackMasterJson);
 			Yposition = Yposition-30;	
 				     }
 	      if( str=="kgf1" ){
 		
 		imgWeightArray[i].animate({y: Yposition-up_lift}, time);				
-			console.log(wtStackMasterJson);
+//			console.log(wtStackMasterJson);
 			Yposition = Yposition-30;				
 	     }	
 	      if( str=="kgf2" ){
 		
 		imgWeightArray[i].animate({y: Yposition-up_lift}, time);					
-			console.log(wtStackMasterJson);	
+	//		console.log(wtStackMasterJson);	
 			Yposition = Yposition-30;			
 	     }	
 	      if( str=="kgf5" ){
 			
 		imgWeightArray[i].animate({y: Yposition-up_lift}, time);			
-			console.log(wtStackMasterJson);			
+		//	console.log(wtStackMasterJson);			
 			Yposition = Yposition-30;	
 	     }	
 	      if( str=="kgf10" ){	
 			
 		imgWeightArray[i].animate({y: Yposition-up_lift}, time);			
-			console.log(wtStackMasterJson);
+		//	console.log(wtStackMasterJson);
 			Yposition = Yposition-30;
 	     }	   	  
   if(a == 50 && up_lift > 30){
@@ -1151,8 +1151,8 @@ var ranErr=0;
 function meterAnimonPlus(){	
 	
  ranErr = num.toFixed(1);
-     console.log(" num "+num);
-     console.log(" ranErr "+ranErr);
+ //    console.log(" num "+num);
+  //   console.log(" ranErr "+ranErr);
     
 	var weight_M = totalStackWeight;
 var unit1=270/meterguage;
@@ -1160,8 +1160,8 @@ var unit1=270/meterguage;
 var angle= unit1*weight_M;
   pres = parseFloat(ranErr);
   pressure = pres+angle;
-console.log("angle :"+angle);
-console.log("pressure :"+pressure);
+// console.log("angle :"+angle);
+// console.log("pressure :"+pressure);
 
 	var arry=[];
     
@@ -1217,8 +1217,8 @@ console.log("pressure :"+pressure);
 	var erDisplay = errDisp.toFixed(1);
 	 err = parseFloat(erDisplay);	 
 	actualPressure = actualPres+err;
-    console.log("actualPressure :"+actualPressure);
-    console.log("err :"+err);
+ //   console.log("actualPressure :"+actualPressure);
+ //   console.log("err :"+err);
        R_valve.toFront();
 	  M_valve.toFront();
 	  }
@@ -1280,9 +1280,9 @@ function addFun(){
     jsonArr.push(tempJson);
 	masterJson.weight = jsonArr;
 //	calculationPanel();
-	console.log(masterJson);
-    console.log(imgWeightArray);
-    console.log(wtStackMasterJson);
+//	console.log(masterJson);
+//    console.log(imgWeightArray);
+//    console.log(wtStackMasterJson);
 }
 // vertical piston move
 
@@ -1294,14 +1294,14 @@ function pisAnim(){
      Yposition = syp-124;
      } if(a == 55){
 	up_lift -= 6;
-	console.log(" pisAnim value "+up_lift);
+//	console.log(" pisAnim value "+up_lift);
 	Yposition= syp-135;
 	}if(a == 60){
 		up_lift -= 5;
-	console.log(" pisAnim value "+up_lift);
+//	console.log(" pisAnim value "+up_lift);
 		Yposition= syp-145;
 	}
-      console.log("Value of up_lift in minus: "+up_lift);
+ //     console.log("Value of up_lift in minus: "+up_lift);
 	
 	  var _transformedPath_p1 = Raphael.transformPath("M"+sxp+" "+syp+" l 0 "+(-1.64*a)+" l "+(-1.4*a)+" 0 l 0 "+(-b/2)+" l "+(3*a)+" 0 l 0 "
 	                          +(b/2)+" l "+(-1.4*a)+" 0 l 0 "+(1.64*a)+" z ", 'T 0 '+-up_lift);
@@ -1319,42 +1319,42 @@ function pisAnim(){
 	    if( str=="gf100" ){
 		imgWeightArray[i].animate({y: Yposition+-up_lift}, time);	
 		Yposition = Yposition-30;	
-			console.log(wtStackMasterJson);
+//			console.log(wtStackMasterJson);
 		
 	     }	
 	      if( str=="gf500" ){
 
 		
 		imgWeightArray[i].animate({y: Yposition+-up_lift}, time);			
-			console.log(wtStackMasterJson);
+	//		console.log(wtStackMasterJson);
 			Yposition = Yposition-30;
 	     }
 	      if( str=="kgf1" ){
 
 		
 		imgWeightArray[i].animate({y: Yposition+-up_lift}, time);			
-			console.log(wtStackMasterJson);
+	//		console.log(wtStackMasterJson);
 			Yposition = Yposition-30;
 	     }	
 	      if( str=="kgf2" ){
 
 		
 		imgWeightArray[i].animate({y: Yposition+-up_lift}, time);			
-			console.log(wtStackMasterJson);
+	//		console.log(wtStackMasterJson);
 			Yposition = Yposition-30;
 	     }	
 	      if( str=="kgf5" ){
 
 		
 		imgWeightArray[i].animate({y: Yposition+-up_lift}, time);			
-			console.log(wtStackMasterJson);
+//			console.log(wtStackMasterJson);
 			Yposition = Yposition-30;
 	     }	
 	      if( str=="kgf10" ){
 
 		
 		imgWeightArray[i].animate({y: Yposition+-up_lift}, time);			
-			console.log(wtStackMasterJson);
+//			console.log(wtStackMasterJson);
 			Yposition = Yposition-30;
 	     }
 	     
@@ -1409,7 +1409,7 @@ plus.click(function(){
 		 {
 	plusAnim();	
 	pfClick();	
-	console.log(" actualPressure "+actualPressure);	
+//	console.log(" actualPressure "+actualPressure);	
 	meterAnimonPlus();
 	     }else{
 		plusAnim();
@@ -1420,7 +1420,7 @@ plus.click(function(){
 }
    
 
-console.log("value of hndl in max :"+hndl);
+// console.log("value of hndl in max :"+hndl);
 }	
 }else{
 	alert("click on valves");
@@ -1428,11 +1428,11 @@ console.log("value of hndl in max :"+hndl);
 })
 
 function plusAnim(){
-	console.log("value of plus forward initially : "+forward);
+//	console.log("value of plus forward initially : "+forward);
 	 forward = forward-10;
 	 hndl=hndl+60; 
       h_img.animate({'transform':'r'+(hndl)+''},time);
-	 console.log("value of plus forward : "+forward);
+//	 console.log("value of plus forward : "+forward);
 	var _transformedPath_p = Raphael.transformPath("M"+(x+(px*a))+" "+(y +163-b)+" l 0 "+(-b)+" l "+(-b*1.2)+ " 0 l 0 "+a+ " l "+(b*1.2)+" 0 l 0 "+(-b) , 'T '+forward+' 0 ' );
          p.animate({path: _transformedPath_p}, time);	
 
@@ -1531,7 +1531,7 @@ function minusAnim(){
   r1.animate({path:Raphael.transformPath("M"+(x+(hx*a-block))+" "+(y+161-(b))+"l 0 "+(-b+3)+" l "+(-block_ht*(a/2.5)+forward)+" 0 "+"l 0 "+(a-1)+" l "+(block_ht*(a/2.5)-forward)+" 0 z") },time);
   
   if(forward >= 1){		
-		console.log("value of hndl is for min:"+hndl); 
+//		console.log("value of hndl is for min:"+hndl); 
 		hndl = 0; 
 			  h_img.animate({'transform':'r'+(hndl)+''},time);
 
@@ -1663,11 +1663,11 @@ if(minusFlg == 1){
 	 wt_ht += 30;
            flag++;
            cnt++;
-            console.log("cnt100gf++ :"+cnt100gf);
-           console.log("wt_ht :"+wt_ht);
+  //          console.log("cnt100gf++ :"+cnt100gf);
+  //         console.log("wt_ht :"+wt_ht);
 
-        console.log(totalStackWeight); 
-         console.log("counter : "+cnt);   
+ //       console.log(totalStackWeight); 
+  //       console.log("counter : "+cnt);   
        }
        if(minusFlg == 0){
 	 wt_ht = 0;
@@ -1709,8 +1709,8 @@ if(minusFlg == 1){
            flag++;
            cnt++;
 //           wt_arr[cnt] = wt;
-          console.log("cnt500gf++ :"+cnt500gf);
-         console.log("counter : "+cnt);        
+ //         console.log("cnt500gf++ :"+cnt500gf);
+ //        console.log("counter : "+cnt);        
 //         console.log("www "+weight12);
      }
     
@@ -1746,9 +1746,9 @@ if(minusFlg == 1){
 	   wt_ht += 30;
            flag++;
              cnt++;
-              console.log("cnt1kgf++ :"+cnt1kgf);
-            console.log("counter : "+cnt);  
-            console.log(totalStackWeight);
+   //           console.log("cnt1kgf++ :"+cnt1kgf);
+  //          console.log("counter : "+cnt);  
+  //          console.log(totalStackWeight);
 //             console.log("www "+weight12);
        }
 	});
@@ -1782,9 +1782,9 @@ if(minusFlg == 1){
 	   wt_ht += 30;
            flag++;
             cnt++;
-             console.log("cnt2kgf++ :"+cnt100gf);
-       console.log("counter : "+cnt);  
-      console.log(totalStackWeight);
+ //            console.log("cnt2kgf++ :"+cnt100gf);
+ //      console.log("counter : "+cnt);  
+//      console.log(totalStackWeight);
 //       console.log("www "+weight12);
       }
 	});
@@ -1820,9 +1820,9 @@ if(minusFlg == 1){
            flag++;
           
             cnt++;
-             console.log("cnt5kgf++ :"+cnt5kgf);
-            console.log("counter : "+cnt);  
-      console.log(totalStackWeight);
+ //            console.log("cnt5kgf++ :"+cnt5kgf);
+ //           console.log("counter : "+cnt);  
+ //     console.log(totalStackWeight);
 //       console.log("www "+weight12);
      }
 	});
@@ -1860,8 +1860,8 @@ imgWeightArray[position] =  paper.image("images/10kgf.png",(x-40), y-53-wt_ht,15
 	   wt_ht += 30;
        flag++;        
         cnt++; 
-             console.log("cnt10kgf :"+cnt10kgf);
-   console.log(totalStackWeight);
+ //            console.log("cnt10kgf :"+cnt10kgf);
+ //  console.log(totalStackWeight);
      }
 	});
 	
@@ -1890,7 +1890,7 @@ function weight_remove(){
 
   imgWeightArray[imgWeightArray.length-1].remove();
 	imgWeightArray.pop();
-	   console.log(imgWeightArray);
+//	   console.log(imgWeightArray);
 	if(gf100 === true && str=="gf100" )
 	{
 		
@@ -1905,10 +1905,10 @@ function weight_remove(){
 		masterJson.weight[masterJson.weight.length-1].gf100 -=1;	
 		
 
-		console.log(wtStackMasterJson);
-	   console.log("totalStackWeight"+totalStackWeight);
+//		console.log(wtStackMasterJson);
+//	   console.log("totalStackWeight"+totalStackWeight);
 	     }
-	       console.log(masterJson);
+//	       console.log(masterJson);
 	} 
 	
 	
@@ -1923,10 +1923,10 @@ function weight_remove(){
 	    cnt500gf--;
 		totalStackWeight -= 0.500;
 		masterJson.weight[masterJson.weight.length-1].gf500 -=1;
-		console.log(wtStackMasterJson);
-	   console.log("totalStackWeight"+totalStackWeight);
+//		console.log(wtStackMasterJson);
+//	   console.log("totalStackWeight"+totalStackWeight);
 	     }
-	       console.log(masterJson);
+//	       console.log(masterJson);
 	} 
 	
 	if(kgf1 === true && str=="kgf1" )
@@ -1940,11 +1940,11 @@ function weight_remove(){
 	    cnt1kgf--;
 		totalStackWeight-= 1;
 		masterJson.weight[masterJson.weight.length-1].kgf1 -=1;	
-		console.log(wtStackMasterJson);
-	   console.log("totalStackWeight"+totalStackWeight);
+//		console.log(wtStackMasterJson);
+//	   console.log("totalStackWeight"+totalStackWeight);
 	   
 	     }
-	       console.log(masterJson);
+//	       console.log(masterJson);
 	} 
 	
 	if(kgf2 === true && str=="kgf2" )
@@ -1958,11 +1958,11 @@ function weight_remove(){
 		totalStackWeight-= 2;
 		masterJson.weight[masterJson.weight.length-1].kgf2 -=1;	
 
-	console.log(wtStackMasterJson);
-	   console.log("totalStackWeight"+totalStackWeight);
+//	console.log(wtStackMasterJson);
+//	   console.log("totalStackWeight"+totalStackWeight);
 	   
 	     }
-	       console.log(masterJson);
+//	       console.log(masterJson);
 	} 
 	
 	if(kgf5 === true && str=="kgf5" )
@@ -1975,11 +1975,11 @@ function weight_remove(){
 	    cnt5kgf--;
 		totalStackWeight-= 5;			
 		masterJson.weight[masterJson.weight.length-1].kgf5 -=1;
-	console.log(wtStackMasterJson);
-	   console.log("totalStackWeight"+totalStackWeight);
+//	console.log(wtStackMasterJson);
+//	   console.log("totalStackWeight"+totalStackWeight);
 	   
 	     }
-	       console.log(masterJson);
+//	       console.log(masterJson);
 	} 
 	
 	if(kgf10 === true && str=="kgf10" )
@@ -1993,10 +1993,10 @@ function weight_remove(){
 	    
 		totalStackWeight -= 10;		
 		masterJson.weight[masterJson.weight.length-1].kgf10 -=1;
-		console.log(wtStackMasterJson);
-	   console.log("totalStackWeight"+totalStackWeight);
+//		console.log(wtStackMasterJson);
+//	   console.log("totalStackWeight"+totalStackWeight);
 	     }
-	       console.log(masterJson);
+//	       console.log(masterJson);
 	}     
 		
 	
@@ -2023,8 +2023,8 @@ function weight_remove(){
          
 		  weight_remove();
 		   delete wtStackMasterJson.LIFOSTACK.pop();
-		  console.log("After delete");
-        console.log(wtStackMasterJson);		 
+//		  console.log("After delete");
+ //       console.log(wtStackMasterJson);		 
 //		  totalStackWeight-= weight12;
 		    pf.toFront();
 		    polish.toFront();				  	

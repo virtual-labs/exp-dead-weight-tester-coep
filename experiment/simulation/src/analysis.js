@@ -1,6 +1,6 @@
 function resultAnalysis(counterMasterJson){
 	$("#procedure").prop("hidden",true);
-console.log(counterMasterJson);
+//console.log(counterMasterJson);
 
 //	$("#resultId").click(function(){
 	var htm=''

@@ -1,8 +1,8 @@
 function calibration(masterJson,meter,cylinderPiston)
 	{
-		console.log(counterMasterJson);	
-		console.log(" calibration page");
-		console.log(masterJson);
+//		console.log(counterMasterJson);	
+//		console.log(" calibration page");
+//		console.log(masterJson);
 	    var zero_wrong = 0;
 	    var span_wrong = 0;
 	    var zeroCalibrationWrongMinus = 0;
@@ -145,7 +145,7 @@ function calibration(masterJson,meter,cylinderPiston)
 			countTempJson.spanWrong = span_wrong;
 			
 			counterMasterJson.calibration = countTempJson;
-			console.log(counterMasterJson);
+//			console.log(counterMasterJson);
 				MeterCalibration(meter,cylinderPiston,masterJson,counterMasterJson); 
 				
 			});
@@ -157,17 +157,17 @@ function calibration(masterJson,meter,cylinderPiston)
 				
 				
 				
-				console.log("in zero submit");
+//				console.log("in zero submit");
 				
 				 flowAns = $("#zeroText").val().trim();
 				var max=masterJson.weight[0].meterPressureWithError;
 				var min=masterJson.weight[0].totalWeight;
 				var ans=min-max;
 				ans3 = parseFloat(ans);
-				console.log("zero ans    "+ans);
+	//			console.log("zero ans    "+ans);
 				var ans2=ans.toFixed(2);
 				var ans1 = parseFloat(ans2);
-				console.log("zero Answer   "+ans1);
+	//			console.log("zero Answer   "+ans1);
 				
 				
 				if(flowAns=="")
@@ -232,19 +232,19 @@ function calibration(masterJson,meter,cylinderPiston)
 			var id1=1;
 			$("#spanSubmit").click(function() {
 				
-				console.log("in span submit");
+	//			console.log("in span submit");
 				flowAns = $("#spanText").val().trim();
 				var max=masterJson.weight[length].meterPressureWithError;
 				var min=masterJson.weight[length].totalWeight;
 				var ans=min-max;
-				console.log("span ans    "+ans);
+	//			console.log("span ans    "+ans);
 				ans2 = parseFloat(ans);
 				var ans3=ans2.toFixed(2);
 				var ans1 = parseFloat(ans3);
-				console.log("span Answer   "+ans1);
+	//			console.log("span Answer   "+ans1);
 				
 				//var flowAns = parseFloat($("#spanText").val().trim());
-				console.log("flowAns Answer   "+flowAns);
+	//			console.log("flowAns Answer   "+flowAns);
 				if(flowAns=="")
 					{
 
@@ -311,9 +311,9 @@ function calibration(masterJson,meter,cylinderPiston)
 			var rotate=20;
 			$("#plusZero").click(function() {
 				zeroCalibrationWrongPlus++;
-				console.log("zeroCalibrationWrongPlus "+zeroCalibrationWrongPlus);
+//				console.log("zeroCalibrationWrongPlus "+zeroCalibrationWrongPlus);
 				var ydataPulse=[];
-			    console.log(counterMasterJson);
+//			    console.log(counterMasterJson);
 				$("#knobZero").css({ transform: 'rotate('+rotate+'deg)' });
 				var temp1=masterJson.weight[0].meterPressureWithError;
 				var temp2=masterJson.weight[0].totalWeight;
@@ -352,7 +352,7 @@ function calibration(masterJson,meter,cylinderPiston)
 			$("#minusZero").click(function() {
 				zeroCalibrationWrongMinus++;
 				
-	   console.log("zeroCalibrationWrongMinus "+zeroCalibrationWrongMinus);
+//	   console.log("zeroCalibrationWrongMinus "+zeroCalibrationWrongMinus);
 				var ydataPulse=[];
 			
 				$("#knobZero").css({ transform: 'rotate('+rotate+'deg)' });
@@ -401,7 +401,7 @@ function calibration(masterJson,meter,cylinderPiston)
 			var stdSpan=parseInt(temp2);
 			$("#minusMax").click(function() {
 				spanCalibrationWrongMinus++;
-	  			console.log("spanCalibrationWrongMinus "+spanCalibrationWrongMinus);
+	//  			console.log("spanCalibrationWrongMinus "+spanCalibrationWrongMinus);
 				var ydataPulse=[];
 			
 				$("#knobSpan").css({ transform: 'rotate('+rotate+'deg)' });
@@ -463,7 +463,7 @@ function calibration(masterJson,meter,cylinderPiston)
 				 $("#plus2").click(function() {
 					  
 	  					 zeroCalibrationAgainPlus++;
-	  					 console.log("zeroCalibrationAgainPlus "+zeroCalibrationAgainPlus);
+//	  					 console.log("zeroCalibrationAgainPlus "+zeroCalibrationAgainPlus);
 						var ydataPulse=[];
 						var length= masterJson.weight.length-1;
 						$("#knob2").css({ transform: 'rotate('+rotate+'deg)' });
@@ -514,7 +514,7 @@ function calibration(masterJson,meter,cylinderPiston)
 					});
 				 $("#minus2").click(function() {
 					 zeroCalibrationAgainMinus++;
-						console.log("zeroCalibrationAgainMinus "+zeroCalibrationAgainMinus);
+	//					console.log("zeroCalibrationAgainMinus "+zeroCalibrationAgainMinus);
 						var ydataPulse=[];
 						var length= masterJson.weight.length-1;
 						$("#knob2").css({ transform: 'rotate('+rotate+'deg)' });
@@ -570,7 +570,7 @@ function calibration(masterJson,meter,cylinderPiston)
 				var ydataPulse=[];
 				
 	 spanCalibrationWrongPlus++;
-	 console.log("spanCalibrationWrongPlus "+spanCalibrationWrongPlus);
+//	 console.log("spanCalibrationWrongPlus "+spanCalibrationWrongPlus);
 				$("#knobSpan").css({ transform: 'rotate('+rotate+'deg)' });
 //				var actualSpan =parseInt(masterJson.weight[length].meterPressureWithError);
 //				var stdSpan=parseInt(masterJson.weight[length].totalWeight);
