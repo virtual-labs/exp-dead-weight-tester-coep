@@ -92,13 +92,13 @@ function tableCreate(masterJson,meter,cylinderPiston)
 //					 +'</div>'
 //					 +'</div>'
 //				        $("#sub-main-div2").html(str);
-//						console.log("calibration ");
+						console.log("calibration ");
 					}
 //				}
 //				else{
 //					alert("Please provide atleast 5 reading ");}
 				}
-//				console.log(masterJson);
+				console.log(masterJson);
 				$("#Calibration").click(function(){
 					calibration(masterJson);
                    
@@ -132,17 +132,17 @@ function tableCreate(masterJson,meter,cylinderPiston)
 			graphData1.push(tempArr);
 
 	}
-//		console.log("xdata "+xdata);
-//		console.log("ydata "+ydata);
-//		console.log("graphData1 "+graphData1);
+		console.log("xdata "+xdata);
+		console.log("ydata "+ydata);
+		console.log("graphData1 "+graphData1);
 		ydata.sort(function(a, b) { return a - b });
 		xdata.sort(function(a, b) { return a - b });
-//		console.log("After xdata "+xdata);
-//		console.log("After ydata "+ydata);
+		console.log("After xdata "+xdata);
+		console.log("After ydata "+ydata);
 		Xmax = parseFloat(xdata[xdata.length - 1]);
 		Ymax = parseFloat(ydata[ydata.length - 1]);
-//		console.log("Xmax "+Xmax);
-//		console.log("Ymax "+Ymax);
+		console.log("Xmax "+Xmax);
+		console.log("Ymax "+Ymax);
 		var maxPoint=0;
 		if(Xmax<Ymax)
 		{
@@ -152,7 +152,7 @@ function tableCreate(masterJson,meter,cylinderPiston)
 		{
 			maxPoint=Xmax;
 		}
-//		console.log(" Weight V/S Pressure  " + graphData1);
+		console.log(" Weight V/S Pressure  " + graphData1);
 		Highcharts.chart('main-div-conf', {
 			title: {
 				text: ' Weight V/S Pressure  '

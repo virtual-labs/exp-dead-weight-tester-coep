@@ -89,8 +89,8 @@ $(".panelBody").css({"background-color": "#fff"});
 });
 			$('#testSubmit').on('click', function() {		
 				$("body").css("padding","0px 0px 0px 0px");
-				
-				
+				$("#testSubmit").prop("hidden",true);
+				$("#nextLevel1").prop("hidden",false);
 					var arr = [];
 					
 					for (var i = 0; i < QuestionsJSON.data["SEC"].length; i++) {
@@ -110,7 +110,6 @@ $(".panelBody").css({"background-color": "#fff"});
 //							alert('Please attempt all the questions');
 //							$("body").css("padding","0px");
 							$("#modelMsg").html("<b class='boldTextRed'>Please attempt all the questions.</b>");
-							$("#testSubmit").prop("hidden",false);
 						break;	
 						}
 						arr.push({
@@ -118,8 +117,6 @@ $(".panelBody").css({"background-color": "#fff"});
 							"ANS": myRadio,
 							"ANSId": ansId
 						});
-						$("#nextLevel1").prop("hidden",true);
-						$("#testSubmit").prop("hidden",true);
 					}
 
 					
@@ -128,7 +125,14 @@ $(".panelBody").css({"background-color": "#fff"});
 						for (var i = 0; i < arr.length; i++) {
 							if (arr[i].ANSId == "true") {
 								ansCount++;
-							$("#modelMsg").html("<b class='boldTextGreen'>Test Submitted Successfully . Correct Answers Are : " + ansCount+"</b>");
+								
+							}
+						}
+//						dataQues.corrAns = ansCount;
+//						 data.corrAns = dataQues;
+//						 console.log(data);
+						 
+						$("#modelMsg").html("<b class='boldTextGreen'>Test Submitted Successfully . Correct Answers Are : " + ansCount+"</b>");
 //						alert("Test Submitted Successfully . Correct Answers Are : " + ansCount);
 //						$("body").css("padding","0px 0px 0px 0px");
 						
@@ -136,16 +140,7 @@ $(".panelBody").css({"background-color": "#fff"});
 						tempCountJson.correctAnswer = ansCount; 
 //						 jsonArr.push(tempJson);
 					counterMasterJson.questionary = tempCountJson;
-					
-						 $("#centerText2").html("CONFIGURATION"); 	
-							}
-						}
-//						dataQues.corrAns = ansCount;
-//						 data.corrAns = dataQues;
-//						 console.log(data);
-						 
-						$("#nextLevel1").prop("hidden",false);
-						$("#testSubmit").prop("hidden",true);
+						 $("#centerText2").html("CONFIGURATION"); 
 							
 		   					
 					}

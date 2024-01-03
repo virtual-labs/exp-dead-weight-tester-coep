@@ -2,7 +2,7 @@
 function mimicCall(meter,cylinderPiston)
 {	
 	$(".panelBody").css({"background-color": "#fff"});
-//console.log(counterMasterJson);	
+console.log(counterMasterJson);	
 $("#centerText1").html("MIMIC");
 $("#centerText2").html("OBSERVED READINGS");
 //paper = new Raphael(document.getElementById('canvas-div'), 800, 800);
@@ -989,8 +989,8 @@ function remove_Weight_label(){
 //    jsonArr.push(tempJson);
 //	masterJson.weight = jsonArr;
 ////	calculationPanel();
-//masterJson.weight.sort(function(a, b){
-//		  		  return a.totalWeight - b.totalWeight;
+	//masterJson.weight.sort(function(a, b){
+//	  		  return a.totalWeight - b.totalWeight;
 //			});
 //	console.log(masterJson);
 //    console.log(imgWeightArray);
@@ -1085,37 +1085,37 @@ function pfClick(){
 		
 		imgWeightArray[i].animate({y: Yposition-up_lift}, time);	
 			Yposition = Yposition-30;
-//			console.log(wtStackMasterJson);
+			console.log(wtStackMasterJson);
 		
 	     }	
 	      if( str=="gf500" ){
 		
 		imgWeightArray[i].animate({y: Yposition-up_lift}, time);					
-	//		console.log(wtStackMasterJson);
+			console.log(wtStackMasterJson);
 			Yposition = Yposition-30;	
 				     }
 	      if( str=="kgf1" ){
 		
 		imgWeightArray[i].animate({y: Yposition-up_lift}, time);				
-//			console.log(wtStackMasterJson);
+			console.log(wtStackMasterJson);
 			Yposition = Yposition-30;				
 	     }	
 	      if( str=="kgf2" ){
 		
 		imgWeightArray[i].animate({y: Yposition-up_lift}, time);					
-//			console.log(wtStackMasterJson);	
+			console.log(wtStackMasterJson);	
 			Yposition = Yposition-30;			
 	     }	
 	      if( str=="kgf5" ){
 			
 		imgWeightArray[i].animate({y: Yposition-up_lift}, time);			
-//			console.log(wtStackMasterJson);			
+			console.log(wtStackMasterJson);			
 			Yposition = Yposition-30;	
 	     }	
 	      if( str=="kgf10" ){	
 			
 		imgWeightArray[i].animate({y: Yposition-up_lift}, time);			
-//			console.log(wtStackMasterJson);
+			console.log(wtStackMasterJson);
 			Yposition = Yposition-30;
 	     }	   	  
   if(a == 50 && up_lift > 48){
@@ -1260,7 +1260,7 @@ var unit1=270/meterguage;
 
  angle= unit1*weight_M;
  pressure = angle+pres+1; 
-//  console.log("pressure :"+pressure);
+  console.log("pressure :"+pressure);
   presCal = pressure - totalStackWeight;
   actualPres = pressure-presCal;
   
@@ -1318,8 +1318,8 @@ var unit1=270/meterguage;
 	 	}
 	}
 	
- //   console.log("actualPressure in animonPlus:"+actualPressure);
- //   console.log("err in animonPlus:"+err);
+    console.log("actualPressure in animonPlus:"+actualPressure);
+    console.log("err in animonPlus:"+err);
        R_valve.toFront();
 	  M_valve.toFront();
 	  
@@ -1356,7 +1356,7 @@ var unit1=270/meterguage;
 
  angle= unit1;
  pressure += pres; 
-//  console.log("pressure :"+pressure);
+  console.log("pressure :"+pressure);
   presCal = pressure - totalStackWeight;
   actualPres = pressure-presCal;
   
@@ -1544,8 +1544,8 @@ if(animVal == 0){
 animVal++;
 } 
 ranErr = num.toFixed(1);
- //    console.log(" num "+num);
- //    console.log(" ranErr "+ranErr);
+     console.log(" num "+num);
+     console.log(" ranErr "+ranErr);
      pres = parseFloat(ranErr);
 var weight_M = totalStackWeight;
 var unit1=270/meterguage;
@@ -1604,8 +1604,8 @@ if(animVal == 0){
 animVal++;
 } 
 ranErr = num.toFixed(1);
- //    console.log(" num "+num);
- //    console.log(" ranErr "+ranErr);
+     console.log(" num "+num);
+     console.log(" ranErr "+ranErr);
      pres = parseFloat(ranErr);
 var weight_M = totalStackWeight;
 var unit1=270/meterguage;
@@ -1655,7 +1655,7 @@ function animBefore(){
 	    xPrayVal += err;
 	    round = xPrayVal.toFixed(1);
 	    meterVal = parseFloat(round);
-//	  console.log("xPrayVal "+round);
+	  console.log("xPrayVal "+round);
 		
 		 if(a==50){
 	    
@@ -1706,7 +1706,7 @@ function animBefore1(){
 	    xPrayVal += err;
 	    round1 = xPrayVal.toFixed(1);
 	    meterVal = parseFloat(round1);
-//	  console.log("xPrayVal "+round1);
+	  console.log("xPrayVal "+round1);
 		
 		 if(a==50){
 	    
@@ -1816,8 +1816,8 @@ var unit1=270/meterguage;
 	 	}
 	}
 	
- //   console.log("actualPressure :"+actualPressure);
- //   console.log("err :"+err);
+    console.log("actualPressure :"+actualPressure);
+    console.log("err :"+err);
        R_valve.toFront();
 	  M_valve.toFront();
 	  }	 
@@ -1827,8 +1827,8 @@ function meterAnimonMinus(){
       
       pressure = pressure-pres;      
       meterVal = parseFloat(meterVal-err).toFixed(1);
- //     console.log("meterVal enter"+meterVal);
- //     console.log(" pressure enter"+pressure);
+      console.log("meterVal enter"+meterVal);
+      console.log(" pressure enter"+pressure);
 	 if(a==50){
 	    
 	 	x1 = x-528 , y1 = y-307;
@@ -1891,14 +1891,14 @@ function pisAnimZero(){
      Yposition = syp-124;
      } if(a == 55){
 	up_lift -= 5;
-//	console.log(" pisAnim value "+up_lift);
+	console.log(" pisAnim value "+up_lift);
 	Yposition= syp-135;
 	}if(a == 60){
 		up_lift -= 5;
-//	console.log(" pisAnim value "+up_lift);
+	console.log(" pisAnim value "+up_lift);
 		Yposition= syp-145;
 	}
- //     console.log("Value of up_lift in minus: "+up_lift);
+      console.log("Value of up_lift in minus: "+up_lift);
 	  
 	  var _transformedPath_p1 = Raphael.transformPath("M"+sxp+" "+syp+" l 0 "+(-1.64*a)+" l "+(-1.4*a)+" 0 l 0 "+(-b/2)+" l "+(3*a)+" 0 l 0 "
 	                          +(b/2)+" l "+(-1.4*a)+" 0 l 0 "+(1.64*a)+" z ", 'T 0 '+-up_lift);
@@ -1926,14 +1926,14 @@ function pisAnim(){
      Yposition = syp-124;
      } if(a == 55){
 	up_lift -= 5;
-//	console.log(" pisAnim value "+up_lift);
+	console.log(" pisAnim value "+up_lift);
 	Yposition= syp-135;
 	}if(a == 60){
 		up_lift -= 5;
-//	console.log(" pisAnim value "+up_lift);
+	console.log(" pisAnim value "+up_lift);
 		Yposition= syp-145;
 	}
- //     console.log("Value of up_lift in minus: "+up_lift);
+      console.log("Value of up_lift in minus: "+up_lift);
 	  
 	  var _transformedPath_p1 = Raphael.transformPath("M"+sxp+" "+syp+" l 0 "+(-1.64*a)+" l "+(-1.4*a)+" 0 l 0 "+(-b/2)+" l "+(3*a)+" 0 l 0 "
 	                          +(b/2)+" l "+(-1.4*a)+" 0 l 0 "+(1.64*a)+" z ", 'T 0 '+-up_lift);
@@ -1953,42 +1953,42 @@ function pisAnim(){
 	    if( str=="gf100" ){
 		imgWeightArray[i].animate({y: Yposition+-up_lift}, time);	
 		Yposition = Yposition-30;	
-//			console.log(wtStackMasterJson);
+			console.log(wtStackMasterJson);
 		
 	     }	
 	      if( str=="gf500" ){
 
 		
 		imgWeightArray[i].animate({y: Yposition+-up_lift}, time);			
-	//		console.log(wtStackMasterJson);
+			console.log(wtStackMasterJson);
 			Yposition = Yposition-30;
 	     }
 	      if( str=="kgf1" ){
 
 		
 		imgWeightArray[i].animate({y: Yposition+-up_lift}, time);			
-	//		console.log(wtStackMasterJson);
+			console.log(wtStackMasterJson);
 			Yposition = Yposition-30;
 	     }	
 	      if( str=="kgf2" ){
 
 		
 		imgWeightArray[i].animate({y: Yposition+-up_lift}, time);			
-	//		console.log(wtStackMasterJson);
+			console.log(wtStackMasterJson);
 			Yposition = Yposition-30;
 	     }	
 	      if( str=="kgf5" ){
 
 		
 		imgWeightArray[i].animate({y: Yposition+-up_lift}, time);			
-	//		console.log(wtStackMasterJson);
+			console.log(wtStackMasterJson);
 			Yposition = Yposition-30;
 	     }	
 	      if( str=="kgf10" ){
 
 		
 		imgWeightArray[i].animate({y: Yposition+-up_lift}, time);			
-	//		console.log(wtStackMasterJson);
+			console.log(wtStackMasterJson);
 			Yposition = Yposition-30;
 	     }
 	     
@@ -2242,8 +2242,8 @@ function meterAnimPosErr(){
 		}
 		}
 		
-//		console.log(" presAfter: "+presAfter);
-//		console.log(" pAv: "+pAv);
+		console.log(" presAfter: "+presAfter);
+		console.log(" pAv: "+pAv);
 		
 	}else{
 		meterZero();
@@ -2396,7 +2396,6 @@ minus.click(function(){
 function meterMinusZero(){
 	angle = 0;
 	pressure = 0;
-	totalStackWeight = 0;
 	 if(a==50){
 	    
 	 	x1 = x-528 , y1 = y-307;
@@ -2643,8 +2642,8 @@ else{
            flag++;
            cnt++;
 //           wt_arr[cnt] = wt;
- //         console.log("cnt500gf++ :"+cnt100gf);
-//         console.log("counter : "+cnt);        
+          console.log("cnt500gf++ :"+cnt100gf);
+         console.log("counter : "+cnt);        
 //         console.log("www "+weight12);
      }else{
 	alert("If you add this weight it will cross meter limit");
@@ -2748,8 +2747,8 @@ else{
            flag++;
            cnt++;
 //           wt_arr[cnt] = wt;
-//          console.log("cnt500gf++ :"+cnt500gf);
- //        console.log("counter : "+cnt);        
+          console.log("cnt500gf++ :"+cnt500gf);
+         console.log("counter : "+cnt);        
 //         console.log("www "+weight12);
       }else{
 	alert("If you add this weight it will cross meter limit");
@@ -2846,9 +2845,9 @@ else{
 	   wt_ht += 30;
            flag++;
              cnt++;
- //             console.log("cnt1kgf++ :"+cnt1kgf);
- //           console.log("counter : "+cnt);  
- //           console.log(totalStackWeight);
+              console.log("cnt1kgf++ :"+cnt1kgf);
+            console.log("counter : "+cnt);  
+            console.log(totalStackWeight);
 //             console.log("www "+weight12);
         }else{
 	alert("If you add this weight it will cross meter limit");
@@ -2946,9 +2945,9 @@ else{
 	   wt_ht += 30;
            flag++;
             cnt++;
- //            console.log("cnt2kgf++ :"+cnt100gf);
- //      console.log("counter : "+cnt);  
- //     console.log(totalStackWeight);
+             console.log("cnt2kgf++ :"+cnt100gf);
+       console.log("counter : "+cnt);  
+      console.log(totalStackWeight);
 //       console.log("www "+weight12);
       }else{
 	alert("If you add this weight it will cross meter limit");
@@ -3047,9 +3046,9 @@ else{
            flag++;
           
             cnt++;
-  //           console.log("cnt5kgf++ :"+cnt5kgf);
-  //          console.log("counter : "+cnt);  
- //     console.log(totalStackWeight);
+             console.log("cnt5kgf++ :"+cnt5kgf);
+            console.log("counter : "+cnt);  
+      console.log(totalStackWeight);
 //       console.log("www "+weight12);
      }else{
 	alert("If you add this weight it will cross meter limit");
@@ -3154,8 +3153,8 @@ else{
 	   wt_ht += 30;
        flag++;        
         cnt++; 
- //            console.log("cnt10kgf :"+cnt10kgf);
- //  console.log(totalStackWeight);
+             console.log("cnt10kgf :"+cnt10kgf);
+   console.log(totalStackWeight);
      }else{
 	 alert("If you add this weight it will cross meter limit");
 }
@@ -3208,10 +3207,10 @@ function weight_remove(){
 		masterJson.weight[masterJson.weight.length-1].gf100 -=1;	
 	   
 
-//		console.log(wtStackMasterJson);
+		console.log(wtStackMasterJson);
 
 //	     }
-//	       console.log(masterJson);
+	       console.log(masterJson);
 	} 
 	
 	
@@ -3228,10 +3227,10 @@ function weight_remove(){
 		totalStackWeight = totalStackWeight;
 		masterJson.weight[masterJson.weight.length-1].gf500 -=1;
 		 
-//		console.log(wtStackMasterJson);
-//	   console.log("totalStackWeight"+totalStackWeight);
+		console.log(wtStackMasterJson);
+	   console.log("totalStackWeight"+totalStackWeight);
 //	     }
-//	       console.log(masterJson);
+	       console.log(masterJson);
 	} 
 	
 	 else if(kgf1 === true && str=="kgf1" )
@@ -3247,11 +3246,11 @@ function weight_remove(){
 		totalStackWeight = totalStackWeight;
 		masterJson.weight[masterJson.weight.length-1].kgf1 -=1;	
 		 
-//		console.log(wtStackMasterJson);
-//	   console.log("totalStackWeight"+totalStackWeight);
+		console.log(wtStackMasterJson);
+	   console.log("totalStackWeight"+totalStackWeight);
 	   
 //	     }
-//	       console.log(masterJson);
+	       console.log(masterJson);
 	} 
 	
 	 else if(kgf2 === true && str=="kgf2" )
@@ -3266,11 +3265,11 @@ function weight_remove(){
 		totalStackWeight = totalStackWeight;
 		masterJson.weight[masterJson.weight.length-1].kgf2 -=1;	
          
-//	console.log(wtStackMasterJson);
-//	   console.log("totalStackWeight"+totalStackWeight);
+	console.log(wtStackMasterJson);
+	   console.log("totalStackWeight"+totalStackWeight);
 	   
 //	     }
-//	       console.log(masterJson);
+	       console.log(masterJson);
 	} 
 	
 	 else if(kgf5 === true && str=="kgf5" )
@@ -3285,11 +3284,11 @@ function weight_remove(){
 		totalStackWeight = totalStackWeight;			
 		masterJson.weight[masterJson.weight.length-1].kgf5 -=1;
 	
-//	console.log(wtStackMasterJson);
-//	   console.log("totalStackWeight"+totalStackWeight);
+	console.log(wtStackMasterJson);
+	   console.log("totalStackWeight"+totalStackWeight);
 	   
 //	     }
-//	       console.log(masterJson);
+	       console.log(masterJson);
 	} 
 	
 	 else if(kgf10 === true && str=="kgf10" )
@@ -3312,7 +3311,7 @@ function weight_remove(){
 	}  
 	imgWeightArray[imgWeightArray.length-1].remove();
 	imgWeightArray.pop();
-//	   console.log(imgWeightArray);
+	   console.log(imgWeightArray);
 	
 	totalStackWeight = totalStackWeight;
 	 imgWeightArray.length = imgWeightArray.length;
@@ -3323,9 +3322,9 @@ function weight_remove(){
 	alert("Place weight on platform...");
 }
    
-//    console.log("weight removed value : "+totalStackWeight);
- //   console.log("masterJson");
- //   console.log(masterJson);
+    console.log("weight removed value : "+totalStackWeight);
+    console.log("masterJson");
+    console.log(masterJson);
 	}
 
 
@@ -3336,7 +3335,7 @@ function weight_remove(){
 	 cnt--;
 		 wt_ht -= 30;
          
-//         console.log("dupFlg in weight_remove :"+dupFlg);
+         console.log("dupFlg in weight_remove :"+dupFlg);
 //        wtStackMasterJson.LIFOSTACK = wtStackMasterJson.LIFOSTACK;
     
 	      flag--; 
@@ -3351,8 +3350,8 @@ function weight_remove(){
 		
 		  weight_remove();
 		  delete wtStackMasterJson.LIFOSTACK.pop();
-//		  console.log("After delete");
-//        console.log(wtStackMasterJson);		 
+		  console.log("After delete");
+        console.log(wtStackMasterJson);		 
 
 		    pf.toFront();
 		    polish.toFront();	
@@ -3601,8 +3600,8 @@ if(confirmFlg == 1){
 	        if(totalStackWeight > 0){
 		addFun();
 	        }   
-//	       console.log("masterJson in subrec");
-//	       console.log(masterJson);
+	       console.log("masterJson in subrec");
+	       console.log(masterJson);
 	       tableCreate(masterJson,meter);
 	       dupFlg = 0;
 	  }
@@ -3623,7 +3622,7 @@ var unit1=270/meterguage;
 
  angle= unit1*weight_M;
  pressure = angle+pres+1; 
-//  console.log("pressure :"+pressure);
+  console.log("pressure :"+pressure);
   presCal = pressure - totalStackWeight;
   actualPres = pressure-presCal;
   
@@ -3647,7 +3646,7 @@ function addFun(){
                    arrWeight.push(totalStackWeight);
 					var hasDuplicate = arrWeight.some((totalStackWeight, i) => arrWeight.indexOf(totalStackWeight) !== i);
 					
-	//				console.log("hasDuplicate"+hasDuplicate);
+					console.log("hasDuplicate"+hasDuplicate);
 					if(hasDuplicate == true){
 						dupFlg = 0;
 						
@@ -3691,7 +3690,7 @@ function addFun(){
 				    
 				    
 				//	calculationPanel();
-//				    console.log("IN add function meter pressure with error 2"+actalVal);
+				    console.log("IN add function meter pressure with error 2"+actalVal);
 					masterJson.weight.sort(function(a, b){
 						  return a.tableSortVal - b.tableSortVal;
 						  });
