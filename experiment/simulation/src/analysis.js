@@ -665,8 +665,8 @@ function resultAnalysis(counterMasterJson){
 			    drilldown: {
 			        series: [
 			            {
-			                name: 'Configuration',
-			                id: 'Configuration',
+			                name: 'Mimic',
+			                id: 'Mimic',
 			                data: [
 			                    [
 			                        'v97.0',
@@ -775,8 +775,8 @@ function resultAnalysis(counterMasterJson){
 			                ]
 			            },
 			            {
-			                name: 'Mimic',
-			                id: 'Mimic',
+			                name: 'Configuration',
+			                id: 'Configuration',
 			                data: [
 			                    [
 			                        'v15.3',
