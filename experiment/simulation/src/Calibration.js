@@ -163,10 +163,10 @@ function calibration(masterJson,meter,cylinderPiston)
 				flowAns = $("#zeroText").val().trim();
 				var max=masterJson.weight[0].meterPressureWithError;
 				var min=masterJson.weight[0].totalWeight;
-				var ans=min-max;
+				var ans=(min-max);
 				ans3 = parseFloat(ans);
-				console.log("zero ans    "+ans);
-				var ans1=ans.toFixed(2);
+				console.log("zero ans    "+ans3);
+//				var ans1=ans.toFixed(2);
 				
 				console.log("zero Answer   "+ans1);
 				
@@ -183,14 +183,14 @@ function calibration(masterJson,meter,cylinderPiston)
 				
 				if (id <= 3) {
 					
-								if(flowAns==ans1){
+								if(flowAns==ans3){
 									checkAns = 0;
 									id=0;
 									  $("#zeroSubmit").prop('disabled', true);
 									$("#zeroText").prop('disabled', true);
 									$("#spanAnswer").attr("hidden",false);
 								}
-								else if (flowAns != ans1) {
+								else if (flowAns != ans3) {
 								
 								 $("#modelMsgZero").html("<b class='boldTextRed'>Entered value is incorrect.Try again . </b>");
 								 $("body").css("padding","0px 0px 0px 0px");
@@ -207,7 +207,7 @@ function calibration(masterJson,meter,cylinderPiston)
 				} else {
 //					flowAns = $("#zeroText").val();
 
-					if (flowAns == ans1) {
+					if (flowAns == ans3) {
 						checkAns = 0;
 						
 						id=0;
@@ -218,7 +218,7 @@ function calibration(masterJson,meter,cylinderPiston)
 					} else {
 						checkAns = 0;
 //						alert("correct answer is " + flow );
-						 $("#modelMsgZero").html("<b class='boldTextRed'>Correct answer is " + ans1+"</b>");
+						 $("#modelMsgZero").html("<b class='boldTextRed'>Correct answer is " + ans3+"</b>");
 						 $("body").css("padding","0px 0px 0px 0px");
 						 zero_wrong++;	
 
@@ -232,6 +232,8 @@ function calibration(masterJson,meter,cylinderPiston)
 			var length= masterJson.weight.length-1;
 			var ans2 = 0;
 			var id1=1;
+			var ans1 = 0;
+			
 			$("#spanSubmit").click(function() {
 				
 				console.log("in span submit");
@@ -242,7 +244,7 @@ function calibration(masterJson,meter,cylinderPiston)
 				console.log("span ans    "+ans);
 				ans2 = parseFloat(ans);
 				var ans11=ans2.toFixed(2);
-				var ans1 = parseFloat(ans11);
+				 ans1 = parseFloat(ans11);
 				console.log("span Answer   "+ans1);
 				
 				

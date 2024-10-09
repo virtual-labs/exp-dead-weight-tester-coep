@@ -1,44 +1,65 @@
 function resultAnalysis(counterMasterJson){
 	$("#procedure").prop("hidden",true);
-//console.log(counterMasterJson);
+var correctVal = (counterMasterJson.questionary.correctAnswer/6).toFixed(2);
+var quesPercent = (correctVal*100).toFixed(1);
+quesPercent = parseFloat(quesPercent);
 
-//	$("#resultId").click(function(){
-	var htm=''
-		
-		+'<div class="container-fluid">'
-		+'  <div class="row">'
-//		+'<div class="col-md-1">'
-//
-//		+' </div>'
-		+'<div class="col-md-4">'
-		+' <div class="panel panel-danger headingPanel" >'
-		+' <div class="panel-body" id="panelbody"><center><span class="heading1">Pressure Gauge : '+counterMasterJson.config.meter+'</span></center></div>'
-		+'</div>'
-		+'</div>'
+var config = ((1/(counterMasterJson.config.attempt+1))*100).toFixed(2);
+config = parseFloat(config);
+console.log(config);
 
-		+'<div class="col-md-4">'
-		+' <div class="panel remarkBground" >'
-		+' <div class="panel-body remark" ><center>Congratulations!!! <br> Dead weight tester experiment is completed successfully!!'
-		+'<br> Satisfactory performance</center></div>'
-		+'</div>'
-		+'</div>'
+var mimicVal = (1/(counterMasterJson.mimic.misplacePolishSurface+1)*100).toFixed(2);
+mimicVal = parseFloat(mimicVal);
 
-		+'<div class="col-md-4">'
-		+' <div class="panel panel-danger headingPanel">'
-		+' <div class="panel-body" id="panelbody"><center><span class="heading1">Cylinder Piston :'+counterMasterJson.config.cylinderPiston+'</span></center></div>'
-		+'</div>'
-		+' </div>'
-//		+'<div class="col-md-1">'
-//
-//		+' </div>'
-		+' </div>'
-		
-		//Close 1 Row
-		+'<div class="container-fluid">'
+var totZero = parseInt(counterMasterJson.calibration.zeroCalibrationForMinusWrong)+parseInt(counterMasterJson.calibration.zeroCalibrationForWrongPlus);
+var totSpan = parseInt(counterMasterJson.calibration.spanCalibrationForMinusWrong)+parseInt(counterMasterJson.calibration.spanCalibrationForWrongPlus);
+	
+var calPercent = ((totZero+totSpan)/2).toFixed(2);
+calPercent = parseFloat(calPercent);
+    
+var fault = ((1/counterMasterJson.faultFinding.wrongSelection+1)*100).toFixed(2);
+fault = parseFloat(fault);
+
+var htm = ''
+	+ '<div class="container-fluid">'
+	+ '  <div class="row">'
+//	+ '<div class="col-md-4">'
+//	+ ' <div class="panel panel-danger headingPanel" >'
+//	+ ' <div class="panel-body" id="panelbody"><center><span class="heading1"><b> Pressure Gauge : '+counterMasterJson.config.meter+' </b></span></center></div>'
+//	+ '</div>'
+//	+ '</div>'
+
+	+ '<div class="col-md-12">'
+	+ ' <div class="panel remarkBground" >'
+	+ ' <div class="panel-body remark" ><center>Congratulations!!! <b>Dead weight tester simulation is completed !!</b>'
+//	+ '<br> <b>Satisfactory performance</b></center></div>'
+	+ '</div>'
+	+ '</div>'
+	+ '</div>'
+
+//	+ '<div class="col-md-4">'
+//	+ ' <div class="panel panel-danger headingPanel">'
+//	+ ' <div class="panel-body" id="panelbody"><center><span class="heading1"><b>Cylinder Piston :'+counterMasterJson.config.cylinderPiston+'</b></span></center></div>'
+//	+ '</div>'
+//	
+//		+ ' <div class="panel panel-danger headingPanel" >'
+//	+ ' <div class="panel-body" id="panelbody"><center><span class="heading1"><b> Pressure Gauge : '+counterMasterJson.config.meter+' </b></span></center></div>'
+//	+ '</div>'
+//	
+//	+ ' </div>'
+	+ ' </div>'
+	
+	+'  <div class="row">'
+	+ '<div class="col-md-12">'
+	+ ' <center><p class="configHeader"><b>Selected Configuration : &emsp; </b><span class="heading1">Cylinder Piston :'+counterMasterJson.config.cylinderPiston
+	+ ' and  Pressure Gauge : '+counterMasterJson.config.meter+' </span></p></center>'
+	+'</div>'
+	+'</div>'
+	
 		+'  <div class="row">'
 		+'<div class="col-md-4">'
 	
-		 +'<br><table class="table table-bordered ">'
+		 +'<table class="table table-bordered table-striped">'
 		   +'  <thead class="thead-dark">'
 		   +'    <tr class="">'
 		   +'      <th><center class="">COMPETENCY(DEAD WEIGHT TESTER)</center></th>'
@@ -48,166 +69,166 @@ function resultAnalysis(counterMasterJson){
 		   +'  <tbody>'
 		   +'   <tr>'
 		   +'     <td class=""><center>Basic knowledge</center></td>'
-		   +'     <td class=""><center class="attained"> Attained</center></td>'
+		   if(quesPercent>=60){
+			htm += '<td class=""><center class="attained"> Attained</center></td>'
+		}else{
+			htm +='<td class=""><center class="NotAttained"> Not Attained</center></td>'
+		}
+		   
 		  
-		   +'  </tr>'
+		   htm += '  </tr>'
 		   +'  <tr>'
 		   +'     <td class=""><center>Configuration</center></td>'
-		   +'     <td class=""><center class="attained"> Attained</center></td>'
-		   +' </tr>'
+		   if(config>=60){
+		   htm += '<td class=""><center class="attained"> Attained</center></td>'
+		   }else{
+			htm +='<td class=""><center class="NotAttained"> Not Attained</center></td>'
+		}
+		  htm +=' </tr>'
 		   +'   <tr>'
 		  +'     <td class=""><center>Mimic</center></td>'
-		   +'     <td class=""><center class="attained">Attained</center></td>'
+		  if(mimicVal>=60){
+			 htm += '<td class=""><center class="attained"> Attained</center></td>'
+		}else{
+			htm +='<td class=""><center class="NotAttained"> Not Attained</center></td>'
+		}
 		  
-		   +'  </tr>'
+		  
+		   htm +='  </tr>'
 		   +'  <tr>'
 		+'<td class=""><center>Calibration</center></td>'
-		   +'<td class=""><center class="attained">Attained</center></td>'
-		   +' </tr>'
+		   
+		   if(calPercent>=60){
+			htm += '<td class=""><center class="attained"> Attained</center></td>'
+		}else{
+			htm +='<td class=""><center class="NotAttained"> Not Attained</center></td>'
+		}
+		  
+		   htm +=' </tr>'
 		   +'<tr>'
 		  +' <td class=""><center>Meter Calibration</center></td>'
 		   +'<td class=""><center class="attained"> Attained</center></td>'
 		  
 		   +'  </tr>'
-			 +'   <tr>'
-		  +'     <td class=""><center>Fault Finding</center></td>'
-		   +'     <td class=""><center class="attained"> Attained</center></td>'
-		  
-		   +'  </tr>'
+		   +'<tr>'
+		  +' <td class=""><center>Fault Finding</center></td>'
+		  if(fault>=60){
+		   htm += '<td class=""><center class="attained"> Attained</center></td>'
+		  }else{
+		  htm +='<td class=""><center class="NotAttained"> Not Attained</center></td>'
+		}
+		   htm +='  </tr>'
+			
 		   +' </tbody>'
 		  +' </table>'
+		
+		
+		+' <div class="panel panel-danger headingPanel">'
+		+' <div class="panel-body" id="panelbody">'
+		+'<center><span class="heading1"><b>Mimic (Polish Surface)</b></span></center>'		
+		+'</div>'
+		+'</div>'
+		
+		+'<div class="col-md-6">'
+		+' <div class="panel panel-danger " style="margin-bottom: 28px;margin-top:5px;">'
+		+'<center><span class="valueBox">On place</span></center>'
+		+' <div class="panel-body counterPanelRed">'
+		+'<center><span class="valueBox">'+counterMasterJson.mimic.onPolishSurface+'</span></center>'
+		+' </div>'		
+		+'</div>'		
+		+' </div>'
+		
+		+'<div class="col-md-6">'
+		+' <div class="panel panel-danger " style="    margin-bottom: 28px;margin-top:5px;">'
+		+'<center><span class="valueBox">Misplaced</span></center>'
+		+' <div class="panel-body counterPanelGreen">'
+		+'<center><span class="valueBox">'+counterMasterJson.mimic.misplacePolishSurface+'</span></center>'
+		+' </div>'		
+		+'</div>'		
+		+' </div>'
 		  
 		+' </div>'
 		+'<div class="col-md-4" id="graph-div" >'
 
 		+' </div>'
-		+'<div class="col-md-4">'
-		 +'<br><table class="table table-bordered ">'
-		   +'  <thead class="thead-dark">'
-		   +'    <tr class="">'
-		   +'      <th><center class="">COMPETENCY(DEAD WEIGHT TESTER)</center></th>'
-		   +'     <th><center class="">STATUS</center></th>'
-		   +'    </tr>'
-		   +' </thead>'
-		   +'  <tbody>'
-		   +'   <tr>'
-		   +'     <td class=""><center>Basic knowledge</center></td>'
-		   +'     <td class=""><center class="attained"> Attained</center></td>'
-		  
-		   +'  </tr>'
-		   +'  <tr>'
-		   +'     <td class=""><center>Configuration</center></td>'
-		   +'     <td class=""><center class="attained"> Attained</center></td>'
-		   +' </tr>'
-		   +'   <tr>'
-		  +'     <td class=""><center>Mimic</center></td>'
-		   +'     <td class=""><center class="attained">Attained</center></td>'
-		  
-		   +'  </tr>'
-		   +'  <tr>'
-		+'<td class=""><center>Calibration</center></td>'
-		   +'<td class=""><center class="attained">Attained</center></td>'
-		   +' </tr>'
-		   +'<tr>'
-		  +' <td class=""><center>Meter Calibration</center></td>'
-		   +'<td class=""><center class="attained"> Attained</center></td>'
-		  
-		   +'  </tr>'
-			 +'   <tr>'
-		  +'     <td class=""><center>Fault Finding</center></td>'
-		   +'     <td class=""><center class="attained"> Attained</center></td>'
-		  
-		   +'  </tr>'
-		   +' </tbody>'
-		  +' </table>'
-		+' </div>'
 		
-		+' </div>'
-		+' </div>'
-		//Close 2 Row
-		+' <div class="row">'
-		+'<div class="col-md-12">'
-		+'<div class="col-md-4">'
-		+' <div class="panel panel-danger headingPanel" >'
-		+' <div class="panel-body" id="panelbody">'
-		+'<center><span class="heading1">Basic knowledge </span></center>'
-		+'</div>'
-		+'</div>'
+//		+'<div class="col-md-4">'
+//		+' <div class="panel panel-danger headingPanel" style = "margin-top:10px;">'
+//		+' <div class="panel-body" id="panelbody">'
+//		+'<center><span class="heading1"><b>TESTING PERFORMANCE </b></span></center>'
 		
-		+'<div class="col-md-6">'
-		+' <div class="panel panel-danger " style="    margin-bottom: 28px;">'
-		+'<center><span class="valueBox">Correct Answers</span></center>'
-		+' <div class="panel-body counterPanelGreen">'
+//		+'</div>'
+//		+'</div>'
+//		+'</div>'
+//		+'</div>'
 
-		+'<center><span class="valueBox"><b>'+counterMasterJson.questionary.correctAnswer+'</b></span></center>'
+        + '<div class="col-md-4">'
+		+' <div class="panel panel-danger headingPanel">'
+		+' <div class="panel-body" id="panelbody">'
+		+'<center><span class="heading1"><b>Basic Knowledge </b></span></center>'		
 		+'</div>'
 		+'</div>'
-//		+'<span class="heading1">1 </span>'
-		+'</div>'
+		
 		+'<div class="col-md-6">'
-		+' <div class="panel panel-danger  " style="    margin-bottom: 28px;">'
+		+' <div class="panel panel-danger " style="    margin-bottom: 28px;margin-top:5px;">'
 		+'<center><span class="valueBox">Total Questions</span></center>'
 		+' <div class="panel-body counterPanelRed">'
-
-		+'<center><span class="valueBox"><b>6</b></span></center>'
-		+'</div>'
-		+'</div>'
-//		+'<span class="heading1">4 </span>'
-		+'</div>'
-		+'</div>'
-
-		+'<div class="col-sm-4">'
-		+' <div class="panel panel-danger headingPanel">'
-		+' <div class="panel-body" id="panelbody"><center><span class="heading1">Calculated radius of cylinder(cm):</span></center></div>'
-		+'</div>'
-		+'<div class="col-sm-6">'
-		+' <div class="panel panel-danger " style="    margin-bottom: 28px;">'
-		+'<center><span class="valueBox">Correct Attempt</span></center>'
+		+'<center><span class="valueBox">6</span></center>'
+		+' </div>'		
+		+'</div>'		
+		+' </div>'
+		
+		+'<div class="col-md-6">'
+		+' <div class="panel panel-danger " style="    margin-bottom: 28px;margin-top:5px;">'
+		+'<center><span class="valueBox">Correct Answers</span></center>'
 		+' <div class="panel-body counterPanelGreen">'
-
-		+'<center><span class="valueBox"><b>1</b></span></center>'
+		+'<center><span class="valueBox">'+counterMasterJson.questionary.correctAnswer+'</span></center>'
+		+' </div>'		
+		+'</div>'		
+		+' </div>'
+        
+        
+        
+        +'<div class="col-md-12">'
+//		+'<div class="col-md-4">'
+		+' <div class="panel panel-danger headingPanel" >'
+		+' <div class="panel-body" id="panelbody">'
+		+'<center><span class="heading1"><b>Configuration</b></span></center>'
 		+'</div>'
 		+'</div>'
-
-		+'</div>'
-		+'<div class="col-sm-6">'
-		+' <div class="panel panel-danger  " style="    margin-bottom: 28px;">'
+		
+		
+		+'<div class="col-md-6">'
+		+' <div class="panel panel-danger  " style="margin-bottom: 28px;margin-top:5px;">'
 		+'<center><span class="valueBox">Wrong Attempts</span></center>'
 		+' <div class="panel-body counterPanelRed">'
 
 		+'<center><span class="valueBox"><b>'+counterMasterJson.config.attempt+'</b></span></center>'
 		+'</div>'
 		+'</div>'
-
+//		+'<span class="heading1">4 </span>'
 		+'</div>'
-		+' </div>'
-		+'<div class="col-sm-4">'
-		+' <div class="panel panel-danger headingPanel" >'
-		+' <div class="panel-body" id="panelbody"><center><span class="heading1">Mimic(Polish Surface)</span></center></div>'
-		+'</div>'
-		+'<div class="col-sm-6">'
-		+' <div class="panel panel-danger " style="    margin-bottom: 28px;">'
-		+'<center><span class="valueBox">On Place </span></center>'
+		
+		+'<div class="col-md-6">'
+		+' <div class="panel panel-danger " style="margin-bottom: 28px;margin-top:5px;">'
+		+'<center><span class="valueBox">Correct Attempt</span></center>'
 		+' <div class="panel-body counterPanelGreen">'
 
-		+'<center><span class="valueBox"><b>'+counterMasterJson.mimic.onPolishSurface+'</b></span></center>'
+		+'<center><span class="valueBox"><b>1</b></span></center>'
 		+'</div>'
 		+'</div>'
-
+//		+'<span class="heading1">1 </span>'
 		+'</div>'
-		+'<div class="col-sm-6">'
-		+' <div class="panel panel-danger  " style="    margin-bottom: 28px;">'
-		+'<center><span class="valueBox">Misplaced</span></center>'
-		+' <div class="panel-body counterPanelRed">'
-
-		+'<center><span class="valueBox"><b>'+counterMasterJson.mimic.misplacePolishSurface+'</b></span></center>'
+        
+        
+        
+        +'</div>'
 		+'</div>'
 		+'</div>'
-		+'</div>'
-		+' </div>'
-		+' </div>'
-		+' </div>'
-		//Close 2 Row
+		
+		
+		
+		
 		+' <div class="row">'
 		+'<div class="col-sm-12">'
 
@@ -377,527 +398,50 @@ function resultAnalysis(counterMasterJson){
 		+' </div>'
 
 		+' </div>'
-//		//Close 4 Row
-//		+' <div class="row">'
-//		+'<div class="col-sm-7">'
-//
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger headingPanel" >'
-//		+' <div class="panel-body"><center><span class="heading1">Span error Calculation Analysis</span></center></div>'
-//		+'</div>'
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger " style="    margin-bottom: 28px;">'
-//		+'<center><span class="valueBox">Right Answer</span></center>'
-//		+' <div class="panel-body counterPanelGreen">'
-//
-//		+'<center><span class="valueBox"><b>1</b></span></center>'
-//		+'</div>'
-//		+'</div>'
-////		+'<span class="heading1">1 </span>'
-//		+'</div>'
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger  " style="    margin-bottom: 28px;">'
-//		+'<center><span class="valueBox">Total Questions</span></center>'
-//		+' <div class="panel-body counterPanelRed">'
-//
-//		+'<center><span class="valueBox"><b>8</b></span></center>'
-//		+'</div>'
-//		+'</div>'
-////		+'<span class="heading1">4 </span>'
-//		+'</div>'
-//		+' </div>'
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-////		+'</div>'
-//
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger headingPanel" >'
-//		+' <div class="panel-body"><center><span class="heading1">Linearity error Calculation Analysis</span></center></div>'
-//		+'</div>'
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger " style="    margin-bottom: 28px;">'
-//		+'<center><span class="valueBox">Right Answer</span></center>'
-//		+' <div class="panel-body counterPanelGreen">'
-//
-//		+'<center><span class="valueBox"><b>1</b></span></center>'
-//		+'</div>'
-//		+'</div>'
-////		+'<span class="heading1">1 </span>'
-//		+'</div>'
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger  " style="    margin-bottom: 28px;">'
-//		+'<center><span class="valueBox">Total Questions</span></center>'
-//		+' <div class="panel-body counterPanelRed">'
-//
-//		+'<center><span class="valueBox"><b>8</b></span></center>'
-//		+'</div>'
-//		+'</div>'
-////		+'<span class="heading1">4 </span>'
-//		+'</div>'
-//		+' </div>'
-////		+'</div>'
-//
-//		+' </div>'
-//		+'<div class="col-sm-5">'
-////		+'fgfghhhgh'
-//		+' </div>'
-//		+' </div>'
-//		//Close 5 Row
-//		+' <div class="row">'
-//		+'<div class="col-sm-7">'
-//
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger headingPanel" >'
-//		+' <div class="panel-body"><center><span class="heading1">Span error Calculation Analysis</span></center></div>'
-//		+'</div>'
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger " style="    margin-bottom: 28px;">'
-//		+'<center><span class="valueBox">Right Answer</span></center>'
-//		+' <div class="panel-body counterPanelGreen">'
-//
-//		+'<center><span class="valueBox"><b>1</b></span></center>'
-//		+'</div>'
-//		+'</div>'
-////		+'<span class="heading1">1 </span>'
-//		+'</div>'
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger  " style="    margin-bottom: 28px;">'
-//		+'<center><span class="valueBox">Total Questions</span></center>'
-//		+' <div class="panel-body counterPanelRed">'
-//
-//		+'<center><span class="valueBox"><b>8</b></span></center>'
-//		+'</div>'
-//		+'</div>'
-////		+'<span class="heading1">4 </span>'
-//		+'</div>'
-//		+' </div>'
-////		+'</div>'
-//
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger headingPanel" >'
-//		+' <div class="panel-body"><center><span class="heading1">Linearity error Calculation Analysis</span></center></div>'
-//		+'</div>'
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger " style="    margin-bottom: 28px;">'
-//		+'<center><span class="valueBox">Right Answer</span></center>'
-//		+' <div class="panel-body counterPanelGreen">'
-//
-//		+'<center><span class="valueBox"><b>1</b></span></center>'
-//		+'</div>'
-//		+'</div>'
-////		+'<span class="heading1">1 </span>'
-//		+'</div>'
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger  " style="    margin-bottom: 28px;">'
-//		+'<center><span class="valueBox">Total Questions</span></center>'
-//		+' <div class="panel-body counterPanelRed">'
-//
-//		+'<center><span class="valueBox"><b>8</b></span></center>'
-//		+'</div>'
-//		+'</div>'
-////		+'<span class="heading1">4 </span>'
-//		+'</div>'
-////		+' </div>'
-//		
-//		
-//		+'</div>'
-//
-//		+' </div>'
-//
-//		+' </div>'
-		//Close 6 Row
-//		+' <div class="row">'
-//		+'<div class="col-sm-7">'
-//
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger headingPanel" >'
-//		+' <div class="panel-body"><center><span class="heading1">Span error Calculation Analysis</span></center></div>'
-//		+'</div>'
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger " style="    margin-bottom: 28px;">'
-//		+'<center><span class="valueBox">Right Answer</span></center>'
-//		+' <div class="panel-body counterPanelGreen">'
-//
-//		+'<center><span class="valueBox"><b>1</b></span></center>'
-//		+'</div>'
-//		+'</div>'
-////		+'<span class="heading1">1 </span>'
-//		+'</div>'
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger  " style="    margin-bottom: 28px;">'
-//		+'<center><span class="valueBox">Total Questions</span></center>'
-//		+' <div class="panel-body counterPanelRed">'
-//
-//		+'<center><span class="valueBox"><b>8</b></span></center>'
-//		+'</div>'
-//		+'</div>'
-////		+'<span class="heading1">4 </span>'
-//		+'</div>'
-////		+' </div>'
-//		+'</div>'
-//
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger headingPanel" >'
-//		+' <div class="panel-body"><center><span class="heading1">Linearity error Calculation Analysis</span></center></div>'
-//		+'</div>'
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger " style="    margin-bottom: 28px;">'
-//		+'<center><span class="valueBox">Right Answer</span></center>'
-//		+' <div class="panel-body counterPanelGreen">'
-//
-//		+'<center><span class="valueBox"><b>1</b></span></center>'
-//		+'</div>'
-//		+'</div>'
-////		+'<span class="heading1">1 </span>'
-//		+'</div>'
-//		+'<div class="col-sm-6">'
-//		+' <div class="panel panel-danger  " style="    margin-bottom: 28px;">'
-//		+'<center><span class="valueBox">Total Questions</span></center>'
-//		+' <div class="panel-body counterPanelRed">'
-//
-//		+'<center><span class="valueBox"><b>8</b></span></center>'
-//		+'</div>'
-//		+'</div>'
-////		+'<span class="heading1">4 </span>'
-//		+'</div>'
-////		+' </div>'
-//		+'</div>'
-//
-//		+' </div>'
-////		+'<DIV CLASS="COL-SM-5">'
-//////		+'FGFGHHHGH'
-////		+' </DIV>'
-//		+' </div>'
-//		+'</div>'
-//		
 		
-		$("#mainDiv").html(htm);
-//		var graph=// Create the chart
-			Highcharts.chart('graph-div', {
-			    chart: {
-			        type: 'pie'
-			    },
-			    title: {
-			        text: 'Performance',
-			        align: 'left'
-			    },
-			    subtitle: {
-			        text: 'Chart</a>',
-			        align: 'left'
-			    },
+		
+		
+		
+		
+//$("#main-div").html(htm);
 
-			    accessibility: {
-			        announceNewData: {
-			            enabled: true
-			        },
-			        point: {
-			            valueSuffix: '%'
-			        }
-			    },
+$("#mainDiv").html(htm);
 
-			    plotOptions: {
-			        series: {
-			            borderRadius: 5,
-			            dataLabels: [{
-			                enabled: true,
-			                distance: 15,
-			                format: '{point.name}'
-			            }, {
-			                enabled: true,
-			                distance: '-30%',
-			                filter: {
-			                    property: 'percentage',
-			                    operator: '>',
-			                    value: 5
-			                },
-			                format: '{point.y:.1f}%',
-			                style: {
-			                    fontSize: '0.9em',
-			                    textOutline: 'none'
-			                }
-			            }]
-			        }
-			    },
+	    
 
-			    tooltip: {
-			        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-			        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
-			    },
 
-			    series: [
-			        {
-			            name: 'Browsers',
-			            colorByPoint: true,
-			            data: [
-			                {
-			                    name: 'Configuration',
-			                    y: 61.04,
-			                    drilldown: 'Configuration'
-			                },
-			                {
-			                    name: 'Mimic',
-			                    y: 9.47,
-			                    drilldown: 'Mimic'
-			                },
-			                {
-			                    name: 'Table and Graph',
-			                    y: 9.32,
-			                    drilldown: 'Table and Graph '
-			                },
-			                {
-			                    name: 'Meter Calibration',
-			                    y: 8.15,
-			                    drilldown: 'Meter Calibration'
-			                },
-			                {
-			                    name: 'Fault Finding',
-			                    y: 11.02,
-			                    drilldown: 'Fault Finding'
-			                }
-			            ]
-			        }
-			    ],
-			    drilldown: {
-			        series: [
-			            {
-			                name: 'Mimic',
-			                id: 'Mimic',
-			                data: [
-			                    [
-			                        'v97.0',
-			                        36.89
-			                    ],
-			                    [
-			                        'v96.0',
-			                        18.16
-			                    ],
-			                    [
-			                        'v95.0',
-			                        0.54
-			                    ],
-			                    [
-			                        'v94.0',
-			                        0.7
-			                    ],
-			                    [
-			                        'v93.0',
-			                        0.8
-			                    ],
-			                    [
-			                        'v92.0',
-			                        0.41
-			                    ],
-			                    [
-			                        'v91.0',
-			                        0.31
-			                    ],
-			                    [
-			                        'v90.0',
-			                        0.13
-			                    ],
-			                    [
-			                        'v89.0',
-			                        0.14
-			                    ],
-			                    [
-			                        'v88.0',
-			                        0.1
-			                    ],
-			                    [
-			                        'v87.0',
-			                        0.35
-			                    ],
-			                    [
-			                        'v86.0',
-			                        0.17
-			                    ],
-			                    [
-			                        'v85.0',
-			                        0.18
-			                    ],
-			                    [
-			                        'v84.0',
-			                        0.17
-			                    ],
-			                    [
-			                        'v83.0',
-			                        0.21
-			                    ],
-			                    [
-			                        'v81.0',
-			                        0.1
-			                    ],
-			                    [
-			                        'v80.0',
-			                        0.16
-			                    ],
-			                    [
-			                        'v79.0',
-			                        0.43
-			                    ],
-			                    [
-			                        'v78.0',
-			                        0.11
-			                    ],
-			                    [
-			                        'v76.0',
-			                        0.16
-			                    ],
-			                    [
-			                        'v75.0',
-			                        0.15
-			                    ],
-			                    [
-			                        'v72.0',
-			                        0.14
-			                    ],
-			                    [
-			                        'v70.0',
-			                        0.11
-			                    ],
-			                    [
-			                        'v69.0',
-			                        0.13
-			                    ],
-			                    [
-			                        'v56.0',
-			                        0.12
-			                    ],
-			                    [
-			                        'v49.0',
-			                        0.17
-			                    ]
-			                ]
-			            },
-			            {
-			                name: 'Configuration',
-			                id: 'Configuration',
-			                data: [
-			                    [
-			                        'v15.3',
-			                        0.1
-			                    ],
-			                    [
-			                        'v15.2',
-			                        2.01
-			                    ],
-			                    [
-			                        'v15.1',
-			                        2.29
-			                    ],
-			                    [
-			                        'v15.0',
-			                        0.49
-			                    ],
-			                    [
-			                        'v14.1',
-			                        2.48
-			                    ],
-			                    [
-			                        'v14.0',
-			                        0.64
-			                    ],
-			                    [
-			                        'v13.1',
-			                        1.17
-			                    ],
-			                    [
-			                        'v13.0',
-			                        0.13
-			                    ],
-			                    [
-			                        'v12.1',
-			                        0.16
-			                    ]
-			                ]
-			            },
-			            {
-			                name: 'Table and Graph',
-			                id: 'Table and Graph',
-			                data: [
-			                    [
-			                        'v97',
-			                        6.62
-			                    ],
-			                    [
-			                        'v96',
-			                        2.55
-			                    ],
-			                    [
-			                        'v95',
-			                        0.15
-			                    ]
-			                ]
-			            },
-			            {
-			                name: 'Meter Calibration',
-			                id: 'Meter Calibration',
-			                data: [
-			                    [
-			                        'v96.0',
-			                        4.17
-			                    ],
-			                    [
-			                        'v95.0',
-			                        3.33
-			                    ],
-			                    [
-			                        'v94.0',
-			                        0.11
-			                    ],
-			                    [
-			                        'v91.0',
-			                        0.23
-			                    ],
-			                    [
-			                        'v78.0',
-			                        0.16
-			                    ],
-			                    [
-			                        'v52.0',
-			                        0.15
-			                    ]
-			                ]
-			            },
-						{
-			                name: 'Fault Finding',
-			                id: 'Fault Finding',
-			                data: [
-			                    [
-			                        'v96.0',
-			                        4.17
-			                    ],
-			                    [
-			                        'v95.0',
-			                        3.33
-			                    ],
-			                    [
-			                        'v94.0',
-			                        0.11
-			                    ],
-			                    [
-			                        'v91.0',
-			                        0.23
-			                    ],
-			                    [
-			                        'v78.0',
-			                        0.16
-			                    ],
-			                    [
-			                        'v52.0',
-			                        0.15
-			                    ]
-			                ]
-			            }
-			        ]
-			    }
-			});
 
-// });//Result button
+
+
+let initialData = [
+    { name: 'Questionaries', y: quesPercent },
+    { name: 'Configuration', y: config },
+    { name: 'Mimic', y: mimicVal },
+    { name: 'Calibration', y: calPercent },
+    { name: 'Fault Finding', y: calPercent }
+];
+
+// Create the pie chart
+let chart = Highcharts.chart('graph-div', {
+    chart: {
+        type: 'pie'
+    },
+    title: {
+        text: 'Observations'
+    },
+    series: [{
+        name: 'Observed',
+        colorByPoint: true,
+        data: initialData
+    }],
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}: {point.percentage:.1f} %'
+            }
+        }
+    }
+});
 
   }
