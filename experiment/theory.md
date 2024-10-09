@@ -75,8 +75,8 @@ Percent Error = ¦Relative Error¦ × 100
 
 ### Graphical Relationship: Plot the following graphs
 
-1.  Actual Pressure (Pactual) against Measured Pressure (Pguage) (Gauge Reading).
-2.  Percent Error (%Error) against Measured Pressure (Pguage) (Gauge Reading).
+1.  Actual Pressure (%actual) against Measured Pressure (Gauge Reading).
+2.  Percent Error (%Error) against Measured Pressure  (Gauge Reading).
 
 ![4](images/figure4.PNG)
 

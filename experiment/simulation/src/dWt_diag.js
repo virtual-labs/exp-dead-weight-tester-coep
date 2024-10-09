@@ -1334,19 +1334,19 @@ function meterZero(){
 	pressure = pressure;
 	if(animVal == 0){	
 	if(meter == 16){
-	var rmin = 2 ; var rmax = 10;
+	var rmin = 1 ; var rmax = 1;
  num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin);
 }else if(meter == 50){
-	var rmin = 2.3 ; var rmax = 5;
+	var rmin = 1 ; var rmax = 1;
  num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin);
 }else{
-	var rmin = 3 ; var rmax = 5.5;
+	var rmin = 1 ; var rmax = 1;
  num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin); 
 }
 animVal++;
 } 
 ranErr = num.toFixed(1);
-//     console.log(" num "+num);
+     console.log(" num "+num);
 //     console.log(" ranErr "+ranErr);
      pres = parseFloat(ranErr);
      
