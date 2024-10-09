@@ -5,7 +5,7 @@
 
 ### Configuration:-
 - Select meter gauge and cylinder Piston Area.
-- Calculate radius of cylinder by using formula - Area = "+unescape('%u220F')+" r"+unescape('%B2'). After submitting the given answer is wrong for 3 attempts it will show the formula, if the given answer is wrong it will show the correct answer. 
+- Calculate radius of cylinder by using formula - Area = πr². After submitting the given answer is wrong for 3 attempts it will show the formula, if the given answer is wrong it will show the correct answer. 
 
  ### Mimic:-
 ![1](simulation/images/DWT_dig_labels.png)
