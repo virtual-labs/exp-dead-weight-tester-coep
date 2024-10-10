@@ -114,7 +114,7 @@ function fualtFinding(masterJson,counterMasterJson)
 //		
 //		 +'  </select>'
 		 +'<div class="col-sm-12">'
-		 +' <select  class="form-control col-sm-12 " style="height: auto;" id="errorSelection">'
+		 +' <select  class="form-control col-sm-12 " style="height:auto; height: 40px;" id="errorSelection">'
 		 +' <option >Select Error type </option>'
 		 +' <option  value="0">Needle jam </option>'
 		 +'  <option value="1">Helical spring fluctuate & break</option>'
