@@ -62,7 +62,7 @@ var htm = ''
 		 +'<table class="table table-bordered table-striped">'
 		   +'  <thead class="thead-dark">'
 		   +'    <tr class="">'
-		   +'      <th><center class="">COMPETENCY(DEAD WEIGHT TESTER)</center></th>'
+		   +'      <th><center class="">COMPETENCY (DEAD WEIGHT TESTER)</center></th>'
 		   +'     <th><center class="">STATUS</center></th>'
 		   +'    </tr>'
 		   +' </thead>'
@@ -432,7 +432,13 @@ let chart = Highcharts.chart('graph-div', {
     series: [{
         name: 'Observed',
         colorByPoint: true,
-        data: initialData
+        data: initialData,
+        dataLabels: {
+                        enabled: true,
+                        style: {
+                            fontSize: '12px', 
+							},                       
+                    }
     }],
     plotOptions: {
         pie: {
