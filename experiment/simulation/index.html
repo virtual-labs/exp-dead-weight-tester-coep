@@ -28,6 +28,9 @@
 
 
 
+
+
+
 </style>
 <body bgproperties="fixed">
 
@@ -38,15 +41,52 @@
 		
 	</header>
 <div  class="row " >
-<div class="col-sm-10">
-<!-- <button type="button" class="btn btn-primary">Primary</button> -->
+<div class="col-sm-8">
+
 </div>
+
 <div class="col-sm-2">
-<button type="button" class="btn btn-danger btn-lg" id="procedure" data-toggle="modal" data-target="#readProcedureModal">Read Procedure</button>
-<!-- <button type="button" class="btn btn-danger" >Read Procedure</button> -->
-<!-- <button type="button" class="btn btn-danger btn-lg" id="resultId" >Result</button> -->
+<button type="button" class="btn btn-danger btn-lg" id="procedure" data-toggle="modal" 
+data-target="#readProcedureModal">Read Procedure</button>
+</div>
+
+<div class="col-sm-2">
+<button type="button" class="btn btn-danger btn-lg" id="demo" data-toggle="modal" 
+data-target="#readProcedureModal1">Simulation Demo</button>
 </div>
 </div>
+
+
+<div id="readProcedureModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog  modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">DEMO</h3>
+<!--         <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+      </div>
+      <div class="modal-body">
+ 
+    <center><video width="90%"  controls>
+  <source src="images/simulation.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video></center>
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
 <div id="readProcedureModal" class="modal fade" role="dialog">
   <div class="modal-dialog  modal-lg">
 
@@ -159,6 +199,12 @@ After completion of process click on "Fault Finding" button to move on next leve
 <li> After selecting the correct fault Result will be displayed.
 </li>
 </ol>
+<center>
+    <video width="95%" controls>
+  <source src="images/simulation.mp4" type="video/mp4">
+</video></center>
+    
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -167,6 +213,13 @@ After completion of process click on "Fault Finding" button to move on next leve
 
   </div>
 </div>
+
+
+
+
+
+
+
 
 <div  class="row container-fluid" id="mainDiv">
 
