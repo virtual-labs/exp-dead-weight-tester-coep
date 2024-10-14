@@ -122,8 +122,8 @@ function fualtFinding(masterJson,counterMasterJson)
 		 +'  </select>'
 		 +'</div>'
 		 +'<div class="col-sm-12 ">'
-		 +'<div class="alert alert-danger" role="alert" id="alertMsgBox" style="margin-top:20px;" hidden>'
-		 +'<b id="msgBox"> Wrong Selection !!!!!!!!</b>'
+		 +'<div class="alert alert-danger" role="alert" id="alertMsgBox" style="margin-top:20px;style = height:40px;" hidden>'
+		 +'<b id="msgBox"> Wrong Selection !!</b>'
 		+'</div>'
 			+'</div>'
 //    +'</div>'
@@ -155,7 +155,7 @@ function fualtFinding(masterJson,counterMasterJson)
     $("#canvas-div").html("<img src='images/DWT.png' class='img-fluid'>");
 	
     $("#errorSelection").change(function() {
-	 $("#errorSelection").css("height", "");
+//	 $("#errorSelection").css("height", "");
     	var selectedOption=$("#errorSelection").val();
     	console.log("selectedOption   "+selectedOption);
 //    	if(counter<=3){
@@ -175,7 +175,7 @@ function fualtFinding(masterJson,counterMasterJson)
     		}
     		else{
     			$("#alertMsgBox").attr('hidden',false);
-    			$("#msgBox").html("<b class='errorMsgf'> Wrong selection !!!!!!!!!</b>");	
+    			$("#msgBox").html("<b class='errorMsgf' style = 'height:40px;'> Wrong selection!!</b>");	
     			count_wrong_fault++;
     			
     			}

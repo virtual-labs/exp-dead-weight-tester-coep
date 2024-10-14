@@ -35,10 +35,16 @@
 5. When span error is calibrated it disturbs zero. Again adjust zero and follow the process as mentioned in step 3. 
 6. After adjusting zero and span error click on "CALIBRATION WITH METER" button to move on next level.
 
-### CALIBRATION WITH METER
+### Calibration with meter
 1. Follow the given Instructions and complete the process.
 2. After completion of process click on "Fault Finding" button to move on next level. 
 
-### Fault Finding:
+### Fault Finding
 1. Observe the shown table and select the fault accordingly.
 2. After selecting the correct fault Result will be displayed.
+
+
+
+
+
+
