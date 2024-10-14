@@ -1,5 +1,7 @@
 function resultAnalysis(counterMasterJson){
 	$("#procedure").prop("hidden",true);
+	$("#demo").prop("hidden",true);
+	
 var correctVal = (counterMasterJson.questionary.correctAnswer/6).toFixed(2);
 var quesPercent = (correctVal*100).toFixed(1);
 quesPercent = parseFloat(quesPercent);

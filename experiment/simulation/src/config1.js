@@ -154,7 +154,7 @@ CalculateActualFlowStr +='<div class="col-sm-4">'
 				
 	//			alert("formula : Volume of the float = "+unescape('%u220F')+" / 4 Dr"+unescape('%B2')+"h ");
 				 wrong_cnt++;
-				 $("#modelMsg").html("<b class='boldTextBlue'>formula : Area = "+unescape('%u220F')+" r"+unescape('%B2')+"</b> ");
+				 $("#modelMsg").html("<b class='boldTextBlue'>formula : Area = &pi; r<sup>2</sup></b> ");
 				 $("body").css("padding","0px 0px 0px 0px");
 				
 				
