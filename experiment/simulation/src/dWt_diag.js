@@ -3831,7 +3831,7 @@ function addFun(){
 						 } 
 				}
    
-//	console.log(masterJson);
+	console.log(masterJson);
 //    console.log(imgWeightArray);
 //    console.log(wtStackMasterJson);
 }

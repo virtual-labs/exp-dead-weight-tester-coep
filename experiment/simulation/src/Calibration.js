@@ -460,7 +460,7 @@ function calibration(masterJson,meter,cylinderPiston)
 							 }
 						}	
 					
-				var chart = $('#smain-div-conf').highcharts();
+				var chart = $('#main-div-conf').highcharts();
 		        chart.series[1].setData(ydataPulse, false);
 		        $('#main-div-conf').highcharts().redraw();
 		        
