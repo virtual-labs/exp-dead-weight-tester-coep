@@ -54,26 +54,28 @@ function tableCreateForFualtFinding1(masterJson)
 					var temp=Math.random() * (max1 - min1) + min1;
 					errorRandom=temp.toFixed(2);
 					console.log("errorRandom   "+errorRandom);
-					if(place<=i-1)
-						{
-							var error1=masterJson.weight[place].meterPressureWithExpectedError;
-							var error = error1.toFixed(2); 
-							tableMainDiv += '<tr>'
-							+ '   <td><center>' +masterJson.weight[i].totalWeight + '</center></td>'
-							+ '   <td style="background-color:#f7b5b5;"><center>' + error + '</center></td>'
-//							+ '   <td style="background-color:#de767645;"><center>' + errorRotameter.toFixed(2) + '</center></td>'
-							+ '     </tr>'
-						
-						}
-					else
-						{
+					console.log(masterJson);
+//					if(place<=i-1)
+//						{	
+//							
+//							var error1=masterJson.weight[place].meterPressureWithExpectedError;
+//							var error = error1.toFixed(2); 
+//							tableMainDiv += '<tr>'
+//							+ '   <td><center>' +masterJson.weight[i].totalWeight + '</center></td>'
+//							+ '   <td style="background-color:#f7b5b5;"><center>' + error + '</center></td>'
+////							+ '   <td style="background-color:#de767645;"><center>' + errorRotameter.toFixed(2) + '</center></td>'
+//							+ '     </tr>'
+//						
+//						}
+//					else
+//						{
 						var error=parseFloat(errorRandom+masterJson.weight[i].meterPressureWithExpectedError);
 						tableMainDiv += '<tr>'
 							+ '   <td><center>' + masterJson.weight[i].totalWeight + '</center></td>'
 							+ '   <td style="background-color:#f7b5b5;"><center >' + error + '</center></td>'
 //							+ '   <td style="background-color:#de767645;"><center >' + + masterJson.weight[i].meterPressureWithExpectedError + + '</center></td>'
 							+ '     </tr>'
-						}
+//						}
 					
 
 						
@@ -143,14 +145,12 @@ function fualtFinding(masterJson,counterMasterJson)
 //</div>
     +'</div>'
     $("#main-div-conf").html(str);
-	
+
 	if(randomNumber==0){
 		tableCreateForFualtFinding1(masterJson);
-	}
-	else
-		{
+	}else{
 		tableCreateForFualtFinding2(masterJson);
-		}
+	}
 	
     $("#canvas-div").html("<img src='images/DWT.png' class='img-fluid'>");
 	
