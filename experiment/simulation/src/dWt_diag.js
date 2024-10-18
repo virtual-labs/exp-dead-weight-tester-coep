@@ -198,6 +198,7 @@ function platform(){
 
 	h_img = paper.image("images/handle.png",(x+295), (y-50),70, 70);
 	plus = paper.image("images/plus1.png",(x+385), (y-35), 40, 40); 
+	plus.node.id = 'plusId';
 	minus = paper.image("images/minus1.png",(x+235), (y-35), 40, 40);                
 } 
 
@@ -238,14 +239,17 @@ function Oil_Button(){
 	if(a == 50){
       x1 = x-520 , y1 = y-307;
       	 oil_rect = paper.image("images/oil_reservoir.png",(x1+300),( y1+125),150,50);
+      	 oil_rect.node.id = 'oilRect';
 
      }else if(a == 55){
 	  x1 = x-540 , y1 = y-324;
       	 oil_rect = paper.image("images/oil_reservoir.png",(x1+305),( y1+125),150,50);
+      	 oil_rect.node.id = 'oilRect';
 
      }else{
 	  x1 = x-552 , y1 = y-340;
       	 oil_rect = paper.image("images/oil_reservoir.png",(x1+301),( y1+110),150,50);
+      	 oil_rect.node.id = 'oilRect';
 
      }  
 
@@ -343,6 +347,7 @@ R_cap.click(function(){
 
 oil_rect.click(function(){
 	if(oil_flag==1){
+		oil_rect.unclick();
 		if(a == 50 && ct == 1){
 			
 			oilImg=paper.image("images/oil.png",(x1+348), (y1+187), 65, 65);
@@ -1120,12 +1125,20 @@ function pfClick(){
 	     }	   	  
   if(a == 50 && up_lift > 48){
 	up_lift = 48;
-
+	plus.node.style.pointerEvents = 'none'; 
+//	plus.unclick();
+//    document.getElementById('plusId').style.display = 'none';
 }
 if(a == 55 && up_lift>53){
+//	document.getElementById('plusId').style.display = 'none';
 	up_lift = 53;
+plus.node.style.pointerEvents = 'none'; 
+//	plus.unclick();
 }if(a == 60 && up_lift>59){
+//	document.getElementById('plusId').style.display = 'none';
 	up_lift = 59;
+	plus.node.style.pointerEvents = 'none'; 
+//	plus.unclick();
 } 
   
    pis.toFront();  
@@ -1136,6 +1149,64 @@ if(a == 55 && up_lift>53){
 //	}
 	var pis1_transformedPath1  = Raphael.transformPath("M"+sz+" "+sy1+" l 0 "+((1.7*a)-up_lift)+ " l "+wid+ " 0 l 0 "+((-(1.7)*a)+up_lift)+"z");	
 	pis1.animate({path: pis1_transformedPath1}, time);
+}
+
+
+function zerWeightBetween(){
+	
+		totalStackWeight = totalStackWeight;
+
+//	if(pf1 == 1 || pf1 == 0){
+		
+		if(a == 50){
+	up_lift = up_lift+5;
+	Yposition= syp-124;
+	 }
+	 if(a == 55){
+		up_lift = up_lift+5;
+		Yposition= syp-135;
+	}if(a == 60){
+		up_lift = up_lift+5;
+		Yposition= syp-145;
+	}
+	pf.animate({path: Raphael.transformPath("M"+sxp+" "+syp+" l 0 "+(-1.64*a)+" l "+(-1.4*a)+" 0 l 0 "+(-b/2)+" l "+(3*a)+" 0 l 0 "
+	                          +(b/2)+" l "+(-1.4*a)+" 0 l 0 "+(1.64*a)+" z ", 'T 0 '+-up_lift)}, time);	    
+	                          
+	    var _transformedPath1 = Raphael.transformPath("M"+sx+" "+sy+" l "+rec_wid+" 0 l 0"+(-b*1.5)+" l "+(-rec_wid)+" 0 l 0 "+(b*1.5)
+	                   
+	                       , 'T 0 '+-up_lift);
+
+	    pis.animate({path: _transformedPath1}, time);
+	//  polish = paper.rect((sxp-5),(syp-18),20,20,5) .attr({'stroke' : '#000' , 'stroke-width' : 1 , 'gradient': '160-#C0C0C0-#A9A9A9'});  
+        polish.animate({'width': 20, 'height': 20, 'x': sxp-5, 'y': syp-18-up_lift}, time);
+    
+     if(a == 50 && up_lift > 48){
+	up_lift = 48;
+	plus.node.style.pointerEvents = 'none'; 
+//	plus.unclick();
+//    document.getElementById('plusId').style.display = 'none';
+}
+if(a == 55 && up_lift>53){
+//	document.getElementById('plusId').style.display = 'none';
+plus.node.style.pointerEvents = 'none'; 
+//plus.unclick();
+	up_lift = 53;
+}if(a == 60 && up_lift>59){
+//	document.getElementById('plusId').style.display = 'none';
+plus.node.style.pointerEvents = 'none'; 
+//plus.unclick();
+	up_lift = 59;
+} 
+    
+    
+	    pis.toFront();  
+//   l.toFront(); 
+   pf.toFront();
+   polish.toFront();
+   
+   var pis1_transformedPath1  = Raphael.transformPath("M"+sz+" "+sy1+" l 0 "+((1.7*a)-up_lift)+ " l "+wid+ " 0 l 0 "+((-(1.7)*a)+up_lift)+"z");	
+	pis1.animate({path: pis1_transformedPath1}, time);
+//  zeroBetweenNeedle();
 }
 
 //function pfClick(){
@@ -1255,172 +1326,12 @@ function meterAnimonPlus(){
 ////} 
 
 
-var weight_M = totalStackWeight;
-var unit1=270/meterguage;
-
- angle= unit1*weight_M;
- pressure = angle+pres+1; 
-  console.log("pressure :"+pressure);
-  presCal = pressure - totalStackWeight;
-  actualPres = pressure-presCal;
-  
-	if(meterguage == 50){
-		divideVal = 5;
-	}if(meterguage == 100){
-		divideVal = 2.8;
-	}if(meterguage == 16){		
-		divideVal = 12;
-	}
-
-   errDisp = pres/divideVal;
-	var erDisplay = errDisp.toFixed(1);
-	 err = parseFloat(erDisplay);	 
-	actualPressure1 = actualPres+err;     
-     actalVal = actualPressure1;
- 
-     if(a==50){
-	    
-	 	x1 = x-528 , y1 = y-307;
-	 	if (meterguage==16){
-		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+118)+' '},time+4000,'elastic');
-		mline.animate(keepRotating); 
-			 	
-		}else { 
-		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+98)+' '}, time+4000,'elastic' );
-	    mline.animate(keepRotating);
-
-		}	
-	}else if(a==55){
-		x1 = x-560 , y1 = y-334;
-		if (meterguage==16){
-			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
-		mline.animate(keepRotating); 
-
-		}else {
-			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time+4000,'elastic');
-	    mline.animate(keepRotating);
-     			
-		}
- 	    
-	       
-	}else{
-		x1 = x-540 , y1 = y-328;
-		if (meterguage==16){
-			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
-		mline.animate(keepRotating);
-	   
-		}else {
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+65)+' '}, time+4000,'elastic' );
-		mline.animate(keepRotating); 
-	 	}
-	}
-	
-    console.log("actualPressure in animonPlus:"+actualPressure);
-    console.log("err in animonPlus:"+err);
-       R_valve.toFront();
-	  M_valve.toFront();
-	  
-	}  
-	
-	var xPray = 0;
-	var xPrayVal = 0;
-	var sFlag = 0;
-    var actualPressure3 = 0;
-    var temp_pres = 0;
-function meterZero(){
-	pressure = pressure;
-	if(animVal == 0){	
-	if(meter == 16){
-	var rmin = 1 ; var rmax = 1;
- num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin);
-}else if(meter == 50){
-	var rmin = 1 ; var rmax = 1;
- num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin);
-}else{
-	var rmin = 1 ; var rmax = 1;
- num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin); 
-}
-animVal++;
-} 
-ranErr = num.toFixed(1);
-     console.log(" num "+num);
-//     console.log(" ranErr "+ranErr);
-     pres = parseFloat(ranErr);
-     
-   
-
-var unit1=270/meterguage;
-
- angle= unit1;
- pressure += pres; 
-  console.log("pressure :"+pressure);
-  presCal = pressure - totalStackWeight;
-  actualPres = pressure-presCal;
-  
-	if(meterguage == 50){
-		divideVal = 5;
-	}if(meterguage == 100){
-		divideVal = 2.8;
-	}if(meterguage == 16){		
-		divideVal = 12;
-	}
-
-   errDisp = pres/divideVal;
-	var erDisplay = errDisp.toFixed(1);
-	 err = parseFloat(erDisplay);	 
-	actualPressure3 += err;     
-     actalVal = actualPressure3.toFixed(1); 
-     meterVal = actualPressure3.toFixed(1);
-   if(a==50){
-	    
-	 	x1 = x-528 , y1 = y-307;
-	 	if (meterguage==16){
-		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+118)+' '},time+4000,'elastic');
-		mline.animate(keepRotating); 
-			 	
-		}else { 
-		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+98)+' '}, time+4000,'elastic' );
-	    mline.animate(keepRotating);
-
-		}	
-	}else if(a==55){
-		x1 = x-560 , y1 = y-334;
-		if (meterguage==16){
-			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
-		mline.animate(keepRotating); 
-
-		}else {
-			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time+4000,'elastic');
-	    mline.animate(keepRotating);
-     			
-		}
- 	    
-	       
-	}else{
-		x1 = x-540 , y1 = y-328;
-		if (meterguage==16){
-			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
-		mline.animate(keepRotating);
-	   
-		}else {
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+65)+' '}, time+4000,'elastic' );
-		mline.animate(keepRotating); 
-	 	}
-	}
- temp_pres = pressure;
-     
-}
-    
-//function meterZeroMinus(){
-//	pressure = temp_pres;
-//	
-//  
+//var weight_M = totalStackWeight;
+//var unit1=270/meterguage;
+//
+// angle= unit1*weight_M;
+// pressure = angle+pres+1; 
+//  console.log("pressure :"+pressure);
 //  presCal = pressure - totalStackWeight;
 //  actualPres = pressure-presCal;
 //  
@@ -1435,99 +1346,184 @@ var unit1=270/meterguage;
 //   errDisp = pres/divideVal;
 //	var erDisplay = errDisp.toFixed(1);
 //	 err = parseFloat(erDisplay);	 
-//	actualPressure3 -= err;     
-//     actalVal = actualPressure3.toFixed(1); 
-//     meterVal = actualPressure3.toFixed(1);
-//    if(totalStackWeight == 0)
-//    {
-//	pressure -= pres; 
-//	 if(pressure > 0){
-//   if(a==50){
-//	    
-//	 	x1 = x-528 , y1 = y-307;
-//	 	if (meterguage==16){
-//		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+118)+' '},time+4000,'elastic');
-//		mline.animate(keepRotating); 
-//			 	
-//		}else { 
-//		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+98)+' '}, time+4000,'elastic' );
-//	    mline.animate(keepRotating);
-//
-//		}	
-//	}else if(a==55){
-//		x1 = x-560 , y1 = y-334;
-//		if (meterguage==16){
-//			
-//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
-//		mline.animate(keepRotating); 
-//
-//		}else {
-//			
-//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time+4000,'elastic');
-//	    mline.animate(keepRotating);
-//     			
-//		}
-// 	    
-//	       
-//	}else{
-//		x1 = x-540 , y1 = y-328;
-//		if (meterguage==16){
-//			
-//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
-//		mline.animate(keepRotating);
-//	   
-//		}else {
-//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+65)+' '}, time+4000,'elastic' );
-//		mline.animate(keepRotating); 
-//	 	}
-//	}
-//	}else{
-//		pressure = 0;
-//		angle = 0;
-//		if(a==50){
-//	    
-//	 	x1 = x-528 , y1 = y-307;
-//	 	if (meterguage==16){
-//		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+118)+' '},time+4000,'elastic');
-//		mline.animate(keepRotating); 
-//			 	
-//		}else { 
-//		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+98)+' '}, time+4000,'elastic' );
-//	    mline.animate(keepRotating);
-//
-//		}	
-//	}else if(a==55){
-//		x1 = x-560 , y1 = y-334;
-//		if (meterguage==16){
-//			
-//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
-//		mline.animate(keepRotating); 
-//
-//		}else {
-//			
-//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time+4000,'elastic');
-//	    mline.animate(keepRotating);
-//     			
-//		}
-// 	    
-//	       
-//	}else{
-//		x1 = x-540 , y1 = y-328;
-//		if (meterguage==16){
-//			
-//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
-//		mline.animate(keepRotating);
-//	   
-//		}else {
-//		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+65)+' '}, time+4000,'elastic' );
-//		mline.animate(keepRotating); 
-//	 	}
-//	}
-//	}
-//  }	
-//}
+//	actualPressure1 = actualPres+err;     
+//     actalVal = actualPressure1;
+ 
+ 
+  xPray = xPray+pres;
+       xPrayVal = xPrayVal+err;
+ 
+ if(xPrayVal>=0){
+     if(a==50){
+	    
+	 	x1 = x-528 , y1 = y-307;
+	 	if (meterguage==16){
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+200)+', '+(y1+118)+' '},time+4000,'elastic');
+		mline.animate(keepRotating); 
+			 	
+		}else { 
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+200)+', '+(y1+98)+' '}, time+4000,'elastic' );
+	    mline.animate(keepRotating);
 
+		}	
+	}else if(a==55){
+		x1 = x-560 , y1 = y-334;
+		if (meterguage==16){
+			
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
+		mline.animate(keepRotating); 
 
+		}else {
+			
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time+4000,'elastic');
+	    mline.animate(keepRotating);
+     			
+		}
+ 	    
+	       
+	}else{
+		x1 = x-540 , y1 = y-328;
+		if (meterguage==16){
+			
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
+		mline.animate(keepRotating);
+	   
+		}else {
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+142)+', '+(y1+65)+' '}, time+4000,'elastic' );
+		mline.animate(keepRotating); 
+	 	}
+	}
+	}else{
+		
+		xPray = xPray;
+       xPrayVal = xPrayVal;
+		
+	}
+    console.log("xPray meterAnimonPlus"+xPray);
+    console.log("xPrayVal meterAnimonPlus:"+xPrayVal);
+       R_valve.toFront();
+	  M_valve.toFront();
+	  
+	}  
+	
+	var xPray = 0;
+	var xPrayVal = 0;
+	var sFlag = 0;
+    var actualPressure3 = 0;
+    var temp_pres = 0;
+    
+    var presFlg = 0;
+function meterZero(){
+	
+	if(presFlg==0){
+	pressure = 0;
+	xPray =0 ;
+	xPrayVal =0;
+	presFlg++;
+	}
+	if(animVal == 0){	
+	if(meter == 16){
+	var rmin = 1 ; var rmax = 1;
+ num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin);
+}else if(meter == 50){
+	var rmin = 1 ; var rmax = 1;
+ num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin);
+}else{
+	var rmin = 1 ; var rmax = 1;
+ num = Math.floor(Math.random() * (rmax -rmin + 1) + rmin); 
+}
+animVal++;
+} 
+ranErr = num.toFixed(1);
+//     console.log(" num "+num);
+//     console.log(" ranErr "+ranErr);
+     pres = parseFloat(ranErr);
+     
+   
+
+var unit1=270/meterguage;
+
+ angle= unit1;
+ pressure = 0+angle; 
+//  console.log("pressure :"+pressure);
+  presCal = pressure - totalStackWeight;
+  actualPres = pressure-presCal;
+  
+	if(meterguage == 50){
+		divideVal = 5;
+	}if(meterguage == 100){
+		divideVal = 2.8;
+	}if(meterguage == 16){		
+		divideVal = 12;
+	}
+
+   errDisp = pres/divideVal;
+	var erDisplay = errDisp.toFixed(1);
+	 err = parseFloat(erDisplay);	 
+	actualPressure3 += err;
+	pressure = pressure+err;     
+	pressure = pressure.toFixed(1);
+	pressure = parseFloat(pressure);
+     actalVal = actualPressure3.toFixed(1); 
+     meterVal = actualPressure3.toFixed(1);
+     meterVal = parseFloat(meterVal);
+     
+     xPray = xPray+pres;
+       xPrayVal = xPrayVal+err;
+     
+      xPray = xPray.toFixed(1);
+	    xPray = parseFloat(xPray);
+   if(xPrayVal>=0)  
+     {
+   if(a==50){
+	    
+	 	x1 = x-528 , y1 = y-307;
+	 	if (meterguage==16){
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+200)+', '+(y1+118)+' '},time+4000,'bounce');
+		mline.animate(keepRotating); 
+			 	
+		}else { 
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+200)+', '+(y1+98)+' '}, time+4000,'bounce' );
+	    mline.animate(keepRotating);
+
+		}	
+	}else if(a==55){
+		x1 = x-560 , y1 = y-334;
+		if (meterguage==16){
+			
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'bounce');
+		mline.animate(keepRotating); 
+
+		}else {
+			
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time+4000,'bounce');
+	    mline.animate(keepRotating);
+     			
+		}
+ 	    
+	       
+	}else{
+		x1 = x-540 , y1 = y-328;
+		if (meterguage==16){
+			
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'bounce');
+		mline.animate(keepRotating);
+	   
+		}else {
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+142)+', '+(y1+65)+' '}, time+4000,'bounce' );
+		mline.animate(keepRotating); 
+	 	}
+	}
+ temp_pres = pressure;
+ }else{
+	 xPrayVal = xPrayVal;
+     
+      xPray = xPray;
+}    
+     console.log("xPray in meterZero : "+xPray);
+     console.log("xPrayVal in meterZero : "+xPrayVal);
+}
+    
 
 function meterAnimonPlusBefore(){
 if(animVal == 0){	
@@ -1569,14 +1565,14 @@ var angle= unit1*weight_M;
 	 
 if(sFlag == 0){
 	if(a==50){
- xPray = pressure-pres*7;
-  xPrayVal = actualPressure-err*7;
+ xPray = pressure-(pres*7);
+  xPrayVal = actualPressure-(err*7);
   }if(a==55){
-	xPray = pressure-pres*8;
-  xPrayVal = actualPressure-err*8;
+	xPray = pressure-(pres*8);
+  xPrayVal = actualPressure-(err*8);
 }if(a==60){
-	xPray = pressure-pres*9;
-  xPrayVal = actualPressure-err*9;
+	xPray = pressure-(pres*9);
+  xPrayVal = actualPressure-(err*9);
 }
   animBefore();
   sFlag++;
@@ -1584,10 +1580,8 @@ if(sFlag == 0){
 	 animBefore();
     } 
  
-	  }	
-	  
-	
-	
+}	
+
 	  
 function meterAnimonPlusNegBef(){
 if(animVal == 0){	
@@ -1629,14 +1623,14 @@ var angle= unit1*weight_M;
 	 
 if(sFlag == 0){
 	if(a==50){
-  xPray = pressure-pres*7;
-  xPrayVal = actualPressure-err*7;
+  xPray = pressure-(pres*7);
+  xPrayVal = actualPressure-(err*7);
   }if(a==55){
-	xPray = pressure-pres*8;
-  xPrayVal = actualPressure-err*8;
+	xPray = pressure-(pres*8);
+  xPrayVal = actualPressure-(err*8);
 }if(a == 60){
-	xPray = pressure-pres*9;
-  xPrayVal = actualPressure-err*9;
+	xPray = pressure-(pres*9);
+  xPrayVal = actualPressure-(err*9);
 }
   animBefore1();
   sFlag++;
@@ -1651,12 +1645,17 @@ if(sFlag == 0){
 	var meterVal = 0;
 function animBefore(){
 	
-		xPray += pres;	
-	    xPrayVal += err;
+		xPray = xPray+pres;	
+		
+	    xPrayVal = xPrayVal+err;
+	   
 	    round = xPrayVal.toFixed(1);
 	    meterVal = parseFloat(round);
-	  console.log("xPrayVal "+round);
-		
+	    
+	    
+	     xPray = xPray.toFixed(1);
+	    xPray = parseFloat(xPray);
+		if(xPrayVal>=0){
 		 if(a==50){
 	    
 	 	x1 = x-528 , y1 = y-307;
@@ -1673,7 +1672,7 @@ function animBefore(){
 		x1 = x-560 , y1 = y-334;
 		if (meterguage==16){
 			
-		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
 		mline.animate(keepRotating); 
 
 		}else {
@@ -1688,7 +1687,7 @@ function animBefore(){
 		x1 = x-540 , y1 = y-328;
 		if (meterguage==16){
 			
-		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
 		mline.animate(keepRotating);
 	   
 		}else {
@@ -1696,18 +1695,28 @@ function animBefore(){
 		mline.animate(keepRotating); 
 	 	}
 	}
+ }else{
+	xPrayVal = xPrayVal;
+	xPray = xPray;
+}		
+		console.log("animBefore xPray"+xPray);
+	    console.log("animBefore xPrayVal"+xPrayVal);
+//	    console.log("animBefore meterVal "+meterVal);
 		
 }
 
 var round1 = 0;
 function animBefore1(){
 	
-		xPray += pres;	
-	    xPrayVal += err;
+		xPray = xPray+pres;	
+	    xPrayVal = xPrayVal+err;
 	    round1 = xPrayVal.toFixed(1);
+	    xPray = xPray.toFixed(1);
+	    xPray = parseFloat(xPray);
 	    meterVal = parseFloat(round1);
-	  console.log("xPrayVal "+round1);
-		
+	  
+	  if(xPrayVal>=0){ 
+     
 		 if(a==50){
 	    
 	 	x1 = x-528 , y1 = y-307;
@@ -1724,7 +1733,7 @@ function animBefore1(){
 		x1 = x-560 , y1 = y-334;
 		if (meterguage==16){
 			
-		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
 		mline.animate(keepRotating); 
 
 		}else {
@@ -1739,7 +1748,7 @@ function animBefore1(){
 		x1 = x-540 , y1 = y-328;
 		if (meterguage==16){
 			
-		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
 		mline.animate(keepRotating);
 	   
 		}else {
@@ -1747,6 +1756,15 @@ function animBefore1(){
 		mline.animate(keepRotating); 
 	 	}
 	}
+ }else{
+	
+	xPray = xPray;	
+    xPrayVal = xPrayVal;
+	
+}	
+	 console.log("animBefore1 xPray"+xPray);
+	    console.log("animBefore1 xPrayVal"+xPrayVal);
+//	    console.log("animBefore1 meterVal "+meterVal);
 		
 }
 
@@ -1754,37 +1772,43 @@ var actualPressure2 = 0;
 function meterAnimonPlus1(){	
 
  
-var weight_M = totalStackWeight;
-var unit1=270/meterguage;
+//var weight_M = totalStackWeight;
+//var unit1=270/meterguage;
+//
+// angle= unit1*weight_M;
+// pressure = angle-pres+1;
+// 
+//  
+//  presCal = pressure - totalStackWeight;
+//	actualPres = pressure-presCal;
+//	if(meterguage == 50){
+//		divideVal = 5;
+//	}if(meterguage == 100){
+//		divideVal = 2.8;
+//	}if(meterguage == 16){		
+//		divideVal = 12;
+//	}
+//
+//   errDisp = pres/divideVal;
+//	var erDisplay = errDisp.toFixed(1);
+//	 err = parseFloat(erDisplay);	 
+//	actualPressure2 = actualPres-err;
+//      actalVal = actualPressure2;
 
- angle= unit1*weight_M;
- pressure = angle-pres+1;
- 
-  
-  presCal = pressure - totalStackWeight;
-	actualPres = pressure-presCal;
-	if(meterguage == 50){
-		divideVal = 5;
-	}if(meterguage == 100){
-		divideVal = 2.8;
-	}if(meterguage == 16){		
-		divideVal = 12;
-	}
 
-   errDisp = pres/divideVal;
-	var erDisplay = errDisp.toFixed(1);
-	 err = parseFloat(erDisplay);	 
-	actualPressure2 = actualPres-err;
-      actalVal = actualPressure2;
+       xPray = xPray+pres;
+       xPrayVal = xPrayVal+err;
+    if(xPrayVal>=0)
+    {
      if(a==50){
 	    
 	 	x1 = x-528 , y1 = y-307;
 	 	if (meterguage==16){
-		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+118)+' '},time+4000,'elastic');
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+200)+', '+(y1+118)+' '},time+4000,'elastic');
 		mline.animate(keepRotating); 
 			 	
 		}else { 
-		keepRotating = Raphael.animation({ 'transform':  'r'+(pressure)+ ', '+(x1+200)+', '+(y1+98)+' '}, time+4000,'elastic' );
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+200)+', '+(y1+98)+' '}, time+4000,'elastic' );
 	    mline.animate(keepRotating);
 
 		}	
@@ -1792,12 +1816,12 @@ var unit1=270/meterguage;
 		x1 = x-560 , y1 = y-334;
 		if (meterguage==16){
 			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time+4000,'elastic');
 		mline.animate(keepRotating); 
 
 		}else {
 			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time+4000,'elastic');
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time+4000,'elastic');
 	    mline.animate(keepRotating);
      			
 		}
@@ -1807,49 +1831,69 @@ var unit1=270/meterguage;
 		x1 = x-540 , y1 = y-328;
 		if (meterguage==16){
 			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+142)+', '+(y1+84)+' '},time+4000,'elastic');
 		mline.animate(keepRotating);
 	   
 		}else {
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+65)+' '}, time+4000,'elastic' );
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+142)+', '+(y1+65)+' '}, time+4000,'elastic' );
 		mline.animate(keepRotating); 
 	 	}
 	}
-	
-    console.log("actualPressure :"+actualPressure);
-    console.log("err :"+err);
+	}else{
+		
+		xPray =xPray;
+		xPrayVal = xPrayVal;
+	}
+	console.log("xPray in meterAnimonPlus1 :"+xPray);
+	    console.log("xPrayVal in meterAnimonPlus1 :"+xPrayVal);
+//    console.log("actualPressure :"+actualPressure);
+//    console.log("err :"+err);
        R_valve.toFront();
 	  M_valve.toFront();
 	  }	 
  	  
 function meterAnimonMinus(){	
-     
-      
+     xPray = xPray;
+     xPrayVal = xPrayVal;
+    
       pressure = pressure-pres;      
       meterVal = parseFloat(meterVal-err).toFixed(1);
-      console.log("meterVal enter"+meterVal);
-      console.log(" pressure enter"+pressure);
+      
+//       console.log("in minus xPray"+xPray);
+//	    console.log("in minus xPrayVal"+xPrayVal);
+//	    console.log("in minus meterVal "+meterVal);
+      
+        xPray = xPray-pres;
+       xPrayVal = xPrayVal-err;
+       
+       xPrayVal = xPrayVal.toFixed(1);
+       xPrayVal = parseFloat(xPrayVal);
+       
+        console.log("in minus dec xPray"+xPray);
+	    console.log("in minus dec xPrayVal"+xPrayVal);
+      
+      if(xPrayVal>=0){
 	 if(a==50){
 	    
 	 	x1 = x-528 , y1 = y-307;
 	 	if (meterguage==16){
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+200)+', '+(y1+118)+' '}, time);
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+200)+', '+(y1+118)+' '}, time);
 		mline.animate(keepRotating); 
 
 			 	
 		}else { 
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+200)+', '+(y1+98)+' '}, time );
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+200)+', '+(y1+98)+' '}, time );
 	    mline.animate(keepRotating);
 
 		}	
 	}else if(a==55){
 		x1 = x-560 , y1 = y-334;
 		if (meterguage==16){
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time );
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time );
 		mline.animate(keepRotating); 
 
 		}else {
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time );
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time );
 	    mline.animate(keepRotating);
      			
 		}
@@ -1859,15 +1903,63 @@ function meterAnimonMinus(){
 		x1 = x-540 , y1 = y-328;
 		if (meterguage==16){
 			
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+84)+' '}, time );
+		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+142)+', '+(y1+84)+' '}, time );
 		mline.animate(keepRotating);
 	   
 		}else {
-		keepRotating = Raphael.animation({ 'transform':  'r'+pressure+ ', '+(x1+142)+', '+(y1+65)+' '}, time);
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+142)+', '+(y1+65)+' '}, time);
 		mline.animate(keepRotating); 
 	 	}
 	}
- 
+   }else{
+	  xPray = xPray; 
+	  xPrayVal = xPrayVal;     
+//      meterVal = 0;
+//	 if(a==50){
+//	    
+//	 	x1 = x-528 , y1 = y-307;
+//	 	if (meterguage==16){
+//		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+200)+', '+(y1+118)+' '}, time);
+//		mline.animate(keepRotating); 
+//
+//			 	
+//		}else { 
+//		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+200)+', '+(y1+98)+' '}, time );
+//	    mline.animate(keepRotating);
+//
+//		}	
+//	}else if(a==55){
+//		x1 = x-560 , y1 = y-334;
+//		if (meterguage==16){
+//		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time );
+//		mline.animate(keepRotating); 
+//
+//		}else {
+//		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time );
+//	    mline.animate(keepRotating);
+//     			
+//		}
+// 	    
+//	       
+//	}else{
+//		x1 = x-540 , y1 = y-328;
+//		if (meterguage==16){
+//			
+//		keepRotating = Raphael.animation({ 'transform':  'r'+(xPray)+ ', '+(x1+142)+', '+(y1+84)+' '}, time );
+//		mline.animate(keepRotating);
+//	   
+//		}else {
+//		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+142)+', '+(y1+65)+' '}, time);
+//		mline.animate(keepRotating); 
+//	 	}
+//	}
+	
+	  
+	
+}
+
+ console.log("in minus dec xPray"+xPray);
+	    console.log("in minus dec xPrayVal"+xPrayVal);
 	  }
 
 
@@ -2143,6 +2235,9 @@ function minusAnim(){
 }
 
 
+
+
+
 plus.click(function(){		
 	 if(a == 50)
     {
@@ -2161,17 +2256,22 @@ if(v1_check == 1 && v2_check == 2){
 	if(plusBlock == 1 && rflg1 == 1){
 	if(forward <= 0){		
    
-  if(pisStop > forward ){
+//  if(pisStop >= forward ){
 	
 	if(totalStackWeight == 0){
 		
-		pfClickB();
 	plusAnim();	
-	meterZero();	
-	
+//	zeroWeightBetween();
+//    if(up_lift>0 && (pressure>0 ||pressure<1)){
+    zerWeightBetween();
+//     }else{
+		
+	meterZero();
+	pfClick();	
+//	}
 	var pis1_transformedPath1  = Raphael.transformPath("M"+sz+" "+sy1+" l 0 "+((1.7*a)-up_lift)+ " l "+wid+ " 0 l 0 "+((-(1.7)*a)+up_lift)+"z");	
 	pis1.animate({path: pis1_transformedPath1}, time);
-	 pis.toFront();  
+   pis.toFront();  
    pf.toFront();
    polish.toFront();
 //	ranSelection = [meterAnimPosErr,meterAnimNegErr];	
@@ -2185,8 +2285,7 @@ if(v1_check == 1 && v2_check == 2){
 	pfClick();	
 	
 	plusAnim();
-	
-   
+
 	if(ranNegPosVal==0)
 	{
 		expVal = 0;
@@ -2200,9 +2299,9 @@ if(v1_check == 1 && v2_check == 2){
 
 }
  
-	}else{		
-		plusAnim();	
-	   }	
+//	}else{		
+//		plusAnim();	
+//	   }	
 }
    
 //
@@ -2242,12 +2341,14 @@ function meterAnimPosErr(){
 		}
 		}
 		
-		console.log(" presAfter: "+presAfter);
-		console.log(" pAv: "+pAv);
+		
 		
 	}else{
 		meterZero();
 	}
+	
+//	console.log(" pressure: "+pressure);
+//		console.log(" meterVal: "+meterVal);
 }
 
 var pBv = 0;
@@ -2279,16 +2380,22 @@ function meterAnimNegErr(){
 	}else{
 		meterZero();
 	}	
-	
+//	console.log(" pressure: "+pressure);
+//		console.log(" meterVal: "+meterVal);
 	
 //}
 }
 
+
+
+
 var std12 =1;
+
 
 minus.click(function(){
    plusFlg = 0;
-      
+   plus.node.style.pointerEvents = 'auto';
+//      document.getElementById('plusId').style.display = 'block';
 //   console.log("value of hndl in minus:"+hndl);
 	if(st1 == 1){		
 		id = 1;	
@@ -2353,6 +2460,7 @@ minus.click(function(){
 			if(up_lift <= 0){
 		pf1 = 0;
 		position = 0;
+		sFlag = 0;
 		}else{
 		pf1 = 1;
 		position = imgWeightArray.length;
@@ -2393,30 +2501,37 @@ minus.click(function(){
  
 })
 
+
+ 
+
 function meterMinusZero(){
 	angle = 0;
 	pressure = 0;
+	
+	  xPray = 0;
+       xPrayVal = 0;
+	
 	 if(a==50){
 	    
 	 	x1 = x-528 , y1 = y-307;
 	 	if (meterguage==16){
-		keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+200)+', '+(y1+118)+' '}, time);
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+200)+', '+(y1+118)+' '}, time);
 		mline.animate(keepRotating); 
 
 			 	
 		}else { 
-		keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+200)+', '+(y1+98)+' '}, time );
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+200)+', '+(y1+98)+' '}, time );
 	    mline.animate(keepRotating);
 
 		}	
 	}else if(a==55){
 		x1 = x-560 , y1 = y-334;
 		if (meterguage==16){
-		keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time );
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+196.7)+', '+(y1+118)+' '}, time );
 		mline.animate(keepRotating); 
 
 		}else {
-		keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time );
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+196.6)+', '+(y1+98)+' '}, time );
 	    mline.animate(keepRotating);
      			
 		}
@@ -2426,11 +2541,11 @@ function meterMinusZero(){
 		x1 = x-540 , y1 = y-328;
 		if (meterguage==16){
 			
-		keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+142)+', '+(y1+84)+' '}, time );
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+142)+', '+(y1+84)+' '}, time );
 		mline.animate(keepRotating);
 	   
 		}else {
-		keepRotating = Raphael.animation({ 'transform':  'r'+angle+ ', '+(x1+142)+', '+(y1+65)+' '}, time);
+		keepRotating = Raphael.animation({ 'transform':  'r'+xPray+ ', '+(x1+142)+', '+(y1+65)+' '}, time);
 		mline.animate(keepRotating); 
 	 	}
 	}
@@ -3322,6 +3437,10 @@ function weight_remove(){
 	alert("Place weight on platform...");
 }
    
+   totalStackWeight = totalStackWeight;
+    xPray = xPray;
+    xPrayVal = xPrayVal;
+   
     console.log("weight removed value : "+totalStackWeight);
     console.log("masterJson");
     console.log(masterJson);
@@ -3338,6 +3457,7 @@ function weight_remove(){
          console.log("dupFlg in weight_remove :"+dupFlg);
 //        wtStackMasterJson.LIFOSTACK = wtStackMasterJson.LIFOSTACK;
     
+    
 	      flag--; 
 //	      		if(up_lift <= 0){
 //		pf1 = 0;
@@ -3352,7 +3472,7 @@ function weight_remove(){
 		  delete wtStackMasterJson.LIFOSTACK.pop();
 		  console.log("After delete");
         console.log(wtStackMasterJson);		 
-
+       
 		    pf.toFront();
 		    polish.toFront();	
 		   		  	
@@ -3514,6 +3634,9 @@ var unit1=270/meterguage;
 	 err = parseFloat(erDisplay);	 
 	actualPressure2 = actualPres-err;
       actalVal = actualPressure2;
+      
+       xPray = xPray+pres;
+     xPrayVal = xPrayVal+err;
 }
 var arrWeight = [];
 var checkAlert = 0;
@@ -3521,12 +3644,15 @@ var cnt_before = 0 , cnt_exact = 0, cnt_after = 0;
 var check_bef = 0;
 var sdt1 = 0;
 
+var flg1 = 0;
+
 subRec.click(function(){
 	conBefRem = 1;
     pf_flag = 0;
 	sFlagAfter = 0;
 	sFlag = 0;
 	funCallFlgError = 0;
+	flg1 =1;
 //    if(totalStackWeight % 1 == 0){
 	totalStackWeight = totalStackWeight;
 //}else{
@@ -3551,11 +3677,11 @@ if(confirmFlg == 1){
 //					  
 //					   
 //					}else{
-						if(expVal == 1){
-									expectedVal1();
-									 }else{
-										expectedVal();
-									}
+//						if(expVal == 1){
+//									expectedVal1();
+//									 }else{
+//										expectedVal();
+//									}
 				if(a == 50 ){
 		if(up_lift < 35){
 			alert("You have clicked below polish surface");
@@ -3615,7 +3741,7 @@ if(confirmFlg == 1){
 dupFlg = 0;
 })
 // platform click close
-function expectedVal(){
+function expectedVal1(){
 	
 	var weight_M = totalStackWeight;
 var unit1=270/meterguage;
@@ -3639,6 +3765,10 @@ var unit1=270/meterguage;
 	 err = parseFloat(erDisplay);	 
 	actualPressure1 = actualPres+err;     
      actalVal = actualPressure1;
+     
+     xPray = xPray+pres;
+     xPrayVal = xPrayVal+err;
+     
 }
 
 function addFun(){
@@ -3653,7 +3783,8 @@ function addFun(){
 					   alert("Avoid Duplicates");
 					  arrWeight.splice(index,1);
 					}else{
-					
+					xPrayVal = xPrayVal.toFixed(1);
+					xPrayVal = parseFloat(xPrayVal);
 				    var tempJson = {};
 					var countTempJson = {};
 					 if(totalStackWeight % 1==0){
@@ -3676,8 +3807,11 @@ function addFun(){
 //				    tempJson.totalWeight = totalStackWeight.toFixed(1);
 				    
 				    tempJson.meterPressureWithExpectedError = actalVal; 
-				     tempJson.meterPressureWithError = meterVal;
-				     
+				     if(meterVal>=0){
+				     tempJson.meterPressureWithError = xPrayVal;
+				     }else{
+					 tempJson.meterPressureWithError = -xPrayVal;
+				}
 				    tempJson.errorAdded = err; 
 				    tempJson.tableSortVal = tot_weight;
 				    jsonArr.push(tempJson);

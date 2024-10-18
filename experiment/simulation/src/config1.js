@@ -97,7 +97,7 @@ CalculateActualFlowStr +='<div class="col-sm-4">'
 			}
 			else{
 			
-		var flowAns = $("#flowAns").val().trim();
+		var flowAns = $("#flowAns").val();
 		if(flowAns=="")
 			{
 //				alert("empty");
