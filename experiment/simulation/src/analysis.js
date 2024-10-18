@@ -16,12 +16,12 @@ mimicVal = parseFloat(mimicVal);
 var totZero = parseInt(counterMasterJson.calibration.zeroCalibrationForMinusWrong)+parseInt(counterMasterJson.calibration.zeroCalibrationForWrongPlus);
 var totSpan = parseInt(counterMasterJson.calibration.spanCalibrationForMinusWrong)+parseInt(counterMasterJson.calibration.spanCalibrationForWrongPlus);
 	
-var calPercent = ((totZero+totSpan)/2).toFixed(2);
+var calPercent = (2/(counterMasterJson.calibration.zeroWrong+counterMasterJson.calibration.spanWrong+2)*100).toFixed(2);
 calPercent = parseFloat(calPercent);
     
-var fault = ((1/counterMasterJson.faultFinding.wrongSelection+1)*100).toFixed(2);
+var fault = ((1/parseInt(counterMasterJson.faultFinding.wrongSelection+parseInt(1)))*100).toFixed(2);
 fault = parseFloat(fault);
-
+console.log("faultPercent "+fault);
 var htm = ''
 	+ '<div class="container-fluid">'
 	+ '  <div class="row">'
