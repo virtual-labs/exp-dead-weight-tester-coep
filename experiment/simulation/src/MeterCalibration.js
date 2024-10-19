@@ -638,7 +638,7 @@ var fault_flg=0;
 $("#submit_wt").click(function(){
 	Tot_weight=$("#enter_weight").val();
 	console.log("Weight = "+Tot_weight);
-	weight=parseInt(Tot_weight);
+	weight=parseFloat(Tot_weight);
 	console.log("Weight = "+weight);	
 	
 			if(meterguage==16 && weight<=meterguage){	
