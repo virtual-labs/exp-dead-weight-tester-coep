@@ -89,8 +89,7 @@ $(".panelBody").css({"background-color": "#fff"});
 });
 			$('#testSubmit').on('click', function() {		
 				$("body").css("padding","0px 0px 0px 0px");
-				$("#testSubmit").prop("hidden",true);
-				$("#nextLevel1").prop("hidden",false);
+				
 					var arr = [];
 					
 					for (var i = 0; i < QuestionsJSON.data["SEC"].length; i++) {
@@ -131,6 +130,9 @@ $(".panelBody").css({"background-color": "#fff"});
 //						dataQues.corrAns = ansCount;
 //						 data.corrAns = dataQues;
 //						 console.log(data);
+						 
+				$("#testSubmit").prop("hidden",true);
+				$("#nextLevel1").prop("hidden",false);
 						 
 						$("#modelMsg").html("<b class='boldTextGreen'>Test Submitted Successfully . Correct Answers Are : " + ansCount+"</b>");
 //						alert("Test Submitted Successfully . Correct Answers Are : " + ansCount);
