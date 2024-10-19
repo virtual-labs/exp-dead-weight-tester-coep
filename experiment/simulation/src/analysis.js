@@ -8,7 +8,7 @@ quesPercent = parseFloat(quesPercent);
 
 var config = ((1/(counterMasterJson.config.attempt+1))*100).toFixed(2);
 config = parseFloat(config);
-console.log(config);
+//console.log(config);
 
 var mimicVal = (1/(counterMasterJson.mimic.misplacePolishSurface+1)*100).toFixed(2);
 mimicVal = parseFloat(mimicVal);
@@ -21,7 +21,7 @@ calPercent = parseFloat(calPercent);
     
 var fault = ((1/parseInt(counterMasterJson.faultFinding.wrongSelection+parseInt(1)))*100).toFixed(2);
 fault = parseFloat(fault);
-console.log("faultPercent "+fault);
+//console.log("faultPercent "+fault);
 var htm = ''
 	+ '<div class="container-fluid">'
 	+ '  <div class="row">'

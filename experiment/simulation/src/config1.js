@@ -1,4 +1,4 @@
-console.log(counterMasterJson);
+//console.log(counterMasterJson);
 function config1(){
 
 var weight="";
@@ -105,7 +105,7 @@ CalculateActualFlowStr +='<div class="col-sm-4">'
 				 $("body").css("padding","0px 0px 0px 0px");
 			}
 		else{
-		console.log("cylinderPiston "+cylinderPiston);
+//		console.log("cylinderPiston "+cylinderPiston);
 				if(cylinderPiston==50){
 					cylinderPiston1=3;
 //					console.log("cylinderPiston1 "+cylinderPiston1);
@@ -122,7 +122,7 @@ CalculateActualFlowStr +='<div class="col-sm-4">'
 		
 			flowActual=Math.sqrt(temp);
 			flow=flowActual.toFixed(2);
-			console.log("flow   "+flow);
+//			console.log("flow   "+flow);
 			
 			if (id <= 3) {
 				
@@ -145,7 +145,7 @@ CalculateActualFlowStr +='<div class="col-sm-4">'
 	//			alert("Entered value is incorrect.Try it again... ");
 				 $("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again . </b>");
 				 $("body").css("padding","0px 0px 0px 0px");
-				console.log("wrong");
+//				console.log("wrong");
 				
 				}
 	
@@ -218,7 +218,7 @@ CalculateActualFlowStr +='<div class="col-sm-4">'
 			countTempJson.expected = correct_cnt;
 			countTempJson.attempt = wrong_cnt;
 			counterMasterJson.config = countTempJson;
-			console.log(counterMasterJson);
+//			console.log(counterMasterJson);
 			}
 	}
 			}); 
