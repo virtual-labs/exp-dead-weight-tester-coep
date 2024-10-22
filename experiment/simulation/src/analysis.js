@@ -106,7 +106,7 @@ var htm = ''
 
 	+ '<div class="col-md-12">'
 	+ ' <div class="panel remarkBground" >'
-	+ ' <div class="panel-body remark" style="font-size:18px;"><center><b>Dead weight tester simulation is completed !!</b>'
+	+ ' <div class="panel-body remark" style="font-size:18px;"><center><b>Dead weight tester experiment is completed !!</b>'
 //	+ '<br> <b>Satisfactory performance</b></center></div>'
 	+ '</div>'
 	+ '</div>'
