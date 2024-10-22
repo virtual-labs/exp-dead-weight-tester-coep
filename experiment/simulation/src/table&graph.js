@@ -153,7 +153,16 @@ function tableCreate(masterJson,meter,cylinderPiston)
 			maxPoint=Xmax;
 		}
 //		console.log(" Weight V/S Pressure  " + graphData1);
-		Highcharts.chart('main-div-conf', {
+		Highcharts.chart('main-div-conf', 
+		{
+//			legend: {
+//				    symbolPadding: 0,
+//				    symbolWidth: 0,
+//				    symbolHeight: 0,
+//				    squareSymbol: true
+//				  },
+				exporting: { enabled: true },
+				credits: { enabled: false},
 			title: {
 				text: ' Weight V/S Pressure  '
 			},
