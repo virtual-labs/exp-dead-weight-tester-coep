@@ -3807,7 +3807,7 @@ function addFun(){
 //				    tempJson.totalWeight = totalStackWeight.toFixed(1);
 				    
 				    tempJson.meterPressureWithExpectedError = actalVal; 
-				     if(meterVal>=0){
+				     if(xPrayVal>=0){
 				     tempJson.meterPressureWithError = xPrayVal;
 				     }else{
 					 tempJson.meterPressureWithError = -xPrayVal;
