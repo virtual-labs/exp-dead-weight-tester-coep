@@ -83,9 +83,9 @@ $(".panelBody").css({"background-color": "#fff"});
 			$("#main-div-conf").html(questions);
              
              $('#nextLevel1').on('click', function() {	
-	      if(ansCount != 0){
+//	      if(ansCount != 0){
 		config1();
-	} 
+//	} 
 });
 			$('#testSubmit').on('click', function() {		
 				$("body").css("padding","0px 0px 0px 0px");
