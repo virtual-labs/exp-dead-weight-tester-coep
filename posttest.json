@@ -1,0 +1,68 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Working principle of dead weight pressure gauge tester is based on",
+      "answers": {
+        "a": "Pascal's law",
+        "b": "Dalton's law of partial pressure",
+        "c": "Newton's law of viscosity",
+        "d": "Avogadro's hypothesis"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is relative error?",
+      "answers": {
+        "a": "(Measured Value - Actual Value) /Actual Value",
+        "b": "(Measured Value  + Actual Value) /Actual Value",
+        "c": "(Measured Value - Actual Value) X Actual Value",
+        "d": "(Actual  Value - Measured   Value) /Actual Value"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "Gauge pressure is _____ ",
+      "answers": {
+        "a": "equal to atmospheric pressure - absolute pressure",
+        "b": "greater than atmospheric pressure + gauge pressure",
+        "c": "equal to atmospheric pressure + gauge pressure",
+        "d": "greater than atmospheric pressure - absolute pressure"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "Atmospheric pressure is _____",
+      "answers": {
+        "a": "equal to absolute pressure + Gauge pressure",
+        "b": "equal to gauge pressure",
+        "c": "greater than  Gauge pressure - absolute pressure",
+        "d": "less than absolute pressure"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "1 kilogram Force is equal to _____",
+      "answers": {
+        "a": "14.22334 PSI",
+        "b": "15  PSI",
+        "c": "13 PSI",
+        "d": "17.22335 PSI"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}
