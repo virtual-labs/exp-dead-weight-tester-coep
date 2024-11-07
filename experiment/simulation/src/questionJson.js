@@ -6,38 +6,38 @@ QuestionsJSON = {
 
 				"QUES": [{
 					
-					"QC": "What is the range of pressure that a low-pressure gauge typically measures?",
+					"QC": "In a Pirani gauge, the pressure is related to the ________.",
 					"ANS": [{
-						"ANSID": false,
-						"content": "0-60 psi"
-					}, {
-						"ANSID": false,
-						"content": "0-100 psi"
-					}, {
-						"ANSID": false,
-						"content": "0-30 psi"
-					},{
 						"ANSID": true,
-						"content": "0-15 psi"
+						"content": "thermal conductivity of the gas"
+					}, {
+						"ANSID": false,
+						"content": "the volume of the gas"
+					}, {
+						"ANSID": false,
+						"content": "mass transfer of the gas"
+					},{
+						"ANSID": false,
+						"content": "composition of the gas"
 					}]
 				}]
 			}, {
 
 				"QUES": [{
 					
-					"QC": " What is the most common unit of measurement used for pressure gauges?",
+					"QC": "Gauge pressure is measured ________.",
 					"ANS": [{
 						"ANSID": false,
-						"content": "Pascal"
-					}, {
-						"ANSID": false,
-						"content": "Bar "
+						"content": "below the local atmospheric pressure"
 					}, {
 						"ANSID": true,
-						"content": "PSI"
+						"content": "above the local atmospheric pressure"
 					}, {
 						"ANSID": false,
-						"content": "Atmosphere"
+						"content": "above the zero absolute pressure"
+					}, {
+						"ANSID": false,
+						"content": "below the zero absolute pressure"
 					}]
 					
 				}]
@@ -45,19 +45,19 @@ QuestionsJSON = {
 
 				"QUES": [{
 					
-					"QC": "What is the purpose of the glass cover on a pressure gauge?",
+					"QC": "Which thermal conductivity gauge measures pressure in vacuum tubes?",
 					"ANS": [{
 						"ANSID": true,
-						"content": "To protect the dial face from damage"
+						"content": "Pirani gauge"
 					}, {
 						"ANSID": false,
-						"content": "To provide a visual indication of pressure changes"
+						"content": "Thermocouple gauge"
 					}, {
 						"ANSID": false,
-						"content": "To magnify the pressure reading"
+						"content": "Strain gauge"
 					}, {
 						"ANSID": false,
-						"content": "To protect the pointer from damage"
+						"content": "Conductivity gauge"
 					}]
 					
 				}]
@@ -65,19 +65,19 @@ QuestionsJSON = {
 
 				"QUES": [{
 					
-					"QC": "What is the purpose of the connection on a pressure gauge?",
+					"QC": "Pirani gauge is useful for measurement of pressure.",
 					"ANS": [{
+						"ANSID": false,
+						"content": "Between 10<sup>1</sup> to 10 mm of Hg"
+					}, {
+						"ANSID": false,
+						"content": "Between 10<sup>-1 </sup>to 10<sup>-9 </sup>of Hg "
+					}, {
 						"ANSID": true,
-						"content": "To connect the gauge to the process being measured"
+						"content": "Between 10<sup>-1</sup> to 10<sup> -3</sup>"
 					}, {
 						"ANSID": false,
-						"content": "To provide a visual indication of pressure changes"
-					}, {
-						"ANSID": false,
-						"content": "To protect the gauge from overpressure"
-					}, {
-						"ANSID": false,
-						"content": "None of these"
+						"content": "Between 10<sup>-1 </sup>to 10<sup>-12</sup> mm of Hg"
 					}]
 					
 				}]
@@ -85,19 +85,19 @@ QuestionsJSON = {
 
 				"QUES": [{
 					
-					"QC": "What is the purpose of the movement in a pressure gauge?",
+					"QC": "Pirani gauge is used for the measurement of",
 					"ANS": [{
-						"ANSID": false,
-						"content": "To provide a visual indication of pressure changes"
-					}, {
-						"ANSID": false,
-						"content": "To protect the gauge from overpressure"
-					}, {
 						"ANSID": true,
-						"content": "To convert pressure into a mechanical deflection"
+						"content": "high vacuum."
 					}, {
 						"ANSID": false,
-						"content": "None of these"
+						"content": "very high pressure."
+					}, {
+						"ANSID": false,
+						"content": "liquid level at atmospheric pressure"
+					}, {
+						"ANSID": false,
+						"content": "liquid level under pressure."
 					}]
 					
 				}]
@@ -105,19 +105,19 @@ QuestionsJSON = {
 
 				"QUES": [{
 					
-					"QC": "What is the purpose of the case on a pressure gauge?",
+					"QC": "The operation of Pirani gauge depends upon the",
 					"ANS": [{
 						"ANSID": false,
-						"content": "To provide a visual indication of pressure changes"
+						"content": "variation of the electrical conductivity of a gas with the change in pressure."
+					}, {
+						"ANSID": false,
+						"content": "variation in humidity of the medium with the change in pressure."
 					}, {
 						"ANSID": true,
-						"content": "To protect the gauge from overpressure"
+						"content": "variation of the thermal conductivity of a gas with the change in pressure."
 					}, {
 						"ANSID": false,
-						"content": "To hold the movement in place"
-					}, {
-						"ANSID": false,
-						"content": "To hold the bourdon tube in place"
+						"content": "none of the above."
 					}]
 					
 				}]
@@ -130,14 +130,14 @@ QuestionsJSON = {
 
 
 
-var ANSWERJSON = {
-			
-				"0" : "All the points mentioned",
-				"1" : "Set the standard output for the required limits of process parameter",
-				"2" : "Set majority of the points of the transmitter output in the operating region",
-				"3" : "Pump discharge flow and Outlet flow",
-				"4" : "Nothing is required to be changed",
-				"5" : "Nil"
-				
-			
-}
+//var ANSWERJSON = {
+//			
+//				"0" : "All the points mentioned",
+//				"1" : "Set the standard output for the required limits of process parameter",
+//				"2" : "Set majority of the points of the transmitter output in the operating region",
+//				"3" : "Pump discharge flow and Outlet flow",
+//				"4" : "Nothing is required to be changed",
+//				"5" : "Nil"
+//				
+//			
+//}

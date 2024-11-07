@@ -1,17 +1,10 @@
-var counterMasterJson ={};	
-var ansCount = 0;
-$(".panelBody").css({"background-color": "#fff"});
-//	$(function() {
-//		basicKnowledge = function() {
-	var ques_cnt = 0;	
+
 			var flag = false;
 			var myRadio = null;
-			dataQues = {};
-
-			$("#main-div-conf").html('');
 			
-				$("#panelHeadingBold").html('BASIC KNOWLEDGE');
-
+			 counterMasterJson = {};
+           var ansCount = 0;
+			
 			var questions = '';
 			questions += ''
 				+ '<div id = "questionDiv">'
@@ -48,48 +41,41 @@ $(".panelBody").css({"background-color": "#fff"});
 			}
 
 			questions += '<div class="buttonDiv">'
-				+ '<button  class="btn btn-danger"  id="testSubmit" data-toggle="modal" data-target="#questionModal">Submit Test</button>'
-				+ '<button  class="btn btn-danger"  id="nextLevel1" data-toggle="modal" data-target="#questionModal" hidden>Next Level</button>'
+				+ '<button  class="btn btn-danger" data-toggle="modal" data-target="#myModal" id="testSubmit">Submit Test</button>'
+		        + '<button  class="btn btn-danger" id="nextLevelConfig" hidden>Next Level</button>'
+			    + '</div>'	
+				
 
-//				data-toggle="modal" data-target="#myModal"
-			//	+ '<button id="config" class=" btn btn-danger nextLevelBtn" >Next Level</button>'
+//				+ ' <!-- Modal -->'
+//				+ '<div class="modal fade" id="myModal" role="dialog">'
+//				+ ' <div class="modal-dialog modal-md">'
+//				+ '    <div class="modal-content">'
+//				+ '     <div class="modal-header">'
+//				
+//				+ '       <h4 class="modal-title">Message box</h4>'
+//				+ '       <button type="button" class="close" data-dismiss="modal" style="color:#fff;">&times;</button>'
+//				+ '     </div>'
+//				+ '     <div class="modal-body">'
+//				+ '       <p id="modelMsg">This is a small modal.</p>'
+//				+ '     </div>'
+//				+ '     <div class="modal-footer">'
+//				+ '       <button type="button" class="btn btn-danger" id = "nextPage" data-dismiss="modal" >Okay</button>'
+//				+'</style>'
+//				+ '     </div>'
+//				
+//				+ '   </div>'
+//				+ ' </div>'
+//				+ '</div>'
+//				
 
-				+ ' <!-- Modal -->'
-				+ '<div class="modal fade" id="questionModal"  role="dialog">'
-				+ ' <div class="modal-dialog modal-md">'
-				+ '    <div class="modal-content">'
-				+ '     <div class="modal-header">'
-				
-				+ '       <h4 class="modal-title">Message box</h4>'
-				+ '       <button type="button"  class="close" data-dismiss="modal" style="color:#fff;">&times;</button>'
-				+ '     </div>'
-				+ '     <div class="modal-body">'
-				+ '       <p id="modelMsg"></p>'
-				+ '     </div>'
-				+ '     <div class="modal-footer">'
-				+ '       <button type="button" class="btn btn-danger" id="configcallModal" data-dismiss="modal">OK</button>'
-				+ '     </div>'
-				+ '   </div>'
-				+ ' </div>'
-				+ '</div>'
-				
-				+ '</div>'
-				+ ' </div>'
-
-				
-				
+//				+ ' </div>'	
 		
 
 			$("#main-div-conf").html(questions);
-             
-             $('#nextLevel1').on('click', function() {	
-//	      if(ansCount != 0){
-		config1();
-//	} 
-});
+
 			$('#testSubmit').on('click', function() {		
 				$("body").css("padding","0px 0px 0px 0px");
-				
+
 					var arr = [];
 					
 					for (var i = 0; i < QuestionsJSON.data["SEC"].length; i++) {
@@ -107,9 +93,13 @@ $(".panelBody").css({"background-color": "#fff"});
 						if (myRadio == null) {
 							flag = flag && false;
 //							alert('Please attempt all the questions');
-//							$("body").css("padding","0px");
-							$("#modelMsg").html("<b class='boldTextRed'>Please attempt all the questions.</b>");
-						break;	
+							$("body").css("padding","0px");
+							$(".modal-header").html("Error Message");
+							$(".modal-header").css("background","#9c1203b0");
+							$("#btnModal").removeClass("btn-success").addClass("btn-danger");
+							$("#MsgModal").html("Please attempt all the questions");
+//							$("#modelMsg").html("<b class='boldTextRed'>Please attempt all the questions.</b>");
+							break;
 						}
 						arr.push({
 							"QID": qid,
@@ -118,42 +108,48 @@ $(".panelBody").css({"background-color": "#fff"});
 						});
 					}
 
-					
+					var ansCount = 0;
 
 					if (myRadio != null) {
 						for (var i = 0; i < arr.length; i++) {
 							if (arr[i].ANSId == "true") {
 								ansCount++;
-								
 							}
 						}
-//						dataQues.corrAns = ansCount;
-//						 data.corrAns = dataQues;
-//						 console.log(data);
-						 
-				$("#testSubmit").prop("hidden",true);
-				$("#nextLevel1").prop("hidden",false);
-						 
-						$("#modelMsg").html("<b class='boldTextGreen'>Test Submitted Successfully . Correct Answers Are : " + ansCount+"</b>");
-//						alert("Test Submitted Successfully . Correct Answers Are : " + ansCount);
-//						$("body").css("padding","0px 0px 0px 0px");
-						
-						var tempCountJson ={};
+						var wrongAns = 6-ansCount;
+                         var tempCountJson ={};
 						tempCountJson.correctAnswer = ansCount; 
-//						 jsonArr.push(tempJson);
-					counterMasterJson.questionary = tempCountJson;
-						 $("#centerText2").html("CONFIGURATION"); 
-							
-		   					
+						tempCountJson.wrongAnswer = wrongAns; 
+						counterMasterJson.questionary = tempCountJson;
+						 console.log(counterMasterJson);
+						
+						 $("#btnModal").removeClass("btn-danger").addClass("btn-success");
+	                     $(".modal-header").html("Success Message");
+				         $(".modal-header").css("background","#5cb85c");
+						 $("#MsgModal").html("Test Submitted Successfully .<br> Number of Correct Answers  : " + ansCount);
+//						 $("#modelMsg").html("<b class='boldTextGreen'>Test Submitted Successfully .<br> Number of Correct Answers  : " + ansCount+"</b>");
+                         $('#nextLevelConfig').prop('hidden',false);
+						 
+						    $('#testSubmit').prop('hidden',true); 
+
+		   			
 					}
 					
-//			$('#config').on('click', function() {
-//				
-//				});
-						
-			});
-			
-		
-//			}
-				
-//	});
+					$('#nextLevelConfig').on('click', function() {	
+						 
+//	      if(ansCount != 0){
+		$("#main-div-conf").html("");
+//				  $("#main-div-conf").html('<img src="images/loadCellMerge.png"  width="100%" height="60%" class="img-fluid" >');
+				$("#canvas-div").html("");
+				$("#main-div-conf").html(""); 
+//				  config1();
+//     calculate();
+     wheatStoneCon();
+//       digitalMeter();
+//	} 
+	});	
+					
+});
+
+	
+	
