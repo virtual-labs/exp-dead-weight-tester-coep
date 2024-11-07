@@ -359,6 +359,11 @@ Copyrights &copy; COEP - Virtual Lab
 <script type="text/javascript" src="src/MeterCalibration.js"></script>
 <script type="text/javascript" src="src/faultFinding.js"></script>
 <script type="text/javascript" src="src/analysis.js"></script>
-
-
+<script>
+$('#readProcedureModal1').click(function(){
+	 $('video').each(function(){
+		    $(this).get(0).pause();
+		  })
+	})
+</script>
 </html>
