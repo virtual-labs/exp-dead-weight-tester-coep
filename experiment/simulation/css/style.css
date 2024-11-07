@@ -1,40 +1,19 @@
-.draggable {
-            cursor: pointer;
-        }
-        .selected {
-            stroke: blue !important;
-            stroke-width: 4 !important;
-            
-        }
-        .selected-connection {
-            stroke: red !important;
-            stroke-width: 4 !important;
-        }
-        
-        .btn1 {
-        margin-left:10px;
-        margin-right: 10px;
-        margin-top:7px;
-        float:right;
-        margin-bottom:10px;
-        padding: 7px; 
-        border:none; 
-        border-radius: 5px;
-        }
-        
-        #delete-btn {            
-            padding: 7px;
-            background-color: red;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .dot {
-            fill: blue;
-            stroke: none;
-        }
-
-
+#div1 {
+  width: 600px;
+  height: 670px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+#modelTitle{
+	background-color: #244f56;
+    padding: 7px;
+    color: #fff;
+    font-size: 17px;
+    margin:10px;}
+#imgb1{
+	background-image: url("images/b1.jpg");
+	 background-color: #cccccc;
+}
 #div1 {
   width: 600px;
   height: 670px;
@@ -45,10 +24,9 @@
 	background-image: url("images/b1.jpg");
 	 background-color: #cccccc;
 }
-
- #questionDiv{}
+ 
 .QueHead{font-size: 18px;
-/*       font-size: 22px; */
+      font-size: 22px;
     font-weight: bold;
     color: #fff;
     background-color: #333;

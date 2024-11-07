@@ -3,8 +3,6 @@
   margin-left:20px;
 }
 
-
-
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -44,9 +42,7 @@ background-color:gray;
 	color:#fff;
 	font-size:20px;
 }
-p{ 
-	text-align: left;
-}
+
 
 input[type=range].slider {
   -webkit-appearance: none;
@@ -165,4 +161,3 @@ table{
 {
 	font-size:14px;color:#fff;margin-bottom:10px;
 }
-

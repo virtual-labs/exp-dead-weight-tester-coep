@@ -8,11 +8,30 @@
 table{
 	   
     background-color: gainsboro;
-    font-size: 16px;
+    font-size: 14px;
+}
+
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+	line-height: 1;
+}
+
+.panel-body{
+	padding: 10px;
+}
+
+.table {
+	margin-bottom: 2px;
+}
+
+.configHeader {
+	text-align: center;
+    background: #658e8d40;
+    border-radius: 5px;
+    margin-top: 2px;
 }
 .NotAttained{
 	background-color: #ec4848c4;
-    padding: 5px;
+    padding: 4px;
     color: #000;
     border-radius: 10px;
     
@@ -23,7 +42,7 @@ table{
  }  
 .attained{
 	background-color: #bff0a8;
-    padding: 5px;
+    padding: 4px;
     color: #000;
     border-radius: 10px;
   	
@@ -100,12 +119,12 @@ margin-bottom: 30px;
 }
 .counterPanelGreen{
 	margin-bottom: 20px;
-    margin-top: 26px;
+    margin-top: 15px;
     background-color: #34ae50a6;
 }
 .counterPanelRed{
 	margin-bottom: 20px;
-    margin-top: 26px;
+    margin-top: 15px;
     background-color: #ec4848bd;
 }
 .valueBox

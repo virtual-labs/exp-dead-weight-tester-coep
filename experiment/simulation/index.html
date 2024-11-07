@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title> Pirani guage </title>
+<title> Dead weight tester  </title>
 <meta charset="ISO-8859-1">
  <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,19 +11,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" > -->
     <link rel="stylesheet" href=" https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<!--     <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet"> -->
-
-   <link rel="stylesheet" href="css/header.css">
-<!--     <link rel="stylesheet" href="css/main.css"> -->
+   	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/header1.css">
 	<link rel="stylesheet" href="css/mainPage.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/piraniGuage.css">
-	<link rel="stylesheet" href="css/analysis.css">
 
-
-
-
+	<link rel="stylesheet" href="css/dwt.css">
+		<link rel="stylesheet" href="css/analysis.css">
 </head>
 
 <style>
@@ -32,23 +26,15 @@
  src: url('font/digital-7.ttf');
 }
 
-.modal-header1{
-    text-align: center;
+.modal-header1{text-align: center;
     font-size: 22px;
     font-weight: 600;
-     background-color: #001f3f; /* Navy blue background */
-    color: white; /* White text color */
-   
+    background-color: #171c42;
+    color:#fff;
     }
-    #main-div-conf{
-    width:100%;
-    }
-    #canvas-div{
-    width:100%;
-    }
-    
-    
-    .button1 {
+
+
+.button1 {
   background-color: #004A7F;
   -webkit-border-radius: 10px;
   border-radius: 4px;
@@ -57,8 +43,8 @@
   cursor: pointer;
   display: inline-block;
   font-family: Arial;
-/*   font-size: 15px; */
-/*  padding: 5px 10px;  */
+  font-size: 15px;
+ padding: 5px 10px; 
   text-align: center;
   text-decoration: none;
   -webkit-animation: glowing 1500ms infinite;
@@ -89,39 +75,52 @@
   50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
   100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
 }   
-    
-    
+
+
+
 </style>
-<body>
+<body bgproperties="fixed">
 
 <header>
-		<img class="COEPLogo" src='images/COEPlogo.png' />
+		<img class="Coeplogo" src='images/COEPlogo.png' />
 		<img class="VlabLogo" src='images/vlablogo.jpg' />
-		<span id="colgName">COEP TECHNOLOGICAL UNIVERSITY PUNE</span>		
-	</header>	
-
-
+		<span id="colgName">COEP Technological University</span>		
 		
+	</header>
+	
+	
 	<div  class="row container" style="">	
-	  <div  class="col-sm-10" >
+	  <div  class="col-sm-8" >
 	  </div>
+	   <div  class="col-sm-2" >
+	 </div>
 	   <div  class="col-sm-2" >
 		<button type="button" class="btn btn-danger" style="margin-top:7px;margin-bottom:5px;"  id = "pdfDownload" hidden>
 	  Download Report
 	 
 	</button>
 	</div>
+	
+	
 	</div>
 	
-<div  class="row container-fluid">	
-	<div  class="col-sm-12" >      
-      <button type="button" id="calibrateLevel" class="btn btn-danger btn1" data-dismiss="modal" hidden><b>Next Level</b></button>
-	  <button type="button" id="simDemo" class="btn btn-danger btn1" data-toggle="modal" data-target="#readProcedureModal1"><b>Simulation Demo</b> </button>
-	  <button type="button" id="btnForModal" class="btn btn-danger btn1 button1" data-toggle="modal" data-target="#exampleModal1"><b> Procedure </b></button>
-      <button type="button" id="validateCon" class="btn btn-primary btn1" data-dismiss="modal" data-toggle="modal" data-target="#myModal" hidden><b>Validate Connection</b></button>
-	  <button type="button" id="delete-btn" class="btn btn1" data-dismiss="modal" hidden><b>Delete Selected</b></button>	
-	</div>
- </div>
+<div  class="row " >
+<div class="col-sm-8">
+
+</div>
+
+
+
+<div class="col-sm-2">
+<button type="button" class="btn btn-danger btn-lg button1" id="procedure" data-toggle="modal" 
+data-target="#readProcedureModal">Read Procedure</button>
+</div>
+
+<div class="col-sm-2">
+<button type="button" class="btn btn-danger btn-lg" id="demo" data-toggle="modal" 
+data-target="#readProcedureModal1">Simulation Demo</button>
+</div>
+</div>
 
 
 <div id="readProcedureModal1" class="modal fade" role="dialog">
@@ -130,15 +129,14 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header1">
-        <h3 class="modal-title12">DEMO</h3>
+        <h3 class="modal-title">DEMO</h3>
 <!--         <button type="button" class="close" data-dismiss="modal">&times;</button> -->
       </div>
-      <div class="modal-body12">
+      <div class="modal-body">
  
-
-<center><video id="simVideo" width="90%" controls>
-    <source src="images/simulation.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+    <center><video width="90%"  controls>
+  <source src="images/simulation.mp4" type="video/mp4">
+  Your browser does not support the video tag.
 </video></center>
   
       </div>
@@ -151,107 +149,198 @@
 </div>
 
 
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
+
+
+
+
+<div id="readProcedureModal" class="modal fade" role="dialog">
+  <div class="modal-dialog  modal-lg">
+
+    <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header1" >
-        <h3 class="modal-title1" id="exampleModalLabel">Procedure</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <div class="modal-header">
+<!--         <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        <h4 class="modal-title"><center>PROCEDURE</center></h4>
       </div>
-      <div class="modal-body11" style="overflow-y: scroll;height:600px;margin-left:10px; ">
-        
+      <div class="modal-body">
+    
+
+<center id="modelTitle"> Basic Knowledge </center>
+ <ol>
+<li> Answer all the questions and click on "Submit Test" button</li>
+</ol>
+
+<center id="modelTitle"> Configuration</center>
+<ol>
+<li> Select meter gauge and cylinder Piston Area</li>
+<li> Calculate radius of cylinder as its area is known. After submitting the given answer is wrong for 3 attempts it will show the formula, if the given answer is wrong it will show the correct answer 
+</li>
+</ol>
+<center id="modelTitle"> Mimic</center>
+<!-- ![1](images/DWT_dig_labels.PNG) -->
+<img src="images/DWT_dig_labels.png" class="img-responsive" alt="Cinque Terre">
+<ol>
+<li>
+Open the Cap of Oil Reservoir 
+</li>
+<li>
+Click on "Oil Reservoir" button and fill the reservoir with oil  
+</li>
+<li>
+Click on oil reservoir valve (it will change its color to green), so that oil will get spread in the cylinder
+</li>
+<li>
+ Click on metergauge valve and spread the oil throughout the cylinder and metergauge
+</li>
+<li>
+Once the oil is spread in the cylinder click on plus sign ("Forward click") to move the handle in clockwise direction, and to generate the pressure so that the handle will move in inner direction
+</li>
+<li>
+ After creating  pressure and you reach its maximum  position excess air will get released. Then click on minus sign ("Reverse click") this will release the pressure so that the handle will move in outer direction. To remove excess air from the oil and cylinder repeat this process four times and close the cap of oil reservoir by clicking on cap  
+</li>
+<li>
+Click on minus sign and reach its initial position. Once you reach the minimum limit, oil reservoir valve will get closed (it will change its color to red) 
+</li>
+<li>
+Place the weights (by clicking weights from the weight stack) on platform and click on plus sign to generate the pressure, when the pressure is generated, platform will get uplifted. You can uplift the platform till it reaches to its correct reading position (refer Fig.1 and Fig.2) and then click on confirm button to add the record in table
+ </li>
+<img src="images/ProcedureDig.png" class="img-responsive" alt="Cinque Terre">
+<!-- <img src="images/platformFig2.png" class="img-responsive" alt="Cinque Terre"> -->
+<!--  ![1](images/platform_explanation.PNG) -->
+<!--  **Fig.1**  -->
+<!--  ![1](images/platformFig2.PNG) -->
+<!--  **Fig.2**  -->
+
+<li>
+Once you add a values in the table then release the pressure by clicking on minus sign and repeat step 8 for more readings. You can add or remove weights from the platform for different readings. To remove weight from the platform click on "Remove weight" button 
+</li>
+<li>
+ It is mandatory to perform this experiment for minimum and maximum weight i.e. 0 kg and maximum as per meter selection  
+</li>
+<li>
+After you take 5 readings Show graph button will be enabled 
+</li>
+<li>
+Once you click on show graph, graph will be displayed. Further the process can be followed as per instructions
+</li>
+
+</ol>
+
+<center id="modelTitle">Calibration</center>
+<ol>
+<li>
+Calculate zero error (minimum value) upto two decimals and click on submit (Formula: Actual Reading - Observed Reading) 
+</li>
+<li>
+Similarly calculate span error (maximum value) upto two decimals and click on submit (Formula: Actual Reading - Observed Reading)
+</li>
+<li>
+ Observe the graph and then adjust zero by clicking "plus" and "minus" buttons 
+</li>
+<li>
+ Once zero error is calibrated then calibrate span error with same process as mentioned in step 3
+</li>
+<li>
+ When span error is calibrated it disturbs zero. Again adjust zero and follow the process as mentioned in step 3 
+</li>
+<li> After adjusting zero and span error click on "CALIBRATION WITH METER" button to move on next level
+</li>
+</ol>
+<center id="modelTitle"> Calibration With Pressure Gauge</center>
+
+<ol>
+<li>
+ Follow the given Instructions and complete the process
+ </li>
+<li>
+After completion of process click on "Fault Finding" button to move on next level 
+</li>
+</ol>
+<center id="modelTitle"> Fault Finding</center>
+<ol>
+<li>
+ Observe the shown table and select the fault accordingly
+</li>
+
+<li> After selecting the correct fault Result will be displayed
+</li>
+</ol>
+<center>
+    <video width="95%" controls>
+  <source src="images/simulation.mp4" type="video/mp4">
+</video></center>
+    
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-<!--         <button type="button" class="btn btn-primary">OK</button> -->
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
     </div>
+
   </div>
 </div>
 
 
-<div  class="row container-fluid" id="main-div" >
 
 
-<div class="col-lg-6" id="canvas" style="width:100%;">
-	             <div class="panel panel-primary" >
-	      			<div class="panel-heading " id="panelHeading2" ><center id="centerText2"> DIAGRAM</center>
+
+
+
+
+<div  class="row container-fluid" id="mainDiv">
+
+<div class="col-lg-6" id="canvas">
+	             <div class="panel panel-primary">
+	      			<div class="panel-heading " id="panelHeading2"><center id="centerText1"> DIAGRAM</center>
 	      			</div>
-<!-- 	      			<label  id="counter"></label> -->
+	      			<label  id="counter"></label>
 	      			<div class="panel-body" id="canvas-div" >
-	      			
-	      			<img src="images/piraniDiag1.jpg"  class="img-fluid" >
-	      			
-<!-- 	      			<img src="images/digital-pirani-gauge.png "  class="img-fluid" > -->
-	      			
+	      			<img src="images/dwTester.png" class="img-fluid " width="1000" height="800">
 	      			</div>
-					<div class="panel-body" id="table-design" >
-<!-- 	      			<img src="images/digital-pirani-gauge.png "  class="img-fluid" > -->
-	      			</div>
-	      			
+
 	   			</div>
 	       </div>
-	<div class="col-lg-6" id="canvas2"  style="width:100%;">
-	        
+	<div class="col-lg-6" id="main-div">
 				<div class="panel panel-primary">
-	      			<div class="panel-heading " id="panelHeading1"><center id="centerText1">BASIC KNOWLEDGE </center>
+	      			<div class="panel-heading " id="panelHeading1"><center id="centerText2">BASIC KNOWLEDGE</center>
 	      			</div>
-	     			<div class="panel-body" id="main-div-conf" >
-	     			          
-
+	     			<div class="panel-body" id="main-div-conf">
+<!-- 	     			<script>basicKnowledge();</script> -->
 	     			</div>
-	     		<div class="panel-body" id="graph2" >
-
-	      			</div>
+	     			<div class="row" >
+	     			<div class="col-sm-12" id="sub-main-div1" >
+	     			</div>
+	     			<div class="row" id="sub-main-div2">
+	     			
+	     			</div>
 	     		</div>
 	   	</div>
-	   
-
-			
+	        
+	  </div>      
 	</div>
-	
-	<!-- 	Model Start -->
-	<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-		<h4 class="modal-title" style="font-weight: 600;"></h4>
-          <button type="button" class="close" data-dismiss="modal" style="color: black;">&times;</button>
-          
-        </div>
-        <div class="modal-body">
-          <p id="MsgModal"></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" id="btnModal" class="btn" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-<!--   Model end -->
-	
-	
 	<footer>
 Copyrights &copy; COEP - Virtual Lab
 </footer>
 </body>
 
+<!-- https://code.jquery.com/jquery-3.5.1.js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="lib/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 <script type="text/javascript" src="lib/raphael.js"></script>
 <script type="text/javascript" src="lib/raphael.min.js"></script>
+<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
+  
+<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> -->
+  
+<!--   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   
   <script type="text/javascript" src="src/bootstrap.min.js"></script>
@@ -261,132 +350,20 @@ Copyrights &copy; COEP - Virtual Lab
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript" src="src/questionJson.js"></script>
 <script type="text/javascript" src="src/questions.js"></script>
-<script type="text/javascript" src="src/piraniConfig.js"></script>
 
-<script type="text/javascript" src="src/wheatStoneBuild.js"></script>
-
-
-<script type="text/javascript" src="src/piraniCalculate.js"></script>
-<script type="text/javascript" src="src/table.js"></script>
-<script type="text/javascript" src="src/digitalMeterCalculate.js"></script>
-<script type="text/javascript" src="src/digitalTable.js"></script>
-<script type="text/javascript" src="src/tableWithGraph.js"></script>
-<script type="text/javascript" src="src/calibiration.js"></script>
-<script type="text/javascript" src="src/piraniResult.js"></script>
-
-
-<script>
-function resetDivSize() {  
-    const div = document.getElementById('canvas-div');  
-    
-    // Resetting width and height to auto  
-    div.style.width = 'auto';  
-    div.style.height = 'auto'; 
-    
- const div1 = document.getElementById('main-div-conf');  
-    
-    // Resetting width and height to auto  
-    div1.style.width = 'auto';  
-    div1.style.height = 'auto';  
-    
-}  
-</script>
+<script type="text/javascript" src="src/config1.js"></script>
+<!-- <script type="text/javascript" src="src/mainPage.js"></script> -->
+<script type="text/javascript" src="src/dWt_diag.js"></script>
+<script type="text/javascript" src="src/table&graph.js"></script>
+<script type="text/javascript" src="src/Calibration.js"></script>
+<script type="text/javascript" src="src/MeterCalibration.js"></script>
+<script type="text/javascript" src="src/faultFinding.js"></script>
+<script type="text/javascript" src="src/analysis.js"></script>
 <script>
 $('#readProcedureModal1').click(function(){
 	 $('video').each(function(){
 		    $(this).get(0).pause();
 		  })
 	})
-
-$("#simDemo").on("click", function(){
-	
-	var video = document.getElementById("simVideo");
-
-	// Define the start and end skip times (in seconds)
-	var skipStart = 0;  // Skip the first 5 seconds
-	var skipEnd = 7;    // Skip the last 5 seconds
-
-// 	video.onloadedmetadata = function() { 
-	    // Get the duration of the video
-	    var videoDuration = video.duration;
-
-	    // Ensure the video plays between skipStart and (duration - skipEnd)
-	    video.currentTime = skipStart;
-
-	    // Event listener to pause the video when it reaches the end limit (video duration - skipEnd)
-	    video.ontimeupdate = function() {
-	        if (video.currentTime >= videoDuration - skipEnd) {
-	            video.pause();
-	        }
-	    };
-
-	    // Prevent seeking outside the allowed time range
-	    video.addEventListener('seeking', function(event) {
-	        // If seeking before the start time or after the allowed end time, reset the current time
-	        if (video.currentTime < skipStart) {
-	            video.currentTime = skipStart;
-	        } else if (video.currentTime > videoDuration - skipEnd) {
-	            video.currentTime = videoDuration - skipEnd;
-	        }
-	    });
-// 	};
-	
-	video.play();
-})
-
-</script>
-<script>
-
-$("#btnForModal").on("click", function(){
- var htm = '';
- htm += '<h3>Basic Knowledge -</h3>'
- +'<ol>'
- +'<li>Answer all the questions and click on "Submit Test" button</li>'
- +' <li>Click on "Next level"</li>'
- +' </ol>'
-
- +'<h3>Construction of Wheatstone bridge:-</h3>'
- +'<ol>'
- +' <li>Click on a component from the left panel to select it. The selected component will appear on the right, where you can drag and drop the component to adjust its position</li>'
- +' <li>You can select any image or connection and click the delete button to modify it, if needed</li>'
- +' <li>Use drag-and-drop to connect the ports and construct the Wheatstone bridge</li>'
- +' <li>After making the connections, click the "Validate Connection" button to verify them. If the connections are incorrect three times, a popup message will appear, and on the fourth attempt, a hint will be provided. If the connections are correct, you will be redirected to the next page</li>'
- +'</ol>'
-
- +'<h3>Standard Calculation:-</h3>'
- +'<ol>'
- +'<li>Select pressure range between 0.001 to 0.1 torr</li>'
-   +'<li>After submitting pressure, another panel will appear where you have to enter temperature. Here temperature range is between 50 to 60 degrees K</li>'
-   +'<li>After submitting the temperature, calculate the value of Rx. Once the value of Rx is submitted successfully, another panel will appear where you have to calculate output voltage Vout (mV)</li>'
-   +'<li>After clicking on submit, click on "Next Reading" and repeat the procedure. This part shows standard calculated values</li>'
-   +'<li>After 5 iterations, click on the "Next Level" button</li>'
-   +'</ol>'
-
- +'<h3>Actual Calculation:-</h3>'
- +'<ol>'
- +'<li>Enter pressure range between 0.001 to 0.1 torr</li>'
-   +'<li>After submitting pressure, another panel will appear where you have to enter temperature. Here temperature range is between 50 to 60 degrees K. Here the actual values of Rx will be displayed</li>'
-   +'<li>Click on "Submit". Here the actual values of output voltage can be observed</li>'
-   +'<li>Click on "Next Reading". Observe the same for other values</li>'
-   +'</ol>'
-
- +'<h3>Observation:-</h3>'
- +'<ol>'
- +'<li>Observe the difference between the standard value and actual value and click on "Next Level" button on the top</li>'
-   +'</ol>'
-
- +'<h3>Calibration:-</h3>'
- +'<ol>'
- +'<li>Calculate zero error (zero error = actual reading - observed reading)</li>'
-   +'<li>Calculate span error (span error = actual reading - observed reading)</li>'
-   +'<li>Observe the graph and then adjust zero point on the graph by clicking on "plus" and "minus" buttons</li>'
-   +'<li>Once zero error is calibrated, then calibrate span error with the same process</li>'
-   +' <li>When span error is calibrated, it disturbs zero. Again zero is adjusted</li>'
-   +'</ol>'
-
-//  $(".modal-body1").html(htm);
-   $(".modal-body11").html(htm);
-   $(".modal-title1").html("Procedure");
-});
 </script>
 </html>
